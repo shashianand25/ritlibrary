@@ -156,19 +156,7 @@ export default function Header() {
                     <div style={{ padding: '8px 12px 12px', borderBottom: '1px solid rgba(255,255,255,0.08)', marginBottom: 6 }}>
                       <p style={{ fontSize: 13, fontWeight: 700, color: '#F3F4F6', margin: 0 }}>{user.displayName}</p>
                       <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', margin: '2px 0 0', wordBreak: 'break-all' }}>{user.email}</p>
-                      {isAdmin && (
-                        <Link to="/admin" className="mt-2 block">
-                          <span style={{
-                            display: 'inline-flex', alignItems: 'center', gap: 4,
-                            marginTop: 6, fontSize: 10, fontWeight: 800,
-                            padding: '2px 8px', borderRadius: 999,
-                            background: 'rgba(163,230,53,0.15)', color: '#A3E635',
-                            border: '1px solid rgba(163,230,53,0.3)', letterSpacing: '0.06em',
-                          }}>
-                            <ShieldCheck size={10} /> ADMIN
-                          </span>
-                        </Link>
-                      )}
+
                     </div>
                     <button
                       onClick={() => { signOut(); setUserMenuOpen(false); }}
