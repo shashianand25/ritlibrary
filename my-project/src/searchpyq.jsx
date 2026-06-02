@@ -22,6 +22,7 @@ import { StyledSelect, PillBtn } from "./components/UIElements.jsx";
 import { FileRow } from "./components/FileRow.jsx";
 
 const FILES_JSON_URL = import.meta.env.VITE_WORKER_URL || "https://library-backend.ritlibrary.workers.dev/";
+const ALL_SUBJECTS_PYQ_LABEL = "All Subjects PYQ";
 
 function normalizeSearch(str) {
   return (str || "").toLowerCase().replace(/[\s/_-]+/g, '');
@@ -35,7 +36,13 @@ function getFileCategory(file) {
   return "";
 }
 
+function isAllSubjectsPyq(file) {
+  const parts = file.name?.split(/[/\\]/).filter(Boolean).map(p => p.toLowerCase()) || [];
+  return getFileCategory(file) === "pyq" && (file.allSubjects === true || parts.includes("allsubjects"));
+}
+
 function getFileSubjectCode(file) {
+  if (isAllSubjectsPyq(file)) return "ALL";
   if (file.subjectCode) return file.subjectCode;
   const parts = file.name?.split(/[/\\]/).filter(Boolean) || [];
   const first = parts[0]?.toLowerCase();
@@ -311,11 +318,13 @@ export default function SearchPYQ() {
       const pyqResults = allData.filter(file => {
         if (getFileCategory(file) !== "pyq") return false;
         
+        const allSubjectsPyq = isAllSubjectsPyq(file);
         const fileCode = normalizeSearch(getFileSubjectCode(file));
         if (fileCode !== code) {
-          if (fileCode === "all") {
-             if (form.sem && form.branch) {
-               if (file.sem !== form.sem || file.branch !== form.branch) return false;
+          if (allSubjectsPyq || fileCode === "all") {
+             if (form.semester && form.branch) {
+               if (file.sem && file.sem !== form.semester) return false;
+               if (file.branch && file.branch !== form.branch) return false;
              }
           } else {
             return false;
@@ -323,7 +332,7 @@ export default function SearchPYQ() {
         }
         
         const searchable = normalizeSearch(`${file.name} ${file.view || ""} ${file.folderName || ""}`);
-        return examTypes.some(t => searchable.includes(normalizeSearch(t)));
+        return allSubjectsPyq || examTypes.some(t => searchable.includes(normalizeSearch(t)));
       });
       const notesResults = allData.filter(file => {
         if (getFileCategory(file) !== "notes") return false;
@@ -399,7 +408,7 @@ export default function SearchPYQ() {
     if (!pdfFiles?.length) return [];
     return Object.entries(
       pdfFiles.reduce((acc, f) => {
-        const group = f.folderName || f.year || "PYQ";
+        const group = isAllSubjectsPyq(f) ? ALL_SUBJECTS_PYQ_LABEL : (f.folderName || f.year || "PYQ");
         const section = getFileSection(f, currentSubjectCode);
         const sectionPrefix = section && section.toLowerCase() !== "gen" ? `${section.toUpperCase()} · ` : "";
         const leafName = getFileLeafName(f, currentSubjectCode);
@@ -410,7 +419,11 @@ export default function SearchPYQ() {
         });
         return acc;
       }, {})
-    ).sort(([a], [b]) => parseInt(b.split("-")[0]) - parseInt(a.split("-")[0]));
+    ).sort(([a], [b]) => {
+      if (a === ALL_SUBJECTS_PYQ_LABEL) return -1;
+      if (b === ALL_SUBJECTS_PYQ_LABEL) return 1;
+      return parseInt(b.split("-")[0]) - parseInt(a.split("-")[0]);
+    });
   }, [pdfFiles, currentSubjectCode]);
 
   /* ── shared panel style ── */
