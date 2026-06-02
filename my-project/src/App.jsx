@@ -6,6 +6,7 @@ import HomePage from './HomePage.jsx'
 import About from './About.jsx'
 import Contribute from './Contribute.jsx'
 import SyllabusTracker from './SyllabusTracker.jsx'
+import ManageAdmins from './ManageAdmins.jsx'
 import { AuthProvider } from './lib/AuthContext.jsx'
 
 /* Shared page transition wrapper */
@@ -46,6 +47,7 @@ function AnimatedRoutes() {
         <Route path="/syllabus"  element={<PageTransition><SyllabusTracker /></PageTransition>} />
         <Route path="/about"     element={<PageTransition><About     /></PageTransition>} />
         <Route path="/contribute"element={<PageTransition><Contribute/></PageTransition>} />
+        <Route path="/admin"     element={<PageTransition><ManageAdmins/></PageTransition>} />
       </Routes>
     </AnimatePresence>
   )

@@ -3,8 +3,27 @@ import cors from 'cors';
 import { Octokit } from '@octokit/rest';
 import multer from 'multer';
 import crypto from 'crypto';
+import pg from 'pg';
 
+const { Pool } = pg;
 const app = express();
+
+let pool;
+if (process.env.DATABASE_URL) {
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
+  });
+  
+  // Initialize table
+  pool.query(`
+    CREATE TABLE IF NOT EXISTS admins (
+      id SERIAL PRIMARY KEY,
+      email VARCHAR(255) UNIQUE NOT NULL,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+  `).catch(err => console.error("Failed to create admins table:", err));
+}
 
 // Use express.json for JSON requests
 app.use(express.json());
@@ -193,6 +212,27 @@ async function verifyIdToken(idToken, firebaseApiKey) {
   } catch { return null; }
 }
 
+async function checkIsAdmin(email) {
+  if (!email) return false;
+  const target = email.toLowerCase();
+  
+  // 1. Check Env Vars
+  const envAdmins = (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim().toLowerCase());
+  if (envAdmins.includes(target)) return true;
+  
+  // 2. Check Database
+  if (pool) {
+    try {
+      const { rows } = await pool.query('SELECT 1 FROM admins WHERE email = $1', [target]);
+      if (rows.length > 0) return true;
+    } catch (err) {
+      console.error("DB check failed:", err);
+    }
+  }
+  
+  return false;
+}
+
 async function requireAdmin(req) {
   const authHeader = req.headers.authorization || '';
   const idToken = authHeader.replace(/^Bearer\s+/i, '').trim();
@@ -201,9 +241,7 @@ async function requireAdmin(req) {
   const email = await verifyIdToken(idToken, process.env.FIREBASE_API_KEY);
   if (!email) return { error: 'Invalid token', status: 401 };
 
-  const admins = (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim().toLowerCase());
-  const isAdmin = admins.includes(email.toLowerCase());
-  
+  const isAdmin = await checkIsAdmin(email);
   if (!isAdmin) return { error: 'Forbidden', status: 403 };
 
   return { email };
@@ -232,8 +270,7 @@ async function requireUploader(req) {
 
   const PUBLIC_UPLOADS_ENABLED = process.env.PUBLIC_UPLOADS_ENABLED !== 'false';
   if (!PUBLIC_UPLOADS_ENABLED) {
-    const admins = (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim().toLowerCase());
-    const isAdmin = admins.includes(email.toLowerCase());
+    const isAdmin = await checkIsAdmin(email);
     if (!isAdmin) return { error: 'Forbidden', status: 403 };
   }
 
@@ -253,11 +290,56 @@ app.get('/api/files.json', (req, res) => {
 app.post('/api/check-admin', async (req, res) => {
   try {
     const { email } = req.body;
-    const admins = (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim().toLowerCase());
-    const isAdmin = admins.includes(String(email).toLowerCase());
+    const isAdmin = await checkIsAdmin(String(email));
     return res.status(isAdmin ? 200 : 403).json({ isAdmin });
   } catch {
     return res.status(400).json({ isAdmin: false });
+  }
+});
+
+// --- Admin Management Routes ---
+
+app.get('/api/admins', async (req, res) => {
+  const adminCheck = await requireAdmin(req);
+  if (adminCheck.error) return res.status(adminCheck.status).json({ error: adminCheck.error });
+  
+  if (!pool) return res.json({ envAdmins: (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim()), dbAdmins: [] });
+
+  try {
+    const { rows } = await pool.query('SELECT email, created_at FROM admins ORDER BY created_at ASC');
+    res.json({ envAdmins: (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim()), dbAdmins: rows });
+  } catch (err) {
+    res.status(500).json({ error: 'DB Error' });
+  }
+});
+
+app.post('/api/admins', async (req, res) => {
+  const adminCheck = await requireAdmin(req);
+  if (adminCheck.error) return res.status(adminCheck.status).json({ error: adminCheck.error });
+  
+  const targetEmail = (req.body.email || '').trim().toLowerCase();
+  if (!targetEmail || !pool) return res.status(400).json({ error: 'Invalid email or DB disabled' });
+
+  try {
+    await pool.query('INSERT INTO admins (email) VALUES ($1) ON CONFLICT DO NOTHING', [targetEmail]);
+    res.json({ success: true, email: targetEmail });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to add admin' });
+  }
+});
+
+app.delete('/api/admins/:email', async (req, res) => {
+  const adminCheck = await requireAdmin(req);
+  if (adminCheck.error) return res.status(adminCheck.status).json({ error: adminCheck.error });
+  
+  const targetEmail = (req.params.email || '').trim().toLowerCase();
+  if (!targetEmail || !pool) return res.status(400).json({ error: 'Invalid email or DB disabled' });
+
+  try {
+    await pool.query('DELETE FROM admins WHERE email = $1', [targetEmail]);
+    res.json({ success: true, email: targetEmail });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to remove admin' });
   }
 });
 
