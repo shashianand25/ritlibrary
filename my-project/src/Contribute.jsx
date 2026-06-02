@@ -11,7 +11,7 @@ import subjectsData from "./data/subjects.json";
 import { branchGroups, COLORS, sectionCountsByBranch } from "./constants/searchData.js";
 
 const WORKER = import.meta.env.VITE_WORKER_URL || "https://library-backend.ritlibrary.workers.dev";
-const FILES_JSON_URL = import.meta.env.VITE_FILES_JSON_URL || "https://library-backend.ritlibrary.workers.dev/";
+const FILES_JSON_URL = WORKER;
 const PUBLIC_UPLOADS_ENABLED = true;
 const PUBLIC_DELETES_ENABLED = true;
 const C = COLORS;
