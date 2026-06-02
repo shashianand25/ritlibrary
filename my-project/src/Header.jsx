@@ -158,6 +158,21 @@ export default function Header() {
                       <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', margin: '2px 0 0', wordBreak: 'break-all' }}>{user.email}</p>
 
                     </div>
+                    {isAdmin && (
+                      <button
+                        onClick={() => { navigate('/admin'); setUserMenuOpen(false); }}
+                        style={{
+                          width: '100%', display: 'flex', alignItems: 'center', gap: 8,
+                          padding: '9px 12px', borderRadius: 10, border: 'none', cursor: 'pointer',
+                          background: 'transparent', color: '#F3F4F6', fontSize: 13, fontWeight: 600,
+                          transition: 'background 0.15s', marginBottom: 4
+                        }}
+                        onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                      >
+                        <ShieldCheck size={15} style={{ color: '#A3E635' }} /> Manage Admins
+                      </button>
+                    )}
                     <button
                       onClick={() => { signOut(); setUserMenuOpen(false); }}
                       style={{
