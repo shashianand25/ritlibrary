@@ -1,0 +1,214 @@
+import React, { useState, useRef, useEffect } from 'react';
+
+const FullFeaturePDF = ({ fileId, onClose, fileName }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [scale, setScale] = useState(1.5);
+  const [pdfDoc, setPdfDoc] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  
+  const canvasRef = useRef(null);
+  
+  const backendBaseUrl = 'https://pyq-backend-xs9d.onrender.com';
+  const filePath = `${backendBaseUrl}/api/pdf/${fileId}`;
+
+  // Load PDF
+  const loadPDF = async () => {
+    try {
+      setIsLoading(true);
+      
+      // Check if PDF.js is already loaded
+      if (window.pdfjsLib) {
+        await initializePDF();
+        return;
+      }
+
+      // Load PDF.js from CDN
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+      
+      script.onload = async () => {
+        await initializePDF();
+      };
+      
+      script.onerror = () => {
+        console.error('Failed to load PDF.js from CDN');
+        setIsLoading(false);
+      };
+      
+      document.head.appendChild(script);
+      
+    } catch (error) {
+      console.error('Error setting up PDF.js:', error);
+      setIsLoading(false);
+    }
+  };
+
+  const initializePDF = async () => {
+    try {
+      // Set up PDF.js worker
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+      // Load PDF document
+      const loadingTask = window.pdfjsLib.getDocument({
+        url: filePath,
+        disableRange: false,
+        disableStream: false,
+        disableAutoFetch: false,
+      });
+
+      const pdf = await loadingTask.promise;
+      setPdfDoc(pdf);
+      setTotalPages(pdf.numPages);
+      
+      // Render first page
+      await renderPage(pdf, 1);
+      setIsLoading(false);
+      
+    } catch (error) {
+      console.error('Error loading PDF:', error);
+      setIsLoading(false);
+    }
+  };
+
+  // Render a page
+  const renderPage = async (pdf, pageNumber) => {
+    try {
+      const page = await pdf.getPage(pageNumber);
+      const canvas = canvasRef.current;
+      
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      const viewport = page.getViewport({ scale: scale });
+      
+      // Set canvas size
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      
+      // Render page to canvas
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: viewport
+      };
+      
+      await page.render(renderContext).promise;
+      setCurrentPage(pageNumber);
+      
+    } catch (error) {
+      console.error('Error rendering page:', error);
+    }
+  };
+
+  // Navigation functions
+  const nextPage = () => {
+    if (pdfDoc && currentPage < totalPages) {
+      renderPage(pdfDoc, currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (pdfDoc && currentPage > 1) {
+      renderPage(pdfDoc, currentPage - 1);
+    }
+  };
+
+  const zoomIn = () => {
+    setScale(prev => Math.min(prev + 0.25, 3));
+  };
+
+  const zoomOut = () => {
+    setScale(prev => Math.max(prev - 0.25, 0.5));
+  };
+
+  // Load PDF on component mount
+  useEffect(() => {
+    loadPDF();
+  }, [fileId]);
+
+  // Re-render when scale changes
+  useEffect(() => {
+    if (pdfDoc && currentPage) {
+      renderPage(pdfDoc, currentPage);
+    }
+  }, [scale]);
+
+  return (
+    <div className="fixed inset-0 bg-gray-900 z-50 flex flex-col">
+      {/* Header */}
+      <div className="bg-gray-800 text-white px-4 py-2 flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <button 
+            onClick={onClose}
+            className="px-3 py-1 bg-red-600 rounded hover:bg-red-700"
+          >
+            Close
+          </button>
+          <span className="text-sm truncate max-w-md">{fileName}</span>
+        </div>
+        
+        <div className="flex items-center space-x-2">
+          <span className="text-sm">Page {currentPage} of {totalPages}</span>
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="bg-gray-700 text-white px-4 py-2 flex items-center justify-center space-x-4">
+        <button 
+          onClick={prevPage}
+          disabled={currentPage <= 1}
+          className="px-3 py-1 bg-gray-600 rounded disabled:opacity-50 hover:bg-gray-500"
+        >
+          Previous
+        </button>
+        
+        <button 
+          onClick={zoomOut}
+          className="px-3 py-1 bg-gray-600 rounded hover:bg-gray-500"
+        >
+          Zoom Out
+        </button>
+        
+        <span className="text-sm">{(scale * 100).toFixed(0)}%</span>
+        
+        <button 
+          onClick={zoomIn}
+          className="px-3 py-1 bg-gray-600 rounded hover:bg-gray-500"
+        >
+          Zoom In
+        </button>
+        
+        <button 
+          onClick={nextPage}
+          disabled={currentPage >= totalPages}
+          className="px-3 py-1 bg-gray-600 rounded disabled:opacity-50 hover:bg-gray-500"
+        >
+          Next
+        </button>
+      </div>
+
+      {/* Loading State */}
+      {isLoading && (
+        <div className="flex-1 flex items-center justify-center bg-gray-800">
+          <div className="text-white text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-2"></div>
+            <div>Loading PDF...</div>
+          </div>
+        </div>
+      )}
+
+      {/* PDF Content */}
+      {!isLoading && (
+        <div className="flex-1 bg-gray-200 overflow-auto flex justify-center p-4">
+          <canvas 
+            ref={canvasRef} 
+            className="border shadow-lg bg-white"
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default FullFeaturePDF;

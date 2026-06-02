@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pdf-preview-overlay {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+
+.pdf-preview-overlay iframe {
+  min-height: 0;
+  background: #171717;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(89,102,40,0.4); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(89,102,40,0.7); }
+
+/* ── Select dropdown cross-browser colours ── */
+select, select option {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+@media (prefers-color-scheme: dark) {
+  select, select option {
+    background-color: #1a2030 !important;
+    color: #f3f4f6 !important;
+  }
+}
+.dark select, .dark select option {
+  background-color: #1a2030 !important;
+  color: #f3f4f6 !important;
+}
+
+/* ── Global keyframes used across pages ── */
+@keyframes ritlib-circle {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+@keyframes blob-float-1 {
+  0%,100% { transform: translate(0px, 0px) scale(1); }
+  33%     { transform: translate(30px, -50px) scale(1.1); }
+  66%     { transform: translate(-20px, 20px) scale(0.9); }
+}
+@keyframes blob-float-2 {
+  0%,100% { transform: translate(0px, 0px) scale(1); }
+  33%     { transform: translate(-40px, 60px) scale(1.15); }
+  66%     { transform: translate(20px, -30px) scale(0.95); }
+}
+@keyframes blob-float-3 {
+  0%,100% { transform: translate(0px, 0px) scale(1); }
+  33%     { transform: translate(50px, 30px) scale(0.9); }
+  66%     { transform: translate(-30px, -40px) scale(1.1); }
+}
+@keyframes ring-cw  {
+  from { transform: translateY(-50%) rotate(0deg);    }
+  to   { transform: translateY(-50%) rotate(360deg);  }
+}
+@keyframes ring-ccw {
+  from { transform: translateY(-50%) rotate(0deg);    }
+  to   { transform: translateY(-50%) rotate(-360deg); }
+}

@@ -1,0 +1,2849 @@
+{
+    "branch": "CSE",
+    "semesters": [
+        {
+            "semester": 3,
+            "subjects": [
+                {
+                    "id": "cs31",
+                    "name": "Laplace Transforms & Vector Space",
+                    "code": "CS31",
+                    "credits": "2:1:0",
+                    "units": [
+                        {
+                            "id": "cs31_u1",
+                            "title": "Laplace Transforms",
+                            "topics": [
+                                {
+                                    "id": "cs31_u1_t1",
+                                    "text": "Definition, transforms of elementary functions"
+                                },
+                                {
+                                    "id": "cs31_u1_t2",
+                                    "text": "Properties of Laplace transforms"
+                                },
+                                {
+                                    "id": "cs31_u1_t3",
+                                    "text": "Existence conditions"
+                                },
+                                {
+                                    "id": "cs31_u1_t4",
+                                    "text": "Transform of derivatives, integrals"
+                                },
+                                {
+                                    "id": "cs31_u1_t5",
+                                    "text": "Multiplication by t^n, division by t"
+                                },
+                                {
+                                    "id": "cs31_u1_t6",
+                                    "text": "Evaluation of integrals by Laplace transforms"
+                                },
+                                {
+                                    "id": "cs31_u1_t7",
+                                    "text": "Transform of periodic function"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs31_u2",
+                            "title": "Application of Laplace Transforms",
+                            "topics": [
+                                {
+                                    "id": "cs31_u2_t1",
+                                    "text": "Unit-step function, unit-impulse function"
+                                },
+                                {
+                                    "id": "cs31_u2_t2",
+                                    "text": "Inverse transforms, convolution theorem"
+                                },
+                                {
+                                    "id": "cs31_u2_t3",
+                                    "text": "Solution of linear differential equations"
+                                },
+                                {
+                                    "id": "cs31_u2_t4",
+                                    "text": "Solution of simultaneous linear differential equations"
+                                },
+                                {
+                                    "id": "cs31_u2_t5",
+                                    "text": "Engineering applications"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs31_u3",
+                            "title": "Vector space and Linear Transformation",
+                            "topics": [
+                                {
+                                    "id": "cs31_u3_t1",
+                                    "text": "Vector space, linear combination and span"
+                                },
+                                {
+                                    "id": "cs31_u3_t2",
+                                    "text": "Linearly independent and dependent vectors"
+                                },
+                                {
+                                    "id": "cs31_u3_t3",
+                                    "text": "Basis and dimension"
+                                },
+                                {
+                                    "id": "cs31_u3_t4",
+                                    "text": "Linear transformations, matrix of transformations"
+                                },
+                                {
+                                    "id": "cs31_u3_t5",
+                                    "text": "Rotation, dilation, contraction and reflection"
+                                },
+                                {
+                                    "id": "cs31_u3_t6",
+                                    "text": "Composition of matrix transformations"
+                                },
+                                {
+                                    "id": "cs31_u3_t7",
+                                    "text": "Kernel and range, change of basis"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs31_u4",
+                            "title": "Orthogonal Projections",
+                            "topics": [
+                                {
+                                    "id": "cs31_u4_t1",
+                                    "text": "The null space of A, solving Ax = 0 and Rx = 0"
+                                },
+                                {
+                                    "id": "cs31_u4_t2",
+                                    "text": "The complete solution to Ax = b"
+                                },
+                                {
+                                    "id": "cs31_u4_t3",
+                                    "text": "Dimensions of the four subspaces"
+                                },
+                                {
+                                    "id": "cs31_u4_t4",
+                                    "text": "Orthogonality of the four subspaces, projections"
+                                },
+                                {
+                                    "id": "cs31_u4_t5",
+                                    "text": "Orthonormal bases and Gram-Schmidt method"
+                                },
+                                {
+                                    "id": "cs31_u4_t6",
+                                    "text": "QR-factorization, least-squares approximations"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs31_u5",
+                            "title": "Applications of Eigenvalue Decomposition",
+                            "topics": [
+                                {
+                                    "id": "cs31_u5_t1",
+                                    "text": "Introduction to eigenvalues and eigenvectors"
+                                },
+                                {
+                                    "id": "cs31_u5_t2",
+                                    "text": "Similarity and diagonalization"
+                                },
+                                {
+                                    "id": "cs31_u5_t3",
+                                    "text": "Symmetric, complex, Hermitian and unitary matrices"
+                                },
+                                {
+                                    "id": "cs31_u5_t4",
+                                    "text": "Positive definite matrices"
+                                },
+                                {
+                                    "id": "cs31_u5_t5",
+                                    "text": "Singular value decomposition (SVD)"
+                                },
+                                {
+                                    "id": "cs31_u5_t6",
+                                    "text": "Principal component analysis (PCA)"
+                                },
+                                {
+                                    "id": "cs31_u5_t7",
+                                    "text": "Applications to linear recurrence relations, quadratic forms and conic sections"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs32",
+                    "name": "Digital Design and Computer Organization",
+                    "code": "CS32",
+                    "credits": "3:0:1",
+                    "units": [
+                        {
+                            "id": "cs32_u1",
+                            "title": "Optimized implementation of logic function and combinational circuits",
+                            "topics": [
+                                {
+                                    "id": "cs32_u1_t1",
+                                    "text": "Synthesis of logic circuits with SOP and POS"
+                                },
+                                {
+                                    "id": "cs32_u1_t2",
+                                    "text": "K-map, Strategy for minimization"
+                                },
+                                {
+                                    "id": "cs32_u1_t3",
+                                    "text": "Minimization of SOP and POS forms"
+                                },
+                                {
+                                    "id": "cs32_u1_t4",
+                                    "text": "Incompletely specified functions"
+                                },
+                                {
+                                    "id": "cs32_u1_t5",
+                                    "text": "Tabular method for minimization of Boolean functions"
+                                },
+                                {
+                                    "id": "cs32_u1_t6",
+                                    "text": "Combinational circuits: Half adder, full adder (using NAND gates)"
+                                },
+                                {
+                                    "id": "cs32_u1_t7",
+                                    "text": "Multiplexers, decoders, encoders and code converters"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs32_u2",
+                            "title": "Flip-flops, registers and counters",
+                            "topics": [
+                                {
+                                    "id": "cs32_u2_t1",
+                                    "text": "Basic latch, gated SR latch, gated D latch"
+                                },
+                                {
+                                    "id": "cs32_u2_t2",
+                                    "text": "T FF, JK FF"
+                                },
+                                {
+                                    "id": "cs32_u2_t3",
+                                    "text": "Truth table, characteristics equation and excitation tables"
+                                },
+                                {
+                                    "id": "cs32_u2_t4",
+                                    "text": "Registers: Shift registers, parallel access registers"
+                                },
+                                {
+                                    "id": "cs32_u2_t5",
+                                    "text": "Asynchronous counters: Up, down counters"
+                                },
+                                {
+                                    "id": "cs32_u2_t6",
+                                    "text": "Synchronous sequential circuits: Design of a counter"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs32_u3",
+                            "title": "Introduction to functional units and addressing modes",
+                            "topics": [
+                                {
+                                    "id": "cs32_u3_t1",
+                                    "text": "Functional units, bus structures, performance"
+                                },
+                                {
+                                    "id": "cs32_u3_t2",
+                                    "text": "Overflow in integer arithmetic"
+                                },
+                                {
+                                    "id": "cs32_u3_t3",
+                                    "text": "Numbers, Arithmetic operations and characters"
+                                },
+                                {
+                                    "id": "cs32_u3_t4",
+                                    "text": "Memory locations and addresses, Memory operations"
+                                },
+                                {
+                                    "id": "cs32_u3_t5",
+                                    "text": "Instructions and instruction sequencing"
+                                },
+                                {
+                                    "id": "cs32_u3_t6",
+                                    "text": "Addressing modes, Encoding of machine instructions"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs32_u4",
+                            "title": "Processor",
+                            "topics": [
+                                {
+                                    "id": "cs32_u4_t1",
+                                    "text": "Arithmetic unit: Multiplication of two numbers"
+                                },
+                                {
+                                    "id": "cs32_u4_t2",
+                                    "text": "Signed operand multiplication, Booth algorithm"
+                                },
+                                {
+                                    "id": "cs32_u4_t3",
+                                    "text": "Bit pair recoding and CSA"
+                                },
+                                {
+                                    "id": "cs32_u4_t4",
+                                    "text": "IEEE standard for floating point numbers"
+                                },
+                                {
+                                    "id": "cs32_u4_t5",
+                                    "text": "The Processor: Fundamental concepts, Execution of complete instruction"
+                                },
+                                {
+                                    "id": "cs32_u4_t6",
+                                    "text": "Multiple bus organization"
+                                },
+                                {
+                                    "id": "cs32_u4_t7",
+                                    "text": "Pipelining: Basic concepts, Data hazards, Instruction hazards"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs32_u5",
+                            "title": "Memory and I/O Units",
+                            "topics": [
+                                {
+                                    "id": "cs32_u5_t1",
+                                    "text": "Memory unit: Basic concepts"
+                                },
+                                {
+                                    "id": "cs32_u5_t2",
+                                    "text": "Cache mapping techniques"
+                                },
+                                {
+                                    "id": "cs32_u5_t3",
+                                    "text": "Input Output Unit: Accessing I/O devices"
+                                },
+                                {
+                                    "id": "cs32_u5_t4",
+                                    "text": "Interrupts: Interrupt hardware, Enabling and disabling of interrupts"
+                                },
+                                {
+                                    "id": "cs32_u5_t5",
+                                    "text": "Handling multiple devices, Controlling device requests"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs33",
+                    "name": "Data Structures",
+                    "code": "CS33",
+                    "credits": "3:0:0",
+                    "units": [
+                        {
+                            "id": "cs33_u1",
+                            "title": "Basic Concepts",
+                            "topics": [
+                                {
+                                    "id": "cs33_u1_t1",
+                                    "text": "Pointers and Dynamic Memory allocation"
+                                },
+                                {
+                                    "id": "cs33_u1_t2",
+                                    "text": "Data Abstraction"
+                                },
+                                {
+                                    "id": "cs33_u1_t3",
+                                    "text": "Introduction to Structures: Structures, Internal Representation"
+                                },
+                                {
+                                    "id": "cs33_u1_t4",
+                                    "text": "Self-referential Structures, Polynomials"
+                                },
+                                {
+                                    "id": "cs33_u1_t5",
+                                    "text": "Sparse Matrix: Abstract Data Type, Representation, Transposing"
+                                },
+                                {
+                                    "id": "cs33_u1_t6",
+                                    "text": "Stacks: Stacks using Dynamic Arrays, Evaluation of expression"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs33_u2",
+                            "title": "Queues and Linked Lists",
+                            "topics": [
+                                {
+                                    "id": "cs33_u2_t1",
+                                    "text": "Queues, Circular queue using Dynamic arrays"
+                                },
+                                {
+                                    "id": "cs33_u2_t2",
+                                    "text": "Linked Lists: Singly Linked lists and chains"
+                                },
+                                {
+                                    "id": "cs33_u2_t3",
+                                    "text": "Representing Chains in C"
+                                },
+                                {
+                                    "id": "cs33_u2_t4",
+                                    "text": "Linked Stacks and Queues"
+                                },
+                                {
+                                    "id": "cs33_u2_t5",
+                                    "text": "Additional List operations"
+                                },
+                                {
+                                    "id": "cs33_u2_t6",
+                                    "text": "Sparse Matrices: Representation"
+                                },
+                                {
+                                    "id": "cs33_u2_t7",
+                                    "text": "Doubly Linked Lists"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs33_u3",
+                            "title": "Trees",
+                            "topics": [
+                                {
+                                    "id": "cs33_u3_t1",
+                                    "text": "Introduction, Binary Trees"
+                                },
+                                {
+                                    "id": "cs33_u3_t2",
+                                    "text": "Binary Tree Traversals"
+                                },
+                                {
+                                    "id": "cs33_u3_t3",
+                                    "text": "Threaded Binary Trees"
+                                },
+                                {
+                                    "id": "cs33_u3_t4",
+                                    "text": "Heaps, Binary Search Trees"
+                                },
+                                {
+                                    "id": "cs33_u3_t5",
+                                    "text": "Selection Trees, Forests"
+                                },
+                                {
+                                    "id": "cs33_u3_t6",
+                                    "text": "Counting Binary Trees"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs33_u4",
+                            "title": "Priority Queues and Graphs",
+                            "topics": [
+                                {
+                                    "id": "cs33_u4_t1",
+                                    "text": "Priority Queues: Single- and Double-Ended Priority Queue"
+                                },
+                                {
+                                    "id": "cs33_u4_t2",
+                                    "text": "Leftist Trees"
+                                },
+                                {
+                                    "id": "cs33_u4_t3",
+                                    "text": "Efficient Binary Search Trees: AVL Trees"
+                                },
+                                {
+                                    "id": "cs33_u4_t4",
+                                    "text": "Graphs: The Graph Abstract Data Type"
+                                },
+                                {
+                                    "id": "cs33_u4_t5",
+                                    "text": "Elementary Graph Operations: Depth First Search and Breadth First Search"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs33_u5",
+                            "title": "Sorting and Hashing",
+                            "topics": [
+                                {
+                                    "id": "cs33_u5_t1",
+                                    "text": "Sorting: Quick sort"
+                                },
+                                {
+                                    "id": "cs33_u5_t2",
+                                    "text": "Merge Sort - Merging, Recursive Merge Sort"
+                                },
+                                {
+                                    "id": "cs33_u5_t3",
+                                    "text": "Heap Sort"
+                                },
+                                {
+                                    "id": "cs33_u5_t4",
+                                    "text": "Hashing: Introduction, Static Hashing"
+                                },
+                                {
+                                    "id": "cs33_u5_t5",
+                                    "text": "Hash tables, Hashing Function, Overflow handling"
+                                },
+                                {
+                                    "id": "cs33_u5_t6",
+                                    "text": "Dynamic Hashing: Using Directories"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs34",
+                    "name": "Object Oriented Programming",
+                    "code": "CS34",
+                    "credits": "3:0:0",
+                    "units": [
+                        {
+                            "id": "cs34_u1",
+                            "title": "The Object Model and Introduction to Java Programming",
+                            "topics": [
+                                {
+                                    "id": "cs34_u1_t1",
+                                    "text": "The Object Model: Foundations, OOP, OOD, OOA"
+                                },
+                                {
+                                    "id": "cs34_u1_t2",
+                                    "text": "Elements of the Object Model: Abstraction, Encapsulation, Modularity"
+                                },
+                                {
+                                    "id": "cs34_u1_t3",
+                                    "text": "Hierarchy, Typing, Concurrency, Persistence"
+                                },
+                                {
+                                    "id": "cs34_u1_t4",
+                                    "text": "Java Buzzwords, Overview of Java"
+                                },
+                                {
+                                    "id": "cs34_u1_t5",
+                                    "text": "Data types, Variables, arrays, Control statements"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs34_u2",
+                            "title": "Java Programming Fundamentals",
+                            "topics": [
+                                {
+                                    "id": "cs34_u2_t1",
+                                    "text": "The Three OOP Principles"
+                                },
+                                {
+                                    "id": "cs34_u2_t2",
+                                    "text": "Class Fundamentals, Declaring Objects"
+                                },
+                                {
+                                    "id": "cs34_u2_t3",
+                                    "text": "Assigning Object Reference Variables"
+                                },
+                                {
+                                    "id": "cs34_u2_t4",
+                                    "text": "Introducing Methods, Constructors, This Keyword"
+                                },
+                                {
+                                    "id": "cs34_u2_t5",
+                                    "text": "Garbage Collection, finalize() Method"
+                                },
+                                {
+                                    "id": "cs34_u2_t6",
+                                    "text": "Overloading Methods, Objects as Parameters"
+                                },
+                                {
+                                    "id": "cs34_u2_t7",
+                                    "text": "Argument Passing, Returning Objects"
+                                },
+                                {
+                                    "id": "cs34_u2_t8",
+                                    "text": "Access Control, static, final, Nested and Inner Classes"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs34_u3",
+                            "title": "Inheritance, Packages & Interfaces",
+                            "topics": [
+                                {
+                                    "id": "cs34_u3_t1",
+                                    "text": "Inheritance Basics, using super"
+                                },
+                                {
+                                    "id": "cs34_u3_t2",
+                                    "text": "Creating a Multilevel Hierarchy"
+                                },
+                                {
+                                    "id": "cs34_u3_t3",
+                                    "text": "When Constructors Are Called"
+                                },
+                                {
+                                    "id": "cs34_u3_t4",
+                                    "text": "Method Overriding, Dynamic Method Dispatch"
+                                },
+                                {
+                                    "id": "cs34_u3_t5",
+                                    "text": "Using Abstract Classes, final with Inheritance"
+                                },
+                                {
+                                    "id": "cs34_u3_t6",
+                                    "text": "Packages, Access Protection, Importing Packages"
+                                },
+                                {
+                                    "id": "cs34_u3_t7",
+                                    "text": "Interfaces"
+                                },
+                                {
+                                    "id": "cs34_u3_t8",
+                                    "text": "String and String Buffer Handling"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs34_u4",
+                            "title": "Exception Handling & Multithreaded Programming",
+                            "topics": [
+                                {
+                                    "id": "cs34_u4_t1",
+                                    "text": "Exception Handling Fundamentals"
+                                },
+                                {
+                                    "id": "cs34_u4_t2",
+                                    "text": "Exception Classes, Types, Uncaught Exceptions"
+                                },
+                                {
+                                    "id": "cs34_u4_t3",
+                                    "text": "Using try and catch, Multiple catch clauses"
+                                },
+                                {
+                                    "id": "cs34_u4_t4",
+                                    "text": "Nested try Statements, throw, throws, finally"
+                                },
+                                {
+                                    "id": "cs34_u4_t5",
+                                    "text": "Java Thread Classes, The Java Thread Model"
+                                },
+                                {
+                                    "id": "cs34_u4_t6",
+                                    "text": "The Main Thread, Creating a Thread"
+                                },
+                                {
+                                    "id": "cs34_u4_t7",
+                                    "text": "Creating Multiple Threads, isAlive() and join()"
+                                },
+                                {
+                                    "id": "cs34_u4_t8",
+                                    "text": "Thread Priorities, Synchronization"
+                                },
+                                {
+                                    "id": "cs34_u4_t9",
+                                    "text": "Suspending, Resuming and Stopping Threads"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs34_u5",
+                            "title": "Event Handling, Swings & Lambda Expressions",
+                            "topics": [
+                                {
+                                    "id": "cs34_u5_t1",
+                                    "text": "Event Handling Mechanisms, Delegation Event Model"
+                                },
+                                {
+                                    "id": "cs34_u5_t2",
+                                    "text": "Event Classes, Sources of Events"
+                                },
+                                {
+                                    "id": "cs34_u5_t3",
+                                    "text": "Event Listener Interfaces, Using Delegation Model"
+                                },
+                                {
+                                    "id": "cs34_u5_t4",
+                                    "text": "Adapter Classes, Inner Classes"
+                                },
+                                {
+                                    "id": "cs34_u5_t5",
+                                    "text": "Swing: Introduction"
+                                },
+                                {
+                                    "id": "cs34_u5_t6",
+                                    "text": "Lambda Expressions: Fundamentals, Block Lambda"
+                                },
+                                {
+                                    "id": "cs34_u5_t7",
+                                    "text": "Passing Lambda Expressions as Argument"
+                                },
+                                {
+                                    "id": "cs34_u5_t8",
+                                    "text": "Lambda Expressions and Exceptions, Method References"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs35",
+                    "name": "Discrete Mathematical Structures",
+                    "code": "CS35",
+                    "credits": "2:1:0",
+                    "units": [
+                        {
+                            "id": "cs35_u1",
+                            "title": "Logics and Proofs",
+                            "topics": [
+                                {
+                                    "id": "cs35_u1_t1",
+                                    "text": "The laws of Logic"
+                                },
+                                {
+                                    "id": "cs35_u1_t2",
+                                    "text": "Logical implication"
+                                },
+                                {
+                                    "id": "cs35_u1_t3",
+                                    "text": "Rules of inference, Quantifiers"
+                                },
+                                {
+                                    "id": "cs35_u1_t4",
+                                    "text": "Proofs of theorems"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs35_u2",
+                            "title": "Relations",
+                            "topics": [
+                                {
+                                    "id": "cs35_u2_t1",
+                                    "text": "Relations, Properties of relations"
+                                },
+                                {
+                                    "id": "cs35_u2_t2",
+                                    "text": "Computer Recognition: Zero-one Matrices and directed Graphs"
+                                },
+                                {
+                                    "id": "cs35_u2_t3",
+                                    "text": "Equivalence Relations and partitions"
+                                },
+                                {
+                                    "id": "cs35_u2_t4",
+                                    "text": "POSETS, Hasse Diagrams, Lattices"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs35_u3",
+                            "title": "Combinatorics",
+                            "topics": [
+                                {
+                                    "id": "cs35_u3_t1",
+                                    "text": "Fundamentals of counting, permutation, combination"
+                                },
+                                {
+                                    "id": "cs35_u3_t2",
+                                    "text": "Combination with repetition, Binomial Coefficient"
+                                },
+                                {
+                                    "id": "cs35_u3_t3",
+                                    "text": "Pigeon hole principle"
+                                },
+                                {
+                                    "id": "cs35_u3_t4",
+                                    "text": "The Principle of Inclusion and Exclusion"
+                                },
+                                {
+                                    "id": "cs35_u3_t5",
+                                    "text": "Generalizations of the Principle, Derangements"
+                                },
+                                {
+                                    "id": "cs35_u3_t6",
+                                    "text": "Rook Polynomials"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs35_u4",
+                            "title": "Graph Theory",
+                            "topics": [
+                                {
+                                    "id": "cs35_u4_t1",
+                                    "text": "Definitions, sub graphs, complements, graph isomorphism"
+                                },
+                                {
+                                    "id": "cs35_u4_t2",
+                                    "text": "Euler's trails and circuits"
+                                },
+                                {
+                                    "id": "cs35_u4_t3",
+                                    "text": "Hamilton paths and Cycles"
+                                },
+                                {
+                                    "id": "cs35_u4_t4",
+                                    "text": "Planar graphs, Euler's Theorem"
+                                },
+                                {
+                                    "id": "cs35_u4_t5",
+                                    "text": "Graph Coloring"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs35_u5",
+                            "title": "Applications of Graphs and Trees",
+                            "topics": [
+                                {
+                                    "id": "cs35_u5_t1",
+                                    "text": "Network flow problems, flows and source/sink cuts"
+                                },
+                                {
+                                    "id": "cs35_u5_t2",
+                                    "text": "Ford Fulkerson algorithm"
+                                },
+                                {
+                                    "id": "cs35_u5_t3",
+                                    "text": "Max-flow min-cut theorem"
+                                },
+                                {
+                                    "id": "cs35_u5_t4",
+                                    "text": "Definitions, Properties, and Examples of Routed Trees"
+                                },
+                                {
+                                    "id": "cs35_u5_t5",
+                                    "text": "Trees and Sorting, Weighted Trees and Prefix Codes"
+                                },
+                                {
+                                    "id": "cs35_u5_t6",
+                                    "text": "Applications of Graphs and Trees"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs36",
+                    "name": "Data Structures Laboratory",
+                    "code": "CSL36",
+                    "credits": "0:0:1",
+                    "units": [
+                        {
+                            "id": "cs36_u1",
+                            "title": "Laboratory Topics",
+                            "topics": [
+                                {
+                                    "id": "cs36_u1_t1",
+                                    "text": "Managing Structures in applications: Addition of Polynomials, Sparse Matrix"
+                                },
+                                {
+                                    "id": "cs36_u1_t2",
+                                    "text": "Organizing Stacks: Infix to Postfix, Evaluation of Postfix"
+                                },
+                                {
+                                    "id": "cs36_u1_t3",
+                                    "text": "Constructing Queues: Circular queue"
+                                },
+                                {
+                                    "id": "cs36_u1_t4",
+                                    "text": "Linked Lists: stack, queue, doubly linked list"
+                                },
+                                {
+                                    "id": "cs36_u1_t5",
+                                    "text": "Binary Tree: BST Traversal, Threaded Binary Tree"
+                                },
+                                {
+                                    "id": "cs36_u1_t6",
+                                    "text": "Priority queues: Max heap"
+                                },
+                                {
+                                    "id": "cs36_u1_t7",
+                                    "text": "Graph based problems: DFS, BFS"
+                                },
+                                {
+                                    "id": "cs36_u1_t8",
+                                    "text": "Sorting: Merge sort"
+                                },
+                                {
+                                    "id": "cs36_u1_t9",
+                                    "text": "Hashing: Open addressing with linear probing"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs37",
+                    "name": "Object Oriented Programming Laboratory",
+                    "code": "CSL37",
+                    "credits": "0:0:1",
+                    "units": [
+                        {
+                            "id": "cs37_u1",
+                            "title": "Laboratory Topics",
+                            "topics": [
+                                {
+                                    "id": "cs37_u1_t1",
+                                    "text": "Primitive Data type and Operators"
+                                },
+                                {
+                                    "id": "cs37_u1_t2",
+                                    "text": "Control Statements and Arrays"
+                                },
+                                {
+                                    "id": "cs37_u1_t3",
+                                    "text": "Classes, objects, static variables"
+                                },
+                                {
+                                    "id": "cs37_u1_t4",
+                                    "text": "Method overloading, method overriding"
+                                },
+                                {
+                                    "id": "cs37_u1_t5",
+                                    "text": "Dynamic method dispatch, abstract classes"
+                                },
+                                {
+                                    "id": "cs37_u1_t6",
+                                    "text": "Inheritance"
+                                },
+                                {
+                                    "id": "cs37_u1_t7",
+                                    "text": "Interfaces & Packages"
+                                },
+                                {
+                                    "id": "cs37_u1_t8",
+                                    "text": "String handling"
+                                },
+                                {
+                                    "id": "cs37_u1_t9",
+                                    "text": "Exception Handling"
+                                },
+                                {
+                                    "id": "cs37_u1_t10",
+                                    "text": "Multi-threading"
+                                },
+                                {
+                                    "id": "cs37_u1_t11",
+                                    "text": "Synchronizing the threads"
+                                },
+                                {
+                                    "id": "cs37_u1_t12",
+                                    "text": "Event Handling"
+                                },
+                                {
+                                    "id": "cs37_u1_t13",
+                                    "text": "Programs on Swings"
+                                },
+                                {
+                                    "id": "cs37_u1_t14",
+                                    "text": "Lambda Expressions"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs38",
+                    "name": "Universal Human Values",
+                    "code": "UHV38",
+                    "credits": "2:0:0",
+                    "units": [
+                        {
+                            "id": "cs38_u1",
+                            "title": "Course Introduction - Need, Basic Guidelines, Content and Process for Value Education",
+                            "topics": [
+                                {
+                                    "id": "cs38_u1_t1",
+                                    "text": "Understanding the need, basic guidelines, content and process for Value Education"
+                                },
+                                {
+                                    "id": "cs38_u1_t2",
+                                    "text": "Self-Exploration - content and process; Natural Acceptance and Experiential Validation"
+                                },
+                                {
+                                    "id": "cs38_u1_t3",
+                                    "text": "Continuous Happiness and Prosperity - basic Human Aspirations"
+                                },
+                                {
+                                    "id": "cs38_u1_t4",
+                                    "text": "Right understanding, Relationship and Physical Facilities"
+                                },
+                                {
+                                    "id": "cs38_u1_t5",
+                                    "text": "Understanding Happiness and Prosperity correctly"
+                                },
+                                {
+                                    "id": "cs38_u1_t6",
+                                    "text": "Method to fulfill human aspirations: harmony at various levels"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs38_u2",
+                            "title": "Understanding Harmony in the Human Being - Harmony in Myself!",
+                            "topics": [
+                                {
+                                    "id": "cs38_u2_t1",
+                                    "text": "Human being as co-existence of sentient 'I' and material 'Body'"
+                                },
+                                {
+                                    "id": "cs38_u2_t2",
+                                    "text": "Needs of Self ('I') and 'Body' - Sukh and Suvidha"
+                                },
+                                {
+                                    "id": "cs38_u2_t3",
+                                    "text": "Body as instrument of 'I'"
+                                },
+                                {
+                                    "id": "cs38_u2_t4",
+                                    "text": "Characteristics and activities of 'I' and harmony in 'I'"
+                                },
+                                {
+                                    "id": "cs38_u2_t5",
+                                    "text": "Harmony of I with Body: Sanyam and Swasthya"
+                                },
+                                {
+                                    "id": "cs38_u2_t6",
+                                    "text": "Programs to ensure Sanyam and Swasthya"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs38_u3",
+                            "title": "Understanding Harmony in the Family and Society - Harmony in Human-Human Relationship",
+                            "topics": [
+                                {
+                                    "id": "cs38_u3_t1",
+                                    "text": "Harmony in the family - basic unit of human interaction"
+                                },
+                                {
+                                    "id": "cs38_u3_t2",
+                                    "text": "Values in human-human relationship; Nyaya and Ubhay-tripti"
+                                },
+                                {
+                                    "id": "cs38_u3_t3",
+                                    "text": "Trust (Vishwas) and Respect (Samman) as foundational values"
+                                },
+                                {
+                                    "id": "cs38_u3_t4",
+                                    "text": "Meaning of Vishwas; Intention vs competence"
+                                },
+                                {
+                                    "id": "cs38_u3_t5",
+                                    "text": "Meaning of Samman; Respect vs differentiation"
+                                },
+                                {
+                                    "id": "cs38_u3_t6",
+                                    "text": "Harmony in society: Samadhan, Samridhi, Abhay, Sah-astitva"
+                                },
+                                {
+                                    "id": "cs38_u3_t7",
+                                    "text": "Universal harmonious order: Undivided Society (Akhand Samaj), Universal Order (Sarvabhaum Vyawastha)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs38_u4",
+                            "title": "Understanding Harmony in the Nature and Existence - Whole existence as Co-existence",
+                            "topics": [
+                                {
+                                    "id": "cs38_u4_t1",
+                                    "text": "Harmony in the Nature"
+                                },
+                                {
+                                    "id": "cs38_u4_t2",
+                                    "text": "Interconnectedness and mutual fulfillment among four orders of nature"
+                                },
+                                {
+                                    "id": "cs38_u4_t3",
+                                    "text": "Existence as Co-existence (Sah-astitva)"
+                                },
+                                {
+                                    "id": "cs38_u4_t4",
+                                    "text": "Holistic perception of harmony at all levels"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs38_u5",
+                            "title": "Implications of Holistic Understanding of Harmony on Professional Ethics",
+                            "topics": [
+                                {
+                                    "id": "cs38_u5_t1",
+                                    "text": "Natural acceptance of human values"
+                                },
+                                {
+                                    "id": "cs38_u5_t2",
+                                    "text": "Definitiveness of Ethical Human Conduct"
+                                },
+                                {
+                                    "id": "cs38_u5_t3",
+                                    "text": "Basis for Humanistic Education, Constitution and Universal Order"
+                                },
+                                {
+                                    "id": "cs38_u5_t4",
+                                    "text": "Competence in professional ethics"
+                                },
+                                {
+                                    "id": "cs38_u5_t5",
+                                    "text": "Case studies of holistic technologies, management models"
+                                },
+                                {
+                                    "id": "cs38_u5_t6",
+                                    "text": "Strategy for transition to Universal Human Order"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs39",
+                    "name": "Mastering Office",
+                    "code": "CSAEC39",
+                    "credits": "1:0:0",
+                    "units": [
+                        {
+                            "id": "cs39_u1",
+                            "title": "MS-Word",
+                            "topics": [
+                                {
+                                    "id": "cs39_u1_t1",
+                                    "text": "Working with Files, Text Formatting"
+                                },
+                                {
+                                    "id": "cs39_u1_t2",
+                                    "text": "Moving, copying and pasting text"
+                                },
+                                {
+                                    "id": "cs39_u1_t3",
+                                    "text": "Styles, Lists (Bulleted, Numbered, Nested)"
+                                },
+                                {
+                                    "id": "cs39_u1_t4",
+                                    "text": "Table Manipulations"
+                                },
+                                {
+                                    "id": "cs39_u1_t5",
+                                    "text": "Graphics: Adding Clip Art, Images"
+                                },
+                                {
+                                    "id": "cs39_u1_t6",
+                                    "text": "Page Formatting: Header, Footer, Page Numbers"
+                                },
+                                {
+                                    "id": "cs39_u1_t7",
+                                    "text": "Protect Document, Mail Merge, Macros"
+                                },
+                                {
+                                    "id": "cs39_u1_t8",
+                                    "text": "Creating & Saving web pages, Hyperlinks"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs39_u2",
+                            "title": "MS-Excel",
+                            "topics": [
+                                {
+                                    "id": "cs39_u2_t1",
+                                    "text": "Modifying Worksheet: Cells, Rows, Columns"
+                                },
+                                {
+                                    "id": "cs39_u2_t2",
+                                    "text": "Freezing panes, Macros (recording and running)"
+                                },
+                                {
+                                    "id": "cs39_u2_t3",
+                                    "text": "Linking worksheets"
+                                },
+                                {
+                                    "id": "cs39_u2_t4",
+                                    "text": "Sorting and Filling, Auto Fill"
+                                },
+                                {
+                                    "id": "cs39_u2_t5",
+                                    "text": "Graphics, Charts, Copy chart to Word"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs39_u3",
+                            "title": "MS-PowerPoint",
+                            "topics": [
+                                {
+                                    "id": "cs39_u3_t1",
+                                    "text": "Create Presentation from template"
+                                },
+                                {
+                                    "id": "cs39_u3_t2",
+                                    "text": "Working with Slides, Design Template, Layouts"
+                                },
+                                {
+                                    "id": "cs39_u3_t3",
+                                    "text": "Resizing Text Box, Properties"
+                                },
+                                {
+                                    "id": "cs39_u3_t4",
+                                    "text": "Video and Audio effects, Color Schemes & Backgrounds"
+                                },
+                                {
+                                    "id": "cs39_u3_t5",
+                                    "text": "Adding graphics, Save as web page"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs39_u4",
+                            "title": "MS-Access",
+                            "topics": [
+                                {
+                                    "id": "cs39_u4_t1",
+                                    "text": "Using Access database wizard, pages and projects"
+                                },
+                                {
+                                    "id": "cs39_u4_t2",
+                                    "text": "Creating Tables in design view"
+                                },
+                                {
+                                    "id": "cs39_u4_t3",
+                                    "text": "Datasheet Records: Adding, Editing, Deleting"
+                                },
+                                {
+                                    "id": "cs39_u4_t4",
+                                    "text": "Adding/Deleting columns, Resizing rows/columns"
+                                },
+                                {
+                                    "id": "cs39_u4_t5",
+                                    "text": "Finding/Replacing data, Print datasheet"
+                                },
+                                {
+                                    "id": "cs39_u4_t6",
+                                    "text": "Queries in MS-Access"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs39_u5",
+                            "title": "Microsoft Outlook",
+                            "topics": [
+                                {
+                                    "id": "cs39_u5_t1",
+                                    "text": "Introduction, Starting Outlook"
+                                },
+                                {
+                                    "id": "cs39_u5_t2",
+                                    "text": "Outlook Today, Different Views"
+                                },
+                                {
+                                    "id": "cs39_u5_t3",
+                                    "text": "Outlook Data Files"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs310",
+                    "name": "Unix Shell Programming",
+                    "code": "CSAEC310",
+                    "credits": "1:0:0",
+                    "units": [
+                        {
+                            "id": "cs310_u1",
+                            "title": "Introduction to UNIX",
+                            "topics": [
+                                {
+                                    "id": "cs310_u1_t1",
+                                    "text": "Architecture of UNIX, Features"
+                                },
+                                {
+                                    "id": "cs310_u1_t2",
+                                    "text": "UNIX file system, vi editor"
+                                },
+                                {
+                                    "id": "cs310_u1_t3",
+                                    "text": "File handling utilities, security by file permissions"
+                                },
+                                {
+                                    "id": "cs310_u1_t4",
+                                    "text": "Basic UNIX commands (PATH, man, echo, printf, script, passwd, uname, who, date, stty)"
+                                },
+                                {
+                                    "id": "cs310_u1_t5",
+                                    "text": "pwd, cd, mkdir, rmdir, ls, cp, mv, rm, cat, more, wc, lp, od, tar, gzip"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs310_u2",
+                            "title": "Introduction to Shells",
+                            "topics": [
+                                {
+                                    "id": "cs310_u2_t1",
+                                    "text": "UNIX Session, UNIX utilities"
+                                },
+                                {
+                                    "id": "cs310_u2_t2",
+                                    "text": "Process utilities, disk utilities"
+                                },
+                                {
+                                    "id": "cs310_u2_t3",
+                                    "text": "Networking commands"
+                                },
+                                {
+                                    "id": "cs310_u2_t4",
+                                    "text": "Text processing utilities, backup utilities"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs310_u3",
+                            "title": "Standard Streams",
+                            "topics": [
+                                {
+                                    "id": "cs310_u3_t1",
+                                    "text": "Redirection, Pipes, Tee Command"
+                                },
+                                {
+                                    "id": "cs310_u3_t2",
+                                    "text": "Command Execution, Quotes"
+                                },
+                                {
+                                    "id": "cs310_u3_t3",
+                                    "text": "Command Substitution, Aliases"
+                                },
+                                {
+                                    "id": "cs310_u3_t4",
+                                    "text": "Variables, Environment Variables"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs310_u4",
+                            "title": "Filters",
+                            "topics": [
+                                {
+                                    "id": "cs310_u4_t1",
+                                    "text": "Filters and Pipes"
+                                },
+                                {
+                                    "id": "cs310_u4_t2",
+                                    "text": "Concatenating Files, Display Beginning and End"
+                                },
+                                {
+                                    "id": "cs310_u4_t3",
+                                    "text": "Cut and Paste, Sorting"
+                                },
+                                {
+                                    "id": "cs310_u4_t4",
+                                    "text": "Translating Characters, Files with Duplicate Lines"
+                                },
+                                {
+                                    "id": "cs310_u4_t5",
+                                    "text": "Regular Expressions using grep"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs310_u5",
+                            "title": "Shell Scripts",
+                            "topics": [
+                                {
+                                    "id": "cs310_u5_t1",
+                                    "text": "read for interactive scripts"
+                                },
+                                {
+                                    "id": "cs310_u5_t2",
+                                    "text": "Command Line Arguments"
+                                },
+                                {
+                                    "id": "cs310_u5_t3",
+                                    "text": "exit and Exit Status, Logical Operators (&&, ||)"
+                                },
+                                {
+                                    "id": "cs310_u5_t4",
+                                    "text": "Conditional Execution, if Conditional"
+                                },
+                                {
+                                    "id": "cs310_u5_t5",
+                                    "text": "Using test and [] to Evaluate Expressions"
+                                },
+                                {
+                                    "id": "cs310_u5_t6",
+                                    "text": "case Conditional"
+                                },
+                                {
+                                    "id": "cs310_u5_t7",
+                                    "text": "expr for Computation and String Handling"
+                                },
+                                {
+                                    "id": "cs310_u5_t8",
+                                    "text": "while looping, for looping with list"
+                                },
+                                {
+                                    "id": "cs310_u5_t9",
+                                    "text": "set and shift for Positional Parameters"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "am31",
+                    "name": "Additional Mathematics - I",
+                    "code": "AM31",
+                    "credits": "0:0:0",
+                    "units": [
+                        {
+                            "id": "am31_u1",
+                            "title": "Differential Calculus",
+                            "topics": [
+                                {
+                                    "id": "am31_u1_t1",
+                                    "text": "Successive differentiation, nth derivatives"
+                                },
+                                {
+                                    "id": "am31_u1_t2",
+                                    "text": "Leibnitz theorem"
+                                },
+                                {
+                                    "id": "am31_u1_t3",
+                                    "text": "Polar curves, Angle between radius vector and tangent"
+                                },
+                                {
+                                    "id": "am31_u1_t4",
+                                    "text": "Angle between curves, Length of perpendicular from pole to tangent"
+                                },
+                                {
+                                    "id": "am31_u1_t5",
+                                    "text": "Pedal equations, Taylor's and Maclaurin's expansions"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am31_u2",
+                            "title": "Integral Calculus",
+                            "topics": [
+                                {
+                                    "id": "am31_u2_t1",
+                                    "text": "Reduction formula"
+                                },
+                                {
+                                    "id": "am31_u2_t2",
+                                    "text": "Reduction formula for ∫sin^n x dx, ∫cos^n x dx"
+                                },
+                                {
+                                    "id": "am31_u2_t3",
+                                    "text": "Reduction formula for ∫sin^n x cos^m x dx"
+                                },
+                                {
+                                    "id": "am31_u2_t4",
+                                    "text": "Evaluation of double and triple integrals"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am31_u3",
+                            "title": "Vector Algebra",
+                            "topics": [
+                                {
+                                    "id": "am31_u3_t1",
+                                    "text": "Scalar and vectors, Vector addition and subtraction"
+                                },
+                                {
+                                    "id": "am31_u3_t2",
+                                    "text": "Dot and Cross products"
+                                },
+                                {
+                                    "id": "am31_u3_t3",
+                                    "text": "Scalar and vector triple product"
+                                },
+                                {
+                                    "id": "am31_u3_t4",
+                                    "text": "Vector functions of a single variable"
+                                },
+                                {
+                                    "id": "am31_u3_t5",
+                                    "text": "Derivative of a vector function, geometrical interpretation"
+                                },
+                                {
+                                    "id": "am31_u3_t6",
+                                    "text": "Velocity and acceleration"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am31_u4",
+                            "title": "Vector Differentiation",
+                            "topics": [
+                                {
+                                    "id": "am31_u4_t1",
+                                    "text": "Scalar and vector fields"
+                                },
+                                {
+                                    "id": "am31_u4_t2",
+                                    "text": "Gradient of a scalar field, directional derivative"
+                                },
+                                {
+                                    "id": "am31_u4_t3",
+                                    "text": "Divergence of a vector field, solenoidal vector"
+                                },
+                                {
+                                    "id": "am31_u4_t4",
+                                    "text": "Curl of a vector field, irrotational vector"
+                                },
+                                {
+                                    "id": "am31_u4_t5",
+                                    "text": "Laplace's operator"
+                                },
+                                {
+                                    "id": "am31_u4_t6",
+                                    "text": "Vector identities for gradient, divergence and curl"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am31_u5",
+                            "title": "First Order Differential Equations",
+                            "topics": [
+                                {
+                                    "id": "am31_u5_t1",
+                                    "text": "Variable separable methods"
+                                },
+                                {
+                                    "id": "am31_u5_t2",
+                                    "text": "Homogeneous equations"
+                                },
+                                {
+                                    "id": "am31_u5_t3",
+                                    "text": "Linear and Bernoulli's equations"
+                                },
+                                {
+                                    "id": "am31_u5_t4",
+                                    "text": "Exact differential equations"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "semester": 4,
+            "subjects": [
+                {
+                    "id": "cs41",
+                    "name": "Statistics, Probability and Linear Programming",
+                    "code": "CS41",
+                    "credits": "2:1:0",
+                    "units": [
+                        {
+                            "id": "cs41_u1",
+                            "title": "Statistics and Probability Distributions",
+                            "topics": [
+                                {
+                                    "id": "cs41_u1_t1",
+                                    "text": "Curve fitting by method of least squares"
+                                },
+                                {
+                                    "id": "cs41_u1_t2",
+                                    "text": "Fitting linear, quadratic and geometric curves"
+                                },
+                                {
+                                    "id": "cs41_u1_t3",
+                                    "text": "Correlation, regression and multiple regression"
+                                },
+                                {
+                                    "id": "cs41_u1_t4",
+                                    "text": "Random variables, Binomial distribution"
+                                },
+                                {
+                                    "id": "cs41_u1_t5",
+                                    "text": "Poisson distribution"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs41_u2",
+                            "title": "Probability Distributions",
+                            "topics": [
+                                {
+                                    "id": "cs41_u2_t1",
+                                    "text": "Uniform, Exponential, Gamma and Normal distributions"
+                                },
+                                {
+                                    "id": "cs41_u2_t2",
+                                    "text": "Joint probability distribution (discrete and continuous)"
+                                },
+                                {
+                                    "id": "cs41_u2_t3",
+                                    "text": "Conditional probability, conditional expectation"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs41_u3",
+                            "title": "Markov Chain and Queuing Theory",
+                            "topics": [
+                                {
+                                    "id": "cs41_u3_t1",
+                                    "text": "Introduction to stochastic process, probability vectors"
+                                },
+                                {
+                                    "id": "cs41_u3_t2",
+                                    "text": "Stochastic matrices, regular stochastic matrices"
+                                },
+                                {
+                                    "id": "cs41_u3_t3",
+                                    "text": "Markov chains, higher transition probabilities"
+                                },
+                                {
+                                    "id": "cs41_u3_t4",
+                                    "text": "Stationary distribution, absorbing states"
+                                },
+                                {
+                                    "id": "cs41_u3_t5",
+                                    "text": "Markov and Poisson processes"
+                                },
+                                {
+                                    "id": "cs41_u3_t6",
+                                    "text": "Queuing models: M/M/1, M/M/S, M/G/1"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs41_u4",
+                            "title": "Sampling and Statistical Inference",
+                            "topics": [
+                                {
+                                    "id": "cs41_u4_t1",
+                                    "text": "Sampling distributions, Central Limit Theorem"
+                                },
+                                {
+                                    "id": "cs41_u4_t2",
+                                    "text": "Standard error and confidence interval"
+                                },
+                                {
+                                    "id": "cs41_u4_t3",
+                                    "text": "Level of significance, Type I and Type II errors"
+                                },
+                                {
+                                    "id": "cs41_u4_t4",
+                                    "text": "One-tailed and two-tailed tests"
+                                },
+                                {
+                                    "id": "cs41_u4_t5",
+                                    "text": "Z-test, Student's t-test, F-test"
+                                },
+                                {
+                                    "id": "cs41_u4_t6",
+                                    "text": "Chi-square test"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs41_u5",
+                            "title": "Linear Programming",
+                            "topics": [
+                                {
+                                    "id": "cs41_u5_t1",
+                                    "text": "Introduction to LPP, formulation"
+                                },
+                                {
+                                    "id": "cs41_u5_t2",
+                                    "text": "Graphical method"
+                                },
+                                {
+                                    "id": "cs41_u5_t3",
+                                    "text": "General, canonical and standard forms"
+                                },
+                                {
+                                    "id": "cs41_u5_t4",
+                                    "text": "Simplex method, Big-M method"
+                                },
+                                {
+                                    "id": "cs41_u5_t5",
+                                    "text": "Two-phase simplex method, Duality"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs42",
+                    "name": "Microcontrollers & IoT",
+                    "code": "CS42",
+                    "credits": "3:0:1",
+                    "units": [
+                        {
+                            "id": "cs42_u1",
+                            "title": "Introduction to Microcontrollers and IoT",
+                            "topics": [
+                                {
+                                    "id": "cs42_u1_t1",
+                                    "text": "Introduction to Cortex M0: Technical Overview"
+                                },
+                                {
+                                    "id": "cs42_u1_t2",
+                                    "text": "System Features, Implementation Features, Debug Features"
+                                },
+                                {
+                                    "id": "cs42_u1_t3",
+                                    "text": "Programming model, Operation Modes and States"
+                                },
+                                {
+                                    "id": "cs42_u1_t4",
+                                    "text": "Architecture, Registers and Special Registers"
+                                },
+                                {
+                                    "id": "cs42_u1_t5",
+                                    "text": "Application Program Status Register (APSR)"
+                                },
+                                {
+                                    "id": "cs42_u1_t6",
+                                    "text": "Memory System Overview, Stack memory operation"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs42_u2",
+                            "title": "Instruction Set: Cortex M0",
+                            "topics": [
+                                {
+                                    "id": "cs42_u2_t1",
+                                    "text": "Instruction Set, Usage Examples"
+                                },
+                                {
+                                    "id": "cs42_u2_t2",
+                                    "text": "Implementation of loops, switch, functions, subroutines"
+                                },
+                                {
+                                    "id": "cs42_u2_t3",
+                                    "text": "Memory System, Exceptions and Interrupts"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs42_u3",
+                            "title": "Smart Objects",
+                            "topics": [
+                                {
+                                    "id": "cs42_u3_t1",
+                                    "text": "The 'Things' in IoT: Sensors, Actuators, Smart Objects"
+                                },
+                                {
+                                    "id": "cs42_u3_t2",
+                                    "text": "Workflow of a Sensor, Classification of Sensors"
+                                },
+                                {
+                                    "id": "cs42_u3_t3",
+                                    "text": "Sampling, DAC and ADC conversion"
+                                },
+                                {
+                                    "id": "cs42_u3_t4",
+                                    "text": "Workflow of an Actuator, Classification of Actuators"
+                                },
+                                {
+                                    "id": "cs42_u3_t5",
+                                    "text": "Types of Sensors"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs42_u4",
+                            "title": "IoT Network and Transport Layer",
+                            "topics": [
+                                {
+                                    "id": "cs42_u4_t1",
+                                    "text": "IoT Access Technologies, IP as IoT Network Layer"
+                                },
+                                {
+                                    "id": "cs42_u4_t2",
+                                    "text": "The Business Case for IP, Need for Optimization"
+                                },
+                                {
+                                    "id": "cs42_u4_t3",
+                                    "text": "Low Bandwidth Wireless Networks: FSK, LoRa, LoRaWAN"
+                                },
+                                {
+                                    "id": "cs42_u4_t4",
+                                    "text": "Optimizing IP for IoT: HTTP, AMQP, MQTT, STOMP"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs42_u5",
+                            "title": "Programming IoT Physical Devices and Endpoints",
+                            "topics": [
+                                {
+                                    "id": "cs42_u5_t1",
+                                    "text": "Introduction to Raspberry Pi, Board Hardware Layout"
+                                },
+                                {
+                                    "id": "cs42_u5_t2",
+                                    "text": "Operating Systems on Raspberry Pi, Configuration"
+                                },
+                                {
+                                    "id": "cs42_u5_t3",
+                                    "text": "Programming Raspberry Pi with Python, Connecting via SSH"
+                                },
+                                {
+                                    "id": "cs42_u5_t4",
+                                    "text": "Smart and Connected Cities, IoT Strategy for Smarter Cities"
+                                },
+                                {
+                                    "id": "cs42_u5_t5",
+                                    "text": "Smart City IoT Architecture, Security Architecture"
+                                },
+                                {
+                                    "id": "cs42_u5_t6",
+                                    "text": "Smart City Use-Case Examples"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs43",
+                    "name": "Design and Analysis of Algorithms",
+                    "code": "CS43",
+                    "credits": "3:0:0",
+                    "units": [
+                        {
+                            "id": "cs43_u1",
+                            "title": "Introduction and Basics of Algorithm Analysis",
+                            "topics": [
+                                {
+                                    "id": "cs43_u1_t1",
+                                    "text": "Some Representative Problems: Stable Matching"
+                                },
+                                {
+                                    "id": "cs43_u1_t2",
+                                    "text": "Asymptotic Order of Growth, Common Running Times"
+                                },
+                                {
+                                    "id": "cs43_u1_t3",
+                                    "text": "Mathematical Analysis of Non-recursive Algorithms"
+                                },
+                                {
+                                    "id": "cs43_u1_t4",
+                                    "text": "Mathematical Analysis of Recursive Algorithms"
+                                },
+                                {
+                                    "id": "cs43_u1_t5",
+                                    "text": "Brute Force: Selection Sort and Bubble Sort"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs43_u2",
+                            "title": "Divide and Conquer & Decrease-and-Conquer",
+                            "topics": [
+                                {
+                                    "id": "cs43_u2_t1",
+                                    "text": "Divide and Conquer: General method, Recurrence equation"
+                                },
+                                {
+                                    "id": "cs43_u2_t2",
+                                    "text": "Merge sort, Quick sort"
+                                },
+                                {
+                                    "id": "cs43_u2_t3",
+                                    "text": "Strassen's matrix multiplication"
+                                },
+                                {
+                                    "id": "cs43_u2_t4",
+                                    "text": "Decrease-and-Conquer: Topological Sorting"
+                                },
+                                {
+                                    "id": "cs43_u2_t5",
+                                    "text": "Generating Permutations, Russian Peasant Multiplication"
+                                },
+                                {
+                                    "id": "cs43_u2_t6",
+                                    "text": "Computing Median and Selection Problem"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs43_u3",
+                            "title": "Greedy Algorithms and Space/Time Tradeoffs",
+                            "topics": [
+                                {
+                                    "id": "cs43_u3_t1",
+                                    "text": "Prim's Algorithm, Kruskal's Algorithm"
+                                },
+                                {
+                                    "id": "cs43_u3_t2",
+                                    "text": "Dijkstra's Algorithm"
+                                },
+                                {
+                                    "id": "cs43_u3_t3",
+                                    "text": "Huffman Trees, Fractional Knapsack Problem"
+                                },
+                                {
+                                    "id": "cs43_u3_t4",
+                                    "text": "Horspool's Algorithm, Boyer-Moore Algorithm"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs43_u4",
+                            "title": "Dynamic Programming",
+                            "topics": [
+                                {
+                                    "id": "cs43_u4_t1",
+                                    "text": "General method with examples, Multistage Graphs"
+                                },
+                                {
+                                    "id": "cs43_u4_t2",
+                                    "text": "Transitive Closure: Warshall's Algorithm"
+                                },
+                                {
+                                    "id": "cs43_u4_t3",
+                                    "text": "All Pairs Shortest Paths: Floyd's Algorithm"
+                                },
+                                {
+                                    "id": "cs43_u4_t4",
+                                    "text": "Optimal Binary Search Trees, Knapsack problem"
+                                },
+                                {
+                                    "id": "cs43_u4_t5",
+                                    "text": "Bellman-Ford Algorithm, Travelling Sales Person problem"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs43_u5",
+                            "title": "Backtracking and Branch-and-Bound",
+                            "topics": [
+                                {
+                                    "id": "cs43_u5_t1",
+                                    "text": "Backtracking: n-Queens Problem"
+                                },
+                                {
+                                    "id": "cs43_u5_t2",
+                                    "text": "Backtracking: Subset-Sum Problem"
+                                },
+                                {
+                                    "id": "cs43_u5_t3",
+                                    "text": "Branch-and-Bound: Knapsack Problem"
+                                },
+                                {
+                                    "id": "cs43_u5_t4",
+                                    "text": "Branch-and-Bound: Traveling Salesman Problem"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs44",
+                    "name": "Operating System",
+                    "code": "CS44",
+                    "credits": "3:0:0",
+                    "units": [
+                        {
+                            "id": "cs44_u1",
+                            "title": "Introduction to Operating Systems",
+                            "topics": [
+                                {
+                                    "id": "cs44_u1_t1",
+                                    "text": "What operating systems do, OS operations"
+                                },
+                                {
+                                    "id": "cs44_u1_t2",
+                                    "text": "Process management, Memory management"
+                                },
+                                {
+                                    "id": "cs44_u1_t3",
+                                    "text": "Storage management, Protection and security"
+                                },
+                                {
+                                    "id": "cs44_u1_t4",
+                                    "text": "System Structures: OS Services, System calls"
+                                },
+                                {
+                                    "id": "cs44_u1_t5",
+                                    "text": "OS design and implementation, OS structure"
+                                },
+                                {
+                                    "id": "cs44_u1_t6",
+                                    "text": "Virtual machines"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs44_u2",
+                            "title": "Process Management",
+                            "topics": [
+                                {
+                                    "id": "cs44_u2_t1",
+                                    "text": "Process concept, Process scheduling"
+                                },
+                                {
+                                    "id": "cs44_u2_t2",
+                                    "text": "Operations on processes, Inter-process communication"
+                                },
+                                {
+                                    "id": "cs44_u2_t3",
+                                    "text": "Scheduling criteria, Scheduling algorithms"
+                                },
+                                {
+                                    "id": "cs44_u2_t4",
+                                    "text": "Multiple-Processor scheduling"
+                                },
+                                {
+                                    "id": "cs44_u2_t5",
+                                    "text": "Process Synchronization: Critical section problem"
+                                },
+                                {
+                                    "id": "cs44_u2_t6",
+                                    "text": "Synchronization hardware, Semaphores"
+                                },
+                                {
+                                    "id": "cs44_u2_t7",
+                                    "text": "Classical problems of synchronization"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs44_u3",
+                            "title": "Deadlocks and Memory Management",
+                            "topics": [
+                                {
+                                    "id": "cs44_u3_t1",
+                                    "text": "Deadlocks: System model, Characterization"
+                                },
+                                {
+                                    "id": "cs44_u3_t2",
+                                    "text": "Methods for handling deadlocks"
+                                },
+                                {
+                                    "id": "cs44_u3_t3",
+                                    "text": "Deadlock prevention, Deadlock avoidance"
+                                },
+                                {
+                                    "id": "cs44_u3_t4",
+                                    "text": "Memory Management: Background, Swapping"
+                                },
+                                {
+                                    "id": "cs44_u3_t5",
+                                    "text": "Contiguous memory allocation, Paging"
+                                },
+                                {
+                                    "id": "cs44_u3_t6",
+                                    "text": "Structure of page table, Segmentation"
+                                },
+                                {
+                                    "id": "cs44_u3_t7",
+                                    "text": "Virtual Memory: Demand paging, Page replacement"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs44_u4",
+                            "title": "File System",
+                            "topics": [
+                                {
+                                    "id": "cs44_u4_t1",
+                                    "text": "File concept, Access methods"
+                                },
+                                {
+                                    "id": "cs44_u4_t2",
+                                    "text": "Directory structure, Protection"
+                                },
+                                {
+                                    "id": "cs44_u4_t3",
+                                    "text": "File system structure, Implementation"
+                                },
+                                {
+                                    "id": "cs44_u4_t4",
+                                    "text": "Directory implementation, Allocation methods"
+                                },
+                                {
+                                    "id": "cs44_u4_t5",
+                                    "text": "Free space management, Disk scheduling algorithms"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs44_u5",
+                            "title": "Dockers",
+                            "topics": [
+                                {
+                                    "id": "cs44_u5_t1",
+                                    "text": "Docker Basics and Architecture"
+                                },
+                                {
+                                    "id": "cs44_u5_t2",
+                                    "text": "Containerization vs VMs"
+                                },
+                                {
+                                    "id": "cs44_u5_t3",
+                                    "text": "Docker tooling, Basic Docker commands"
+                                },
+                                {
+                                    "id": "cs44_u5_t4",
+                                    "text": "Docker Networking, Types of networks"
+                                },
+                                {
+                                    "id": "cs44_u5_t5",
+                                    "text": "Docker Volumes, Managing data"
+                                },
+                                {
+                                    "id": "cs44_u5_t6",
+                                    "text": "Volume file systems, Creating volumes"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs45",
+                    "name": "Database Systems",
+                    "code": "CS45",
+                    "credits": "2:1:0",
+                    "units": [
+                        {
+                            "id": "cs45_u1",
+                            "title": "Introduction and ER Model",
+                            "topics": [
+                                {
+                                    "id": "cs45_u1_t1",
+                                    "text": "Characteristics of Database Approach"
+                                },
+                                {
+                                    "id": "cs45_u1_t2",
+                                    "text": "Actors, Workers, Advantages of DBMS"
+                                },
+                                {
+                                    "id": "cs45_u1_t3",
+                                    "text": "Data Models, Schemas and Instances"
+                                },
+                                {
+                                    "id": "cs45_u1_t4",
+                                    "text": "Three-Schema Architecture, Data Independence"
+                                },
+                                {
+                                    "id": "cs45_u1_t5",
+                                    "text": "Database Languages and Interfaces"
+                                },
+                                {
+                                    "id": "cs45_u1_t6",
+                                    "text": "Database System Environment, Architectures"
+                                },
+                                {
+                                    "id": "cs45_u1_t7",
+                                    "text": "Classification of DBMS"
+                                },
+                                {
+                                    "id": "cs45_u1_t8",
+                                    "text": "Entity-Relationship Model, ER Design"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs45_u2",
+                            "title": "Relational Model and Algebra",
+                            "topics": [
+                                {
+                                    "id": "cs45_u2_t1",
+                                    "text": "Relational Model Concepts, Constraints"
+                                },
+                                {
+                                    "id": "cs45_u2_t2",
+                                    "text": "Update Operations, Transactions"
+                                },
+                                {
+                                    "id": "cs45_u2_t3",
+                                    "text": "Unary Relational Operations"
+                                },
+                                {
+                                    "id": "cs45_u2_t4",
+                                    "text": "Set Theory Operations, JOIN, DIVISION"
+                                },
+                                {
+                                    "id": "cs45_u2_t5",
+                                    "text": "ER-to-Relational Mapping"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs45_u3",
+                            "title": "Introduction to SQL",
+                            "topics": [
+                                {
+                                    "id": "cs45_u3_t1",
+                                    "text": "SQL Data Definition, Data Types"
+                                },
+                                {
+                                    "id": "cs45_u3_t2",
+                                    "text": "Specifying Constraints in SQL"
+                                },
+                                {
+                                    "id": "cs45_u3_t3",
+                                    "text": "Scheme Change Statements"
+                                },
+                                {
+                                    "id": "cs45_u3_t4",
+                                    "text": "Basic and Complex Queries"
+                                },
+                                {
+                                    "id": "cs45_u3_t5",
+                                    "text": "INSERT, DELETE, UPDATE Statements"
+                                },
+                                {
+                                    "id": "cs45_u3_t6",
+                                    "text": "Assertions, Triggers, Views"
+                                },
+                                {
+                                    "id": "cs45_u3_t7",
+                                    "text": "SQL Programming: Embedded SQL, JDBC"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs45_u4",
+                            "title": "Functional Dependencies and Normalization",
+                            "topics": [
+                                {
+                                    "id": "cs45_u4_t1",
+                                    "text": "Informal Design Guidelines"
+                                },
+                                {
+                                    "id": "cs45_u4_t2",
+                                    "text": "Functional Dependencies"
+                                },
+                                {
+                                    "id": "cs45_u4_t3",
+                                    "text": "Normal Forms (2NF, 3NF, BCNF)"
+                                },
+                                {
+                                    "id": "cs45_u4_t4",
+                                    "text": "Relational Decompositions, Algorithms"
+                                },
+                                {
+                                    "id": "cs45_u4_t5",
+                                    "text": "Multivalued Dependencies, 4NF"
+                                },
+                                {
+                                    "id": "cs45_u4_t6",
+                                    "text": "Join Dependencies, 5NF"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs45_u5",
+                            "title": "Transaction Processing",
+                            "topics": [
+                                {
+                                    "id": "cs45_u5_t1",
+                                    "text": "Introduction to Transaction Processing"
+                                },
+                                {
+                                    "id": "cs45_u5_t2",
+                                    "text": "Transaction and System Concepts"
+                                },
+                                {
+                                    "id": "cs45_u5_t3",
+                                    "text": "Properties of Transactions (ACID)"
+                                },
+                                {
+                                    "id": "cs45_u5_t4",
+                                    "text": "Serializability"
+                                },
+                                {
+                                    "id": "cs45_u5_t5",
+                                    "text": "Concurrency Control: Two-Phase Locking"
+                                },
+                                {
+                                    "id": "cs45_u5_t6",
+                                    "text": "Timestamp Ordering, Multi-version CC"
+                                },
+                                {
+                                    "id": "cs45_u5_t7",
+                                    "text": "Database Recovery Techniques"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs46",
+                    "name": "Design and Analysis of Algorithms Laboratory",
+                    "code": "CSL46",
+                    "credits": "0:0:1",
+                    "units": [
+                        {
+                            "id": "cs46_u1",
+                            "title": "Laboratory Topics",
+                            "topics": [
+                                {
+                                    "id": "cs46_u1_t1",
+                                    "text": "Divide and Conquer: Merge sort, Quicksort"
+                                },
+                                {
+                                    "id": "cs46_u1_t2",
+                                    "text": "Decrease and Conquer: Topological sorting using DFS"
+                                },
+                                {
+                                    "id": "cs46_u1_t3",
+                                    "text": "Greedy: Dijkstra's, Prim's, Kruskal's algorithm"
+                                },
+                                {
+                                    "id": "cs46_u1_t4",
+                                    "text": "Input Enhancement: Horspool's, Boyer-Moore algorithm"
+                                },
+                                {
+                                    "id": "cs46_u1_t5",
+                                    "text": "Dynamic Programming: Warshall-Floyd, Knapsack, Bellman-Ford"
+                                },
+                                {
+                                    "id": "cs46_u1_t6",
+                                    "text": "Backtracking: N-Queen's, Subset-sum problem"
+                                },
+                                {
+                                    "id": "cs46_u1_t7",
+                                    "text": "Branch and Bound: TSP, Assignment problem"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs47",
+                    "name": "Database Systems Laboratory",
+                    "code": "CSL47",
+                    "credits": "0:0:1",
+                    "units": [
+                        {
+                            "id": "cs47_u1",
+                            "title": "Laboratory Topics",
+                            "topics": [
+                                {
+                                    "id": "cs47_u1_t1",
+                                    "text": "Entity-Relationship (ER) Model Design and Mapping"
+                                },
+                                {
+                                    "id": "cs47_u1_t2",
+                                    "text": "Introduction to SQL (Oracle/MySQL)"
+                                },
+                                {
+                                    "id": "cs47_u1_t3",
+                                    "text": "SQL Queries using DDL, DML, DCL"
+                                },
+                                {
+                                    "id": "cs47_u1_t4",
+                                    "text": "Applications using simple and complex queries"
+                                },
+                                {
+                                    "id": "cs47_u1_t5",
+                                    "text": "Applications using Triggers and Views"
+                                },
+                                {
+                                    "id": "cs47_u1_t6",
+                                    "text": "Introduction to NoSQL (MongoDB)"
+                                },
+                                {
+                                    "id": "cs47_u1_t7",
+                                    "text": "NoSQL Queries using CRUD operations"
+                                },
+                                {
+                                    "id": "cs47_u1_t8",
+                                    "text": "Database application using Java Script/Eclipse"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs48",
+                    "name": "Operating Systems Laboratory",
+                    "code": "CSL48",
+                    "credits": "0:0:1",
+                    "units": [
+                        {
+                            "id": "cs48_u1",
+                            "title": "Laboratory Topics",
+                            "topics": [
+                                {
+                                    "id": "cs48_u1_t1",
+                                    "text": "Basic file I/O functions and file properties"
+                                },
+                                {
+                                    "id": "cs48_u1_t2",
+                                    "text": "File Types, access permission, links"
+                                },
+                                {
+                                    "id": "cs48_u1_t3",
+                                    "text": "Virtualizing process and memory"
+                                },
+                                {
+                                    "id": "cs48_u1_t4",
+                                    "text": "Process creation: fork, vfork, exec, wait"
+                                },
+                                {
+                                    "id": "cs48_u1_t5",
+                                    "text": "Process Scheduling: FIFO, RR, Priority"
+                                },
+                                {
+                                    "id": "cs48_u1_t6",
+                                    "text": "Process synchronization: locks and semaphore"
+                                },
+                                {
+                                    "id": "cs48_u1_t7",
+                                    "text": "Deadlock avoidance algorithms"
+                                },
+                                {
+                                    "id": "cs48_u1_t8",
+                                    "text": "Memory allocation: best fit, worst fit, first fit"
+                                },
+                                {
+                                    "id": "cs48_u1_t9",
+                                    "text": "Page replacement: FIFO, Optimal, LRU"
+                                },
+                                {
+                                    "id": "cs48_u1_t10",
+                                    "text": "File directory structures: list, index, graph"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs49",
+                    "name": "UI/UX Design with Angular",
+                    "code": "CSAEC49",
+                    "credits": "1:0:0",
+                    "units": [
+                        {
+                            "id": "cs49_u1",
+                            "title": "Introduction to UI/UX",
+                            "topics": [
+                                {
+                                    "id": "cs49_u1_t1",
+                                    "text": "UI Principles: Layout, typography, color theory"
+                                },
+                                {
+                                    "id": "cs49_u1_t2",
+                                    "text": "UX Principles: User-centered design, usability"
+                                },
+                                {
+                                    "id": "cs49_u1_t3",
+                                    "text": "Wireframing and Prototyping (Figma/Adobe XD)"
+                                },
+                                {
+                                    "id": "cs49_u1_t4",
+                                    "text": "Responsive Design: Mobile-first design, media queries"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs49_u2",
+                            "title": "Angular Basics",
+                            "topics": [
+                                {
+                                    "id": "cs49_u2_t1",
+                                    "text": "Angular Architecture: Modules, Components, Services"
+                                },
+                                {
+                                    "id": "cs49_u2_t2",
+                                    "text": "Data Binding: Interpolation, Property, Event, Two-way"
+                                },
+                                {
+                                    "id": "cs49_u2_t3",
+                                    "text": "Directives: *ngIf, *ngFor, ngClass, ngStyle"
+                                },
+                                {
+                                    "id": "cs49_u2_t4",
+                                    "text": "Forms: Template-driven vs Reactive forms"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs49_u3",
+                            "title": "Angular Material & Styling",
+                            "topics": [
+                                {
+                                    "id": "cs49_u3_t1",
+                                    "text": "Angular Material Components"
+                                },
+                                {
+                                    "id": "cs49_u3_t2",
+                                    "text": "Layout & Theming: Flex layout, dark/light themes"
+                                },
+                                {
+                                    "id": "cs49_u3_t3",
+                                    "text": "Styling Techniques: SCSS, CSS variables"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs49_u4",
+                            "title": "Routing & Navigation",
+                            "topics": [
+                                {
+                                    "id": "cs49_u4_t1",
+                                    "text": "Angular Router: Routes, Parameters, Navigation"
+                                },
+                                {
+                                    "id": "cs49_u4_t2",
+                                    "text": "Lazy Loading for performance"
+                                },
+                                {
+                                    "id": "cs49_u4_t3",
+                                    "text": "Navigation Patterns: Sidebars, Breadcrumbs"
+                                },
+                                {
+                                    "id": "cs49_u4_t4",
+                                    "text": "State management with services"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs49_u5",
+                            "title": "Project",
+                            "topics": [
+                                {
+                                    "id": "cs49_u5_t1",
+                                    "text": "Build Angular app with UI/UX principles"
+                                },
+                                {
+                                    "id": "cs49_u5_t2",
+                                    "text": "Responsive layout, Navigation, Form validation"
+                                },
+                                {
+                                    "id": "cs49_u5_t3",
+                                    "text": "Interactive components, Dark/light theme toggle"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs410",
+                    "name": "Data Visualization with Python and Power BI",
+                    "code": "CSAEC410",
+                    "credits": "1:0:0",
+                    "units": [
+                        {
+                            "id": "cs410_u1",
+                            "title": "Principles & Industry Use Cases",
+                            "topics": [
+                                {
+                                    "id": "cs410_u1_t1",
+                                    "text": "Role of data visualization in decision-making"
+                                },
+                                {
+                                    "id": "cs410_u1_t2",
+                                    "text": "Industry dashboards: KPIs, scorecards"
+                                },
+                                {
+                                    "id": "cs410_u1_t3",
+                                    "text": "Data types, mapping to charts, visualization ethics"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs410_u2",
+                            "title": "Python for Data Visualization",
+                            "topics": [
+                                {
+                                    "id": "cs410_u2_t1",
+                                    "text": "Pandas, Matplotlib, Seaborn, Plotly"
+                                },
+                                {
+                                    "id": "cs410_u2_t2",
+                                    "text": "Interactive dashboards with Plotly/Dash"
+                                },
+                                {
+                                    "id": "cs410_u2_t3",
+                                    "text": "Handling real-world datasets (CSV/API/JSON)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs410_u3",
+                            "title": "Power BI for Business Analytics",
+                            "topics": [
+                                {
+                                    "id": "cs410_u3_t1",
+                                    "text": "Data import, transformation (Power Query)"
+                                },
+                                {
+                                    "id": "cs410_u3_t2",
+                                    "text": "Interactive dashboards: slicers, drill-through, KPIs"
+                                },
+                                {
+                                    "id": "cs410_u3_t3",
+                                    "text": "DAX for calculated measures, Data Modeling"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs410_u4",
+                            "title": "Advanced Visualization Techniques",
+                            "topics": [
+                                {
+                                    "id": "cs410_u4_t1",
+                                    "text": "Time-series and forecasting visualization"
+                                },
+                                {
+                                    "id": "cs410_u4_t2",
+                                    "text": "Geospatial maps (Python Folium + Power BI)"
+                                },
+                                {
+                                    "id": "cs410_u4_t3",
+                                    "text": "Multi-dimensional & comparative visualization"
+                                },
+                                {
+                                    "id": "cs410_u4_t4",
+                                    "text": "Industry case study (marketing/sales dashboard)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs410_u5",
+                            "title": "Capstone Project & Portfolio Work",
+                            "topics": [
+                                {
+                                    "id": "cs410_u5_t1",
+                                    "text": "Combine Python preprocessing with Power BI dashboard"
+                                },
+                                {
+                                    "id": "cs410_u5_t2",
+                                    "text": "Present insights as business decisions"
+                                },
+                                {
+                                    "id": "cs410_u5_t3",
+                                    "text": "Ethical visualization: bias, misleading charts"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cs411",
+                    "name": "Automation Design and Development",
+                    "code": "CSAEC411",
+                    "credits": "1:0:0",
+                    "units": [
+                        {
+                            "id": "cs411_u1",
+                            "title": "Introduction to Robotic Process Automation (RPA)",
+                            "topics": [
+                                {
+                                    "id": "cs411_u1_t1",
+                                    "text": "Scope and Techniques of Automation"
+                                },
+                                {
+                                    "id": "cs411_u1_t2",
+                                    "text": "Core components of RPA (Studio, Orchestrator, Robot)"
+                                },
+                                {
+                                    "id": "cs411_u1_t3",
+                                    "text": "UiPath Stack, Attended vs Unattended Robots"
+                                },
+                                {
+                                    "id": "cs411_u1_t4",
+                                    "text": "History of Automation, Automation vs RPA"
+                                },
+                                {
+                                    "id": "cs411_u1_t5",
+                                    "text": "RPA Development Life Cycle"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs411_u2",
+                            "title": "RPA Fundamentals",
+                            "topics": [
+                                {
+                                    "id": "cs411_u2_t1",
+                                    "text": "Variables and Arguments, Data Types"
+                                },
+                                {
+                                    "id": "cs411_u2_t2",
+                                    "text": "Variables vs Arguments, Namespaces"
+                                },
+                                {
+                                    "id": "cs411_u2_t3",
+                                    "text": "Control Flow: Sequences, Loops, Decision Making"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs411_u3",
+                            "title": "Data Manipulation and UI Automation",
+                            "topics": [
+                                {
+                                    "id": "cs411_u3_t1",
+                                    "text": "String and Data Table Manipulations"
+                                },
+                                {
+                                    "id": "cs411_u3_t2",
+                                    "text": "Data Scraping, File Operations"
+                                },
+                                {
+                                    "id": "cs411_u3_t3",
+                                    "text": "UI Interactions: Anchor Base, Selectors"
+                                },
+                                {
+                                    "id": "cs411_u3_t4",
+                                    "text": "Mouse and Keyboard Activities"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs411_u4",
+                            "title": "Automation Concepts and Techniques",
+                            "topics": [
+                                {
+                                    "id": "cs411_u4_t1",
+                                    "text": "Basic, Desktop, Web Recording"
+                                },
+                                {
+                                    "id": "cs411_u4_t2",
+                                    "text": "Screen scraping, Data scraping, PDF Extraction"
+                                },
+                                {
+                                    "id": "cs411_u4_t3",
+                                    "text": "Types of OCR"
+                                },
+                                {
+                                    "id": "cs411_u4_t4",
+                                    "text": "Email Automation (Incoming/Outgoing)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cs411_u5",
+                            "title": "Error Handling and Deployment",
+                            "topics": [
+                                {
+                                    "id": "cs411_u5_t1",
+                                    "text": "Error handling: Try Catch, Retry Scope"
+                                },
+                                {
+                                    "id": "cs411_u5_t2",
+                                    "text": "Common Exceptions and handling"
+                                },
+                                {
+                                    "id": "cs411_u5_t3",
+                                    "text": "Orchestration Server, Orchestrator Functionalities"
+                                },
+                                {
+                                    "id": "cs411_u5_t4",
+                                    "text": "Connecting and Deploying Robot to Orchestrator"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "am41",
+                    "name": "Additional Mathematics - II",
+                    "code": "AM41",
+                    "credits": "0:0:0",
+                    "units": [
+                        {
+                            "id": "am41_u1",
+                            "title": "Differential Calculus - I",
+                            "topics": [
+                                {
+                                    "id": "am41_u1_t1",
+                                    "text": "Partial differentiation, Euler's theorem"
+                                },
+                                {
+                                    "id": "am41_u1_t2",
+                                    "text": "Total differential coefficient"
+                                },
+                                {
+                                    "id": "am41_u1_t3",
+                                    "text": "Differentiation of composite and implicit functions"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am41_u2",
+                            "title": "Differential Calculus - II",
+                            "topics": [
+                                {
+                                    "id": "am41_u2_t1",
+                                    "text": "Jacobian and Properties"
+                                },
+                                {
+                                    "id": "am41_u2_t2",
+                                    "text": "Taylor's theorem for two variables"
+                                },
+                                {
+                                    "id": "am41_u2_t3",
+                                    "text": "Maxima and minima for two variables"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am41_u3",
+                            "title": "Vector Integration",
+                            "topics": [
+                                {
+                                    "id": "am41_u3_t1",
+                                    "text": "Line integrals, surface integrals, volume integrals"
+                                },
+                                {
+                                    "id": "am41_u3_t2",
+                                    "text": "Green's theorem, Stokes' theorem"
+                                },
+                                {
+                                    "id": "am41_u3_t3",
+                                    "text": "Gauss divergence theorem"
+                                },
+                                {
+                                    "id": "am41_u3_t4",
+                                    "text": "Orthogonal curvilinear coordinates"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am41_u4",
+                            "title": "Higher Order Differential Equations",
+                            "topics": [
+                                {
+                                    "id": "am41_u4_t1",
+                                    "text": "Higher order linear differential equations"
+                                },
+                                {
+                                    "id": "am41_u4_t2",
+                                    "text": "Method of variation of parameters"
+                                },
+                                {
+                                    "id": "am41_u4_t3",
+                                    "text": "Cauchy's and Legendre's homogeneous equations"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "am41_u5",
+                            "title": "Probability",
+                            "topics": [
+                                {
+                                    "id": "am41_u5_t1",
+                                    "text": "Sample space and events"
+                                },
+                                {
+                                    "id": "am41_u5_t2",
+                                    "text": "Axioms of probability"
+                                },
+                                {
+                                    "id": "am41_u5_t3",
+                                    "text": "Addition and multiplication theorems"
+                                },
+                                {
+                                    "id": "am41_u5_t4",
+                                    "text": "Conditional probability, Bayes theorem"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

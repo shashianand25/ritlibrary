@@ -1,0 +1,749 @@
+{
+    "1st Year": {
+    "1st Sem": {
+      "cs": [
+        { "label": "Maths", "value": "maths", "code": "MAC11" },
+        { "label": "Physics", "value": "physics", "code": "PYC12" },
+        { "label": "English", "value": "english", "code": "HSCP15" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
+        { "label": "Health", "value": "health", "code": "AECP17" },
+        { "label": "C Programming", "value": "c_programming", "code": "PPC18" },
+        { "label": "PLC", "value": "esc", "elective": true }
+      ],
+      "electronics": [
+        { "label": "Maths", "value": "maths", "code": "MA102" },
+        { "label": "Physics", "value": "physics", "code": "PH102" },
+        { "label": "English", "value": "english", "code": "HSCP15" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
+        { "label": "Health", "value": "health", "code": "AECP17" },
+        { "label": "Basic Electronics", "value": "basic_electronics", "code": "ESC" },
+        { "label": "ESC", "value": "esc", "elective": true },
+        { "label": "ETC", "value": "etc", "elective": true }
+      ],
+      "electrical": [
+        { "label": "Maths", "value": "maths", "code": "MA103" },
+        { "label": "Physics", "value": "physics", "code": "PH103" },
+        { "label": "English", "value": "english", "code": "HSCP15" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
+        { "label": "Health", "value": "health", "code": "AECP17" },
+        { "label": "Elements of Electrical Engineering", "value": "electrical_eng", "code": "ESC" },
+        { "label": "ESC", "value": "esc", "elective": true },
+        { "label": "ETC", "value": "etc", "elective": true }      ],
+      "civil": [
+        { "label": "Maths", "value": "maths", "code": "MA104" },
+        { "label": "Physics", "value": "physics", "code": "PH104" },
+        { "label": "English", "value": "english", "code": "HSCP15" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
+        { "label": "Health", "value": "health", "code": "AECP17" },
+        { "label": "Civil Engineering Mechanics", "value": "civil_mechanics", "code": "CAED" },
+        { "label": "ESC", "value": "esc", "elective": true },
+        { "label": "ETC", "value": "etc", "elective": true }      ],
+      "mech": [
+        { "label": "Maths", "value": "maths", "code": "MA105" },
+        { "label": "Physics", "value": "physics", "code": "PH105" },
+        { "label": "English", "value": "english", "code": "HSCP15" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
+        { "label": "Health", "value": "health", "code": "AECP17" },
+        { "label": "Elements of Mechanical Engineering", "value": "mechanical_eng", "code": "PLC" },
+        { "label": "ESC", "value": "esc", "elective": true },
+        { "label": "ETC", "value": "etc", "elective": true }      ]
+    },
+    "2nd Sem": {
+      "cs": [
+        { "label": "Maths", "value": "maths", "code": "MAC21" },
+        { "label": "Chemistry", "value": "chemistry", "code": "CH106" },
+        { "label": "English", "value": "english", "code": "HSCC15" },
+        { "label": "Constitution", "value": "constitution", "code": "constitution" },
+        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
+        { "label": "C Programming", "value": "c_programming", "code": "PPC18" },
+        { "label": "ESC", "value": "esc", "elective": true },
+        { "label": "ETC", "value": "etc", "elective": true }      ],
+      "electronics": [
+        { "label": "Maths", "value": "maths", "code": "MAE22" },
+        { "label": "Chemistry", "value": "chemistry", "code": "CH107" },
+        { "label": "English", "value": "english", "code": "HSCC15" },
+        { "label": "Constitution", "value": "constitution", "code": "constitution" },
+        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
+        { "label": "Basic Electronics", "value": "basic_electronics", "code": "ESC" },
+        { "label": "PLC", "value": "plc", "elective": true }
+      ],
+      "electrical": [
+        { "label": "Maths", "value": "maths", "code": "MAE23" },
+        { "label": "Chemistry", "value": "chemistry", "code": "CH108" },
+        { "label": "English", "value": "english", "code": "HSCC15" },
+        { "label": "Constitution", "value": "constitution", "code": "constitution" },
+        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
+        { "label": "Elements of Electrical Engineering", "value": "electrical_eng", "code": "ESC" },
+        { "label": "PLC", "value": "plc", "elective": true }
+      ],
+      "civil": [
+        { "label": "Maths", "value": "maths", "code": "MAE24" },
+        { "label": "Chemistry", "value": "chemistry", "code": "CH109" },
+        { "label": "English", "value": "english", "code": "HSCC15" },
+        { "label": "Constitution", "value": "constitution", "code": "constitution" },
+        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
+        { "label": "Civil Engineering Mechanics", "value": "civil_mechanics", "code": "CAED" },
+        { "label": "PLC", "value": "plc", "elective": true }
+      ],
+      "mech": [
+        { "label": "Maths", "value": "maths", "code": "MAE25" },
+        { "label": "Chemistry", "value": "chemistry", "code": "CH110" },
+        { "label": "English", "value": "english", "code": "HSCC15" },
+        { "label": "Constitution", "value": "constitution", "code": "constitution" },
+        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
+        { "label": "Elements of Mechanical Engineering", "value": "mechanical_eng", "code": "PLC" },
+        { "label": "PLC", "value": "plc", "elective": true }
+      ]
+    }
+  },
+  "2nd Year": {
+    "3rd Sem": {
+      "ise": [
+        { "label": "Laplace Transforms & Vector Space", "value": "laplace_transforms_vector_space", "code": "IS31" },
+        { "label": "Digital Design and Computer Organization", "value": "digital_design_and_computer_organization", "code": "IS32" },
+        { "label": "Data Structures", "value": "data_structures", "code": "IS33" },
+        { "label": "Operating Systems", "value": "operating_systems", "code": "IS34" },
+        { "label": "Discrete Mathematical Structures", "value": "discrete_mathematical_structures", "code": "IS35" },
+        { "label": "Data Structures Lab", "value": "data_structures_lab", "code": "ISL36" },
+        { "label": "Unix System Programming Lab", "value": "unix_system_programming_lab", "code": "ISL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" },
+        { "label": "Numerical Analysis with Python", "value": "NAP", "code": "ISAEC393" }
+      ],
+      "ece": [
+        { "label": "Transform Techniques and Linear Programming", "value": "transform_techniques_and_linear_programming", "code": "EC31" },
+        { "label": "Data Structures using C++", "value": "data_structures_using_c", "code": "EC32" },
+        { "label": "Analog Electronics Circuits", "value": "analog_electronics_circuits", "code": "EC33" },
+        { "label": "Network Analysis and control systems", "value": "network_analysis_and_control_systems", "code": "EC34" },
+        { "label": "Digital Design with HDL", "value": "digital_design_with_hdl", "code": "EC35" },
+        { "label": "Analog Electronics Lab", "value": "analog_electronics_lab", "code": "ECL36" },
+        { "label": "Digital Design & HDL Lab", "value": "digital_design_hdl_lab", "code": "ECL37" },
+        { "label": "Universal Human Value Course", "value": "universal_human_value_course", "code": "UHV38" }
+      ],
+      "eie": [
+        { "label": "Transform Techniques and Linear Programming", "value": "transform_techniques_and_linear_programming", "code": "EI31" },
+        { "label": "Analog Electronic Circuits", "value": "analog_electronic_circuits", "code": "EI32" },
+        { "label": "Network Analysis", "value": "network_analysis", "code": "EI33" },
+        { "label": "Logic Design", "value": "logic_design", "code": "EI34" },
+        { "label": "Measurement and Instrumentation", "value": "measurement_and_instrumentation", "code": "EI35" },
+        { "label": "Logic Design Lab", "value": "logic_design_lab", "code": "EIL36" },
+        { "label": "Measurement and Instrumentation Lab", "value": "measurement_and_instrumentation_lab", "code": "EIL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" },
+        { "label": "Engineering Aptitude", "value": "engineering_aptitude", "code": "EIAEC39" }
+      ],
+      "ete": [
+        { "label": "Transform Techniques and Linear Programming", "value": "transform_techniques_and_linear_programming", "code": "ET31" },
+        { "label": "Data Structures Using C", "value": "data_structures_using_c", "code": "ET32" },
+        { "label": "Analog Circuit Design", "value": "analog_circuit_design", "code": "ET33" },
+        { "label": "Digital Circuit Design", "value": "digital_circuit_design", "code": "ET34" },
+        { "label": "Network Ananlysis", "value": "network analysis", "code": "ET35" },
+        { "label": "Analog Circuit Design Lab", "value": "analog_circuit_design_lab", "code": "ETL36" },
+        { "label": "Digital Circuit Design Lab", "value": "digital_circuit_design_lab", "code": "ETL37" },
+        { "label": "Universal Human Value Course", "value": "universal_human_value_course", "code": "UHV38" }
+      ],
+      "eee": [
+        { "label": "Transform Techniques and Linear Programming", "value": "transform_techniques_and_linear_programming", "code": "EE31" },
+        { "label": "Introduction to Python Programming for Electrical Applications", "value": "introduction_to_python_programming_for_electrical_applications", "code": "EE32" },
+        { "label": "Electronic Devices and Circuits", "value": "electronic_devices_and_circuits", "code": "EE33" },
+        { "label": "Digital Electronics", "value": "digital_electronics", "code": "EE34" },
+        { "label": "Electrical AC Machines", "value": "electrical_ac_machines", "code": "EE35" },
+        { "label": "Digital Electronics Lab", "value": "digital_electronics_lab", "code": "EEL36" },
+        { "label": "Electronic Devices and Circuits Lab", "value": "electronic_devices_and_circuits_lab", "code": "EEL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" }
+      ],
+      "iem": [
+        { "label": "Laplace Transforms & Linear Algebra", "value": "laplace_transforms_linear_algebra", "code": "IM31" },
+        { "label": "Mechanical Behavior of Materials", "value": "mechanical_behavior_of_materials", "code": "IM32" },
+        { "label": "Manufacturing processes", "value": "manufacturing_processes", "code": "IM33" },
+        { "label": "Work Study and Ergonomics", "value": "work_study_and_ergonomics", "code": "IM34" },
+        { "label": "Materials Management", "value": "materials_management", "code": "IM35" },
+        { "label": "Manufacturing Processes Lab", "value": "manufacturing_processes_lab", "code": "IML36" },
+        { "label": "Work Study and Ergonomics Lab", "value": "work_study_and_ergonomics_lab", "code": "IML37" },
+        { "label": "Universal Human Value Course", "value": "universal_human_value_course", "code": "UHV38" }
+      ],
+      "me": [
+        { "label": "Integral Transforms and Applications", "value": "integral_transforms_and_applications", "code": "ME31" },
+        { "label": "Manufacturing Process I", "value": "manufacturing_process_i", "code": "ME32" },
+        { "label": "Basic Thermodynamics", "value": "basic_thermodynamics", "code": "ME33" },
+        { "label": "Mechanics of Materials", "value": "mechanics_of_materials", "code": "ME34" },
+        { "label": "Material Science & Metallurgy", "value": "material_science_metallurgy", "code": "ME35" },
+        { "label": "Materials Testing Laboratory", "value": "materials_testing_laboratory", "code": "MEL36" },
+        { "label": "Computer Aided Machine Drawing", "value": "computer_aided_machine_drawing", "code": "MEL37" },
+        { "label": "Universal Human Value Course", "value": "universal_human_value_course", "code": "UHV38" }
+      ],
+      "md": [
+        { "label": "Transform Techniques and Linear Programming", "value": "transform_techniques_and_linear_programming", "code": "MD31" },
+        { "label": "Signal Processing", "value": "signal_processing", "code": "MD32" },
+        { "label": "Analog & Digital Electronics Circuits", "value": "analog_digital_electronics_circuits", "code": "MD33" },
+        { "label": "Human Anatomy and Human Physiology", "value": "human_anatomy_and_human_physiology", "code": "MD34" },
+        { "label": "Object Oriented Programming (OOP)", "value": "object_oriented_programming_oop", "code": "MD35" },
+        { "label": "Analog & Digital Electronics Circuits Lab", "value": "analog_digital_electronics_circuits_lab", "code": "MDL36" },
+        { "label": "Object Oriented Programming Lab", "value": "object_oriented_programming_lab", "code": "MDL37" },
+        { "label": "Universal Human Value", "value": "universal_human_value", "code": "UHV38" }
+      ],
+      "cy": [
+        { "label": "Laplace Transforms & Vector Space", "value": "laplace_transforms_vector_space", "code": "CY31" },
+        { "label": "Data Communication & Networking", "value": "data_communication_networking", "code": "CY32" },
+        { "label": "Data Structures", "value": "data_structures", "code": "CY33" },
+        { "label": "Computer organization and Architecture", "value": "computer_organization_and_architecture", "code": "CY34" },
+        { "label": "Discrete Mathematical Structures", "value": "discrete_mathematical_structures", "code": "CY35" },
+        { "label": "Data Structures Laboratory", "value": "data_structures_laboratory", "code": "CYL36" },
+        { "label": "Application Development using Java Laboratory", "value": "application_development_using_java_laboratory", "code": "CYL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" }
+      ],
+      "ci": [
+        { "label": "Laplace Transforms & Vector Space", "value": "laplace_transforms_vector_space", "code": "CI31" },
+        { "label": "Computer Networks", "value": "computer_networks", "code": "CI32" },
+        { "label": "Data Structures", "value": "data_structures", "code": "CI33" },
+        { "label": "Computer organization and Architecture", "value": "computer_organization_and_architecture", "code": "CI34" },
+        { "label": "Discrete Mathematical Structures", "value": "discrete_mathematical_structures", "code": "CI35" },
+        { "label": "Data Structures Laboratory", "value": "data_structures_laboratory", "code": "CIL36" },
+        { "label": "Application Development using Java Laboratory", "value": "application_development_using_java_laboratory", "code": "CIL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" }
+      ],
+      "aiml": [
+        { "label": "Laplace Transforms & Vector Space", "value": "laplace_transforms_vector_space", "code": "AD31" },
+        { "label": "Database Management Systems", "value": "database_management_systems", "code": "AD32" },
+        { "label": "Data Structures", "value": "data_structures", "code": "AD33" },
+        { "label": "Discrete Mathematical Structures", "value": "discrete_mathematical_structures", "code": "AD34" },
+        { "label": "Introduction to Artificial Intelligence", "value": "introduction_to_artificial_intelligence", "code": "AD35" },
+        { "label": "Data Structures Laboratory", "value": "data_structures_laboratory", "code": "ADL36" },
+        { "label": "Object Oriented Programming Laboratory", "value": "object_oriented_programming_laboratory", "code": "ADL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" }
+      ],
+      "cse": [
+        { "label": "Laplace Transforms & Vector Space", "value": "laplace_transforms_vector_space", "code": "CS31" },
+        { "label": "Digital Design and Computer Organization", "value": "digital_design_and_computer_organization", "code": "CS32" },
+        { "label": "Data Structures", "value": "data_structures", "code": "CS33" },
+        { "label": "Object Oriented Programming", "value": "object_oriented_programming", "code": "CS34" },
+        { "label": "Discrete Mathematical Structures", "value": "discrete_mathematical_structures", "code": "CS35" },
+        { "label": "Data Structures Laboratory", "value": "data_structures_laboratory", "code": "CSL36" },
+        { "label": "Object Oriented Programming Laboratory", "value": "object_oriented_programming_laboratory", "code": "CSL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" },
+        { "label": "UNIX", "value": "NAP", "code": "CSAEC393" }
+      ],
+      "cv": [
+        { "label": "Integral Transforms & Calculus of Variation", "value": "integral_transforms_calculus_of_variation", "code": "CV31" },
+        { "label": "Geo-informatics and Digital Surveying", "value": "geo_informatics_and_digital_surveying", "code": "CV32" },
+        { "label": "Strength of Materials", "value": "strength_of_materials", "code": "CV33" },
+        { "label": "Fluid Mechanics and Hydraulics", "value": "fluid_mechanics_and_hydraulics", "code": "CV34" },
+        { "label": "Water Supply Engineering and Conservation", "value": "water_supply_engineering_and_conservation", "code": "CV35" },
+        { "label": "Building Planning and Drawing Laboratory", "value": "building_planning_and_drawing_laboratory", "code": "CVL36" },
+        { "label": "Materials Testing Laboratory", "value": "materials_testing_laboratory", "code": "CVL37" },
+        { "label": "Universal Human Value Course", "value": "universal_human_value_course", "code": "UHV38" }
+      ],
+      "ch": [
+        { "label": "Integral Transforms and Complex Analysis", "value": "integral_transforms_and_complex_analysis", "code": "CH31" },
+        { "label": "Momentum Transfer", "value": "momentum_transfer", "code": "CH32" },
+        { "label": "Chemical Process Calculations", "value": "chemical_process_calculations", "code": "CH33" },
+        { "label": "Mechanical Operation", "value": "mechanical_operation", "code": "CH34" },
+        { "label": "Technical Chemistry", "value": "technical_chemistry", "code": "CH35" },
+        { "label": "Technical Chemistry Lab", "value": "technical_chemistry_lab", "code": "CHL36" },
+        { "label": "Mechanical Operation Lab", "value": "mechanical_operation_lab", "code": "CHL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" }
+      ],
+      "aids": [
+        { "label": "Laplace Transforms and Vector Space", "value": "laplace_transforms_vector_space", "code": "AD31" },
+        { "label": "Computer Networks", "value": "computer_networks", "code": "AD32" },
+        { "label": "Data Structures", "value": "data_structures", "code": "AD33" },
+        { "label": "Computer Organization and Architecture", "value": "computer_organization_architecture", "code": "AD34" },
+        { "label": "Discrete Mathematical Structures", "value": "discrete_mathematical_structures", "code": "AD35" },
+        { "label": "Data Structures Laboratory", "value": "data_structures_lab", "code": "ADL36" },
+        { "label": "Application Development using Java Laboratory", "value": "java_lab", "code": "ADL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" },
+        { "label": "Object Oriented Programming (AEC)", "value": "object_oriented_programming", "code": "ADAEC39" }
+      ],
+      "bt": [
+        { "label": "Integral Transforms and Biomodelling", "value": "integral_transforms_and_biomodelling", "code": "BT31" },
+        { "label": "Cell Biology and Genetics", "value": "cell_biology_and_genetics", "code": "BT32" },
+        { "label": "Bioprocess Principles and Calculations", "value": "bioprocess_principles_and_calculations", "code": "BT33" },
+        { "label": "Biochemistry", "value": "biochemistry", "code": "BT34" },
+        { "label": "Microbiology", "value": "microbiology", "code": "BT35" },
+        { "label": "Biochemistry Lab", "value": "biochemistry_lab", "code": "BTL36" },
+        { "label": "Microbiology Lab", "value": "microbiology_lab", "code": "BTL37" },
+        { "label": "Universal Human Values", "value": "universal_human_values", "code": "UHV38" }
+      ]
+    },
+    "4th Sem": {
+      "ise": [
+        { "label": "Statistics, Probability and Linear Programming", "value": "statistics_probability_and_linear_programming", "code": "IS41" },
+        { "label": "Microcontrollers", "value": "microcontrollers", "code": "IS42" },
+        { "label": "Design and Analysis of Algorithms", "value": "design_and_analysis_of_algorithms", "code": "IS43" },
+        { "label": "Database Management Systems", "value": "database_management_systems", "code": "IS44" },
+        { "label": "Advanced Java", "value": "advanced_java", "code": "IS45" },
+        { "label": "Design and Analysis of Algorithms Lab", "value": "design_and_analysis_of_algorithms_lab", "code": "ISL46" },
+        { "label": "Database Management Systems Lab", "value": "database_management_systems_lab", "code": "ISL47" },
+        { "label": "Advanced Java Lab", "value": "advanced_java_lab", "code": "ISL48" },
+        { "label": "JS and JQuery", "value": "JS and JQuery", "code": "ISAEC493" },
+        { "label": "UI/UX", "value": "UI/UX", "code": "ISAEC491" }
+      ],
+      "ece": [
+        { "label": "Numerical Methods, Statistics & Probability", "value": "numerical_methods_statistics_probability", "code": "EC41" },
+        { "label": "Engineering Electromagnetics", "value": "engineering_electromagnetics", "code": "EC42" },
+        { "label": "Communication System-I", "value": "communication_system_i", "code": "EC43" },
+        { "label": "Microprocessors", "value": "microprocessors", "code": "EC44" },
+        { "label": "Signal Processing", "value": "signal_processing", "code": "EC45" },
+        { "label": "Communication", "value": "communication", "code": "ECL46" },
+        { "label": "Microprocessors Lab", "value": "microprocessors_lab", "code": "ECL47" },
+        { "label": "Signal Processing Lab", "value": "signal_processing_lab", "code": "ECL48" }
+      ],
+      "eie": [
+        { "label": "Numerical Methods, Statistics and Probability", "value": "numerical_methods_statistics_and_probability", "code": "EI41" },
+        { "label": "Control Systems", "value": "control_systems", "code": "EI42" },
+        { "label": "Processor Architecture and Embedded Controllers", "value": "processor_architecture_and_embedded_controllers", "code": "EI43" },
+        { "label": "Process Instrumentation", "value": "process_instrumentation", "code": "EI44" },
+        { "label": "Digital Signal Processing", "value": "digital_signal_processing", "code": "EI45" },
+        { "label": "Digital Signal Processing Lab", "value": "digital_signal_processing_lab", "code": "EIL46" },
+        { "label": "Processor Architecture and Embedded Controllers Lab", "value": "processor_architecture_and_embedded_controllers_lab", "code": "EIL47" },
+        { "label": "Process Instrumentation Lab", "value": "process_instrumentation_lab", "code": "EIL48" },
+        { "label": "Biology for Engineers", "value": "biology_for_engineers", "code": "EIAEC49" }
+      ],
+      "ete": [
+        { "label": "Numerical Methods, Statistics and Probability", "value": "numerical_methods_statistics_and_probability", "code": "ET41" },
+        { "label": "Systems Modelling and Control", "value": "systems_modelling_and_control", "code": "ET42" },
+        { "label": "Microcontrollers", "value": "microcontrollers", "code": "ET43" },
+        { "label": "Engineering Electromagnetics", "value": "engineering_electromagnetics", "code": "ET44" },
+        { "label": "Signal Processing", "value": "signal_processing", "code": "ET45" },
+        { "label": "Microcontroller Lab", "value": "microcontroller_lab", "code": "ETL46" },
+        { "label": "Signal Processing Lab", "value": "signal_processing_lab", "code": "ETL47" },
+        { "label": "Introduction to Machine Learning Lab", "value": "introduction_to_machine_learning_lab", "code": "ETL48" }
+      ],
+      "eee": [
+        { "label": "Numerical Methods and Probability Models", "value": "numerical_methods_and_probability_models", "code": "EE41" },
+        { "label": "Electrical Measurements and Instrumentation", "value": "electrical_measurements_and_instrumentation", "code": "EE42" },
+        { "label": "Field Theory", "value": "field_theory", "code": "EE43" },
+        { "label": "Microcontroller Programming & Interfacing", "value": "microcontroller_programming_interfacing", "code": "EE44" },
+        { "label": "Electric Networks", "value": "electric_networks", "code": "EE45" },
+        { "label": "Microcontrollers & Applications Lab", "value": "microcontrollers_applications_lab", "code": "EEL46" },
+        { "label": "Electrical AC Machines Lab", "value": "electrical_ac_machines_lab", "code": "EEL47" },
+        { "label": "Introduction to Product Design Lab", "value": "introduction_to_product_design_lab", "code": "EEL48" },
+        { "label": "Introduction to Earthing practices", "value": "introduction_to_earthing_practices", "code": "EEAEC49" }
+      ],
+      "iem": [
+        { "label": "Computational Techniques And Graph Theory", "value": "computational_techniques_and_graph_theory", "code": "IM41" },
+        { "label": "Operations Research", "value": "operations_research", "code": "IM42" },
+        { "label": "Mechanical Measurements and Metrology", "value": "mechanical_measurements_and_metrology", "code": "IM43" },
+        { "label": "Facilities Planning and Design", "value": "facilities_planning_and_design", "code": "IM44" },
+        { "label": "Applied Probability and Statistics", "value": "applied_probability_and_statistics", "code": "IM45" },
+        { "label": "Mechanical Measurements and Metrology Lab", "value": "mechanical_measurements_and_metrology_lab", "code": "IML46" },
+        { "label": "Applied Probability and Statistics Lab", "value": "applied_probability_and_statistics_lab", "code": "IML47" },
+        { "label": "Computer", "value": "computer", "code": "IML48" }
+      ],
+      "me": [
+        { "label": "Statistics, probability distributions and complex analysis", "value": "statistics_probability_distributions_and_complex_analysis", "code": "ME41" },
+        { "label": "Machine Design-I", "value": "machine_design_i", "code": "ME42" },
+        { "label": "Applied Thermodynamics", "value": "applied_thermodynamics", "code": "ME43" },
+        { "label": "Mechanical Measurements & Metrology", "value": "mechanical_measurements_metrology", "code": "ME44" },
+        { "label": "Manufacturing Process II", "value": "manufacturing_process_ii", "code": "ME45" },
+        { "label": "Applied Thermodynamics Laboratory", "value": "applied_thermodynamics_laboratory", "code": "MEL46" },
+        { "label": "Mechanical Measurements & Metrology Laboratory", "value": "mechanical_measurements_metrology_laboratory", "code": "MEL47" },
+        { "label": "Manufacturing Process Laboratory", "value": "manufacturing_process_laboratory", "code": "MEL48" },
+        { "label": "Fundamentals of sensors and actuators", "value": "fundamentals_of_sensors_and_actuators", "code": "MEAEC49" }
+      ],
+      "md": [
+        { "label": "Numerical methods, Statistics and Probability", "value": "numerical_methods_statistics_and_probability", "code": "MD41" },
+        { "label": "Control Systems", "value": "control_systems", "code": "MD42" },
+        { "label": "Linear Integrated Circuits and its Applications", "value": "linear_integrated_circuits_and_its_applications", "code": "MD43" },
+        { "label": "Real Time Embedded Systems", "value": "real_time_embedded_systems", "code": "MD44" },
+        { "label": "Biomedical Signal Processing", "value": "biomedical_signal_processing", "code": "MD45" },
+        { "label": "Linear Integrated Circuits Lab", "value": "linear_integrated_circuits_lab", "code": "MDL46" },
+        { "label": "Real Time Embedded Systems Lab", "value": "real_time_embedded_systems_lab", "code": "MDL47" },
+        { "label": "Biomedical Signal Processing Lab", "value": "biomedical_signal_processing_lab", "code": "MDL48" }
+      ],
+      "cy": [
+        { "label": "Statistics, Probability And Linear Programming", "value": "statistics_probability_and_linear_programming", "code": "CY41" },
+        { "label": "Operating Systems", "value": "operating_systems", "code": "CY42" },
+        { "label": "Design and Analysis of Algorithms", "value": "design_and_analysis_of_algorithms", "code": "CY43" },
+        { "label": "Automata Theory and Compiler Design", "value": "automata_theory_and_compiler_design", "code": "CY44" },
+        { "label": "Database Management Systems", "value": "database_management_systems", "code": "CY45" },
+        { "label": "Database Management Systems Laboratory", "value": "database_management_systems_laboratory", "code": "CYL46" },
+        { "label": "Algorithms Laboratory", "value": "algorithms_laboratory", "code": "CYL47" },
+        { "label": "Data Visualization Laboratory", "value": "data_visualization_laboratory", "code": "CYL48" }
+      ],
+      "ci": [
+        { "label": "Statistics, Probability And Linear Programming", "value": "statistics_probability_and_linear_programming", "code": "CI41" },
+        { "label": "Operating Systems", "value": "operating_systems", "code": "CI42" },
+        { "label": "Design and Analysis of Algorithms", "value": "design_and_analysis_of_algorithms", "code": "CI43" },
+        { "label": "Automata Theory and Compiler Design", "value": "automata_theory_and_compiler_design", "code": "CI44" },
+        { "label": "Database Management Systems", "value": "database_management_systems", "code": "CI45" },
+        { "label": "Database Management Systems Laboratory", "value": "database_management_systems_laboratory", "code": "CIL46" },
+        { "label": "Algorithms Laboratory", "value": "algorithms_laboratory", "code": "CIL47" },
+        { "label": "Data Visualization Laboratory", "value": "data_visualization_laboratory", "code": "CIL48" }
+      ],
+      "aids": [
+        { "label": "Statistics and Probability for Data Science", "value": "statistics_and_probability_for_data_science", "code": "AD41" },
+        { "label": "Data Communication and Networking", "value": "data_communication_and_networking", "code": "AD42" },
+        { "label": "Design and Analysis of Algorithms", "value": "design_and_analysis_of_algorithms", "code": "AD43" },
+        { "label": "Theory of Computation", "value": "theory_of_computation", "code": "AD44" },
+        { "label": "Linear programming & Queueing theory", "value": "linear_programming_queueing_theory", "code": "AD45" },
+        { "label": "Algorithms Laboratory", "value": "algorithms_laboratory", "code": "ADL46" },
+        { "label": "Statistical Programming Laboratory", "value": "statistical_programming_laboratory", "code": "ADL47" },
+        { "label": "Data Modeling and Visualization Laboratory", "value": "data_modeling_and_visualization_laboratory", "code": "ADL48" }
+      ],
+      "cse": [
+        { "label": "Statistics, Probability and Linear Programming", "value": "statistics_probability_and_linear_programming", "code": "CS41" },
+        { "label": "Microcontrollers and IoT", "value": "microcontrollers_and_iot", "code": "CS42" },
+        { "label": "Design and Analysis of Algorithms", "value": "design_and_analysis_of_algorithms", "code": "CS43" },
+        { "label": "Operating Systems", "value": "operating_systems", "code": "CS44" },
+        { "label": "Database Systems", "value": "database_systems", "code": "CS45" },
+        { "label": "Design and Analysis of Algorithms Laboratory", "value": "design_and_analysis_of_algorithms_laboratory", "code": "CSL46" },
+        { "label": "Database Modelling Laboratory", "value": "database_modelling_laboratory", "code": "CSL47" },
+        { "label": "Systems programming lab", "value": "systems_programming_lab", "code": "CSL48" }
+      ],
+      "cv": [
+        { "label": "Statistics, Probability andLinear Programming", "value": "statistics_probability_and_linear_programming", "code": "CV41" },
+        { "label": "Construction Materials and Technology", "value": "construction_materials_and_technology", "code": "CV42" },
+        { "label": "Hydrology and Water Resources Engineering", "value": "hydrology_and_water_resources_engineering", "code": "CV43" },
+        { "label": "Analysis of Determinate and Indeterminate Structures", "value": "analysis_of_determinate_and_indeterminate_structures", "code": "CV44" },
+        { "label": "Waste Water Engineering and Management", "value": "waste_water_engineering_and_management", "code": "CV45" },
+        { "label": "Environmental Engineering Laboratory", "value": "environmental_engineering_laboratory", "code": "CVL46" },
+        { "label": "Digital Terrain Mapping Laboratory", "value": "digital_terrain_mapping_laboratory", "code": "CVL47" }
+      ],
+      "ch": [
+        { "label": "Statistics, Probability and Design of Experiments", "value": "statistics_probability_and_design_of_experiments", "code": "CH41" },
+        { "label": "Chemical Reaction Engineering-I", "value": "chemical_reaction_engineering_i", "code": "CH42" },
+        { "label": "Process Heat Transfer", "value": "process_heat_transfer", "code": "CH43" },
+        { "label": "Mass Transfer-I", "value": "mass_transfer_i", "code": "CH44" },
+        { "label": "Chemical Engineering Thermodynamics", "value": "chemical_engineering_thermodynamics", "code": "CH45" },
+        { "label": "Pollution Control Lab", "value": "pollution_control_lab", "code": "CHL46" },
+        { "label": "Heat Transfer Lab", "value": "heat_transfer_lab", "code": "CHL47" },
+        { "label": "Process Equipment Drawing (AutoCAD)", "value": "process_equipment_drawing_autocad", "code": "CHL48" }
+      ],
+      "aiml": [
+        { "label": "Statistics, Probability and Linear Programming", "value": "statistics_probability_linear_programming", "code": "AI41" },
+        { "label": "Data Communication & Networking", "value": "data_communication_networking", "code": "AI42" },
+        { "label": "Design and Analysis of Algorithms", "value": "design_analysis_algorithms", "code": "AI43" },
+        { "label": "Theory of Computation", "value": "theory_of_computation", "code": "AI44" },
+        { "label": "Introduction to Machine Learning", "value": "introduction_machine_learning", "code": "AI45" },
+        { "label": "Algorithms Laboratory", "value": "algorithms_lab", "code": "AIL46" },
+        { "label": "Data Modeling & Visualisation Laboratory", "value": "data_modeling_visualisation_lab", "code": "AIL47" },
+        { "label": "Machine Learning Laboratory", "value": "machine_learning_lab", "code": "AIL48" },
+        { "label": "Software Engineering", "value": "software_engineering", "code": "AIAEC49" }
+      ],
+      "bt": [
+        { "label": "Biostatistics and Design of Experiments", "value": "biostatistics_and_design_of_experiments", "code": "BT41" },
+        { "label": "Structural Biology & Analytical Techniques", "value": "structural_biology_analytical_techniques", "code": "BT42" },
+        { "label": "Fundamentals of Biochemical Engineering", "value": "fundamentals_of_biochemical_engineering", "code": "BT43" },
+        { "label": "Molecular Biology and Genetic Engineering", "value": "molecular_biology_and_genetic_engineering", "code": "BT44" },
+        { "label": "Biochemical Thermodynamics and Heat Transfer", "value": "biochemical_thermodynamics_and_heat_transfer", "code": "BT45" },
+        { "label": "Biochemical Engineering Lab", "value": "biochemical_engineering_lab", "code": "BTL46" },
+        { "label": "Molecular Biology and Genetic Engineering Lab", "value": "molecular_biology_and_genetic_engineering_lab", "code": "BTL47" },
+        { "label": "Bioanalytical Technique Lab", "value": "bioanalytical_technique_lab", "code": "BTL48" },
+        { "label": "Bioethics", "value": "bioethics", "code": "BTAEC49" }
+      ]
+    }
+  },
+  "3rd Year": {
+    "5th Sem": {
+      "ise": [
+        { "label": "Software Engineering", "value": "software_engineering", "code": "IS51" },
+        { "label": "Artificial Intelligence", "value": "artificial_intelligence", "code": "IS52" },
+        { "label": "Computer Networks", "value": "computer_networks", "code": "IS53" },
+        { "label": "Theory of Computation", "value": "theory_of_computation", "code": "IS54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "ISE55x" },
+        { "label": "Data Visualization Lab", "value": "data_visualization_lab", "code": "ISL56" },
+        { "label": "Computer Networks lab", "value": "computer_networks_lab", "code": "ISL57" },
+        { "label": "Research Methodology & Intellectual property rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "ece": [
+        { "label": "Communication System-II", "value": "communication_system_ii", "code": "EC51" },
+        { "label": "Computer Communication Network", "value": "computer_communication_network", "code": "EC52" },
+        { "label": "CMOS VLSI Design", "value": "cmos_vlsi_design", "code": "EC53" },
+        { "label": "Microwave Devices & antennas", "value": "microwave_devices_antennas", "code": "EC54" },
+        { "label": "Program Elective Course- 1", "value": "program_elective_course_1", "code": "ECE55x" },
+        { "label": "CMOS VLSI Design Lab", "value": "cmos_vlsi_design_lab", "code": "ECL56" },
+        { "label": "Microwaves & Antenna Laboratory", "value": "microwaves_antenna_laboratory", "code": "ECL57" },
+        { "label": "Research Methodology & Intellectual Property Rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "ete": [
+        { "label": "Analog & Digital Communications", "value": "analog_digital_communications", "code": "ET51" },
+        { "label": "Embedded System Design", "value": "embedded_system_design", "code": "ET52" },
+        { "label": "Digital Signal Processing", "value": "digital_signal_processing", "code": "ET53" },
+        { "label": "Computer Communication Networks", "value": "computer_communication_networks", "code": "ET54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "ETE55x" },
+        { "label": "Analog & Digital Communication Lab", "value": "analog_digital_communication_lab", "code": "ETL56" },
+        { "label": "Digital Signal Processing Lab", "value": "digital_signal_processing_lab", "code": "ETL57" },
+        { "label": "Research Methodology", "value": "research_methodology", "code": "AL58" }
+      ],
+      "eie": [
+        { "label": "", "value": "", "code": "EI51" },
+        { "label": "", "value": "", "code": "EI52" },
+        { "label": "", "value": "", "code": "EI53" },
+        { "label": "", "value": "", "code": "EI54" },
+        { "label": "", "value": "", "code": "EI55" },
+        { "label": "", "value": "", "code": "EIL56" },
+        { "label": "", "value": "", "code": "EIL57" },
+        { "label": "", "value": "", "code": "EI58" },
+        { "label": "", "value": "", "code": "EIAEC59" }
+      ],
+      "eee": [
+        { "label": "Digital Signal Processing", "value": "digital_signal_processing", "code": "EE51" },
+        { "label": "Advanced Industrial Automation", "value": "advanced_industrial_automation", "code": "EE52" },
+        { "label": "Power Electronics", "value": "power_electronics", "code": "EE53" },
+        { "label": "Control Systems", "value": "control_systems", "code": "EE54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "EEE55x" },
+        { "label": "Power Electronics Lab", "value": "power_electronics_lab", "code": "EEL56" },
+        { "label": "Digital Signal Processing Lab", "value": "digital_signal_processing_lab", "code": "EEL57" },
+        { "label": "Research Methodology and Intellectual property rights", "value": "research_methodology_and_intellectual_property_rights", "code": "AL58" }
+      ],
+      "iem": [
+        { "label": "Simulation Modelling and Analysis", "value": "simulation_modelling_and_analysis", "code": "IM51" },
+        { "label": "Computer Integrated Manufacturing and Automation", "value": "computer_integrated_manufacturing_and_automation", "code": "IM52" },
+        { "label": "Operations Management", "value": "operations_management", "code": "IM53" },
+        { "label": "Enterprise Resource Planning", "value": "enterprise_resource_planning", "code": "IM54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "IME55x" },
+        { "label": "Facilities Planning and Design Lab", "value": "facilities_planning_and_design_lab", "code": "IML56" },
+        { "label": "Enterprise Resource Planning Lab", "value": "enterprise_resource_planning_lab", "code": "IML57" },
+        { "label": "Research Methodology & Intellectual property rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "me": [
+        { "label": "Heat Transfer", "value": "heat_transfer", "code": "ME51" },
+        { "label": "Theory of Machines", "value": "theory_of_machines", "code": "ME52" },
+        { "label": "Fluid Mechanics & Machinery", "value": "fluid_mechanics_machinery", "code": "ME53" },
+        { "label": "Machine Design-II", "value": "machine_design_ii", "code": "ME54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "MEE55x" },
+        { "label": "Turbo machinery Laboratory", "value": "turbo_machinery_laboratory", "code": "MEL56" },
+        { "label": "Design and Dynamics Laboratory", "value": "design_and_dynamics_laboratory", "code": "MEL57" },
+        { "label": "Research Methodology & Intellectual property rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "md": [
+        { "label": "Medical Physics", "value": "medical_physics", "code": "MD51" },
+        { "label": "Digital Image Processing", "value": "digital_image_processing", "code": "MD52" },
+        { "label": "Biomedical Instrumentation", "value": "biomedical_instrumentation", "code": "MD53" },
+        { "label": "Diagnostic and Therapeutic Equipment", "value": "diagnostic_and_therapeutic_equipment", "code": "MD54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "MDE55x" },
+        { "label": "Medical Physics Lab", "value": "medical_physics_lab", "code": "MDL56" },
+        { "label": "Biomedical Instrumentation Lab", "value": "biomedical_instrumentation_lab", "code": "MDL57" },
+        { "label": "Research Methodology & Intellectual Property Rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "cy": [
+        { "label": "Foundations to AI & ML", "value": "foundations_to_ai_ml", "code": "CY51" },
+        { "label": "Advanced Computer Networks", "value": "advanced_computer_networks", "code": "CY52" },
+        { "label": "Cryptography and Network Security", "value": "cryptography_and_network_security", "code": "CY53" },
+        { "label": "Software Engineering", "value": "software_engineering", "code": "CY54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "CYE55x" },
+        { "label": "Application Development using Java Laboratory", "value": "application_development_using_java_laboratory", "code": "CYL56" },
+        { "label": "Cryptography and Network Security Laboratory", "value": "cryptography_and_network_security_laboratory", "code": "CYL57" },
+        { "label": "Research Methodology & Intellectual Property Rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "ci": [
+        { "label": "Big Data Systems", "value": "big_data_systems", "code": "CI51" },
+        { "label": "Foundations of Artificial Intelligence and Computational Agents", "value": "foundations_of_artificial_intelligence_and_computational_agents", "code": "CI52" },
+        { "label": "Machine Learning", "value": "machine_learning", "code": "CI53" },
+        { "label": "Software Engineering", "value": "software_engineering", "code": "CI54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "CIE55x" },
+        { "label": "Application Development using Java Laboratory", "value": "application_development_using_java_laboratory", "code": "CIL56" },
+        { "label": "Machine Learning Laboratory", "value": "machine_learning_laboratory", "code": "CIL57" },
+        { "label": "Research Methodology & Intellectual Property Rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "aids": [
+        { "label": "Data Mining and Machine Learning", "value": "data_mining_and_machine_learning", "code": "AD51" },
+        { "label": "Operating Systems", "value": "operating_systems", "code": "AD52" },
+        { "label": "Data Storage Techniques", "value": "data_storage_techniques", "code": "AD53" },
+        { "label": "Fundamentals of Data Science", "value": "fundamentals_of_data_science", "code": "AD54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "ADE553" },
+        { "label": "Machine Learning Laboratory", "value": "machine_learning_laboratory", "code": "ADL56" },
+        { "label": "Parallel Programming Laboratory", "value": "parallel_programming_laboratory", "code": "ADL57" },
+        { "label": "Research Methodology & Intellectual property rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" },
+        { "label": "Data Visualisation using POWER BI", "value": "data_visualisation_power_bi", "code": "ADAEC59"}
+      ],
+      "aiml": [
+        { "label": "Fundamentals of Data Science", "value": "fundamentals_data_science", "code": "AI51" },
+        { "label": "Operating Systems", "value": "operating_systems", "code": "AI52" },
+        { "label": "Natural Language Processing", "value": "natural_language_processing", "code": "AI53" },
+        { "label": "Parallel Programming", "value": "parallel_programming", "code": "AI54" },
+        { "label": "Computer Organisation & Architecture", "value": "computer_organisation_architecture", "code": "AIE553" },
+        { "label": "Natural Language Processing Laboratory", "value": "nlp_lab", "code": "AIL56" },
+        { "label": "Parallel Programming Laboratory", "value": "parallel_programming_lab", "code": "AIL57" },
+        { "label": "Research Methodology & Intellectual Property Rights", "value": "research_methodology_ipr", "code": "AI58" },
+        { "label": "Data Visualisation using Power BI (AEC)", "value": "data_visualisation_power_bi", "code": "AIAEC59" }
+      ],
+      "cse": [
+        { "label": "Software Engineering and Modelling", "value": "software_engineering_and_modelling", "code": "CS51" },
+        { "label": "Artificial Intelligence and Machine Learning", "value": "artificial_intelligence_and_machine_learning", "code": "CS52" },
+        { "label": "Database Systems", "value": "database_systems", "code": "CS53" },
+        { "label": "Operating Systems", "value": "operating_systems", "code": "CS54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "CSE55x" },
+        { "label": "Database Laboratory", "value": "database_laboratory", "code": "CSL56" },
+        { "label": "Full Stack Development Lab", "value": "full_stack_development_lab", "code": "CSL57" },
+        { "label": "Research Methodology & Intellectual property rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "cv": [
+        { "label": "Design of reinforced concrete Elements", "value": "design_of_reinforced_concrete_elements", "code": "CV51" },
+        { "label": "Highway Engineering", "value": "highway_engineering", "code": "CV52" },
+        { "label": "Geotechnical Engineering -I", "value": "geotechnical_engineering_i", "code": "CV53" },
+        { "label": "Prestressed concrete", "value": "prestressed_concrete", "code": "CV54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "CVE55x" },
+        { "label": "Concrete Laboratory", "value": "concrete_laboratory", "code": "CVL56" },
+        { "label": "Highway Engineering Laboratory", "value": "highway_engineering_laboratory", "code": "CVL57" },
+        { "label": "Research Methodology & Intellectual property rights", "value": "research_methodology_intellectual_property_rights", "code": "AL58" }
+      ],
+      "ch": [
+        { "label": "Chemical Reaction Engineering - II", "value": "chemical_reaction_engineering_ii", "code": "CH51" },
+        { "label": "Process Equipment Design", "value": "process_equipment_design", "code": "CH52" },
+        { "label": "Chemical Process Industries", "value": "chemical_process_industries", "code": "CH53" },
+        { "label": "Mass Transfer-II", "value": "mass_transfer_ii", "code": "CH54" },
+        { "label": "Program Elective Course - 1", "value": "program_elective_course_1", "code": "CHE55X" },
+        { "label": "Mass Transfer Lab", "value": "mass_transfer_lab", "code": "CHL56" },
+        { "label": "Computational Methods Lab", "value": "computational_methods_lab", "code": "CHL57" },
+        { "label": "Research Methodology", "value": "research_methodology", "code": "AL58" }
+      ],
+      "bt": [
+        { "label": "Biokinetics and Bioreaction Engineering", "value": "biokinetics_and_bioreaction_engineering", "code": "BT51" },
+        { "label": "Nanotechnology", "value": "nanotechnology", "code": "BT52" },
+        { "label": "Genomics, Proteomics & Bioinformatics", "value": "genomics_proteomics_bioinformatics", "code": "BT53" },
+        { "label": "Immunology", "value": "immunology", "code": "BT54" },
+        { "label": "Program Elective Course – 1", "value": "program_elective_course_1", "code": "BTE55x" },
+        { "label": "Bioinformatics Lab", "value": "bioinformatics_lab", "code": "BTL56" },
+        { "label": "Immunotechnology Lab", "value": "immunotechnology_lab", "code": "BTL57" },
+        { "label": "Research Methodology and Intellectual Property Rights", "value": "research_methodology_and_intellectual_property_rights", "code": "AL58" },
+        { "label": "Scientific Writing & Communication", "value": "scientific_writing_communication", "code": "BTAEC510" }
+      ]
+    },
+    "6th Sem": {
+      "ise": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Machine Learning", "value": "machine_learning", "code": "IS62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "ISE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "ISE64x" },
+        { "label": "Machine Learning Lab", "value": "machine_learning_lab", "code": "ISL65" },
+        { "label": "DevOps Lab", "value": "devops_lab", "code": "ISL66" },
+        { "label": "Open Elective - 1", "value": "open_elective_1", "code": "ISOE0X" }
+      ],
+      "ece": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Embedded Syste  m Design", "value": "embedded_system_design", "code": "EC62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "ECE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "ECE64x" },
+        { "label": "Communication Systems Lab-II", "value": "communication_systems_lab_ii", "code": "ECL65" },
+        { "label": "Embedded System Design Lab", "value": "embedded_system_design_lab", "code": "ECL66" },
+        { "label": "Institutional Open Elective – 1", "value": "institutional_open_elective_1", "code": "ECOE0x" }
+      ],
+      "eie": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "PLC and SCADA", "value": "plc_and_scada", "code": "EI62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "EIE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "EIE64x" },
+        { "label": "Virtual Instrumentation lab", "value": "virtual_instrumentation_lab", "code": "EIL65" },
+        { "label": "PLC and SCADA Lab", "value": "plc_and_scada_lab", "code": "EIL66" },
+        { "label": "Institutional Open Elective – 1", "value": "institutional_open_elective_1", "code": "xxOE0x" }
+      ],
+      "ete": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Microwave & Antenna Engineering", "value": "microwave_antenna_engineering", "code": "ET62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "ETE63X" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "ETE64X" },
+        { "label": "Microwave & Antenna Engineering Lab", "value": "microwave_antenna_engineering_lab", "code": "ETL65" },
+        { "label": "Computer Communication Networks Lab", "value": "computer_communication_networks_lab", "code": "ETL66" },
+        { "label": "Open Elective course- 1", "value": "open_elective_course_1", "code": "ETOE01" }
+      ],
+      "eee": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Power System Engineering-I", "value": "power_system_engineering_i", "code": "EE62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "EEE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "EEE64x" },
+        { "label": "Control Systems Lab", "value": "control_systems_lab", "code": "EEL65" },
+        { "label": "Building Automation Lab", "value": "building_automation_lab", "code": "EEL66" },
+        { "label": "Open Elective - 1", "value": "open_elective_1", "code": "EEOE0x" }
+      ],
+      "iem": [
+        { "label": "Management and Entrepreneurship", "value": "management_and_entrepreneurship", "code": "AL61" },
+        { "label": "Quality Assurance & Reliability", "value": "quality_assurance_reliability", "code": "IM62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "IME63X" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "IME64X" },
+        { "label": "Simulation Modelling and Analysis Lab", "value": "simulation_modelling_and_analysis_lab", "code": "IML65" },
+        { "label": "Quality Assurance & Reliability Lab", "value": "quality_assurance_reliability_lab", "code": "IML66" },
+        { "label": "Institutional Open Elective – 1", "value": "institutional_open_elective_1", "code": "IMOE01" }
+      ],
+      "me": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Finite Element Analysis", "value": "finite_element_analysis", "code": "ME62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "MEE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "MEE64x" },
+        { "label": "Finite Element Analysis Laboratory", "value": "finite_element_analysis_laboratory", "code": "MEL65" },
+        { "label": "Heat and Mass Transfer Laboratory", "value": "heat_and_mass_transfer_laboratory", "code": "MEL66" },
+        { "label": "Institutional Open Elective - 1", "value": "institutional_open_elective_1", "code": "MEOE0x" }
+      ],
+      "md": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Biomedical Image Processing", "value": "biomedical_image_processing", "code": "MD62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "MDE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "MDE64x" },
+        { "label": "Diagnostic and Therapeutic Equipment Lab", "value": "diagnostic_and_therapeutic_equipment_lab", "code": "MDL65" },
+        { "label": "Biomedical Image Processing Lab", "value": "biomedical_image_processing_lab", "code": "MDL66" },
+        { "label": "Institutional Open Elective – 1", "value": "institutional_open_elective_1", "code": "MDOE0x" }
+      ],
+      "cy": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Cyber Security attacks and Defense Strategies", "value": "cyber_security_attacks_and_defense_strategies", "code": "CY62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "CYE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "CYE64x" },
+        { "label": "Vulnerability Assessment and Penetration Testing Laboratory", "value": "vulnerability_assessment_and_penetration_testing_laboratory", "code": "CYL65" },
+        { "label": "Cyber Shield Laboratory", "value": "cyber_shield_laboratory", "code": "CYL66" },
+        { "label": "Institutional open elective", "value": "institutional_open_elective", "code": "CYOE0x" }
+      ],
+      "ci": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Deep Learning and Computer Vision", "value": "deep_learning_and_computer_vision", "code": "CI62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "CIE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "CIE64x" },
+        { "label": "Deep Learning Laboratory", "value": "deep_learning_laboratory", "code": "CIL65" },
+        { "label": "Data Visualization Laboratory", "value": "data_visualization_laboratory", "code": "CIL66" },
+        { "label": "Institutional Open Elective - 1", "value": "institutional_open_elective_1", "code": "CIOE0x" }
+      ],
+      "aids": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Deep Learning", "value": "deep_learning", "code": "AD62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "ADE631" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "ADE641" },
+        { "label": "Data Science Laboratory", "value": "data_science_laboratory", "code": "ADL65" },
+        { "label": "Deep Learning Laboratory", "value": "deep_learning_laboratory", "code": "ADL66" },
+        { "label": "Institutional Open Elective – 1", "value": "institutional_open_elective_1", "code": "ADOE0x" }
+      ],
+      "aiml": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AI61" },
+        { "label": "Deep Learning", "value": "deep_learning", "code": "AI62" },
+        { "label": "Automation Design & Development", "value": "automation_design_development", "code": "AIE632" },
+        { "label": "NoSQL Databases", "value": "nosql_databases", "code": "AIE641" },
+        { "label": "Deep Learning Laboratory", "value": "deep_learning_lab", "code": "AIL65" },
+        { "label": "OpenCV Laboratory", "value": "opencv_lab", "code": "AIL66" },
+        { "label": "Open Electives - 1", "value": "open_elective_1", "code": "XXOEXX" }
+      ],
+      "cse": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Cloud computing and BigData", "value": "cloud_computing_and_bigdata", "code": "CS62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "CSE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "CSE64x" },
+        { "label": "Penetration Testing and Secure Systems Laboratory", "value": "penetration_testing_and_secure_systems_laboratory", "code": "CSL65" },
+        { "label": "Unix System Programming Laboratory", "value": "unix_system_programming_laboratory", "code": "CSL66" },
+        { "label": "Institutional Open Elective – 1", "value": "institutional_open_elective_1", "code": "CSOE0x" }
+      ],
+      "cv": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Design of Structural Steel Elements", "value": "design_of_structural_steel_elements", "code": "CV62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "CVE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "CVE64x" },
+        { "label": "Geotechnical Engineering Lab", "value": "geotechnical_engineering_lab", "code": "CVL65" },
+        { "label": "Detailing of Structural Elements Laboratory", "value": "detailing_of_structural_elements_laboratory", "code": "CVL66" },
+        { "label": "Institutional Open Elective - 1", "value": "institutional_open_elective_1", "code": "CVOE0x" }
+      ],
+      "ch": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Process Control", "value": "process_control", "code": "CH62" },
+        { "label": "Program Elective Course - 2", "value": "program_elective_course_2", "code": "CHE63X" },
+        { "label": "Program Elective Course - 3", "value": "program_elective_course_3", "code": "CHE64X" },
+        { "label": "Simulation Lab - I", "value": "simulation_lab_i", "code": "CHL65" },
+        { "label": "Process Control Lab", "value": "process_control_lab", "code": "CHL66" },
+        { "label": "Open Elective - 1", "value": "open_elective_1", "code": "CHOE01" }
+      ],
+      "bt": [
+        { "label": "Management & Entrepreneurship", "value": "management_entrepreneurship", "code": "AL61" },
+        { "label": "Upstream & Downstream Bioprocessing", "value": "upstream_downstream_bioprocessing", "code": "BT62" },
+        { "label": "Program Elective Course – 2", "value": "program_elective_course_2", "code": "BTE63x" },
+        { "label": "Program Elective Course – 3", "value": "program_elective_course_3", "code": "BTE64x" },
+        { "label": "Upstream Bioprocessing Lab", "value": "upstream_bioprocessing_lab", "code": "BTL65" },
+        { "label": "Biokinetics and Bioreaction Engineering Lab", "value": "biokinetics_and_bioreaction_engineering_lab", "code": "BTL66" },
+        { "label": "Biology for Engineers", "value": "biology_for_engineers", "code": "BTOE01" }
+      ]
+    }
+  }
+}
