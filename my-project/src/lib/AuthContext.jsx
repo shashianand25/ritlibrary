@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, isAdmin: ADMIN_MODE_ENABLED ? isAdmin : false, isAuthLoading, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, isAdmin, isAuthLoading, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
