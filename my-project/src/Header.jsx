@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { Menu, X, LogIn, LogOut, ShieldCheck, ChevronDown } from 'lucide-react';
 import { useAuth } from './lib/AuthContext.jsx';
 
