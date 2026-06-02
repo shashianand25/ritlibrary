@@ -1,101 +1,116 @@
 {
-    "1st Year": {
+  "1st Year": {
     "1st Sem": {
       "cs": [
-        { "label": "Maths", "value": "maths", "code": "MAC11" },
-        { "label": "Physics", "value": "physics", "code": "PYC12" },
-        { "label": "English", "value": "english", "code": "HSCP15" },
+        { "label": "Calculus & Linear Algebra", "value": "calculus_linear_algebra", "code": "MAC11" },
+        { "label": "Quantum Physics & Applications", "value": "quantum_physics", "code": "PYC12" },
+        { "label": "Programming in C", "value": "programming_in_c", "code": "PSCCS14" },
+        { "label": "Soft Skills", "value": "soft_skills", "code": "HSCP15" },
         { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
-        { "label": "Health", "value": "health", "code": "AECP17" },
-        { "label": "C Programming", "value": "c_programming", "code": "PPC18" },
-        { "label": "PLC", "value": "esc", "elective": true }
+        { "label": "Innovation & Design Thinking Lab", "value": "design_thinking", "code": "AEC17" },
+        { "label": "C Programming Lab", "value": "c_programming_lab", "code": "PSCLCS18" },
+        { "label": "Computer Aided Engineering Drawing - CS", "value": "caed_cs", "code": "MELC19" },
+        { "label": "Engineering Science Course - I", "value": "esc", "elective": true }
       ],
       "electronics": [
-        { "label": "Maths", "value": "maths", "code": "MA102" },
-        { "label": "Physics", "value": "physics", "code": "PH102" },
-        { "label": "English", "value": "english", "code": "HSCP15" },
-        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
-        { "label": "Health", "value": "health", "code": "AECP17" },
-        { "label": "Basic Electronics", "value": "basic_electronics", "code": "ESC" },
-        { "label": "ESC", "value": "esc", "elective": true },
-        { "label": "ETC", "value": "etc", "elective": true }
+        { "label": "Differential Calculus & Linear Algebra", "value": "differential_calculus", "code": "MAE11" },
+        { "label": "Applied Chemistry for Emerging Electronics", "value": "applied_chemistry", "code": "CYE12" },
+        { "label": "Introduction to C Programming", "value": "c_programming", "code": "PLC14" },
+        { "label": "Introduction to AI & Applications", "value": "intro_ai", "code": "ETC15" },
+        { "label": "Communication Skills", "value": "communication_skills", "code": "HSCC16" },
+        { "label": "Innovation & Design Thinking Lab", "value": "design_thinking", "code": "AEC17" },
+        { "label": "Constitution of India & Engineering Ethics", "value": "constitution", "code": "HSCC18" },
+        { "label": "Engineering Science Course - I", "value": "esc", "elective": true }
       ],
       "electrical": [
-        { "label": "Maths", "value": "maths", "code": "MA103" },
-        { "label": "Physics", "value": "physics", "code": "PH103" },
-        { "label": "English", "value": "english", "code": "HSCP15" },
-        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
-        { "label": "Health", "value": "health", "code": "AECP17" },
-        { "label": "Elements of Electrical Engineering", "value": "electrical_eng", "code": "ESC" },
-        { "label": "ESC", "value": "esc", "elective": true },
-        { "label": "ETC", "value": "etc", "elective": true }      ],
+        { "label": "Differential Calculus & Linear Algebra", "value": "differential_calculus", "code": "MAE11" },
+        { "label": "Applied Chemistry for Emerging Electronics", "value": "applied_chemistry", "code": "CYE12" },
+        { "label": "Introduction to C Programming", "value": "c_programming", "code": "PLC14" },
+        { "label": "Introduction to AI & Applications", "value": "intro_ai", "code": "ETC15" },
+        { "label": "Communication Skills", "value": "communication_skills", "code": "HSCC16" },
+        { "label": "Innovation & Design Thinking Lab", "value": "design_thinking", "code": "AEC17" },
+        { "label": "Constitution of India & Engineering Ethics", "value": "constitution", "code": "HSCC18" },
+        { "label": "Engineering Science Course - I", "value": "esc", "elective": true }
+      ],
       "civil": [
-        { "label": "Maths", "value": "maths", "code": "MA104" },
-        { "label": "Physics", "value": "physics", "code": "PH104" },
-        { "label": "English", "value": "english", "code": "HSCP15" },
-        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
-        { "label": "Health", "value": "health", "code": "AECP17" },
-        { "label": "Civil Engineering Mechanics", "value": "civil_mechanics", "code": "CAED" },
-        { "label": "ESC", "value": "esc", "elective": true },
-        { "label": "ETC", "value": "etc", "elective": true }      ],
+        { "label": "Differential Calculus & Linear Algebra", "value": "differential_calculus", "code": "MAV11" },
+        { "label": "Applied Chemistry for Sustainable Structures", "value": "applied_chemistry", "code": "CYV12" },
+        { "label": "Introduction to C Programming", "value": "c_programming", "code": "PLC14" },
+        { "label": "Introduction to AI & Applications", "value": "intro_ai", "code": "ETC15" },
+        { "label": "Communication Skills", "value": "communication_skills", "code": "HSCC16" },
+        { "label": "Innovation & Design Thinking Lab", "value": "design_thinking", "code": "AEC17" },
+        { "label": "Constitution of India & Engineering Ethics", "value": "constitution", "code": "HSCC18" },
+        { "label": "Engineering Science Course - I", "value": "esc", "elective": true }
+      ],
       "mech": [
-        { "label": "Maths", "value": "maths", "code": "MA105" },
-        { "label": "Physics", "value": "physics", "code": "PH105" },
-        { "label": "English", "value": "english", "code": "HSCP15" },
-        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP16" },
-        { "label": "Health", "value": "health", "code": "AECP17" },
-        { "label": "Elements of Mechanical Engineering", "value": "mechanical_eng", "code": "PLC" },
-        { "label": "ESC", "value": "esc", "elective": true },
-        { "label": "ETC", "value": "etc", "elective": true }      ]
+        { "label": "Differential Calculus & Linear Algebra", "value": "differential_calculus", "code": "MAM11" },
+        { "label": "Applied Chemistry for Advanced Metal Protection", "value": "applied_chemistry", "code": "CYM12" },
+        { "label": "Introduction to C Programming", "value": "c_programming", "code": "PLC14" },
+        { "label": "Introduction to AI & Applications", "value": "intro_ai", "code": "ETC15" },
+        { "label": "Communication Skills", "value": "communication_skills", "code": "HSCC16" },
+        { "label": "Innovation & Design Thinking Lab", "value": "design_thinking", "code": "AEC17" },
+        { "label": "Constitution of India & Engineering Ethics", "value": "constitution", "code": "HSCC18" },
+        { "label": "Engineering Science Course - I", "value": "esc", "elective": true }
+      ]
     },
     "2nd Sem": {
       "cs": [
-        { "label": "Maths", "value": "maths", "code": "MAC21" },
-        { "label": "Chemistry", "value": "chemistry", "code": "CH106" },
-        { "label": "English", "value": "english", "code": "HSCC15" },
-        { "label": "Constitution", "value": "constitution", "code": "constitution" },
-        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
-        { "label": "C Programming", "value": "c_programming", "code": "PPC18" },
-        { "label": "ESC", "value": "esc", "elective": true },
-        { "label": "ETC", "value": "etc", "elective": true }      ],
+        { "label": "Numerical Methods", "value": "numerical_methods", "code": "MAC21" },
+        { "label": "Applied Chemistry for Smart Systems", "value": "applied_chemistry", "code": "CYC22" },
+        { "label": "Python Programming", "value": "python_programming", "code": "PLC24" },
+        { "label": "Introduction to AI & Applications", "value": "intro_ai", "code": "ETC25" },
+        { "label": "Communication Skills", "value": "communication_skills", "code": "HSCC26" },
+        { "label": "Interdisciplinary Project-Based Learning", "value": "interdisciplinary_project", "code": "AEC27" },
+        { "label": "Constitution of India & Engineering Ethics", "value": "constitution", "code": "HSCC28" },
+        { "label": "Engineering Science Course - II", "value": "esc", "elective": true }
+      ],
       "electronics": [
-        { "label": "Maths", "value": "maths", "code": "MAE22" },
-        { "label": "Chemistry", "value": "chemistry", "code": "CH107" },
-        { "label": "English", "value": "english", "code": "HSCC15" },
-        { "label": "Constitution", "value": "constitution", "code": "constitution" },
-        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
-        { "label": "Basic Electronics", "value": "basic_electronics", "code": "ESC" },
-        { "label": "PLC", "value": "plc", "elective": true }
+        { "label": "Calculus, Laplace Transform & Numerical Techniques", "value": "calculus_laplace", "code": "MAE21" },
+        { "label": "Quantum Physics & Electronic Sensors", "value": "quantum_physics", "code": "PYEC22" },
+        { "label": "Fundamentals of Electronics & Communication Engineering", "value": "basic_electronics", "code": "PSCEC24" },
+        { "label": "Soft Skills", "value": "soft_skills", "code": "HSCP25" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP26" },
+        { "label": "Interdisciplinary Project-Based Learning", "value": "interdisciplinary_project", "code": "AEC27" },
+        { "label": "Fundamentals of Electronics & Communication Engineering Lab", "value": "electronics_lab", "code": "PSCLEC28" },
+        { "label": "Computer Aided Engineering Drawing - EC", "value": "caed_ec", "code": "MELEC29" },
+        { "label": "Engineering Science Course - II", "value": "esc", "elective": true }
       ],
       "electrical": [
-        { "label": "Maths", "value": "maths", "code": "MAE23" },
-        { "label": "Chemistry", "value": "chemistry", "code": "CH108" },
-        { "label": "English", "value": "english", "code": "HSCC15" },
-        { "label": "Constitution", "value": "constitution", "code": "constitution" },
-        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
-        { "label": "Elements of Electrical Engineering", "value": "electrical_eng", "code": "ESC" },
-        { "label": "PLC", "value": "plc", "elective": true }
+        { "label": "Calculus, Laplace Transform & Numerical Techniques", "value": "calculus_laplace", "code": "MAE21" },
+        { "label": "Physics of Electrical & Electronics Materials", "value": "physics_materials", "code": "PYEE22" },
+        { "label": "Basics of Electrical Engineering", "value": "electrical_eng", "code": "PSCEE24" },
+        { "label": "Soft Skills", "value": "soft_skills", "code": "HSCP25" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP26" },
+        { "label": "Interdisciplinary Project-Based Learning", "value": "interdisciplinary_project", "code": "AEC27" },
+        { "label": "Basic Electrical Engineering Lab", "value": "electrical_lab", "code": "PSCLEE28" },
+        { "label": "Computer Aided Engineering Drawing - EE", "value": "caed_ee", "code": "MELEE29" },
+        { "label": "Engineering Science Course - II", "value": "esc", "elective": true }
       ],
       "civil": [
-        { "label": "Maths", "value": "maths", "code": "MAE24" },
-        { "label": "Chemistry", "value": "chemistry", "code": "CH109" },
-        { "label": "English", "value": "english", "code": "HSCC15" },
-        { "label": "Constitution", "value": "constitution", "code": "constitution" },
-        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
-        { "label": "Civil Engineering Mechanics", "value": "civil_mechanics", "code": "CAED" },
-        { "label": "PLC", "value": "plc", "elective": true }
+        { "label": "Differential Calculus & Numerical Methods", "value": "calculus_numerical", "code": "MAV21" },
+        { "label": "Physics for Sustainable Structural Systems", "value": "physics", "code": "PYV22" },
+        { "label": "Engineering Mechanics", "value": "engineering_mechanics", "code": "PSCCV24" },
+        { "label": "Soft Skills", "value": "soft_skills", "code": "HSCP25" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP26" },
+        { "label": "Interdisciplinary Project-Based Learning", "value": "interdisciplinary_project", "code": "AEC27" },
+        { "label": "Mechanics & Materials Lab", "value": "mechanics_lab", "code": "PSCLCV28" },
+        { "label": "Computer Aided Engineering Drawing - CV", "value": "caed_cv", "code": "MELV29" },
+        { "label": "Engineering Science Course - II", "value": "esc", "elective": true }
       ],
       "mech": [
-        { "label": "Maths", "value": "maths", "code": "MAE25" },
-        { "label": "Chemistry", "value": "chemistry", "code": "CH110" },
-        { "label": "English", "value": "english", "code": "HSCC15" },
-        { "label": "Constitution", "value": "constitution", "code": "constitution" },
-        { "label": "Design Thinking", "value": "design_thinking", "code": "AECC17" },
-        { "label": "Elements of Mechanical Engineering", "value": "mechanical_eng", "code": "PLC" },
-        { "label": "PLC", "value": "plc", "elective": true }
+        { "label": "Multivariable Calculus & Numerical Methods", "value": "multivariable_calculus", "code": "MAM21" },
+        { "label": "Physics of Materials", "value": "physics_materials", "code": "PYM22" },
+        { "label": "Elements of Mechanical Engineering", "value": "mechanical_eng", "code": "PSCME24" },
+        { "label": "Soft Skills", "value": "soft_skills", "code": "HSCP25" },
+        { "label": "Kannada Kali", "value": "kannada_kali", "code": "HSCP26" },
+        { "label": "Interdisciplinary Project-Based Learning", "value": "interdisciplinary_project", "code": "AEC27" },
+        { "label": "Elements of Mechanical Engineering Lab/Workshop", "value": "mechanical_lab", "code": "PSCLME28" },
+        { "label": "Computer Aided Engineering Drawing - ME", "value": "caed_me", "code": "MELM29" },
+        { "label": "Engineering Science Course - II", "value": "esc", "elective": true }
       ]
     }
   },
+
   "2nd Year": {
     "3rd Sem": {
       "ise": [

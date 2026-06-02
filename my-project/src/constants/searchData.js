@@ -45,24 +45,13 @@ export const examTypesList = ["CIE1", "CIE2", "SEE"];
 
 export const electiveOptions = {
   esc: [
-    { label: "C Programming", value: "esc_cp" },
-    { label: "Civil", value: "esc_civil" },
-    { label: "Electrical", value: "esc_elec" },
-    { label: "Electronics", value: "esc_ece" },
-    { label: "Mechanical", value: "esc_mech" },
-  ],
-  plc: [
-    { label: "C++", value: "plc_cpp" },
-    { label: "Java", value: "plc_java" },
-    { label: "Python", value: "plc_python" },
-    { label: "Web Programming", value: "plc_web" },
-  ],
-  etc: [
-    { label: "Cyber Security", value: "etc_cyber" },
-    { label: "Green Building", value: "etc_green" },
-    { label: "IoT", value: "etc_iot" },
-    { label: "Solar Energy", value: "etc_solar" },
-  ],
+  { label: "Building Sciences and Mechanics", value: "ESC131", code: "ESC131/231" },
+  { label: "Introduction to Electrical Engineering", value: "ESC132", code: "ESC132/232" },
+  { label: "Introduction to Electronics & Communication Engineering", value: "ESC133", code: "ESC133/233" },
+  { label: "Introduction to Mechanical Engineering", value: "ESC134", code: "ESC134/234" },
+  { label: "Essentials of Information Technology", value: "ESC135", code: "ESC135/235" },
+],
+
 };
 
 // Always dark — no light mode
