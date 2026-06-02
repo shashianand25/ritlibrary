@@ -246,6 +246,10 @@ app.get('/api/drive-root', (req, res) => {
   res.json({ folderId: process.env.DRIVE_ROOT_ID });
 });
 
+app.get('/api/files.json', (req, res) => {
+  res.redirect(302, 'https://shashianand25.github.io/ritlibrary-data/files.json');
+});
+
 app.post('/api/check-admin', async (req, res) => {
   try {
     const { email } = req.body;
