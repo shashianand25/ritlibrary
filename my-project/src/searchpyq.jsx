@@ -21,7 +21,7 @@ import { CircleLoader } from "./components/Loaders.jsx";
 import { StyledSelect, PillBtn } from "./components/UIElements.jsx";
 import { FileRow } from "./components/FileRow.jsx";
 
-const FILES_JSON_URL = import.meta.env.VITE_FILES_JSON_URL || "/api/files.json";
+const FILES_JSON_URL = import.meta.env.VITE_FILES_JSON_URL || "https://library-backend.ritlibrary.workers.dev/";
 
 function normalizeSearch(str) {
   return (str || "").toLowerCase().replace(/[\s/_-]+/g, '');
