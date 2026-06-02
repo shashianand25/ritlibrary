@@ -590,9 +590,9 @@ export default function Contribute() {
                         {mode === "notes" ? "Notes Folders" : "PYQ Year Folders"} — {effectiveSubjectCode}
                       </p>
                       {mode === "pyq" && (
-                        <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 600, color: C.secondary, cursor: "pointer", background: `${C.primary}15`, padding: "4px 8px", borderRadius: 6, border: `1px solid ${C.primary}44` }}>
-                          <input type="checkbox" checked={isAllSubjects} onChange={(e) => setIsAllSubjects(e.target.checked)} style={{ accentColor: C.primary, cursor: "pointer" }} />
+                        <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, color: C.secondary, cursor: "pointer", background: `${C.primary}15`, padding: "6px 12px", borderRadius: 8, border: `1px solid ${C.primary}44` }}>
                           Upload bundle of all subjects?
+                          <input type="checkbox" checked={isAllSubjects} onChange={(e) => setIsAllSubjects(e.target.checked)} style={{ accentColor: C.primary, cursor: "pointer", width: 16, height: 16 }} />
                         </label>
                       )}
                     </div>
