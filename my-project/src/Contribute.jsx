@@ -8,7 +8,7 @@ import {
 import Header from "./Header.jsx";
 import { useAuth } from "./lib/AuthContext.jsx";
 import subjectsData from "./data/subjects.json";
-import { branchGroups, COLORS, sectionCountsByBranch } from "./constants/searchData.js";
+import { branchGroups, COLORS, sectionCountsByBranch, electiveOptions } from "./constants/searchData.js";
 
 const WORKER = import.meta.env.VITE_WORKER_URL || "https://library-backend.ritlibrary.workers.dev";
 const FILES_JSON_URL = WORKER;
@@ -237,7 +237,7 @@ function FolderFilesPanel({ folder, files, isAdmin, deletingFileId, deleteError,
 }
 
 /* ── Upload Modal ── */
-function UploadModal({ folder, subjectCode, category, year, sem, branch, onClose, onSuccess }) {
+function UploadModal({ folder, subjectCode, category, year, sem, branch, allSubjects = false, onClose, onSuccess }) {
   const { user } = useAuth();
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("idle");
@@ -267,6 +267,7 @@ function UploadModal({ folder, subjectCode, category, year, sem, branch, onClose
       formData.append("subjectCode", subjectCode);
       formData.append("folderName", folder);
       formData.append("section", section);
+      formData.append("allSubjects", allSubjects ? "true" : "false");
       formData.append("uploaderName", user.displayName || user.email || "Unknown");
 
       const xhr = new XMLHttpRequest();
@@ -404,6 +405,8 @@ export default function Contribute() {
   const [semester, setSemester] = useState(() => localStorage.getItem("contributeSem") || "");
   const [branch, setBranch] = useState(() => localStorage.getItem("contributeBranch") || "");
   const [subject, setSubject] = useState(() => localStorage.getItem("contributeSubject") || "");
+  const [subSubject, setSubSubject] = useState(() => localStorage.getItem("contributeSubSubject") || "");
+  const [showElective, setShowElective] = useState(() => localStorage.getItem("contributeShowElective") === "true");
   const [subjectCode, setSubjectCode] = useState(() => localStorage.getItem("contributeSubjectCode") || "");
   const [isAllSubjects, setIsAllSubjects] = useState(false);
 
@@ -423,6 +426,8 @@ export default function Contribute() {
   useEffect(() => { localStorage.setItem("contributeSem", semester); }, [semester]);
   useEffect(() => { localStorage.setItem("contributeBranch", branch); }, [branch]);
   useEffect(() => { localStorage.setItem("contributeSubject", subject); }, [subject]);
+  useEffect(() => { localStorage.setItem("contributeSubSubject", subSubject); }, [subSubject]);
+  useEffect(() => { localStorage.setItem("contributeShowElective", showElective); }, [showElective]);
   useEffect(() => { localStorage.setItem("contributeSubjectCode", subjectCode); }, [subjectCode]);
 
 
@@ -431,14 +436,29 @@ export default function Contribute() {
   const branches = year ? (branchGroups[year] || []) : [];
   const subjects = (year && semester && branch) ? getSubjects(year, semester, branch) : [];
 
-  const handleSem = (e) => { setSemester(e.target.value); setBranch(""); setSubject(""); setSubjectCode(""); setActiveFolder(""); };
-  const handleBranch = (e) => { setBranch(e.target.value); setSubject(""); setSubjectCode(""); setActiveFolder(""); };
+  const handleSem = (e) => { setSemester(e.target.value); setBranch(""); setSubject(""); setSubSubject(""); setShowElective(false); setSubjectCode(""); setActiveFolder(""); };
+  const handleBranch = (e) => { setBranch(e.target.value); setSubject(""); setSubSubject(""); setShowElective(false); setSubjectCode(""); setActiveFolder(""); };
   const handleSubject = (e) => {
     const val = e.target.value;
     setSubject(val);
     setIsAllSubjects(false);
     const sel = subjects.find(s => s.value === val);
-    setSubjectCode(sel?.code || sel?.value || "");
+    if (sel?.elective) {
+      setShowElective(true);
+      setSubSubject("");
+      setSubjectCode("");
+    } else {
+      setShowElective(false);
+      setSubSubject("");
+      setSubjectCode(sel?.code || sel?.value || "");
+    }
+    setActiveFolder("");
+  };
+
+  const handleSubSubject = (e) => {
+    const val = e.target.value;
+    setSubSubject(val);
+    setSubjectCode(val);
     setActiveFolder("");
   };
 
@@ -560,6 +580,17 @@ export default function Contribute() {
                   <option value="" disabled hidden>Select Subject</option>
                   {subjects.map(({ label, value }) => <option key={value} value={value}>{label}</option>)}
                 </Dropdown>
+
+                <AnimatePresence>
+                  {showElective && (
+                    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} style={{ display: "flex", flexGrow: 1, minWidth: 200 }}>
+                      <Dropdown label="Elective Topic" value={subSubject} onChange={handleSubSubject} disabled={!subject}>
+                        <option value="" disabled hidden>Select Elective</option>
+                        {electiveOptions[subject]?.map(({ label, value }) => <option key={value} value={value}>{label}</option>)}
+                      </Dropdown>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {selectionDone && (
@@ -567,7 +598,11 @@ export default function Contribute() {
                   style={{ marginTop: 14, padding: "8px 14px", borderRadius: 10, background: `${C.primary}15`, border: `1px solid ${C.primary}33`, display: "inline-flex", alignItems: "center", gap: 10 }}>
                   <span style={{ fontSize: 14, fontWeight: 800, color: C.secondary }}>{subjectCode}</span>
                   <span style={{ fontSize: 12, opacity: 0.55 }}>·</span>
-                  <span style={{ fontSize: 12, opacity: 0.6 }}>{subjects.find(s => s.value === subject)?.label}</span>
+                  <span style={{ fontSize: 12, opacity: 0.6 }}>
+                    {showElective 
+                      ? electiveOptions[subject]?.find(e => e.value === subSubject)?.label 
+                      : subjects.find(s => s.value === subject)?.label}
+                  </span>
                 </motion.div>
               )}
             </motion.div>
@@ -584,22 +619,22 @@ export default function Contribute() {
               ) : (
                 <motion.div key="folders" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
                   {/* Folder bar header */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: mode === "pyq" ? "1fr auto 1fr" : "1fr auto", alignItems: "center", gap: 16, marginBottom: 16 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                       <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", opacity: 0.4 }}>
                         {mode === "notes" ? "Notes Folders" : "PYQ Year Folders"} — {effectiveSubjectCode}
                       </p>
-                      {mode === "pyq" && (
-                        <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, color: C.secondary, cursor: "pointer", background: `${C.primary}15`, padding: "6px 12px", borderRadius: 8, border: `1px solid ${C.primary}44` }}>
-                          Upload bundle of all subjects?
-                          <input type="checkbox" checked={isAllSubjects} onChange={(e) => setIsAllSubjects(e.target.checked)} style={{ accentColor: C.primary, cursor: "pointer", width: 16, height: 16 }} />
-                        </label>
-                      )}
                     </div>
+                    {mode === "pyq" && (
+                      <label style={{ justifySelf: "center", display: "flex", alignItems: "center", gap: 10, fontSize: 13, fontWeight: 700, color: C.secondary, cursor: "pointer", background: `${C.primary}15`, padding: "8px 14px", borderRadius: 10, border: `1px solid ${C.primary}44` }}>
+                        Upload all subjects PYQ
+                        <input type="checkbox" checked={isAllSubjects} onChange={(e) => setIsAllSubjects(e.target.checked)} style={{ accentColor: C.primary, cursor: "pointer", width: 16, height: 16 }} />
+                      </label>
+                    )}
                     {canUpload && (
                       <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                         onClick={() => setShowAddFolder(p => !p)}
-                        style={{ display: "flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 10, border: `1px solid ${C.primary}44`, background: `${C.primary}0d`, color: C.secondary, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>
+                        style={{ justifySelf: "end", display: "flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 10, border: `1px solid ${C.primary}44`, background: `${C.primary}0d`, color: C.secondary, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>
                         <Plus size={13} /> Add Folder
                       </motion.button>
                     )}
@@ -681,6 +716,7 @@ export default function Contribute() {
               subjectCode={isAllSubjects ? "ALL" : effectiveSubjectCode}
               category={mode === "notes" ? "Notes" : "PYQ"}
               year={year} sem={semester} branch={branch}
+              allSubjects={mode === "pyq" && isAllSubjects}
               onClose={() => setUploadTarget(null)}
               onSuccess={file => { setLocalFiles(p => [...p, file]); setUploadTarget(null); }}
             />
