@@ -405,6 +405,7 @@ export default function Contribute() {
   const [branch, setBranch] = useState(() => localStorage.getItem("contributeBranch") || "");
   const [subject, setSubject] = useState(() => localStorage.getItem("contributeSubject") || "");
   const [subjectCode, setSubjectCode] = useState(() => localStorage.getItem("contributeSubjectCode") || "");
+  const [isAllSubjects, setIsAllSubjects] = useState(false);
 
   const [customFolders, setCustomFolders] = useState([]);
   const [showAddFolder, setShowAddFolder] = useState(false);
@@ -435,6 +436,7 @@ export default function Contribute() {
   const handleSubject = (e) => {
     const val = e.target.value;
     setSubject(val);
+    setIsAllSubjects(false);
     const sel = subjects.find(s => s.value === val);
     setSubjectCode(sel?.code || sel?.value || "");
     setActiveFolder("");
@@ -456,10 +458,11 @@ export default function Contribute() {
   const baseFolders = mode === "notes" ? NOTE_FOLDERS : PYQ_FOLDERS;
   const allFolders = [...baseFolders, ...customFolders];
   const selectionDone = semester && branch && subject && subjectCode;
+  const effectiveSubjectCode = isAllSubjects ? "ALL" : subjectCode;
 
   const folderFiles = (folder) => {
     const category = mode === "notes" ? "Notes" : "PYQ";
-    return allDisplayFiles.filter(f => matchesFolder(f, category, subjectCode, folder));
+    return allDisplayFiles.filter(f => matchesFolder(f, category, effectiveSubjectCode, folder));
   };
   const fileCount = (folder) => folderFiles(folder).length;
 
@@ -582,9 +585,17 @@ export default function Contribute() {
                 <motion.div key="folders" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
                   {/* Folder bar header */}
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-                    <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", opacity: 0.4 }}>
-                      {mode === "notes" ? "Notes Folders" : "PYQ Year Folders"} — {subjectCode}
-                    </p>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                      <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", opacity: 0.4 }}>
+                        {mode === "notes" ? "Notes Folders" : "PYQ Year Folders"} — {effectiveSubjectCode}
+                      </p>
+                      {mode === "pyq" && (
+                        <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 600, color: C.secondary, cursor: "pointer", background: `${C.primary}15`, padding: "4px 8px", borderRadius: 6, border: `1px solid ${C.primary}44` }}>
+                          <input type="checkbox" checked={isAllSubjects} onChange={(e) => setIsAllSubjects(e.target.checked)} style={{ accentColor: C.primary, cursor: "pointer" }} />
+                          Upload bundle of all subjects?
+                        </label>
+                      )}
+                    </div>
                     {canUpload && (
                       <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                         onClick={() => setShowAddFolder(p => !p)}
@@ -667,7 +678,7 @@ export default function Contribute() {
           {uploadTarget && (
             <UploadModal
               folder={uploadTarget}
-              subjectCode={subjectCode}
+              subjectCode={isAllSubjects ? "ALL" : effectiveSubjectCode}
               category={mode === "notes" ? "Notes" : "PYQ"}
               year={year} sem={semester} branch={branch}
               onClose={() => setUploadTarget(null)}

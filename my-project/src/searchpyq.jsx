@@ -310,12 +310,35 @@ export default function SearchPYQ() {
 
       const pyqResults = allData.filter(file => {
         if (getFileCategory(file) !== "pyq") return false;
-        if (normalizeSearch(getFileSubjectCode(file)) !== code) return false;
+        
+        const fileCode = normalizeSearch(getFileSubjectCode(file));
+        if (fileCode !== code) {
+          if (fileCode === "all") {
+             if (form.sem && form.branch) {
+               if (file.sem !== form.sem || file.branch !== form.branch) return false;
+             }
+          } else {
+            return false;
+          }
+        }
+        
         const searchable = normalizeSearch(`${file.name} ${file.view || ""} ${file.folderName || ""}`);
         return examTypes.some(t => searchable.includes(normalizeSearch(t)));
       });
       const notesResults = allData.filter(file => {
-        return getFileCategory(file) === "notes" && normalizeSearch(getFileSubjectCode(file)) === code;
+        if (getFileCategory(file) !== "notes") return false;
+        
+        const fileCode = normalizeSearch(getFileSubjectCode(file));
+        if (fileCode !== code) {
+          if (fileCode === "all") {
+             if (form.sem && form.branch) {
+               if (file.sem !== form.sem || file.branch !== form.branch) return false;
+             }
+          } else {
+            return false;
+          }
+        }
+        return true;
       });
 
       setPdfFiles(Array.from(new Map(pyqResults.map(f => [f.id, f])).values()));

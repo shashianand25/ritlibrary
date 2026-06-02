@@ -23,14 +23,6 @@ export default defineConfig(({ command }) => ({
 
   server: {
     historyApiFallback: true,
-    proxy: {
-      // Proxy all /api routes (including /api/pdf) to your Render backend
-      '/api': {
-        target: 'https://pyq-backend-xs9d.onrender.com',
-        changeOrigin: true,
-        secure: true,
-      },
-    },
   },
   resolve: {
     alias: command === 'build' ? {
