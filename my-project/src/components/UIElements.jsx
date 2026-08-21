@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { PdfIcon, ImageIcon } from '../svg.jsx';
-import { pillButtonBase } from '../constants/sharedStyles.js';
+import { pillButtonBase, inputLabelStyle, selectFieldStyle } from '../constants/sharedStyles.js';
 
 /* ────────── file icon ────────── */
 export const FileIcon = ({ fileName, mimeType }) => {
@@ -33,19 +33,7 @@ export function StyledSelect({
 }) {
   return (
     <div>
-      <label
-        style={{
-          display: 'block',
-          fontSize: 12,
-          fontWeight: 700,
-          letterSpacing: '0.06em',
-          textTransform: 'uppercase',
-          opacity: 0.6,
-          marginBottom: 6,
-        }}
-      >
-        {label}
-      </label>
+      <label style={inputLabelStyle}>{label}</label>
       <div style={{ position: 'relative' }}>
         <select
           name={name}
@@ -54,18 +42,9 @@ export function StyledSelect({
           disabled={disabled}
           required={required}
           style={{
-            width: '100%',
-            appearance: 'none',
+            ...selectFieldStyle,
             cursor: disabled ? 'not-allowed' : 'pointer',
-            padding: '10px 36px 10px 14px',
-            borderRadius: 12,
-            background: 'rgba(255,255,255,0.06)',
-            border: '1px solid rgba(255,255,255,0.12)',
             color: disabled ? 'rgba(255,255,255,0.3)' : colors?.text || '#fff',
-            fontSize: 14,
-            fontWeight: 500,
-            outline: 'none',
-            transition: 'border 0.2s, box-shadow 0.2s',
           }}
           onFocus={(e) => {
             if (colors?.primary) {
