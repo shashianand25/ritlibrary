@@ -24,6 +24,24 @@ export default defineConfig(({ command }) => ({
   server: {
     historyApiFallback: true,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-icons': ['lucide-react'],
+          'vendor-firebase': ['firebase/app', 'firebase/auth'],
+          'vendor-pdf': [
+            'pdfjs-dist',
+            'react-pdf',
+            '@react-pdf-viewer/core',
+            '@react-pdf-viewer/default-layout',
+          ],
+        },
+      },
+    },
+  },
   resolve: {
     alias:
       command === 'build'
