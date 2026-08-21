@@ -8,7 +8,7 @@ let currentEnvironment = 'production';
 let currentRelease = '1.3.0';
 
 export const Sentry = {
-  init({ dsn } = {}) {
+  init({ dsn, environment = 'production', release = '1.3.0' } = {}) {
     if (!dsn || typeof dsn !== 'string' || !dsn.trim()) {
       initialized = false;
       currentDsn = null;
