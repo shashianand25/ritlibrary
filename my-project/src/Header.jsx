@@ -123,10 +123,7 @@ export default function Header() {
             />
           ) : user ? (
             <div ref={userMenuRef} style={{ position: 'relative' }}>
-              <button
-                onClick={() => setUserMenuOpen((p) => !p)}
-                style={userChipStyle}
-              >
+              <button onClick={() => setUserMenuOpen((p) => !p)} style={userChipStyle}>
                 {user.photoURL ? (
                   <img
                     src={user.photoURL}

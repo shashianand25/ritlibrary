@@ -44,6 +44,11 @@ export async function handleRequest(request, env, _ctx) {
 			return sendJson(files);
 		}
 
+		/* GET /api/health — lightweight availability healthcheck */
+		if (request.method === 'GET' && url.pathname === '/api/health') {
+			return sendJson({ status: 'ok', timestamp: new Date().toISOString() });
+		}
+
 		/* GET /api/drive-root — exposes folder ID for client uploads */
 		if (request.method === 'GET' && url.pathname === '/api/drive-root') {
 			return sendJson({ folderId: env.DRIVE_ROOT_ID });

@@ -32,27 +32,58 @@ Thank you for your interest in improving RIT Library! We welcome contributions f
 Before opening a pull request, ensure all tests pass and code style meets project requirements:
 
 ```bash
-# 1. Run automated test suite
-npm run test:coverage
+# 1. Run frontend automated tests with coverage
+npm --prefix my-project run test:coverage
 
-# 2. Run ESLint code checks
+# 2. Run backend automated tests
+npm --prefix library-backend test
+
+# 3. Run full monorepo test suite
+npm test
+
+# 4. Run ESLint code checks
 npm run lint
 
-# 3. Check code formatting
+# 5. Check code formatting
 npm run format:check
 
-# 4. Verify production build
+# 6. Verify production build
 npm run build
 ```
 
 ---
 
-## 📝 Commit Conventions
+## 📝 Commit Conventions & Test-Pairing Policy
 
-We follow the Conventional Commits specification:
-- `feat:` New features
-- `fix:` Bug fixes
-- `refactor:` Code restructuring without behavior changes
-- `test:` Adding or updating unit/component tests
-- `docs:` Documentation improvements
-- `ci:` Continuous integration and automation workflows
+We strictly follow the **[Conventional Commits](https://www.conventionalcommits.org/)** specification and maintain a **mandatory test-pairing policy**:
+
+### 1. Test-Pairing Rule
+- **Every feature (`feat:`) and bugfix (`fix:`) commit MUST include its corresponding unit, component, or integration test within the exact same commit.**
+- Changes submitted without accompanying tests will require revisions before PR approval.
+
+### 2. Commit Types
+- `feat(scope):` New user-facing feature or API capability (paired with tests)
+- `fix(scope):` Bug fix or defect resolution (paired with regression test)
+- `test(scope):` Test suite expansion or test fixture improvements
+- `refactor(scope):` Code restructuring without behavior changes
+- `perf(scope):` Performance optimization or bundle reduction
+- `docs(scope):` Documentation, issue template, or changelog updates
+- `ci(scope):` CI/CD workflows, automation gates, or script enhancements
+- `chore(scope):` Dependency bumps or maintenance tasks
+
+### 3. Commit Message Examples
+```
+feat(backend-health): add /api/health monitoring endpoint with tests
+fix(upload): enforce 50MB file size limit with validation tests
+refactor(router): decompose fetch dispatch handlers into router.js
+test(auth): add edge case tests for expired token rejection
+```
+
+---
+
+## 🚀 Pull Request Process
+
+1. Create a feature branch from `main`: `git checkout -b feat/my-new-feature`.
+2. Ensure code follows formatting (`npm run format`) and linting rules (`npm run lint`).
+3. Confirm all tests pass (`npm test`).
+4. Fill out the pull request template completely and check off all verification items.

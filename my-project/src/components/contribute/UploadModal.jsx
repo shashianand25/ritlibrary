@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Upload, X, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
 import { useAuth } from '../../lib/AuthContext.jsx';
 import { COLORS, sectionCountsByBranch } from '../../constants/searchData.js';
+import { MAX_UPLOAD_SIZE_BYTES } from '../../utils/validators.js';
 import logger from '../../utils/logger.js';
 
 const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
@@ -48,15 +49,30 @@ export default function UploadModal({
   const inputRef = useRef(null);
   const sectionOptions = getSectionOptions(branch);
 
+  const handleSelectFile = (selectedFile) => {
+    if (!selectedFile) return;
+    if (selectedFile.size > MAX_UPLOAD_SIZE_BYTES) {
+      setErr('File size exceeds maximum allowed limit of 50MB');
+      setFile(null);
+      return;
+    }
+    setErr('');
+    setFile(selectedFile);
+  };
+
   const handleDrop = (e) => {
     e.preventDefault();
     setDrag(false);
     const f = e.dataTransfer.files[0];
-    if (f) setFile(f);
+    if (f) handleSelectFile(f);
   };
 
   const upload = async () => {
     if (!file || status === 'uploading') return;
+    if (file.size > MAX_UPLOAD_SIZE_BYTES) {
+      setErr('File size exceeds maximum allowed limit of 50MB');
+      return;
+    }
     setStatus('uploading');
     setErr('');
     try {

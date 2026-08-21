@@ -5,8 +5,24 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: frontend
     ports:
       - "3000:80"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
+    depends_on:
+      - worker
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: worker
+    ports:
+      - "8787:8787"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+      - ADMIN_EMAILS=admin@college.edu
+      - DRIVE_ROOT_ID=root

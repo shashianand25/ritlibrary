@@ -98,8 +98,8 @@ jobs:
       - name: Install Dependencies
         run: npm --prefix library-backend ci
 
-      - name: Run Backend Tests
-        run: npm --prefix library-backend test
+      - name: Run Backend Tests with Coverage
+        run: npm --prefix library-backend run test:coverage
 
   security:
     name: Security Dependency Audit

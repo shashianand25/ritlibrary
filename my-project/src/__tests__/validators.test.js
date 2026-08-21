@@ -1,5 +1,10 @@
-import { describe, it, expect } from 'vitest';
-import { isValidEmail, sanitizePathSegment, validateUploadMeta } from '../utils/validators.js';
+import {
+  isValidEmail,
+  isValidFileSize,
+  sanitizePathSegment,
+  validateUploadMeta,
+  MAX_UPLOAD_SIZE_BYTES,
+} from '../utils/validators.js';
 
 describe('validators utility suite', () => {
   it('validates email addresses properly', () => {
@@ -8,6 +13,16 @@ describe('validators utility suite', () => {
     expect(isValidEmail('invalid-email')).toBe(false);
     expect(isValidEmail('')).toBe(false);
     expect(isValidEmail(null)).toBe(false);
+  });
+
+  it('validates file sizes accurately within 50MB limit', () => {
+    expect(isValidFileSize(1024)).toBe(true);
+    expect(isValidFileSize(MAX_UPLOAD_SIZE_BYTES)).toBe(true);
+    expect(isValidFileSize(MAX_UPLOAD_SIZE_BYTES + 1)).toBe(false);
+    expect(isValidFileSize(0)).toBe(false);
+    expect(isValidFileSize(-100)).toBe(false);
+    expect(isValidFileSize(NaN)).toBe(false);
+    expect(isValidFileSize('not-a-number')).toBe(false);
   });
 
   it('sanitizes path segments securely', () => {
@@ -34,5 +49,14 @@ describe('validators utility suite', () => {
     const res = validateUploadMeta(invalidMeta);
     expect(res.valid).toBe(false);
     expect(res.errors.length).toBeGreaterThan(0);
+
+    const oversizedFile = { size: MAX_UPLOAD_SIZE_BYTES + 1000, name: 'large.pdf' };
+    const oversizedMeta = {
+      ...validMeta,
+      file: oversizedFile,
+    };
+    const sizeRes = validateUploadMeta(oversizedMeta);
+    expect(sizeRes.valid).toBe(false);
+    expect(sizeRes.errors).toContain('File size exceeds maximum allowed limit of 50MB');
   });
 });

@@ -9,11 +9,20 @@ export default defineConfig({
     setupFiles: './src/setupTests.js',
     css: false,
     fileParallelism: false,
+    maxWorkers: 1,
+    minWorkers: 1,
+    pool: 'threads',
+    poolOptions: {
+      threads: {
+        singleThread: true,
+      },
+    },
     testTimeout: 15000,
     coverage: {
       provider: 'v8',
-      clean: true,
+      clean: false,
       reporter: ['text', 'json', 'html', 'lcov'],
+      reportsDirectory: './coverage',
       exclude: [
         'node_modules/',
         'src/setupTests.js',
