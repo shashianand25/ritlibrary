@@ -18,13 +18,17 @@ vi.mock('../lib/AuthContext.jsx', () => ({
   }),
 }));
 
-describe('ManageAdmins component', () => {
-  it('renders admin management interface for authenticated admins', async () => {
-    global.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      json: async () => ({ dbAdmins: [], bootstrapAdmins: ['admin@rit.edu'] }),
-    });
+vi.mock('../api/client.js', () => ({
+  getAdmins: vi.fn().mockResolvedValue({
+    dbAdmins: [{ email: 'moderator@rit.edu', created_at: new Date().toISOString() }],
+    bootstrapAdmins: ['admin@rit.edu'],
+  }),
+  addAdmin: vi.fn().mockResolvedValue({ success: true }),
+  removeAdmin: vi.fn().mockResolvedValue({ success: true }),
+}));
 
+describe('ManageAdmins component', () => {
+  it('renders admin management interface with mocked API client', async () => {
     render(
       <BrowserRouter>
         <ManageAdmins />
@@ -35,5 +39,6 @@ describe('ManageAdmins component', () => {
       expect(screen.getByText(/Manage Admins/i)).toBeInTheDocument();
     });
     expect(screen.getByText(/Add New Admin/i)).toBeInTheDocument();
+    expect(screen.getByText('moderator@rit.edu')).toBeInTheDocument();
   });
 });

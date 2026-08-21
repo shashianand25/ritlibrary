@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { signInWithPopup, signOut as firebaseSignOut, onAuthStateChanged } from 'firebase/auth';
 import { auth, googleProvider } from './firebase.js';
 import logger from '../utils/logger.js';
+import { checkAdmin as apiCheckAdmin } from '../api/client.js';
 
 export const AuthContext = createContext(null);
-
-const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -14,17 +13,7 @@ export function AuthProvider({ children }) {
   const [isAuthLoading, setIsAuthLoading] = useState(true);
 
   const checkAdmin = useCallback(async (idToken) => {
-    try {
-      const res = await fetch(`${WORKER}/api/check-admin`, {
-        headers: { Authorization: `Bearer ${idToken}` },
-      });
-      if (!res.ok) return false;
-      const data = await res.json();
-      return Boolean(data.isAdmin);
-    } catch (e) {
-      logger.warn('Admin check failed:', e);
-      return false;
-    }
+    return await apiCheckAdmin(idToken);
   }, []);
 
   useEffect(() => {

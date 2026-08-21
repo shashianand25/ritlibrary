@@ -5,8 +5,8 @@ import { Trash2, Plus, ShieldCheck, Mail, Loader2, AlertCircle } from 'lucide-re
 import Header from './Header.jsx';
 import { COLORS } from './constants/searchData.js';
 import { isValidEmail } from './utils/validators.js';
+import { getAdmins, addAdmin, removeAdmin } from './api/client.js';
 
-const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
 const C = COLORS;
 
 const glass = {
@@ -29,11 +29,7 @@ export default function ManageAdmins() {
     if (!user) return;
     try {
       const idToken = await user.getIdToken();
-      const res = await fetch(`${WORKER}/api/admins`, {
-        headers: { Authorization: `Bearer ${idToken}` },
-      });
-      if (!res.ok) throw new Error('Failed to fetch admins');
-      const data = await res.json();
+      const data = await getAdmins(idToken);
       setAdmins(data.dbAdmins || []);
       setBootstrapAdmins(data.bootstrapAdmins || []);
     } catch (err) {
@@ -59,16 +55,7 @@ export default function ManageAdmins() {
     setError('');
     try {
       const idToken = await user.getIdToken();
-      const res = await fetch(`${WORKER}/api/admins`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${idToken}`,
-        },
-        body: JSON.stringify({ newAdminEmail: newEmail }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to add admin');
+      await addAdmin(newEmail, idToken);
       setNewEmail('');
       await fetchAdmins();
     } catch (err) {
@@ -84,16 +71,7 @@ export default function ManageAdmins() {
     setError('');
     try {
       const idToken = await user.getIdToken();
-      const res = await fetch(`${WORKER}/api/admins`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${idToken}`,
-        },
-        body: JSON.stringify({ removeEmail: emailToRemove }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to remove admin');
+      await removeAdmin(emailToRemove, idToken);
       await fetchAdmins();
     } catch (err) {
       setError(err.message);

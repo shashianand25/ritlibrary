@@ -7,8 +7,8 @@ import { COLORS } from './constants/searchData.js';
 import EventCard from './components/events/EventCard.jsx';
 import AdminEventForm from './components/events/AdminEventForm.jsx';
 import logger from './utils/logger.js';
+import { fetchEvents, deleteEvent as apiDeleteEvent } from './api/client.js';
 
-const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
 const PUBLIC_UPLOADS_ENABLED = import.meta.env.VITE_PUBLIC_UPLOADS_ENABLED !== 'false';
 const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED === 'true';
 
@@ -30,11 +30,7 @@ export default function Events() {
   const [deleteError, setDeleteError] = useState('');
 
   useEffect(() => {
-    fetch(`${WORKER}/api/events`)
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch events');
-        return res.json();
-      })
+    fetchEvents()
       .then((data) => setEvents(data.events || []))
       .catch((err) => {
         logger.warn('Failed to load events list', err);
@@ -51,12 +47,7 @@ export default function Events() {
     setDeleteError('');
     try {
       const idToken = user ? await user.getIdToken() : '';
-      const res = await fetch(`${WORKER}/api/events/${encodeURIComponent(event.id)}`, {
-        method: 'DELETE',
-        headers: idToken ? { Authorization: `Bearer ${idToken}` } : {},
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Delete failed');
+      await apiDeleteEvent(event.id, idToken);
       setEvents((prev) => prev.filter((item) => item.id !== event.id));
     } catch (err) {
       logger.error('Failed to delete event', err);

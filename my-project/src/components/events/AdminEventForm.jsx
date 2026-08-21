@@ -5,8 +5,7 @@ import { ImagePlus, ShieldAlert, Plus, X } from 'lucide-react';
 import { useAuth } from '../../lib/AuthContext.jsx';
 import { COLORS } from '../../constants/searchData.js';
 import logger from '../../utils/logger.js';
-
-const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
+import { createEvent } from '../../api/client.js';
 
 const glass = {
   background: 'rgba(20,25,35,0.72)',
@@ -68,13 +67,7 @@ export default function AdminEventForm({ onCreated }) {
       Object.entries(form).forEach(([key, value]) => body.append(key, value));
       body.append('createdBy', user?.displayName || user?.email || 'Admin');
 
-      const res = await fetch(`${WORKER}/api/events`, {
-        method: 'POST',
-        headers: idToken ? { Authorization: `Bearer ${idToken}` } : {},
-        body,
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Event upload failed');
+      const data = await createEvent(body, idToken);
       onCreated(data.event);
       setImage(null);
       setForm({ title: '', description: '', category: 'event', date: '', venue: '', link: '' });
