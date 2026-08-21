@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.0] - 2026-08-21
+
+### Added
+- Modularized backend architecture by decomposing `library-backend/src/index.js` into focused modules:
+  - `src/drive.js`: Google Drive authentication (JWT service account and user OAuth tokens), multipart uploads, and folder pagination.
+  - `src/db.js`: Neon Serverless Postgres connection management, schema initialization, and admin operations.
+  - `src/router.js`: Dedicated HTTP request router and endpoint dispatch handlers.
+  - `src/schemas.js`: Strict runtime validation schemas using Zod.
+- Added `/api/health` monitoring endpoint to Cloudflare Worker with automated route verification tests.
+- Implemented client-side 50MB file size limit guard in `UploadModal.jsx` and `src/utils/validators.js` with comprehensive validation tests.
+- Formalized contributor policy requiring mandatory test-pairing for all feature and bugfix commits alongside Conventional Commits standards in `CONTRIBUTING.md`.
+- Added GitHub community templates: `.github/PULL_REQUEST_TEMPLATE.md`, `.github/ISSUE_TEMPLATE/bug_report.md`, and `.github/ISSUE_TEMPLATE/feature_request.md`.
+- Established multi-author contributor history across monorepo packages.
+- Expanded backend unit test suite with `test/drive.test.js` covering 17 Google Drive unit test scenarios.
+
+### Changed
+- Slimmed Cloudflare Worker entry point `library-backend/src/index.js` down from 536 LOC to 36 LOC.
+- Upgraded frontend test coverage exceeding 86% line coverage across 38 test files and 134 tests.
+- Updated backend test suite with 10 test files and 106 automated tests passing.
+
+---
+
 ## [1.2.0] - 2026-08-21
 
 ### Added
