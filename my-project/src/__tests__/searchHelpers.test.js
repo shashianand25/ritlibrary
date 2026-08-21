@@ -37,7 +37,9 @@ describe('searchHelpers utility', () => {
     });
 
     it('matches when all tokens are present across fields', () => {
-      expect(matchesQuery(mockFile, ['name', 'view', 'subjectCode'], 'operating 21cs44')).toBe(true);
+      expect(matchesQuery(mockFile, ['name', 'view', 'subjectCode'], 'operating 21cs44')).toBe(
+        true
+      );
       expect(matchesQuery(mockFile, ['view'], 'systems unit')).toBe(true);
     });
 
@@ -48,9 +50,33 @@ describe('searchHelpers utility', () => {
 
   describe('filterResources', () => {
     const sampleFiles = [
-      { id: '1', sem: '4', branch: 'CSE', subjectCode: '21CS41', name: 'Math-IV.pdf', view: 'Math IV', category: 'Notes' },
-      { id: '2', sem: '4', branch: 'ISE', subjectCode: '21IS41', name: 'Math-IV-ISE.pdf', view: 'Math IV ISE', category: 'Notes' },
-      { id: '3', sem: '5', branch: 'CSE', subjectCode: '21CS51', name: 'DBMS.pdf', view: 'DBMS Notes', category: 'Notes' },
+      {
+        id: '1',
+        sem: '4',
+        branch: 'CSE',
+        subjectCode: '21CS41',
+        name: 'Math-IV.pdf',
+        view: 'Math IV',
+        category: 'Notes',
+      },
+      {
+        id: '2',
+        sem: '4',
+        branch: 'ISE',
+        subjectCode: '21IS41',
+        name: 'Math-IV-ISE.pdf',
+        view: 'Math IV ISE',
+        category: 'Notes',
+      },
+      {
+        id: '3',
+        sem: '5',
+        branch: 'CSE',
+        subjectCode: '21CS51',
+        name: 'DBMS.pdf',
+        view: 'DBMS Notes',
+        category: 'Notes',
+      },
     ];
 
     it('returns empty array when input items is not an array', () => {

@@ -146,7 +146,12 @@ export default function UploadModal({
               {subjectCode} · {category} · {section}
             </p>
           </div>
-          <button type="button" onClick={onClose} className="text-neutral-400 hover:text-white p-1">
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close modal"
+            className="text-neutral-400 hover:text-white p-1"
+          >
             <X size={20} />
           </button>
         </div>

@@ -13,9 +13,7 @@ describe('StatBanner component', () => {
   });
 
   it('renders custom stats when provided via props', () => {
-    const customStats = [
-      { label: 'Custom Metric', value: '99.9%' },
-    ];
+    const customStats = [{ label: 'Custom Metric', value: '99.9%' }];
 
     render(<StatBanner stats={customStats} />);
 

@@ -8,8 +8,11 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.js',
     css: false,
+    fileParallelism: false,
+    testTimeout: 15000,
     coverage: {
       provider: 'v8',
+      clean: true,
       reporter: ['text', 'json', 'html', 'lcov'],
       exclude: [
         'node_modules/',
@@ -21,10 +24,10 @@ export default defineConfig({
         'src/pdf.jsx',
       ],
       thresholds: {
-        lines: 65,
-        statements: 65,
-        branches: 50,
-        functions: 58,
+        lines: 70,
+        statements: 70,
+        branches: 70,
+        functions: 70,
       },
     },
   },

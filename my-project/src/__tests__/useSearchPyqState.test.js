@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook, act, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import useSearchPyqState from '../hooks/useSearchPyqState.js';
 
@@ -13,18 +13,26 @@ describe('useSearchPyqState hook', () => {
     localStorage.clear();
   });
 
-  it('initializes with default state or localStorage values', () => {
+  it('initializes with default state or localStorage values', async () => {
     localStorage.setItem('searchMode', 'code');
     localStorage.setItem('lastSubjectCode', '21CS32');
 
     const { result } = renderHook(() => useSearchPyqState());
 
+    await waitFor(() => {
+      expect(result.current.allData.length).toBe(1);
+    });
+
     expect(result.current.searchMode).toBe('code');
     expect(result.current.subjectCode).toBe('21CS32');
   });
 
-  it('updates form semester and computes year correctly', () => {
+  it('updates form semester and computes year correctly', async () => {
     const { result } = renderHook(() => useSearchPyqState());
+
+    await waitFor(() => {
+      expect(result.current.allData.length).toBe(1);
+    });
 
     act(() => {
       result.current.handleSemester({ target: { value: '3' } });
@@ -34,8 +42,12 @@ describe('useSearchPyqState hook', () => {
     expect(result.current.form.year).toBe('2nd Year');
   });
 
-  it('persists changes to localStorage', () => {
+  it('persists changes to localStorage', async () => {
     const { result } = renderHook(() => useSearchPyqState());
+
+    await waitFor(() => {
+      expect(result.current.allData.length).toBe(1);
+    });
 
     act(() => {
       result.current.setSubjectCode('21MAT31');

@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook, act, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import useContributeState from '../hooks/useContributeState.js';
 
@@ -33,18 +33,26 @@ describe('useContributeState hook', () => {
     vi.clearAllMocks();
   });
 
-  it('initializes default values from localStorage', () => {
+  it('initializes default values from localStorage', async () => {
     localStorage.setItem('contributeMode', 'pyq');
     localStorage.setItem('contributeSem', '4');
 
     const { result } = renderHook(() => useContributeState());
 
+    await waitFor(() => {
+      expect(result.current.allFiles.length).toBe(1);
+    });
+
     expect(result.current.mode).toBe('pyq');
     expect(result.current.semester).toBe('4');
   });
 
-  it('updates semester and resets child fields', () => {
+  it('updates semester and resets child fields', async () => {
     const { result } = renderHook(() => useContributeState());
+
+    await waitFor(() => {
+      expect(result.current.allFiles.length).toBe(1);
+    });
 
     act(() => {
       result.current.handleSem({ target: { value: '3' } });
@@ -55,8 +63,12 @@ describe('useContributeState hook', () => {
     expect(result.current.subject).toBe('');
   });
 
-  it('switches modes and persists to localStorage', () => {
+  it('switches modes and persists to localStorage', async () => {
     const { result } = renderHook(() => useContributeState());
+
+    await waitFor(() => {
+      expect(result.current.allFiles.length).toBe(1);
+    });
 
     act(() => {
       result.current.handleMode('pyq');
@@ -68,6 +80,10 @@ describe('useContributeState hook', () => {
 
   it('adds custom folder and performs file deletion', async () => {
     const { result } = renderHook(() => useContributeState());
+
+    await waitFor(() => {
+      expect(result.current.allFiles.length).toBe(1);
+    });
 
     act(() => {
       result.current.setNewFolder('Assignment Solutions');

@@ -19,16 +19,27 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: my-project/package-lock.json
+          cache-dependency-path: |
+            my-project/package-lock.json
+            library-backend/package-lock.json
 
-      - name: Install Dependencies
+      - name: Install Frontend Dependencies
         run: npm --prefix my-project ci
 
-      - name: Run ESLint
+      - name: Run Frontend ESLint
         run: npm --prefix my-project run lint
 
-      - name: Run Prettier Check
+      - name: Run Frontend Prettier Check
         run: npm --prefix my-project run format:check
+
+      - name: Install Backend Dependencies
+        run: npm --prefix library-backend ci
+
+      - name: Run Backend ESLint
+        run: npm --prefix library-backend run lint
+
+      - name: Run Backend Prettier Check
+        run: npm --prefix library-backend run format:check
 
   typecheck:
     name: TypeScript Type Check

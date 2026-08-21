@@ -26,7 +26,10 @@ export default function Breadcrumbs({ items = [] }) {
           <React.Fragment key={`${item.label}-${index}`}>
             <ChevronRight className="w-3.5 h-3.5 text-gray-600 shrink-0" />
             {isLast || !item.to ? (
-              <span className="font-medium text-lime-400 truncate max-w-xs" aria-current={isLast ? 'page' : undefined}>
+              <span
+                className="font-medium text-lime-400 truncate max-w-xs"
+                aria-current={isLast ? 'page' : undefined}
+              >
                 {item.label}
               </span>
             ) : (

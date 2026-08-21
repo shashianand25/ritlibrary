@@ -10,24 +10,15 @@
   "scripts": {
     "dev": "npm --prefix my-project run dev",
     "build": "npm --prefix my-project run build",
-    "test": "npm --prefix my-project run test:coverage && npm --prefix library-backend test",
+    "test": "npm --prefix my-project test && npm --prefix library-backend test",
     "test:coverage": "npm --prefix my-project run test:coverage",
     "typecheck": "npm --prefix my-project run typecheck",
-    "lint": "npm --prefix my-project run lint",
-    "format": "npm --prefix my-project run format",
-    "format:check": "npm --prefix my-project run format:check"
-  },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.9.5",
-    "framer-motion": "^12.12.2",
-    "lucide-react": "^0.511.0"
+    "lint": "npm --prefix my-project run lint && npm --prefix library-backend run lint",
+    "format": "npm --prefix my-project run format && npm --prefix library-backend run format",
+    "format:check": "npm --prefix my-project run format:check && npm --prefix library-backend run format:check"
   },
   "devDependencies": {
-    "prettier": "^3.9.6",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.11"
+    "prettier": "^3.9.6"
   },
   "author": "RIT Library Team",
   "license": "ISC",

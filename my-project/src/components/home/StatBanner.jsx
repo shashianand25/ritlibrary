@@ -29,9 +29,7 @@ export default function StatBanner({ stats = DEFAULT_STATS }) {
               <span className="text-2xl sm:text-3xl font-extrabold text-white mb-1">
                 {stat.value}
               </span>
-              <span className="text-xs sm:text-sm text-gray-400 font-medium">
-                {stat.label}
-              </span>
+              <span className="text-xs sm:text-sm text-gray-400 font-medium">{stat.label}</span>
             </div>
           );
         })}

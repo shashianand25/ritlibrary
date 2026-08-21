@@ -12,10 +12,9 @@ describe('useDebounce and useDebouncedCallback hooks', () => {
   });
 
   it('delays updating value until specified timeout passes', () => {
-    const { result, rerender } = renderHook(
-      ({ value, delay }) => useDebounce(value, delay),
-      { initialProps: { value: 'initial', delay: 300 } }
-    );
+    const { result, rerender } = renderHook(({ value, delay }) => useDebounce(value, delay), {
+      initialProps: { value: 'initial', delay: 300 },
+    });
 
     expect(result.current).toBe('initial');
 
@@ -34,10 +33,9 @@ describe('useDebounce and useDebouncedCallback hooks', () => {
   });
 
   it('cancels pending timer on fast successive changes', () => {
-    const { result, rerender } = renderHook(
-      ({ value }) => useDebounce(value, 300),
-      { initialProps: { value: 'first' } }
-    );
+    const { result, rerender } = renderHook(({ value }) => useDebounce(value, 300), {
+      initialProps: { value: 'first' },
+    });
 
     rerender({ value: 'second' });
     act(() => {

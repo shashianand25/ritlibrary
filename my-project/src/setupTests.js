@@ -62,3 +62,7 @@ global.localStorage = storageMock;
 
 // Polyfill scrollTo
 window.scrollTo = () => {};
+
+// Ensure desktop default viewport
+window.innerWidth = 1024;
+window.innerHeight = 768;
