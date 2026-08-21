@@ -10,6 +10,7 @@
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
     "lint": "eslint .",
+    "typecheck": "tsc --project jsconfig.json --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "vite preview"
@@ -57,6 +58,7 @@
     "globals": "^16.0.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.9.6",
+    "typescript": "^7.0.2",
     "vite": "^6.3.5",
     "vitest": "^4.1.11"
   },

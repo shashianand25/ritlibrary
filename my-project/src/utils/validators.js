@@ -30,7 +30,7 @@ export function sanitizePathSegment(value) {
 
 /**
  * Validate upload metadata
- * @param {object} meta
+ * @param {Record<string, any>} [meta]
  * @returns {{ valid: boolean, errors: string[] }}
  */
 export function validateUploadMeta(meta) {

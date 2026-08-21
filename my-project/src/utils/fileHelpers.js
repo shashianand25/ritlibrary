@@ -4,7 +4,7 @@
 
 /**
  * Get category from file object or path
- * @param {object} file
+ * @param {Record<string, any>} [file]
  * @returns {string} 'notes' | 'pyq' | ''
  */
 export function getFileCategory(file) {
@@ -18,7 +18,7 @@ export function getFileCategory(file) {
 
 /**
  * Check if a PYQ file applies to all subjects
- * @param {object} file
+ * @param {Record<string, any>} [file]
  * @returns {boolean}
  */
 export function isAllSubjectsPyq(file) {
@@ -27,7 +27,7 @@ export function isAllSubjectsPyq(file) {
     file.name
       ?.split(/[/\\]/)
       .filter(Boolean)
-      .map((p) => p.toLowerCase()) || [];
+      .map((/** @type {string} */ p) => p.toLowerCase()) || [];
   return (
     getFileCategory(file) === 'pyq' && (file.allSubjects === true || parts.includes('allsubjects'))
   );
@@ -35,7 +35,7 @@ export function isAllSubjectsPyq(file) {
 
 /**
  * Extract subject code from file metadata or structured path
- * @param {object} file
+ * @param {Record<string, any>} [file]
  * @returns {string}
  */
 export function getFileSubjectCode(file) {
@@ -50,7 +50,7 @@ export function getFileSubjectCode(file) {
 
 /**
  * Extract folder name from file metadata or structured path
- * @param {object} file
+ * @param {Record<string, any>} [file]
  * @param {string} [currentSubjectCode='']
  * @returns {string}
  */
@@ -61,14 +61,14 @@ export function getFileFolderName(file, currentSubjectCode = '') {
   const first = parts[0]?.toLowerCase();
   if (first === 'notes' || first === 'pyq') return parts[5] || 'Other';
   const codeIndex = parts.findIndex(
-    (p) => p.toLowerCase() === (currentSubjectCode || '').toLowerCase()
+    (/** @type {string} */ p) => p.toLowerCase() === (currentSubjectCode || '').toLowerCase()
   );
   return codeIndex > 0 ? parts[codeIndex - 1] : parts[0] || 'Other';
 }
 
 /**
  * Extract section tag from file metadata or structured path
- * @param {object} file
+ * @param {Record<string, any>} [file]
  * @param {string} [currentSubjectCode='']
  * @returns {string}
  */
@@ -79,14 +79,14 @@ export function getFileSection(file, currentSubjectCode = '') {
   const first = parts[0]?.toLowerCase();
   if (first === 'notes' || first === 'pyq') return parts[6] || 'Gen';
   const codeIndex = parts.findIndex(
-    (p) => p.toLowerCase() === (currentSubjectCode || '').toLowerCase()
+    (/** @type {string} */ p) => p.toLowerCase() === (currentSubjectCode || '').toLowerCase()
   );
   return codeIndex >= 0 ? parts[codeIndex + 1] || 'Gen' : 'Gen';
 }
 
 /**
  * Extract clean leaf filename
- * @param {object} file
+ * @param {Record<string, any>} [file]
  * @param {string} [currentSubjectCode='']
  * @returns {string}
  */
@@ -98,7 +98,7 @@ export function getFileLeafName(file, currentSubjectCode = '') {
     return parts[7] || parts[parts.length - 1] || file.name || '';
   }
   const codeIndex = parts.findIndex(
-    (p) => p.toLowerCase() === (currentSubjectCode || '').toLowerCase()
+    (/** @type {string} */ p) => p.toLowerCase() === (currentSubjectCode || '').toLowerCase()
   );
   return codeIndex >= 0
     ? parts[codeIndex + 2] || parts[parts.length - 1] || file.name || ''

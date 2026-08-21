@@ -11,7 +11,21 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
-      exclude: ['node_modules/', 'src/setupTests.js', '**/*.d.ts', 'dist/**'],
+      exclude: [
+        'node_modules/',
+        'src/setupTests.js',
+        '**/*.d.ts',
+        'dist/**',
+        'src/data/**',
+        'src/mozillapdf.jsx',
+        'src/pdf.jsx',
+      ],
+      thresholds: {
+        lines: 60,
+        statements: 60,
+        branches: 48,
+        functions: 50,
+      },
     },
   },
 });
