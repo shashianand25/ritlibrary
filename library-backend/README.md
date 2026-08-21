@@ -33,9 +33,9 @@ Backend test execution is isolated from live third-party services (Google OAuth,
 
 ---
 
-## 📡 Observability & Error Tracking
+## 📡 Observability & Metrics Telemetry
 
-The Cloudflare Worker backend utilizes a structured JSON logger (`src/utils/logger.js`) with request correlation and multi-destination error dispatching.
+The Cloudflare Worker backend utilizes a structured JSON logger (`src/utils/logger.js`) with request correlation and Prometheus/JSON runtime telemetry (`src/utils/metrics.js`).
 
 ### 1. Structured JSON Log Format
 
@@ -66,15 +66,10 @@ Every log output contains standardized fields for high-volume streaming, Logpush
 - **`context`**: Additional execution metadata (HTTP path, method, user identifier).
 - **`error`**: Serialized exception details with stack trace.
 
-### 2. Error Tracking & Sinks Configuration
+### 2. Runtime Metrics & Health Endpoints
 
-Set the corresponding environment variables / wrangler secrets to enable remote error tracking:
-
-| Variable            | Description                                                                 | Sink Protocol                                          |
-| :------------------ | :-------------------------------------------------------------------------- | :----------------------------------------------------- |
-| `SENTRY_DSN`        | Sentry DSN endpoint (e.g. `https://<key>@<org>.ingest.sentry.io/<project>`) | Native Sentry Store API with event stack traces & tags |
-| `LOGPUSH_URL`       | Cloudflare Workers Logpush HTTP destination / Datadog / BetterStack webhook | POST JSON payloads                                     |
-| `ERROR_TRACKER_URL` | Generic error ingestion webhook URL                                         | POST JSON payloads                                     |
+- **`GET /api/health`**: Availability and status probe returning JSON `{ status: "ok" }`.
+- **`GET /api/metrics`**: Exposes standard Prometheus text metrics (request totals, 5xx error totals, uptime, and route breakdowns) or JSON metrics when queried with `Accept: application/json`.
 
 ### 3. Request Correlation & Contextual Loggers
 
@@ -105,7 +100,6 @@ Configure `.env` or wrangler secrets based on `.env.example`:
 - `GOOGLE_PRIVATE_KEY`: Service Account RSA Private Key
 - `NEON_DATABASE_URL`: Neon PostgreSQL pooled connection string
 - `ADMIN_EMAILS`: Comma-separated list of bootstrap root admin emails
-- `SENTRY_DSN`: (Optional) Remote Sentry error reporting DSN
 - `LOGPUSH_URL`: (Optional) Remote Logpush / Webhook ingestion endpoint
 
 ## Running Locally

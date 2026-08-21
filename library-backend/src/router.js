@@ -13,6 +13,7 @@ import { listAdminsFromDb, addAdminToDb, removeAdminFromDb } from './db.js';
 import { getDriveAuthToken, uploadToDrive, deleteDriveFile } from './drive.js';
 import { getFilesFromR2, saveFilesToR2, getEventsFromR2, saveEventsToR2 } from './services/r2.js';
 import logger from './utils/logger.js';
+import { recordRequest, getJsonMetrics, getPrometheusMetrics } from './utils/metrics.js';
 
 export async function handleRequest(request, env, _ctx) {
 	const requestId =
@@ -28,8 +29,10 @@ export async function handleRequest(request, env, _ctx) {
 		env
 	);
 
-	const sendJson = (data, status = 200, extraHeaders = {}) =>
-		jsonRes(data, status, { 'X-Request-Id': requestId, ...extraHeaders });
+	const sendJson = (data, status = 200, extraHeaders = {}) => {
+		recordRequest(request.method, url.pathname, status);
+		return jsonRes(data, status, { 'X-Request-Id': requestId, ...extraHeaders });
+	};
 
 	try {
 		if (request.method === 'OPTIONS') {
@@ -47,6 +50,23 @@ export async function handleRequest(request, env, _ctx) {
 		/* GET /api/health — lightweight availability healthcheck */
 		if (request.method === 'GET' && url.pathname === '/api/health') {
 			return sendJson({ status: 'ok', timestamp: new Date().toISOString() });
+		}
+
+		/* GET /api/metrics — Prometheus / JSON runtime telemetry */
+		if (request.method === 'GET' && url.pathname === '/api/metrics') {
+			recordRequest('GET', '/api/metrics', 200);
+			const acceptHeader = request.headers.get('accept') || '';
+			if (acceptHeader.includes('application/json')) {
+				return sendJson(getJsonMetrics());
+			}
+			return new Response(getPrometheusMetrics(), {
+				status: 200,
+				headers: {
+					'Content-Type': 'text/plain; version=0.0.4; charset=utf-8',
+					...CORS,
+					'X-Request-Id': requestId,
+				},
+			});
 		}
 
 		/* GET /api/drive-root — exposes folder ID for client uploads */

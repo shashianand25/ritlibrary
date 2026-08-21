@@ -31,7 +31,7 @@ graph TD
 - 📤 **Resource Contribution**: Direct-to-storage upload pipeline supporting large binary payloads with progress tracking.
 - 🛡 **Role-Based Admin Management**: Dynamic database-backed administrator role assignment powered by Neon PostgreSQL.
 - 📊 **Syllabus Progress Tracker**: Localized preparation tracker with graceful offline recovery and progress metrics.
-- 📡 **Observability & Error Tracking**: Structured JSON logging with request correlation IDs and multi-sink error tracking (Sentry & Cloudflare Logpush).
+- 📡 **Observability & Metrics**: Structured JSON logging with request correlation IDs, `/api/health` availability checks, `/api/metrics` Prometheus runtime telemetry, and Web Vitals client performance monitoring.
 - 🧪 **Comprehensive Automated Testing**: 100% test pass rate with Vitest, React Testing Library, and V8 coverage enforcement.
 
 ---
