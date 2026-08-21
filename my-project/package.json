@@ -34,6 +34,7 @@
     "pdfjs-dist": "^3.11.174",
     "pg": "^8.21.0",
     "ppt-to-text": "^1.0.1",
+    "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-pdf": "^9.2.1",
