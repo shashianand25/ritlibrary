@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import SearchPYQ from './searchpyq.jsx';
 import HomePage from './HomePage.jsx';
 import About from './About.jsx';
+import Events from './Events.jsx';
 import Contribute from './Contribute.jsx';
 import SyllabusTracker from './SyllabusTracker.jsx';
 import ManageAdmins from './ManageAdmins.jsx';
@@ -59,6 +60,14 @@ function AnimatedRoutes() {
           element={
             <PageTransition>
               <SearchPYQ />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/events"
+          element={
+            <PageTransition>
+              <Events />
             </PageTransition>
           }
         />

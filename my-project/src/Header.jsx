@@ -38,6 +38,7 @@ export default function Header() {
   const menuItems = [
     { label: 'About', path: '/about', action: () => navigate('/about') },
     { label: 'Notes', path: '/resources', action: () => navigate('/resources') },
+    { label: 'Events', path: '/events', action: () => navigate('/events') },
     { label: 'Syllabus', path: '/syllabus', action: () => navigate('/syllabus') },
     { label: 'Contribute', path: '/contribute', action: () => navigate('/contribute') },
   ];
