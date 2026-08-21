@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Menu, X, LogIn, LogOut, ShieldCheck, ChevronDown } from 'lucide-react';
 import { useAuth } from './lib/AuthContext.jsx';
+import { userChipStyle, glassDropdown } from './constants/sharedStyles.js';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -124,16 +125,7 @@ export default function Header() {
             <div ref={userMenuRef} style={{ position: 'relative' }}>
               <button
                 onClick={() => setUserMenuOpen((p) => !p)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '6px 10px',
-                  borderRadius: 12,
-                  cursor: 'pointer',
-                  background: 'rgba(163,230,53,0.12)',
-                  border: '1px solid rgba(163,230,53,0.25)',
-                }}
+                style={userChipStyle}
               >
                 {user.photoURL ? (
                   <img
@@ -193,16 +185,12 @@ export default function Header() {
                     exit={{ opacity: 0, y: -8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
                     style={{
+                      ...glassDropdown,
                       position: 'absolute',
                       right: 0,
                       top: 'calc(100% + 8px)',
                       minWidth: 200,
-                      borderRadius: 14,
                       padding: '8px',
-                      background: 'rgba(15,23,42,0.95)',
-                      backdropFilter: 'blur(20px)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      boxShadow: '0 16px 40px rgba(0,0,0,0.5)',
                       zIndex: 100,
                     }}
                   >
