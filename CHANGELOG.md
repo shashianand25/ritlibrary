@@ -7,7 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [1.2.0] - 2026-08-21
+
+### Added
+- Structured JSON logging (`src/utils/logger.js`) with timestamp, level, message, and error tracking sink.
+- Custom state management hook `useManageAdminsState.js` with comprehensive unit test suite.
+- Integration flow test `ContributeFlow.test.jsx` asserting complete directory navigation and file deletion.
+- Shared theme design system (`src/constants/theme.js`) eliminating CSS/glass inline duplication.
+- Direct monorepo tracking for `library-backend` Cloudflare worker with isolated Vitest test suite.
+- Backend automated testing job `test-backend` in `.github/workflows/ci.yml`.
+
+### Changed
+- Hardened security audit gate in CI by removing failure bypass.
+- Purged 153 unused legacy Node server packages from frontend manifest to optimize bundle and eliminate vulnerabilities.
+- Upgraded coverage threshold floors to 65% lines/statements and 50% branches.
+
+---
+
+## [1.1.0] - 2026-08-21
 
 ### Added
 - Centralized API client (`src/api/client.js`) for all backend communication.

@@ -9,6 +9,7 @@
     "noEmit": true,
     "strict": false,
     "skipLibCheck": true,
+    "maxNodeModuleJsDepth": 0,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,5 +23,6 @@
     "src/utils/fileHelpers.js",
     "src/utils/logger.js",
     "src/api/client.js"
-  ]
+  ],
+  "exclude": ["node_modules", "dist"]
 }

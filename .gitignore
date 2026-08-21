@@ -10,10 +10,13 @@ coverage/
 .wrangler/
 .vercel
 
-# Environment variables
+# Environment variables & Secrets
 .env
 .env.local
 .env.*.local
+service-account.json
+*.pem
+*.key
 
 # Vendored PDF viewer build artifacts
 my-project/public/web/
