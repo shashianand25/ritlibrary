@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BookMarked, Layers } from 'lucide-react';
 import { FolderSection, EmptyState } from '../UIElements.jsx';
 import FileRow from '../FileRow.jsx';
 
-export function capitalizeWords(str) {
+function capitalizeWords(str) {
   if (!str) return '';
   return str.replace(/\b\w/g, (c) => c.toUpperCase());
 }
@@ -30,7 +31,7 @@ export default function NotesResults({
           title={capitalizeWords(folder)}
           count={files.length}
           icon={Layers}
-          color={colors.secondary}
+          color={colors?.secondary || '#A3E635'}
           initialOpen={isSingleFolder}
           isSmallScreen={isSmallScreen}
         >
@@ -51,3 +52,14 @@ export default function NotesResults({
     </div>
   );
 }
+
+NotesResults.propTypes = {
+  groupedNotes: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.object)]))
+  ),
+  openMenuId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  setOpenMenuId: PropTypes.func,
+  openPreview: PropTypes.func,
+  isSmallScreen: PropTypes.bool,
+  colors: PropTypes.object,
+};

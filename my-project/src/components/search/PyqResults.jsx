@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { GraduationCap } from 'lucide-react';
 import { FolderSection, EmptyState } from '../UIElements.jsx';
 import FileRow from '../FileRow.jsx';
@@ -27,7 +28,7 @@ export default function PyqResults({
             title={year}
             count={files.length}
             icon={GraduationCap}
-            color={colors.primary}
+            color={colors?.primary || '#A3E635'}
             initialOpen={isSingleFolder}
             isSmallScreen={isSmallScreen}
           >
@@ -64,3 +65,15 @@ export default function PyqResults({
     </div>
   );
 }
+
+PyqResults.propTypes = {
+  pdfFiles: PropTypes.arrayOf(PropTypes.object),
+  groupedPDFs: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.object)]))
+  ),
+  openMenuId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  setOpenMenuId: PropTypes.func,
+  openPreview: PropTypes.func,
+  isSmallScreen: PropTypes.bool,
+  colors: PropTypes.object,
+};

@@ -1,10 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { FileText, ExternalLink, Trash2 } from 'lucide-react';
-import { COLORS } from '../../constants/searchData.js';
 import { getFileViewName } from '../../utils/fileHelpers.js';
-
-const C = COLORS;
 
 const glass = {
   background: 'rgba(20,25,35,0.75)',
@@ -81,7 +79,7 @@ export default function FolderContents({
                         type="button"
                         disabled={isDeleting}
                         onClick={() => onDelete(file)}
-                        className="w-7 h-7 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400"
+                        className="w-7 h-7 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400 cursor-pointer"
                         title="Delete file"
                       >
                         <Trash2 size={13} />
@@ -97,3 +95,20 @@ export default function FolderContents({
     </motion.div>
   );
 }
+
+FolderContents.propTypes = {
+  activeFolder: PropTypes.string,
+  folderFiles: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      name: PropTypes.string,
+      view: PropTypes.string,
+      section: PropTypes.string,
+      uploaderName: PropTypes.string,
+      previewUrl: PropTypes.string,
+    })
+  ),
+  isAdmin: PropTypes.bool,
+  isDeleting: PropTypes.bool,
+  onDelete: PropTypes.func,
+};

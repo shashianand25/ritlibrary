@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Upload, X, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
 import { useAuth } from '../../lib/AuthContext.jsx';
@@ -237,3 +238,12 @@ export default function UploadModal({
     </motion.div>
   );
 }
+
+UploadModal.propTypes = {
+  folder: PropTypes.string.isRequired,
+  subjectCode: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  branch: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onSuccess: PropTypes.func.isRequired,
+};

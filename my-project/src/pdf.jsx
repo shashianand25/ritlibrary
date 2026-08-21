@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Download, X, Loader2, Check, AlertCircle, Sparkles } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
+import logger from './utils/logger.js';
 
 // Ensure worker is set up for pdfjs-dist
 pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
@@ -214,7 +216,7 @@ Content:
       setExtractState('success');
       setTimeout(() => setExtractState('idle'), 3000);
     } catch (err) {
-      console.error('Text extraction failed:', err);
+      logger.error('Text extraction failed:', err);
       setExtractError(err.message || 'Extraction failed');
       setExtractState('error');
       setTimeout(() => setExtractState('idle'), 4000);
@@ -306,6 +308,14 @@ Content:
       </div>
     </div>
   );
+};
+
+DrivePreview.propTypes = {
+  fileId: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+  fileName: PropTypes.string,
+  originalFileName: PropTypes.string,
+  mimeType: PropTypes.string,
 };
 
 export default DrivePreview;

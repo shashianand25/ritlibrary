@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { FolderOpen, Plus, X, Eye } from 'lucide-react';
 import { COLORS } from '../../constants/searchData.js';
@@ -15,7 +16,6 @@ const glass = {
 export default function FolderCard({
   name,
   count,
-  isAdmin,
   isCustom,
   isActive,
   onUpload,
@@ -43,7 +43,7 @@ export default function FolderCard({
         <button
           type="button"
           onClick={onRemove}
-          className="absolute top-2 right-2 p-1 text-white/30 hover:text-white/80 transition-colors"
+          className="absolute top-2 right-2 p-1 text-white/30 hover:text-white/80 transition-colors cursor-pointer"
           title="Remove custom folder"
         >
           <X size={13} />
@@ -88,3 +88,13 @@ export default function FolderCard({
     </motion.div>
   );
 }
+
+FolderCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+  isCustom: PropTypes.bool,
+  isActive: PropTypes.bool,
+  onUpload: PropTypes.func.isRequired,
+  onRemove: PropTypes.func,
+  onView: PropTypes.func.isRequired,
+};

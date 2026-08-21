@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { ExternalLink, Eye } from 'lucide-react';
 import { FileIcon, Dots } from './UIElements.jsx';
@@ -184,8 +185,9 @@ function ThreeDotMenu({ file, isOpen, setOpenMenuId, openPreview, colors }) {
 }
 
 /* ────────── menu item ────────── */
-export function MenuRow({ icon: Icon, label, onClick, colors }) {
+export function MenuRow({ icon: _Icon, label, onClick, colors }) {
   const [hover, setHover] = useState(false);
+  const Icon = _Icon;
   return (
     <button
       type="button"
@@ -201,16 +203,40 @@ export function MenuRow({ icon: Icon, label, onClick, colors }) {
         border: 'none',
         cursor: 'pointer',
         background: hover ? 'rgba(255,255,255,0.08)' : 'transparent',
-        color: colors.text,
+        color: colors?.text || '#fff',
         fontSize: 13.5,
         fontWeight: 500,
         textAlign: 'left',
         transition: 'background 0.15s',
       }}
     >
-      <Icon size={15} style={{ opacity: 0.7 }} /> {label}
+      {Icon && <Icon size={15} style={{ opacity: 0.7 }} />} {label}
     </button>
   );
 }
+
+FileRow.propTypes = {
+  file: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    name: PropTypes.string,
+    view: PropTypes.string,
+    mimeType: PropTypes.string,
+    section: PropTypes.string,
+    uploaderName: PropTypes.string,
+  }).isRequired,
+  index: PropTypes.number,
+  openMenuId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  setOpenMenuId: PropTypes.func,
+  openPreview: PropTypes.func,
+  isSmallScreen: PropTypes.bool,
+  colors: PropTypes.object,
+};
+
+MenuRow.propTypes = {
+  icon: PropTypes.elementType,
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  colors: PropTypes.object,
+};
 
 export default FileRow;

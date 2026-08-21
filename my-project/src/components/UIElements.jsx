@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { PdfIcon, ImageIcon } from '../svg.jsx';
@@ -11,6 +12,11 @@ export const FileIcon = ({ fileName, mimeType }) => {
   if (ext === 'pdf') return <PdfIcon />;
   if (['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'].includes(ext)) return <ImageIcon />;
   return <PdfIcon />;
+};
+
+FileIcon.propTypes = {
+  fileName: PropTypes.string,
+  mimeType: PropTypes.string,
 };
 
 /* ────────── styled select ────────── */
@@ -54,15 +60,17 @@ export function StyledSelect({
             borderRadius: 12,
             background: 'rgba(255,255,255,0.06)',
             border: '1px solid rgba(255,255,255,0.12)',
-            color: disabled ? 'rgba(255,255,255,0.3)' : colors.text,
+            color: disabled ? 'rgba(255,255,255,0.3)' : colors?.text || '#fff',
             fontSize: 14,
             fontWeight: 500,
             outline: 'none',
             transition: 'border 0.2s, box-shadow 0.2s',
           }}
           onFocus={(e) => {
-            e.target.style.border = `1px solid ${colors.primary}`;
-            e.target.style.boxShadow = `0 0 0 3px ${colors.primary}22`;
+            if (colors?.primary) {
+              e.target.style.border = `1px solid ${colors.primary}`;
+              e.target.style.boxShadow = `0 0 0 3px ${colors.primary}22`;
+            }
           }}
           onBlur={(e) => {
             e.target.style.border = '1px solid rgba(255,255,255,0.12)';
@@ -80,13 +88,24 @@ export function StyledSelect({
             transform: 'translateY(-50%)',
             pointerEvents: 'none',
             opacity: 0.5,
-            color: colors.primary,
+            color: colors?.primary || '#A3E635',
           }}
         />
       </div>
     </div>
   );
 }
+
+StyledSelect.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool,
+  required: PropTypes.bool,
+  children: PropTypes.node,
+  colors: PropTypes.object,
+};
 
 /* ────────── pill toggle button ────────── */
 export function PillBtn({ active, onClick, children, colors }) {
@@ -101,9 +120,9 @@ export function PillBtn({ active, onClick, children, colors }) {
         borderRadius: 999,
         fontSize: 13,
         fontWeight: 700,
-        border: `2px solid ${active ? colors.accent : colors.accent + '55'}`,
-        background: active ? colors.accent : 'transparent',
-        color: active ? '#fff' : colors.accent,
+        border: `2px solid ${active ? colors?.accent || '#A3E635' : (colors?.accent || '#A3E635') + '55'}`,
+        background: active ? colors?.accent || '#A3E635' : 'transparent',
+        color: active ? '#fff' : colors?.accent || '#A3E635',
         cursor: 'pointer',
         transition: 'all 0.2s',
       }}
@@ -112,6 +131,13 @@ export function PillBtn({ active, onClick, children, colors }) {
     </motion.button>
   );
 }
+
+PillBtn.propTypes = {
+  active: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+  colors: PropTypes.object,
+};
 
 /* ────────── three-dot menu ────────── */
 export function Dots({ size = 20, color = '#888' }) {
@@ -132,6 +158,11 @@ export function Dots({ size = 20, color = '#888' }) {
     </svg>
   );
 }
+
+Dots.propTypes = {
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
 
 /* ────────── dropdown component ────────── */
 export function Dropdown({ label, value, onChange, disabled, children }) {
@@ -166,6 +197,14 @@ export function Dropdown({ label, value, onChange, disabled, children }) {
   );
 }
 
+Dropdown.propTypes = {
+  label: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool,
+  children: PropTypes.node,
+};
+
 /* ────────── styled text input ────────── */
 export function StyledInput({ placeholder, value, onChange, className = '', ...props }) {
   return (
@@ -180,6 +219,13 @@ export function StyledInput({ placeholder, value, onChange, className = '', ...p
   );
 }
 
+StyledInput.propTypes = {
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  className: PropTypes.string,
+};
+
 /* ────────── empty state component ────────── */
 export function EmptyState({ icon: Icon, label, colors }) {
   return (
@@ -193,6 +239,12 @@ export function EmptyState({ icon: Icon, label, colors }) {
   );
 }
 
+EmptyState.propTypes = {
+  icon: PropTypes.elementType,
+  label: PropTypes.string,
+  colors: PropTypes.object,
+};
+
 /* ────────── folder section component ────────── */
 export function FolderSection({
   title,
@@ -200,7 +252,7 @@ export function FolderSection({
   icon: Icon,
   color = '#A3E635',
   initialOpen = false,
-  isSmallScreen = false,
+  _isSmallScreen = false,
   children,
 }) {
   const [isOpen, setIsOpen] = React.useState(initialOpen);
@@ -234,3 +286,13 @@ export function FolderSection({
     </div>
   );
 }
+
+FolderSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+  icon: PropTypes.elementType,
+  color: PropTypes.string,
+  initialOpen: PropTypes.bool,
+  _isSmallScreen: PropTypes.bool,
+  children: PropTypes.node,
+};

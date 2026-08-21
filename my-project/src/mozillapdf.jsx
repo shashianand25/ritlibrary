@@ -1,100 +1,39 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { DownloadCloud, Loader2 } from 'lucide-react';
+import PropTypes from 'prop-types';
+import { Loader2 } from 'lucide-react';
 
 const Mozillapdf = ({ fileId, fileName }) => {
-  // --- STATE MANAGEMENT ---
-  // Tracks the complex download logic (Real progress)
-  const [loadStage, setLoadStage] = useState('viewer'); // 'viewer' | 'downloading' | 'complete'
-  const [downloadProgress, setDownloadProgress] = useState(0);
-  const [fileSizeMB, setFileSizeMB] = useState(0);
-
-  // Tracks the Iframe's visual readiness (The "Lines in Circle" persistence)
   const [iframeReady, setIframeReady] = useState(false);
-
-  // Stats
-  const [loadTime, setLoadTime] = useState(0);
-  const [showLoadTime, setShowLoadTime] = useState(false);
-
   const iframeRef = useRef(null);
   const loadStartTime = useRef(null);
 
-  // Viewer URL - Uses standard Google Drive Preview
   const viewerUrl = `https://drive.google.com/file/d/${fileId}/preview`;
 
-  // --- LOGIC: Real Progress Tracking ---
   useEffect(() => {
     loadStartTime.current = Date.now();
-    setLoadStage('complete');
+    setIframeReady(false);
   }, [fileId]);
 
-  // --- HANDLERS ---
   const handleIframeLoad = () => {
-    // This fires when PDF.js is actually ready
     setIframeReady(true);
-
-    // Calculate final load time
-    const finalLoadTime = Date.now() - loadStartTime.current;
-    setLoadTime(finalLoadTime);
-    setShowLoadTime(true);
-    setTimeout(() => setShowLoadTime(false), 3000);
   };
-
-  const getStageMessage = () => {
-    if (loadStage === 'viewer' || !iframeReady) return 'Initializing viewer...';
-    if (loadStage === 'downloading') return `Loading PDF... ${Math.round(downloadProgress)}%`;
-    return 'PDF Ready!';
-  };
-
-  // Logic to determine if we show the overlay
-  // We show it if: 1. Download isn't done OR 2. Iframe isn't ready
-  const showOverlay = loadStage !== 'complete' || !iframeReady;
 
   return (
     <div className="pdf-preview-overlay fixed inset-0 bg-neutral-900 z-50 flex flex-col">
-      {/* --- LOADING OVERLAY --- */}
-      {showOverlay && (
+      {/* Loading Overlay */}
+      {!iframeReady && (
         <div className="absolute inset-0 flex items-center justify-center bg-neutral-900 z-20">
           <div className="text-white text-center max-w-md mx-4 p-6 rounded-2xl bg-neutral-800 shadow-2xl border border-neutral-700">
             <div className="flex justify-center mb-6">
-              <div className="relative">
-                {/* Visual Logic: Show Lines Spinner UNLESS we are in the middle of a big download */}
-                {loadStage === 'downloading' && fileSizeMB >= 5 ? (
-                  <DownloadCloud className="animate-bounce text-blue-400" size={56} />
-                ) : (
-                  // This acts as the default "waiting for iframe" loader
-                  <Loader2
-                    className="animate-spin text-white opacity-80"
-                    size={48}
-                    strokeWidth={2.5}
-                  />
-                )}
-              </div>
+              <Loader2 className="animate-spin text-lime-400" size={48} strokeWidth={2.5} />
             </div>
-
-            <h3 className="text-xl font-bold mb-2">{getStageMessage()}</h3>
-            <p className="text-gray-400 text-sm mb-6 truncate">{fileName}</p>
-
-            {/* Progress Bar (Only for big downloads) */}
-            {loadStage === 'downloading' && fileSizeMB >= 5 && (
-              <div className="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                <div
-                  className="bg-blue-500 h-full rounded-full transition-all duration-300 ease-out"
-                  style={{ width: `${downloadProgress}%` }}
-                />
-              </div>
-            )}
-
-            {fileSizeMB > 0 && loadStage === 'downloading' && (
-              <p className="text-xs text-gray-500 mt-2">
-                {fileSizeMB.toFixed(1)} MB •{' '}
-                {((Date.now() - loadStartTime.current) / 1000).toFixed(0)}s
-              </p>
-            )}
+            <h3 className="text-xl font-bold mb-2">Initializing viewer...</h3>
+            <p className="text-gray-400 text-sm mb-2 truncate">{fileName}</p>
           </div>
         </div>
       )}
 
-      {/* --- PDF VIEWER --- */}
+      {/* PDF Viewer */}
       <div className="min-h-0 flex-1 w-full relative bg-neutral-900 overflow-hidden">
         <iframe
           ref={iframeRef}
@@ -102,12 +41,16 @@ const Mozillapdf = ({ fileId, fileName }) => {
           className="block w-full h-full min-h-0 border-0"
           allow="autoplay"
           title="PDF Viewer"
-          // This is the key: The loader won't vanish until this fires
           onLoad={handleIframeLoad}
         />
       </div>
     </div>
   );
+};
+
+Mozillapdf.propTypes = {
+  fileId: PropTypes.string.isRequired,
+  fileName: PropTypes.string,
 };
 
 export default Mozillapdf;

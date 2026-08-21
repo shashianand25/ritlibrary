@@ -1,35 +1,25 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Sparkles, BookOpen, Layers } from 'lucide-react';
-import { StyledInput, StyledSelect, Dropdown } from '../UIElements.jsx';
-import {
-  branchGroups,
-  COLORS,
-  sectionCountsByBranch,
-  electiveOptions,
-} from '../../constants/searchData.js';
+import PropTypes from 'prop-types';
+import { Search, Sparkles, BookOpen } from 'lucide-react';
+import { StyledInput, Dropdown } from '../UIElements.jsx';
+import { branchGroups, electiveOptions } from '../../constants/searchData.js';
 
 export default function SearchFilters({
   searchMode,
   setSearchMode,
   form,
-  setForm,
   subjectCode,
   setSubjectCode,
   codeError,
   handleSearch,
   isSearching,
-  cycleTag,
   showElective,
   branchSubjects,
   handleBranch,
   handleSemester,
   handleSubject,
   handleSubSubject,
-  isSmallScreen,
 }) {
-  const C = COLORS;
-
   return (
     <div className="search-filters-container space-y-4">
       {/* Mode Switcher */}
@@ -37,7 +27,7 @@ export default function SearchFilters({
         <button
           type="button"
           onClick={() => setSearchMode('guided')}
-          className={`flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 ${
+          className={`flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer ${
             searchMode === 'guided'
               ? 'bg-lime-400/20 text-lime-300 border border-lime-400/40 shadow-sm'
               : 'text-neutral-400 hover:text-white'
@@ -48,7 +38,7 @@ export default function SearchFilters({
         <button
           type="button"
           onClick={() => setSearchMode('code')}
-          className={`flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 ${
+          className={`flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer ${
             searchMode === 'code'
               ? 'bg-lime-400/20 text-lime-300 border border-lime-400/40 shadow-sm'
               : 'text-neutral-400 hover:text-white'
@@ -69,7 +59,7 @@ export default function SearchFilters({
               {Object.entries(branchGroups).map(([group, branches]) => (
                 <optgroup key={group} label={group}>
                   {branches.map(({ label, value }) => (
-                    <option key={value} value={value}>
+                    <option key={value} value={value} className="bg-neutral-900 text-white">
                       {label}
                     </option>
                   ))}
@@ -88,7 +78,7 @@ export default function SearchFilters({
                 Select Semester
               </option>
               {[1, 2, 3, 4, 5, 6, 7, 8].map((sem) => (
-                <option key={sem} value={sem}>
+                <option key={sem} value={sem} className="bg-neutral-900 text-white">
                   Semester {sem}
                 </option>
               ))}
@@ -105,7 +95,7 @@ export default function SearchFilters({
                 Select Subject
               </option>
               {branchSubjects.map(({ label, value, code }) => (
-                <option key={value || code} value={value}>
+                <option key={value || code} value={value} className="bg-neutral-900 text-white">
                   {label} {code ? `(${code})` : ''}
                 </option>
               ))}
@@ -118,7 +108,7 @@ export default function SearchFilters({
                   Select Elective
                 </option>
                 {electiveOptions[form.subject]?.map(({ label, value }) => (
-                  <option key={value} value={value}>
+                  <option key={value} value={value} className="bg-neutral-900 text-white">
                     {label}
                   </option>
                 ))}
@@ -158,3 +148,33 @@ export default function SearchFilters({
     </div>
   );
 }
+
+SearchFilters.propTypes = {
+  searchMode: PropTypes.string.isRequired,
+  setSearchMode: PropTypes.func.isRequired,
+  form: PropTypes.shape({
+    year: PropTypes.string,
+    semester: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    branch: PropTypes.string,
+    subject: PropTypes.string,
+    subSubject: PropTypes.string,
+  }).isRequired,
+  subjectCode: PropTypes.string,
+  setSubjectCode: PropTypes.func.isRequired,
+  codeError: PropTypes.string,
+  handleSearch: PropTypes.func.isRequired,
+  isSearching: PropTypes.bool,
+  showElective: PropTypes.bool,
+  branchSubjects: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+      code: PropTypes.string,
+      elective: PropTypes.bool,
+    })
+  ),
+  handleBranch: PropTypes.func.isRequired,
+  handleSemester: PropTypes.func.isRequired,
+  handleSubject: PropTypes.func.isRequired,
+  handleSubSubject: PropTypes.func.isRequired,
+};
