@@ -40,6 +40,13 @@ async function request(endpoint, options = {}) {
 }
 
 /**
+ * Health Check API method
+ */
+export async function checkHealth() {
+  return await request('/api/health');
+}
+
+/**
  * Admin API methods
  */
 export async function checkAdmin(idToken) {
@@ -153,6 +160,7 @@ export async function deleteEvent(eventId, idToken) {
 }
 
 export default {
+  checkHealth,
   checkAdmin,
   getAdmins,
   addAdmin,
