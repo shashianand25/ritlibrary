@@ -221,4 +221,32 @@ describe('UploadModal component', () => {
       expect(screen.getByText('Network error during upload')).toBeInTheDocument();
     });
   });
+
+  it('rejects oversized files exceeding 50MB with user-friendly error message', async () => {
+    const onClose = vi.fn();
+    const onSuccess = vi.fn();
+
+    render(
+      <UploadModal
+        folder="Unit 1"
+        subjectCode="21CS32"
+        category="notes"
+        branch="cse"
+        onClose={onClose}
+        onSuccess={onSuccess}
+      />
+    );
+
+    const fileInput = document.querySelector('input[type="file"]');
+    const oversizedFile = new File(['x'.repeat(100)], 'huge.pdf', { type: 'application/pdf' });
+    Object.defineProperty(oversizedFile, 'size', { value: 60 * 1024 * 1024 });
+
+    fireEvent.change(fileInput, { target: { files: [oversizedFile] } });
+
+    await waitFor(() => {
+      expect(
+        screen.getByText('File size exceeds maximum allowed limit of 50MB')
+      ).toBeInTheDocument();
+    });
+  });
 });

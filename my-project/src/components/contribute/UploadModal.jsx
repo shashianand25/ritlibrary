@@ -235,11 +235,11 @@ export default function UploadModal({
                 ref={inputRef}
                 type="file"
                 className="hidden"
-                onChange={(e) => e.target.files?.[0] && setFile(e.target.files[0])}
+                onChange={(e) => e.target.files?.[0] && handleSelectFile(e.target.files[0])}
               />
             </div>
 
-            {status === 'error' && (
+            {(status === 'error' || err) && (
               <div className="flex items-center gap-2 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs">
                 <AlertCircle size={15} /> {err}
               </div>
