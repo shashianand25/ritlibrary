@@ -11,7 +11,9 @@ export default defineConfig({
 			exclude: ['node_modules/', 'test/**', 'wrangler.jsonc', 'eslint.config.js'],
 			thresholds: {
 				lines: 70,
-				branches: 60,
+				statements: 70,
+				branches: 70,
+				functions: 70,
 			},
 		},
 	},

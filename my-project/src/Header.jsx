@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Menu, X, LogIn, LogOut, ShieldCheck, ChevronDown } from 'lucide-react';
 import { useAuth } from './lib/AuthContext.jsx';
-import { userChipStyle, glassDropdown } from './constants/sharedStyles.js';
+import {
+  userChipStyle,
+  glassDropdown,
+  avatarFallbackStyle,
+  dropdownItemBase,
+  primaryGradientButton,
+} from './constants/sharedStyles.js';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -131,22 +137,7 @@ export default function Header() {
                     style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }}
                   />
                 ) : (
-                  <div
-                    style={{
-                      width: 28,
-                      height: 28,
-                      borderRadius: '50%',
-                      background: 'linear-gradient(135deg,#66713f,#A3E635)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 12,
-                      fontWeight: 800,
-                      color: '#fff',
-                    }}
-                  >
-                    {initials}
-                  </div>
+                  <div style={avatarFallbackStyle}>{initials}</div>
                 )}
                 {!isSmallScreen && (
                   <span
@@ -219,19 +210,8 @@ export default function Header() {
                           setUserMenuOpen(false);
                         }}
                         style={{
-                          width: '100%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 8,
-                          padding: '9px 12px',
-                          borderRadius: 10,
-                          border: 'none',
-                          cursor: 'pointer',
-                          background: 'transparent',
+                          ...dropdownItemBase,
                           color: '#F3F4F6',
-                          fontSize: 13,
-                          fontWeight: 600,
-                          transition: 'background 0.15s',
                           marginBottom: 4,
                         }}
                         onMouseEnter={(e) =>
@@ -248,19 +228,8 @@ export default function Header() {
                         setUserMenuOpen(false);
                       }}
                       style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
-                        padding: '9px 12px',
-                        borderRadius: 10,
-                        border: 'none',
-                        cursor: 'pointer',
-                        background: 'transparent',
+                        ...dropdownItemBase,
                         color: '#ef4444',
-                        fontSize: 13,
-                        fontWeight: 600,
-                        transition: 'background 0.15s',
                       }}
                       onMouseEnter={(e) =>
                         (e.currentTarget.style.background = 'rgba(239,68,68,0.1)')
@@ -278,20 +247,7 @@ export default function Header() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={signIn}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 7,
-                padding: '7px 16px',
-                borderRadius: 12,
-                border: 'none',
-                cursor: 'pointer',
-                background: 'linear-gradient(135deg,#66713f,#A3E635cc)',
-                color: '#fff',
-                fontSize: 13,
-                fontWeight: 700,
-                boxShadow: '0 4px 14px rgba(102,113,63,0.4)',
-              }}
+              style={primaryGradientButton}
             >
               <LogIn size={15} /> Sign In
             </motion.button>

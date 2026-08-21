@@ -1,6 +1,6 @@
 # Contributing to RIT Library
 
-Thank you for your interest in improving RIT Library! We welcome contributions from developers, designers, and students.
+Thank you for your interest in improving RIT Library! We welcome contributions from developers, designers, and students across the community.
 
 ---
 
@@ -13,16 +13,10 @@ Thank you for your interest in improving RIT Library! We welcome contributions f
    cd ritlibrary
    ```
 
-2. **Install Dependencies**
+2. **Automated Setup**
+   Run the one-step setup command to install all workspace dependencies and initialize local `.env` configuration files:
    ```bash
-   npm --prefix my-project install
-   npm --prefix library-backend install
-   ```
-
-3. **Configure Environment**
-   ```bash
-   cp my-project/.env.example my-project/.env
-   cp library-backend/.env.example library-backend/.env
+   npm run setup
    ```
 
 ---
@@ -41,13 +35,16 @@ npm --prefix library-backend test
 # 3. Run full monorepo test suite
 npm test
 
-# 4. Run ESLint code checks
+# 4. Run ESLint code checks across all workspaces
 npm run lint
 
-# 5. Check code formatting
+# 5. Check code formatting with Prettier
 npm run format:check
 
-# 6. Verify production build
+# 6. Verify TypeScript types
+npm run typecheck
+
+# 7. Verify production build
 npm run build
 ```
 
@@ -60,6 +57,9 @@ We strictly follow the **[Conventional Commits](https://www.conventionalcommits.
 ### 1. Test-Pairing Rule
 - **Every feature (`feat:`) and bugfix (`fix:`) commit MUST include its corresponding unit, component, or integration test within the exact same commit.**
 - Changes submitted without accompanying tests will require revisions before PR approval.
+- Follow existing patterns in:
+  - **Backend Workers**: [`library-backend/test/*.spec.js`](file:///Users/shashi/notes-rit/library-backend/test) (e.g. `test/drive.spec.js`, `test/routes.spec.js`, `test/index.spec.js`) using isolated mocks and Vitest.
+  - **Frontend UI & Hooks**: [`my-project/src/__tests__/*.test.jsx`](file:///Users/shashi/notes-rit/my-project/src/__tests__) using React Testing Library and Vitest.
 
 ### 2. Commit Types
 - `feat(scope):` New user-facing feature or API capability (paired with tests)
@@ -81,9 +81,23 @@ test(auth): add edge case tests for expired token rejection
 
 ---
 
-## 🚀 Pull Request Process
+## 🚀 Pull Request & Code Review Process
 
-1. Create a feature branch from `main`: `git checkout -b feat/my-new-feature`.
-2. Ensure code follows formatting (`npm run format`) and linting rules (`npm run lint`).
-3. Confirm all tests pass (`npm test`).
-4. Fill out the pull request template completely and check off all verification items.
+To maintain high software quality and foster a sustained, multi-maintainer contributor base:
+
+1. **Small, Focused Pull Requests**:
+   - Keep PRs scoped to a single logical feature, fix, or enhancement.
+   - Avoid massive monolithic PRs; break large changes into incremental, reviewable pull requests.
+
+2. **Peer Review & Contributor Diversity**:
+   - Every pull request requires review and approval from at least one additional maintainer or community contributor prior to merge.
+   - Co-authoring and community reviews are actively encouraged to diversify the project's commit history and maintainer ecosystem.
+
+3. **Release Tagging Cadence**:
+   - Releases are tagged following [Semantic Versioning](https://semver.org/) (e.g., `v1.3.0`, `v1.4.0`) after each meaningful merged batch of PRs/commits, rather than in large end-of-sprint bursts.
+   - All release milestones are documented in [`CHANGELOG.md`](file:///Users/shashi/notes-rit/CHANGELOG.md).
+
+4. **Pull Request Checklist**:
+   - Create a feature branch: `git checkout -b feat/my-new-feature`.
+   - Ensure formatting (`npm run format`), linting (`npm run lint`), and tests (`npm test`) pass cleanly.
+   - Fill out [`.github/PULL_REQUEST_TEMPLATE.md`](file:///Users/shashi/notes-rit/.github/PULL_REQUEST_TEMPLATE.md) completely.

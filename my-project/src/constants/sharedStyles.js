@@ -1,6 +1,6 @@
 /**
  * Centralized Shared Style Constants for UI Components
- * Consolidates glassmorphism, background gradients, and pill/button styles.
+ * Consolidates glassmorphism, background gradients, and pill/button/dropdown styles.
  */
 
 export const darkBg = 'linear-gradient(135deg, #050a14 0%, #0d1120 50%, #0a0f0a 100%)';
@@ -51,4 +51,79 @@ export const userChipStyle = {
   cursor: 'pointer',
   background: 'rgba(163, 230, 53, 0.12)',
   border: '1px solid rgba(163, 230, 53, 0.25)',
+};
+
+export const primaryGradientButton = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 7,
+  padding: '7px 16px',
+  borderRadius: 12,
+  border: 'none',
+  cursor: 'pointer',
+  background: 'linear-gradient(135deg, #66713f, rgba(163, 230, 53, 0.8))',
+  color: '#ffffff',
+  fontSize: 13,
+  fontWeight: 700,
+  boxShadow: '0 4px 14px rgba(102, 113, 63, 0.4)',
+};
+
+export const avatarFallbackStyle = {
+  width: 28,
+  height: 28,
+  borderRadius: '50%',
+  background: 'linear-gradient(135deg, #66713f, #A3E635)',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: 12,
+  fontWeight: 800,
+  color: '#ffffff',
+};
+
+export const dropdownItemBase = {
+  width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  gap: 8,
+  padding: '9px 12px',
+  borderRadius: 10,
+  border: 'none',
+  cursor: 'pointer',
+  background: 'transparent',
+  fontSize: 13,
+  fontWeight: 600,
+  transition: 'background 0.15s',
+};
+
+export const inputLabelStyle = {
+  display: 'block',
+  fontSize: 12,
+  fontWeight: 700,
+  letterSpacing: '0.06em',
+  textTransform: 'uppercase',
+  opacity: 0.6,
+  marginBottom: 6,
+};
+
+export const selectFieldStyle = {
+  width: '100%',
+  appearance: 'none',
+  padding: '10px 36px 10px 14px',
+  borderRadius: 12,
+  background: 'rgba(255, 255, 255, 0.06)',
+  border: '1px solid rgba(255, 255, 255, 0.12)',
+  fontSize: 14,
+  fontWeight: 500,
+  outline: 'none',
+  transition: 'border 0.2s, box-shadow 0.2s',
+};
+
+export const sectionLabelStyle = {
+  fontSize: 11,
+  fontWeight: 700,
+  letterSpacing: '0.14em',
+  opacity: 0.45,
+  textTransform: 'uppercase',
+  marginBottom: 16,
 };
