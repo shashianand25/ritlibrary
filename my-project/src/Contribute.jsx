@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Upload,
   Plus,
   FolderOpen,
   ShieldAlert,
@@ -12,17 +11,13 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import Header from './Header.jsx';
-import { useAuth } from './lib/AuthContext.jsx';
 import { COLORS, electiveOptions } from './constants/searchData.js';
+import { glassCard } from './constants/theme.js';
 import UploadModal from './components/contribute/UploadModal.jsx';
 import FolderCard from './components/contribute/FolderCard.jsx';
 import FolderContents from './components/contribute/FolderContents.jsx';
 import useContributeState from './hooks/useContributeState.js';
-import { deleteResource } from './api/client.js';
-import logger from './utils/logger.js';
 
-const PUBLIC_UPLOADS_ENABLED = import.meta.env.VITE_PUBLIC_UPLOADS_ENABLED !== 'false';
-const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED === 'true';
 const C = COLORS;
 
 const NOTE_FOLDERS = [
@@ -36,13 +31,6 @@ const NOTE_FOLDERS = [
   'Others',
 ];
 const PYQ_FOLDERS = ['2022-23', '2023-24', '2024-25', '2025-26', '2026-27', '2027-28', '2028-29'];
-
-const glass = {
-  background: 'rgba(20,25,35,0.75)',
-  backdropFilter: 'blur(24px)',
-  border: '1px solid rgba(255,255,255,0.1)',
-  boxShadow: '0 8px 40px rgba(0,0,0,0.5)',
-};
 
 function matchesFolder(file, category, subjectCode, folder) {
   if (file.category) {
@@ -99,11 +87,10 @@ Dropdown.propTypes = {
 };
 
 export default function Contribute() {
-  const { user, isAdmin } = useAuth();
-  const canUpload = Boolean(user && (isAdmin || PUBLIC_UPLOADS_ENABLED));
-  const canDelete = Boolean(isAdmin || PUBLIC_DELETES_ENABLED);
-
   const {
+    isAdmin,
+    canUpload,
+    canDelete,
     mode,
     semester,
     branch,
@@ -125,7 +112,6 @@ export default function Contribute() {
     activeFolder,
     setActiveFolder,
     deletingFileId,
-    setDeletingFileId,
     deleteError,
     setDeleteError,
     branches,
@@ -135,6 +121,8 @@ export default function Contribute() {
     handleSubject,
     handleSubSubject,
     handleMode,
+    addFolder,
+    deleteFile,
   } = useContributeState();
 
   const baseFolders = mode === 'notes' ? NOTE_FOLDERS : PYQ_FOLDERS;
@@ -147,32 +135,11 @@ export default function Contribute() {
     return allFiles.filter((f) => matchesFolder(f, category, effectiveSubjectCode, folder));
   };
 
-  const deleteFile = async (file) => {
-    if (!file?.id || !canDelete || deletingFileId) return;
+  const handleDeleteWithPrompt = (file) => {
     const ok = window.confirm(
       `Delete "${file.view || file.name}" from Drive and the library index?`
     );
-    if (!ok) return;
-    setDeletingFileId(file.id);
-    setDeleteError('');
-    try {
-      const idToken = user ? await user.getIdToken() : '';
-      await deleteResource(file.id, idToken);
-      setAllFiles((prev) => prev.filter((item) => item.id !== file.id));
-    } catch (e) {
-      logger.error('File deletion failed', e);
-      setDeleteError(e.message);
-    } finally {
-      setDeletingFileId('');
-    }
-  };
-
-  const addFolder = () => {
-    const name = newFolder.trim();
-    if (!name || allFolders.includes(name)) return;
-    setCustomFolders((p) => [...p, name]);
-    setNewFolder('');
-    setShowAddFolder(false);
+    if (ok) deleteFile(file);
   };
 
   return (
@@ -222,7 +189,7 @@ export default function Contribute() {
         </AnimatePresence>
 
         {/* Filter Controls Card */}
-        <section style={glass} className="rounded-3xl p-6 mb-8">
+        <section style={glassCard} className="rounded-3xl p-6 mb-8">
           <div className="flex gap-2 p-1.5 rounded-2xl bg-neutral-900/60 border border-white/10 mb-6">
             <button
               type="button"
@@ -322,7 +289,7 @@ export default function Contribute() {
                 />
                 <button
                   type="button"
-                  onClick={addFolder}
+                  onClick={() => addFolder(allFolders)}
                   className="px-4 py-2 rounded-xl bg-lime-400 text-neutral-950 font-bold text-sm"
                 >
                   Create
@@ -362,7 +329,7 @@ export default function Contribute() {
               folderFiles={activeFolder ? folderFiles(activeFolder) : []}
               isAdmin={canDelete}
               isDeleting={Boolean(deletingFileId)}
-              onDelete={deleteFile}
+              onDelete={handleDeleteWithPrompt}
               onUpload={() => setUploadTarget(activeFolder)}
               colors={C}
             />

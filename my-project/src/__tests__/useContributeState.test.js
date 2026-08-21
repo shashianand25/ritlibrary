@@ -2,6 +2,18 @@ import { renderHook, act } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import useContributeState from '../hooks/useContributeState.js';
 
+vi.mock('../lib/AuthContext.jsx', () => ({
+  useAuth: () => ({
+    user: {
+      email: 'contributor@rit.edu',
+      displayName: 'Contributor',
+      getIdToken: vi.fn().mockResolvedValue('token-abc'),
+    },
+    isAdmin: true,
+    isAuthLoading: false,
+  }),
+}));
+
 vi.mock('../api/client.js', () => ({
   fetchFileIndex: vi.fn().mockResolvedValue([
     {
@@ -12,11 +24,13 @@ vi.mock('../api/client.js', () => ({
       folderName: 'Unit 1',
     },
   ]),
+  deleteResource: vi.fn().mockResolvedValue({ success: true }),
 }));
 
 describe('useContributeState hook', () => {
   beforeEach(() => {
     localStorage.clear();
+    vi.clearAllMocks();
   });
 
   it('initializes default values from localStorage', () => {
@@ -50,5 +64,26 @@ describe('useContributeState hook', () => {
 
     expect(result.current.mode).toBe('pyq');
     expect(localStorage.getItem('contributeMode')).toBe('pyq');
+  });
+
+  it('adds custom folder and performs file deletion', async () => {
+    const { result } = renderHook(() => useContributeState());
+
+    act(() => {
+      result.current.setNewFolder('Assignment Solutions');
+    });
+
+    act(() => {
+      result.current.addFolder(['Unit 1', 'Unit 2']);
+    });
+
+    expect(result.current.customFolders).toContain('Assignment Solutions');
+    expect(result.current.newFolder).toBe('');
+
+    await act(async () => {
+      await result.current.deleteFile({ id: 'f1', name: 'Notes.pdf' });
+    });
+
+    expect(result.current.deleteError).toBe('');
   });
 });
