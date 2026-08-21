@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Upload,
@@ -12,15 +13,14 @@ import {
 } from 'lucide-react';
 import Header from './Header.jsx';
 import { useAuth } from './lib/AuthContext.jsx';
-import subjectsData from './data/subjects.json';
-import { branchGroups, COLORS, electiveOptions } from './constants/searchData.js';
+import { COLORS, electiveOptions } from './constants/searchData.js';
 import UploadModal from './components/contribute/UploadModal.jsx';
 import FolderCard from './components/contribute/FolderCard.jsx';
 import FolderContents from './components/contribute/FolderContents.jsx';
+import useContributeState from './hooks/useContributeState.js';
+import { deleteResource } from './api/client.js';
 import logger from './utils/logger.js';
 
-const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
-const FILES_JSON_URL = WORKER;
 const PUBLIC_UPLOADS_ENABLED = import.meta.env.VITE_PUBLIC_UPLOADS_ENABLED !== 'false';
 const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED === 'true';
 const C = COLORS;
@@ -43,19 +43,6 @@ const glass = {
   border: '1px solid rgba(255,255,255,0.1)',
   boxShadow: '0 8px 40px rgba(0,0,0,0.5)',
 };
-
-function getYearFromSem(sem) {
-  const n = parseInt(sem, 10);
-  if (isNaN(n)) return '';
-  if (n <= 2) return '1st Year';
-  if (n <= 4) return '2nd Year';
-  if (n <= 6) return '3rd Year';
-  return '4th Year';
-}
-
-function getSubjects(year, sem, branch) {
-  return subjectsData?.[year]?.[sem]?.[branch?.toLowerCase()] || [];
-}
 
 function matchesFolder(file, category, subjectCode, folder) {
   if (file.category) {
@@ -103,139 +90,52 @@ function Dropdown({ label, value, onChange, disabled, children }) {
   );
 }
 
+Dropdown.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  children: PropTypes.node,
+};
+
 export default function Contribute() {
   const { user, isAdmin } = useAuth();
   const canUpload = Boolean(user && (isAdmin || PUBLIC_UPLOADS_ENABLED));
   const canDelete = Boolean(isAdmin || PUBLIC_DELETES_ENABLED);
 
-  const [mode, setMode] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('contributeMode') || 'notes' : 'notes'
-  );
-  const [semester, setSemester] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('contributeSem') || '' : ''
-  );
-  const [branch, setBranch] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('contributeBranch') || '' : ''
-  );
-  const [subject, setSubject] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('contributeSubject') || '' : ''
-  );
-  const [subSubject, setSubSubject] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('contributeSubSubject') || '' : ''
-  );
-  const [showElective, setShowElective] = useState(() =>
-    typeof window !== 'undefined'
-      ? localStorage.getItem('contributeShowElective') === 'true'
-      : false
-  );
-  const [subjectCode, setSubjectCode] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('contributeSubjectCode') || '' : ''
-  );
-  const [isAllSubjects, setIsAllSubjects] = useState(false);
-
-  const [customFolders, setCustomFolders] = useState([]);
-  const [showAddFolder, setShowAddFolder] = useState(false);
-  const [newFolder, setNewFolder] = useState('');
-
-  const [allFiles, setAllFiles] = useState([]);
-  const [uploadTarget, setUploadTarget] = useState(null);
-  const [activeFolder, setActiveFolder] = useState('');
-  const [deletingFileId, setDeletingFileId] = useState('');
-  const [deleteError, setDeleteError] = useState('');
-
-  useEffect(() => {
-    localStorage.setItem('contributeMode', mode);
-  }, [mode]);
-  useEffect(() => {
-    localStorage.setItem('contributeSem', semester);
-  }, [semester]);
-  useEffect(() => {
-    localStorage.setItem('contributeBranch', branch);
-  }, [branch]);
-  useEffect(() => {
-    localStorage.setItem('contributeSubject', subject);
-  }, [subject]);
-  useEffect(() => {
-    localStorage.setItem('contributeSubSubject', subSubject);
-  }, [subSubject]);
-  useEffect(() => {
-    localStorage.setItem('contributeShowElective', String(showElective));
-  }, [showElective]);
-  useEffect(() => {
-    localStorage.setItem('contributeSubjectCode', subjectCode);
-  }, [subjectCode]);
-
-  const year = semester ? getYearFromSem(semester) : '';
-  const branches = year ? branchGroups[year] || [] : [];
-  const subjects = useMemo(
-    () => (year && semester && branch ? getSubjects(year, semester, branch) : []),
-    [year, semester, branch]
-  );
-
-  useEffect(() => {
-    if (subject && subjects.length > 0) {
-      const s = subjects.find((subj) => subj.value === subject);
-      setShowElective(Boolean(s?.elective));
-    }
-  }, [subject, subjects]);
-
-  const handleSem = (e) => {
-    setSemester(e.target.value);
-    setBranch('');
-    setSubject('');
-    setSubSubject('');
-    setShowElective(false);
-    setSubjectCode('');
-    setActiveFolder('');
-  };
-
-  const handleBranch = (e) => {
-    setBranch(e.target.value);
-    setSubject('');
-    setSubSubject('');
-    setShowElective(false);
-    setSubjectCode('');
-    setActiveFolder('');
-  };
-
-  const handleSubject = (e) => {
-    const val = e.target.value;
-    setSubject(val);
-    setIsAllSubjects(false);
-    const sel = subjects.find((s) => s.value === val);
-    if (sel?.elective) {
-      setShowElective(true);
-      setSubSubject('');
-      setSubjectCode('');
-    } else {
-      setShowElective(false);
-      setSubSubject('');
-      setSubjectCode(sel?.code || sel?.value || '');
-    }
-    setActiveFolder('');
-  };
-
-  const handleSubSubject = (e) => {
-    const val = e.target.value;
-    setSubSubject(val);
-    setSubjectCode(val);
-    setActiveFolder('');
-  };
-
-  useEffect(() => {
-    fetch(FILES_JSON_URL)
-      .then((r) => r.json())
-      .then((d) => setAllFiles(Array.isArray(d) ? d : []))
-      .catch((err) => {
-        logger.warn('Failed to fetch current files index', err);
-      });
-  }, []);
-
-  const handleMode = (m) => {
-    setMode(m);
-    setCustomFolders([]);
-    setActiveFolder('');
-  };
+  const {
+    mode,
+    semester,
+    branch,
+    subject,
+    subSubject,
+    showElective,
+    subjectCode,
+    isAllSubjects,
+    customFolders,
+    setCustomFolders,
+    showAddFolder,
+    setShowAddFolder,
+    newFolder,
+    setNewFolder,
+    allFiles,
+    setAllFiles,
+    uploadTarget,
+    setUploadTarget,
+    activeFolder,
+    setActiveFolder,
+    deletingFileId,
+    setDeletingFileId,
+    deleteError,
+    setDeleteError,
+    branches,
+    subjects,
+    handleSem,
+    handleBranch,
+    handleSubject,
+    handleSubSubject,
+    handleMode,
+  } = useContributeState();
 
   const baseFolders = mode === 'notes' ? NOTE_FOLDERS : PYQ_FOLDERS;
   const allFolders = [...baseFolders, ...customFolders];
@@ -257,12 +157,7 @@ export default function Contribute() {
     setDeleteError('');
     try {
       const idToken = user ? await user.getIdToken() : '';
-      const res = await fetch(`${WORKER}/api/files/${encodeURIComponent(file.id)}`, {
-        method: 'DELETE',
-        headers: idToken ? { Authorization: `Bearer ${idToken}` } : {},
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Delete failed');
+      await deleteResource(file.id, idToken);
       setAllFiles((prev) => prev.filter((item) => item.id !== file.id));
     } catch (e) {
       logger.error('File deletion failed', e);
@@ -281,35 +176,54 @@ export default function Contribute() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0d14] text-neutral-100 font-sans relative overflow-x-hidden">
+    <div
+      className="min-h-screen text-neutral-100 flex flex-col font-sans"
+      style={{
+        background:
+          'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(163,230,53,0.15), transparent), #050a14',
+      }}
+    >
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-300 text-xs font-bold uppercase tracking-wider mb-3">
-            <ShieldAlert size={14} /> Academic Contribution Portal
+      <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-8">
+        {/* Banner Alert */}
+        <div className="mb-6 rounded-2xl p-4 border flex items-center justify-between gap-4 bg-lime-950/20 border-lime-500/20">
+          <div className="flex items-center gap-3">
+            <ShieldAlert size={20} className="text-lime-400 shrink-0" />
+            <p className="text-xs text-lime-300">
+              Files uploaded here are directly synchronized with Google Drive and verified by RIT
+              student moderators.
+            </p>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-white">Contribute Resources</h1>
-          <p className="text-sm text-neutral-400 max-w-md mx-auto mt-2">
-            Upload lecture notes, assignment solutions, and question papers directly to the student
-            repository.
-          </p>
-        </motion.div>
+        </div>
 
-        {deleteError && (
-          <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-sm flex items-center gap-2">
-            <AlertCircle size={16} /> {deleteError}
-          </div>
-        )}
+        {/* Action / Error Banner */}
+        <AnimatePresence>
+          {deleteError && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="mb-6 rounded-2xl p-4 border bg-red-950/30 border-red-500/30 text-red-300 flex items-center justify-between gap-4 text-xs font-semibold"
+            >
+              <div className="flex items-center gap-2">
+                <AlertCircle size={16} />
+                <span>{deleteError}</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setDeleteError('')}
+                className="text-red-400 hover:text-white"
+              >
+                Dismiss
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-        {/* Form Selection Card */}
-        <section style={{ ...glass, borderRadius: 24, padding: '24px 28px', marginBottom: 32 }}>
-          {/* Mode Switcher */}
-          <div className="flex gap-2 p-1.5 rounded-2xl bg-white/5 mb-6">
+        {/* Filter Controls Card */}
+        <section style={glass} className="rounded-3xl p-6 mb-8">
+          <div className="flex gap-2 p-1.5 rounded-2xl bg-neutral-900/60 border border-white/10 mb-6">
             <button
               type="button"
               onClick={() => handleMode('notes')}
@@ -361,20 +275,15 @@ export default function Contribute() {
               <option value="" disabled hidden>
                 Select Subject
               </option>
-              {subjects.map(({ label, value, code }) => (
+              {subjects.map(({ label, value }) => (
                 <option key={value} value={value} className="bg-neutral-900 text-white">
-                  {label} {code ? `(${code})` : ''}
+                  {label}
                 </option>
               ))}
             </Dropdown>
 
             {showElective ? (
-              <Dropdown
-                label="Elective Topic"
-                value={subSubject}
-                onChange={handleSubSubject}
-                disabled={!subject}
-              >
+              <Dropdown label="Elective Sub-Subject" value={subSubject} onChange={handleSubSubject}>
                 <option value="" disabled hidden>
                   Select Elective
                 </option>
@@ -451,9 +360,11 @@ export default function Contribute() {
             <FolderContents
               activeFolder={activeFolder}
               folderFiles={activeFolder ? folderFiles(activeFolder) : []}
-              isAdmin={isAdmin}
+              isAdmin={canDelete}
               isDeleting={Boolean(deletingFileId)}
               onDelete={deleteFile}
+              onUpload={() => setUploadTarget(activeFolder)}
+              colors={C}
             />
           </section>
         ) : (
@@ -470,15 +381,13 @@ export default function Contribute() {
           {uploadTarget && (
             <UploadModal
               folder={uploadTarget}
-              subjectCode={effectiveSubjectCode}
               category={mode === 'notes' ? 'Notes' : 'PYQ'}
-              year={year}
-              sem={semester}
+              subjectCode={effectiveSubjectCode}
               branch={branch}
-              allSubjects={isAllSubjects}
               onClose={() => setUploadTarget(null)}
               onSuccess={(newFile) => {
                 if (newFile) setAllFiles((prev) => [newFile, ...prev]);
+                setUploadTarget(null);
               }}
             />
           )}

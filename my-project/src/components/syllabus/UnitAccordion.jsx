@@ -107,12 +107,14 @@ export default function UnitAccordion({
                 gap: '8px',
               }}
             >
-              {unit.topics.map((topic) => {
-                const isChecked = !!subjectProgress[topic.id];
+              {unit.topics.map((topic, tIdx) => {
+                const topicId = topic?.id || `topic-${tIdx}`;
+                const topicText = topic?.text || topic?.name || String(topic);
+                const isChecked = !!subjectProgress[topicId];
                 return (
                   <div
-                    key={topic.id}
-                    onClick={() => toggleTopic(subjectId, topic.id)}
+                    key={topicId}
+                    onClick={() => toggleTopic(subjectId, topicId)}
                     style={{
                       display: 'flex',
                       alignItems: 'flex-start',
@@ -143,7 +145,7 @@ export default function UnitAccordion({
                         transition: 'all 0.2s',
                       }}
                     >
-                      {topic.text}
+                      {topicText}
                     </span>
                   </div>
                 );

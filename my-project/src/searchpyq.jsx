@@ -1,8 +1,7 @@
-import { useEffect, useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Search, BookMarked, GraduationCap, BookOpen } from 'lucide-react';
-import subjectsData from './data/subjects.json';
 import DrivePreview from './pdf.jsx';
 import Mozillapdf from './mozillapdf.jsx';
 import Header from './Header.jsx';
@@ -14,10 +13,7 @@ import SearchFilters from './components/search/SearchFilters.jsx';
 import NotesResults from './components/search/NotesResults.jsx';
 import PyqResults from './components/search/PyqResults.jsx';
 import { getFileCategory, getFileSubjectCode, getFileFolderName } from './utils/fileHelpers.js';
-import logger from './utils/logger.js';
-
-const FILES_JSON_URL =
-  import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev/';
+import useSearchPyqState from './hooks/useSearchPyqState.js';
 
 const glass = {
   background: 'rgba(20,25,35,0.75)',
@@ -33,237 +29,125 @@ function normalizeSearch(str) {
 export default function SearchPYQ() {
   const colors = COLORS;
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-  useEffect(() => {
-    const h = () => setIsSmallScreen(window.innerWidth < 768);
-    h();
-    window.addEventListener('resize', h);
-    return () => window.removeEventListener('resize', h);
-  }, []);
+  const {
+    isSmallScreen,
+    form,
+    showElective,
+    searchMode,
+    setSearchMode,
+    subjectCode,
+    setSubjectCode,
+    codeError,
+    setCodeError,
+    pdfFiles,
+    setPdfFiles,
+    notesFiles,
+    setNotesFiles,
+    submitted,
+    setSubmitted,
+    isSearching,
+    setIsSearching,
+    showResultsLoading,
+    setShowResultsLoading,
+    previewFile,
+    setPreviewFile,
+    openMenuId,
+    setOpenMenuId,
+    activeTab,
+    setActiveTab,
+    setCurrentSubjectCode,
+    allData,
 
-  const [form, setForm] = useState(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const s = localStorage.getItem('searchSettings');
-        return s
-          ? JSON.parse(s)
-          : { year: '', branch: '', semester: '', subject: '', subSubject: '' };
-      } catch (e) {
-        logger.warn('Failed to parse search settings from localStorage', e);
+    branchSubjects,
+    handleBranch,
+    handleSemester,
+    handleSubject,
+    handleSubSubject,
+  } = useSearchPyqState();
+
+  const handleSearch = () => {
+    let targetCode = '';
+    if (searchMode === 'code') {
+      if (!subjectCode.trim()) {
+        setCodeError('Please enter a subject code');
+        return;
       }
+      targetCode = subjectCode.trim().toUpperCase();
+      setCodeError('');
+    } else {
+      if (!form.semester || !form.branch || !form.subject) return;
+      if (showElective && !form.subSubject) return;
+
+      const selSub = branchSubjects.find((s) => s.name === form.subject);
+      targetCode = showElective ? form.subSubject : selSub?.code || form.subject;
     }
-    return { year: '', branch: '', semester: '', subject: '', subSubject: '' };
-  });
 
-  const [showElective, setShowElective] = useState(false);
-  const [searchMode, setSearchMode] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('searchMode') || 'guided' : 'guided'
-  );
-  const [subjectCode, setSubjectCode] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('lastSubjectCode') || '' : ''
-  );
-  const [codeError, setCodeError] = useState('');
-
-  const [pdfFiles, setPdfFiles] = useState([]);
-  const [notesFiles, setNotesFiles] = useState([]);
-  const [submitted, setSubmitted] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
-  const [showResultsLoading, setShowResultsLoading] = useState(false);
-  const [previewFile, setPreviewFile] = useState(null);
-  const [openMenuId, setOpenMenuId] = useState(null);
-  const [activeTab, setActiveTab] = useState('notes');
-  const [currentSubjectCode, setCurrentSubjectCode] = useState('');
-
-  const [allData, setAllData] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem('searchSettings', JSON.stringify(form));
-  }, [form]);
-  useEffect(() => {
-    localStorage.setItem('searchMode', searchMode);
-  }, [searchMode]);
-  useEffect(() => {
-    localStorage.setItem('lastSubjectCode', subjectCode);
-  }, [subjectCode]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await fetch(`${FILES_JSON_URL}?t=${Date.now()}`);
-        const data = await res.json();
-        let loadedData = [];
-        if (data?.files) loadedData = data.files;
-        else if (Array.isArray(data)) loadedData = data;
-        setAllData(loadedData);
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const vId = urlParams.get('v');
-        if (vId && loadedData.length > 0) {
-          const target = loadedData.find((f) => f.id === vId);
-          if (target) {
-            setPreviewFile({
-              id: target.id,
-              mimeType: target.mimeType,
-              viewerType: 'drive',
-              name: target.name,
-              view: target.view || target.name,
-            });
-          }
-        }
-      } catch (e) {
-        logger.error('Failed to load file index', e);
-      }
-    })();
-  }, []);
-
-  const getYearFromSemester = (sem) => {
-    const n = parseInt(sem, 10);
-    if (isNaN(n)) return '';
-    if (n <= 2) return '1st Year';
-    if (n <= 4) return '2nd Year';
-    if (n <= 6) return '3rd Year';
-    return '4th Year';
-  };
-
-  const branchSubjects = useMemo(() => {
-    if (!form.year || !form.semester || !form.branch) return [];
-    return subjectsData?.[form.year]?.[form.semester]?.[form.branch.toLowerCase()] || [];
-  }, [form.year, form.semester, form.branch]);
-
-  const handleBranch = (e) => {
-    setForm((p) => ({ ...p, branch: e.target.value, subject: '', subSubject: '' }));
-    setShowElective(false);
-  };
-
-  const handleSemester = (e) => {
-    const value = e.target.value;
-    setForm((p) => ({
-      ...p,
-      semester: value,
-      year: getYearFromSemester(value),
-      branch: '',
-      subject: '',
-      subSubject: '',
-    }));
-    setShowElective(false);
-  };
-
-  const handleSubject = (e) => {
-    const value = e.target.value;
-    setForm((p) => ({ ...p, subject: value, subSubject: '' }));
-    const s = branchSubjects.find((subj) => subj.value === value);
-    setShowElective(Boolean(s?.elective));
-  };
-
-  const handleSubSubject = (e) => {
-    setForm((p) => ({ ...p, subSubject: e.target.value }));
-  };
-
-  const openPreview = (file, viewer = 'drive') => {
-    setPreviewFile({
-      id: file.id,
-      mimeType: file.mimeType,
-      viewerType: viewer,
-      name: file.name,
-      view: `${currentSubjectCode} ${file.view || file.name}`,
-    });
-  };
-
-  const closePreview = () => {
-    setPreviewFile(null);
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
     setIsSearching(true);
     setShowResultsLoading(true);
+    setCurrentSubjectCode(targetCode);
 
-    let finalCode = '';
-    if (searchMode === 'code') {
-      finalCode = subjectCode.trim();
-      if (!finalCode || finalCode.length < 3) {
-        setIsSearching(false);
-        setCodeError('Subject code must be at least 3 characters');
-        setTimeout(() => setCodeError(''), 3000);
-        return;
-      }
-    } else {
-      const sel = branchSubjects.find((s) => s.value === form.subject);
-      finalCode = sel?.elective ? form.subSubject : sel?.code || sel?.value;
-      if (!finalCode) {
-        setIsSearching(false);
-        return;
-      }
-    }
+    const normTarget = normalizeSearch(targetCode);
 
-    setCurrentSubjectCode(finalCode);
-    const code = normalizeSearch(finalCode);
+    setTimeout(() => {
+      const matchedPyqs = allData.filter((file) => {
+        const cat = getFileCategory(file);
+        if (cat !== 'pyq') return false;
+        const code = normalizeSearch(getFileSubjectCode(file));
+        return code === normTarget || code.includes(normTarget);
+      });
 
-    const pyq = allData.filter((file) => {
-      if (getFileCategory(file) !== 'pyq') return false;
-      const fileCode = normalizeSearch(getFileSubjectCode(file));
-      if (fileCode !== code && fileCode !== 'all') return false;
-      return true;
-    });
+      const matchedNotes = allData.filter((file) => {
+        const cat = getFileCategory(file);
+        if (cat !== 'notes') return false;
+        const code = normalizeSearch(getFileSubjectCode(file));
+        return code === normTarget || code.includes(normTarget);
+      });
 
-    const notes = allData.filter((file) => {
-      if (getFileCategory(file) !== 'notes') return false;
-      const fileCode = normalizeSearch(getFileSubjectCode(file));
-      if (fileCode !== code && fileCode !== 'all') return false;
-      return true;
-    });
-
-    setPdfFiles(pyq);
-    setNotesFiles(notes);
-    setIsSearching(false);
-    setShowResultsLoading(false);
+      setPdfFiles(matchedPyqs);
+      setNotesFiles(matchedNotes);
+      setSubmitted(true);
+      setIsSearching(false);
+      setShowResultsLoading(false);
+    }, 350);
   };
 
-  const groupedNotes = useMemo(() => {
-    const map = {};
-    notesFiles.forEach((file) => {
-      const folder = getFileFolderName(file, currentSubjectCode);
-      if (!map[folder]) map[folder] = [];
-      map[folder].push(file);
-    });
-    return Object.entries(map);
-  }, [notesFiles, currentSubjectCode]);
-
   const groupedPDFs = useMemo(() => {
-    const map = {};
+    const groups = {};
     pdfFiles.forEach((file) => {
-      const folder = file.year || getFileFolderName(file, currentSubjectCode);
-      if (!map[folder]) map[folder] = [];
-      map[folder].push(file);
+      const folder = getFileFolderName(file) || 'General';
+      if (!groups[folder]) groups[folder] = [];
+      groups[folder].push(file);
     });
-    return Object.entries(map);
-  }, [pdfFiles, currentSubjectCode]);
+    return Object.entries(groups).sort(([a], [b]) => b.localeCompare(a));
+  }, [pdfFiles]);
+
+  const groupedNotes = useMemo(() => {
+    const groups = {};
+    notesFiles.forEach((file) => {
+      const folder = getFileFolderName(file) || 'General';
+      if (!groups[folder]) groups[folder] = [];
+      groups[folder].push(file);
+    });
+    return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
+  }, [notesFiles]);
 
   return (
     <>
       <style>{GLOBAL_STYLE}</style>
-      <div className="relative min-h-screen bg-[#0a0d14] text-white font-sans overflow-x-hidden">
-        <ResourcesBg />
+      <ResourcesBg />
+
+      <div className="relative min-h-screen flex flex-col z-10 font-sans text-neutral-100">
         <Header />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Search Controls Panel */}
-            <div className="lg:col-span-5 space-y-6">
+        <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 md:py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            {/* Filter Controls Panel */}
+            <div className="lg:col-span-5">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 style={{ ...glass, borderRadius: 24, padding: 24 }}
               >
-                <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
-                  Academic Resources
-                </h1>
-                <p className="text-sm text-neutral-400 mb-6">
-                  Access official lecture notes, modules, and previous year examination question
-                  papers.
-                </p>
-
                 <SearchFilters
                   searchMode={searchMode}
                   setSearchMode={setSearchMode}
@@ -304,33 +188,41 @@ export default function SearchPYQ() {
                             : 'text-neutral-400 hover:text-white'
                         }`}
                       >
-                        <BookMarked size={16} /> Notes ({notesFiles.length})
+                        <BookMarked size={16} />
+                        Study Notes
+                        <span className="text-xs px-1.5 py-0.5 rounded-full bg-white/10 font-mono">
+                          {notesFiles.length}
+                        </span>
                       </button>
+
                       <button
                         type="button"
-                        onClick={() => setActiveTab('pyqs')}
+                        onClick={() => setActiveTab('pyq')}
                         className={`flex-1 py-2 px-3 rounded-xl text-sm font-semibold transition-all flex items-center justify-center gap-2 ${
-                          activeTab === 'pyqs'
+                          activeTab === 'pyq'
                             ? 'bg-lime-400 text-neutral-950 shadow-md'
                             : 'text-neutral-400 hover:text-white'
                         }`}
                       >
-                        <GraduationCap size={16} /> PYQs ({pdfFiles.length})
+                        <GraduationCap size={16} />
+                        Question Papers
+                        <span className="text-xs px-1.5 py-0.5 rounded-full bg-white/10 font-mono">
+                          {pdfFiles.length}
+                        </span>
                       </button>
                     </div>
 
-                    {/* Results Container */}
                     {showResultsLoading ? (
-                      <div className="flex flex-col items-center justify-center py-24 gap-3">
-                        <CircleLoader size={40} color={colors.primary} />
-                        <p className="text-sm text-neutral-400">Loading resources...</p>
+                      <div className="flex flex-col items-center justify-center py-20 gap-3 text-neutral-400">
+                        <CircleLoader size={36} color={colors.accent} />
+                        <span className="text-xs font-medium">Filtering resources...</span>
                       </div>
                     ) : activeTab === 'notes' ? (
                       <NotesResults
                         groupedNotes={groupedNotes}
                         openMenuId={openMenuId}
                         setOpenMenuId={setOpenMenuId}
-                        openPreview={openPreview}
+                        openPreview={(file) => setPreviewFile(file)}
                         isSmallScreen={isSmallScreen}
                         colors={colors}
                       />
@@ -340,22 +232,22 @@ export default function SearchPYQ() {
                         groupedPDFs={groupedPDFs}
                         openMenuId={openMenuId}
                         setOpenMenuId={setOpenMenuId}
-                        openPreview={openPreview}
+                        openPreview={(file) => setPreviewFile(file)}
                         isSmallScreen={isSmallScreen}
                         colors={colors}
                       />
                     )}
                   </div>
                 ) : (
-                  <div className="flex flex-col items-center justify-center text-center py-24 gap-4">
-                    <div className="w-16 h-16 rounded-2xl bg-lime-400/10 border border-lime-400/20 flex items-center justify-center text-lime-400">
+                  <div className="flex flex-col items-center justify-center py-28 text-center text-neutral-400">
+                    <div className="w-16 h-16 rounded-2xl bg-lime-400/10 border border-lime-400/20 flex items-center justify-center text-lime-400 mb-4">
                       <BookOpen size={32} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold">Select Course Parameters</h3>
-                      <p className="text-sm text-neutral-400 max-w-sm mt-1">
-                        Use the search form on the left to select your semester and branch or enter
-                        a subject code.
+                      <h4 className="text-white font-bold text-base mb-1">Find Course Materials</h4>
+                      <p className="text-xs text-neutral-400 max-w-xs">
+                        Select your semester and branch on the left to browse organized notes and
+                        previous year question papers.
                       </p>
                     </div>
                   </div>
@@ -363,32 +255,41 @@ export default function SearchPYQ() {
               </motion.div>
             </div>
           </div>
-        </div>
-
-        {/* Modal Preview */}
-        {previewFile &&
-          createPortal(
-            <div className="fixed inset-0 z-50">
-              {previewFile.viewerType === 'mozilla' &&
-              previewFile.mimeType === 'application/pdf' ? (
-                <Mozillapdf
-                  fileId={previewFile.id}
-                  fileName={previewFile.view}
-                  onClose={closePreview}
-                />
-              ) : (
-                <DrivePreview
-                  fileId={previewFile.id}
-                  fileName={previewFile.view}
-                  originalFileName={previewFile.name}
-                  mimeType={previewFile.mimeType}
-                  onClose={closePreview}
-                />
-              )}
-            </div>,
-            document.body
-          )}
+        </main>
       </div>
+
+      {/* PDF Modal Viewer */}
+      {previewFile &&
+        createPortal(
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
+            <div className="relative w-full max-w-5xl h-[85vh] bg-neutral-900 rounded-3xl border border-white/10 overflow-hidden flex flex-col shadow-2xl">
+              <div className="flex items-center justify-between px-6 py-3 border-b border-white/10 bg-neutral-900">
+                <span className="text-sm font-semibold text-neutral-200 truncate max-w-md">
+                  {previewFile.view || previewFile.name}
+                </span>
+                <PillBtn
+                  active={false}
+                  onClick={() => setPreviewFile(null)}
+                  style={{ padding: '6px 16px', fontSize: 13 }}
+                >
+                  Close
+                </PillBtn>
+              </div>
+              <div className="flex-1 w-full bg-neutral-950 relative">
+                {previewFile.viewerType === 'mozilla' ? (
+                  <Mozillapdf fileId={previewFile.id} fileName={previewFile.view} />
+                ) : (
+                  <DrivePreview
+                    fileId={previewFile.id}
+                    fileName={previewFile.view || previewFile.name}
+                    mimeType={previewFile.mimeType}
+                  />
+                )}
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }
