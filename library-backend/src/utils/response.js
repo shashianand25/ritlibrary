@@ -5,10 +5,10 @@ export const CORS = {
 	'Access-Control-Max-Age': '86400',
 };
 
-export const jsonRes = (data, status = 200) =>
+export const jsonRes = (data, status = 200, headers = {}) =>
 	new Response(JSON.stringify(data), {
 		status,
-		headers: { ...CORS, 'Content-Type': 'application/json' },
+		headers: { ...CORS, 'Content-Type': 'application/json', ...headers },
 	});
 
 export const cleanPathSegment = (value) =>

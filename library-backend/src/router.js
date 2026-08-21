@@ -15,20 +15,38 @@ import { getFilesFromR2, saveFilesToR2, getEventsFromR2, saveEventsToR2 } from '
 import logger from './utils/logger.js';
 
 export async function handleRequest(request, env, _ctx) {
-	try {
-		if (request.method === 'OPTIONS') return new Response(null, { headers: CORS });
+	const requestId =
+		request.headers.get('cf-ray') ||
+		request.headers.get('x-request-id') ||
+		(typeof crypto !== 'undefined' && crypto.randomUUID
+			? `req_${crypto.randomUUID()}`
+			: `req_${Date.now()}`);
 
-		const url = new URL(request.url);
+	const url = new URL(request.url);
+	const reqLogger = logger.withContext(
+		{ requestId, path: url.pathname, method: request.method },
+		env
+	);
+
+	const sendJson = (data, status = 200, extraHeaders = {}) =>
+		jsonRes(data, status, { 'X-Request-Id': requestId, ...extraHeaders });
+
+	try {
+		if (request.method === 'OPTIONS') {
+			return new Response(null, {
+				headers: { ...CORS, 'X-Request-Id': requestId },
+			});
+		}
 
 		/* GET / — serve files.json from R2 */
 		if (request.method === 'GET' && url.pathname === '/') {
 			const files = await getFilesFromR2(env);
-			return jsonRes(files);
+			return sendJson(files);
 		}
 
 		/* GET /api/drive-root — exposes folder ID for client uploads */
 		if (request.method === 'GET' && url.pathname === '/api/drive-root') {
-			return jsonRes({ folderId: env.DRIVE_ROOT_ID });
+			return sendJson({ folderId: env.DRIVE_ROOT_ID });
 		}
 
 		/* GET /api/events — serve events from R2 */
@@ -304,12 +322,34 @@ export async function handleRequest(request, env, _ctx) {
 
 		return jsonRes({ error: 'Not Found' }, 404);
 	} catch (err) {
+		const urlPath = url.pathname;
 		if (err instanceof z.ZodError || err?.name === 'ZodError') {
 			const errorMsg = err.errors?.map((e) => e.message).join(', ') || 'Validation error';
-			return jsonRes({ error: errorMsg }, 400);
+			reqLogger.warn(`Validation failure on [${request.method}] ${urlPath}: ${errorMsg}`, {
+				path: urlPath,
+				method: request.method,
+				errors: err.errors,
+			});
+			return jsonRes({ error: errorMsg, requestId }, 400, { 'X-Request-Id': requestId });
 		}
-		logger.error('Unhandled worker error', err);
-		return jsonRes({ error: err.message || 'Internal server error' }, 500);
+
+		logger.error(
+			`Unhandled worker error on [${request.method}] ${urlPath}: ${err?.message || 'Internal server error'}`,
+			{
+				name: err?.name || 'Error',
+				message: err?.message || String(err),
+				stack: err?.stack || new Error().stack,
+				path: urlPath,
+				method: request.method,
+				requestId,
+			},
+			requestId,
+			env
+		);
+
+		return jsonRes({ error: err?.message || 'Internal server error', requestId }, 500, {
+			'X-Request-Id': requestId,
+		});
 	}
 }
 

@@ -12,7 +12,7 @@ npm install
 
 ### Running Tests
 
-Tests use `@cloudflare/vitest-pool-workers` providing isolated in-memory worker runtimes with Miniflare:
+Tests use Vitest providing isolated in-memory worker runtimes with Miniflare:
 
 ```bash
 npm test
@@ -31,7 +31,73 @@ Backend test execution is isolated from live third-party services (Google OAuth,
 - **Database Isolation (`test/admins.spec.js`)**:
   - Tests database query builders and connection handling without requiring a live Neon PostgreSQL database instance.
 
-### Environment Variables
+---
+
+## 📡 Observability & Error Tracking
+
+The Cloudflare Worker backend utilizes a structured JSON logger (`src/utils/logger.js`) with request correlation and multi-destination error dispatching.
+
+### 1. Structured JSON Log Format
+
+Every log output contains standardized fields for high-volume streaming, Logpush indexing, and log aggregation:
+
+```json
+{
+	"timestamp": "2026-08-21T06:51:07.123Z",
+	"level": "ERROR",
+	"requestId": "req_81264548-5899-46aa-b0be-cb5a1d835bbd",
+	"message": "Unhandled worker error on [POST] /api/upload",
+	"error": {
+		"name": "Error",
+		"message": "Drive service unavailable",
+		"stack": "Error: Drive service unavailable\n    at uploadToDrive..."
+	},
+	"context": {
+		"path": "/api/upload",
+		"method": "POST"
+	}
+}
+```
+
+- **`timestamp`**: ISO 8601 UTC timestamp.
+- **`level`**: Log severity level (`DEBUG`, `INFO`, `WARN`, `ERROR`).
+- **`requestId`**: Correlated request identifier extracted from Cloudflare `CF-Ray`, `X-Request-Id`, or auto-generated UUID.
+- **`message`**: Human-readable log narrative.
+- **`context`**: Additional execution metadata (HTTP path, method, user identifier).
+- **`error`**: Serialized exception details with stack trace.
+
+### 2. Error Tracking & Sinks Configuration
+
+Set the corresponding environment variables / wrangler secrets to enable remote error tracking:
+
+| Variable            | Description                                                                 | Sink Protocol                                          |
+| :------------------ | :-------------------------------------------------------------------------- | :----------------------------------------------------- |
+| `SENTRY_DSN`        | Sentry DSN endpoint (e.g. `https://<key>@<org>.ingest.sentry.io/<project>`) | Native Sentry Store API with event stack traces & tags |
+| `LOGPUSH_URL`       | Cloudflare Workers Logpush HTTP destination / Datadog / BetterStack webhook | POST JSON payloads                                     |
+| `ERROR_TRACKER_URL` | Generic error ingestion webhook URL                                         | POST JSON payloads                                     |
+
+### 3. Request Correlation & Contextual Loggers
+
+Create request-scoped loggers that automatically inherit `requestId` and route metadata:
+
+```javascript
+import logger from './utils/logger.js';
+
+const reqLogger = logger.withContext(
+	{
+		requestId: request.headers.get('cf-ray'),
+		path: url.pathname,
+		method: request.method,
+	},
+	env
+);
+
+reqLogger.info('Processing file upload', { fileSize: 1048576 });
+```
+
+---
+
+## Environment Variables
 
 Configure `.env` or wrangler secrets based on `.env.example`:
 
@@ -39,8 +105,10 @@ Configure `.env` or wrangler secrets based on `.env.example`:
 - `GOOGLE_PRIVATE_KEY`: Service Account RSA Private Key
 - `NEON_DATABASE_URL`: Neon PostgreSQL pooled connection string
 - `ADMIN_EMAILS`: Comma-separated list of bootstrap root admin emails
+- `SENTRY_DSN`: (Optional) Remote Sentry error reporting DSN
+- `LOGPUSH_URL`: (Optional) Remote Logpush / Webhook ingestion endpoint
 
-### Running Locally
+## Running Locally
 
 ```bash
 npm run dev

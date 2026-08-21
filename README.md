@@ -31,6 +31,7 @@ graph TD
 - 📤 **Resource Contribution**: Direct-to-storage upload pipeline supporting large binary payloads with progress tracking.
 - 🛡 **Role-Based Admin Management**: Dynamic database-backed administrator role assignment powered by Neon PostgreSQL.
 - 📊 **Syllabus Progress Tracker**: Localized preparation tracker with graceful offline recovery and progress metrics.
+- 📡 **Observability & Error Tracking**: Structured JSON logging with request correlation IDs and multi-sink error tracking (Sentry & Cloudflare Logpush).
 - 🧪 **Comprehensive Automated Testing**: 100% test pass rate with Vitest, React Testing Library, and V8 coverage enforcement.
 
 ---
@@ -77,13 +78,8 @@ ritlibrary/
 git clone https://github.com/shashianand25/ritlibrary.git
 cd ritlibrary
 
-# Install all workspace dependencies
-npm --prefix my-project install
-npm --prefix library-backend install
-
-# Copy environment templates
-cp my-project/.env.example my-project/.env
-cp library-backend/.env.example library-backend/.env
+# One-step automated workspace setup (installs all dependencies & initializes .env templates)
+npm run setup
 ```
 
 ### 2. Start Development Servers
@@ -93,8 +89,7 @@ cp library-backend/.env.example library-backend/.env
 npm run dev
 
 # In another terminal, start the Cloudflare Worker API
-cd library-backend
-npx wrangler dev
+npm --prefix library-backend run dev
 ```
 
 ---
