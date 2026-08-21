@@ -16,6 +16,7 @@ import { glassCard } from './constants/theme.js';
 import UploadModal from './components/contribute/UploadModal.jsx';
 import FolderCard from './components/contribute/FolderCard.jsx';
 import FolderContents from './components/contribute/FolderContents.jsx';
+import { Dropdown } from './components/UIElements.jsx';
 import useContributeState from './hooks/useContributeState.js';
 
 const C = COLORS;
@@ -47,44 +48,6 @@ function matchesFolder(file, category, subjectCode, folder) {
     parts[5]?.toLowerCase() === folder.toLowerCase()
   );
 }
-
-function Dropdown({ label, value, onChange, disabled, children }) {
-  return (
-    <div className="flex-1">
-      <label className="block text-[11px] font-bold tracking-wider uppercase text-neutral-400 mb-1.5">
-        {label}
-      </label>
-      <div className="relative">
-        <select
-          value={value}
-          onChange={onChange}
-          disabled={disabled}
-          className={`w-full appearance-none px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-medium outline-none ${
-            disabled
-              ? 'opacity-30 cursor-not-allowed text-neutral-500'
-              : 'text-neutral-100 cursor-pointer'
-          }`}
-        >
-          {children}
-        </select>
-        <ChevronDown
-          size={14}
-          className={`absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-lime-400 ${
-            disabled ? 'opacity-20' : 'opacity-50'
-          }`}
-        />
-      </div>
-    </div>
-  );
-}
-
-Dropdown.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChange: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
-  children: PropTypes.node,
-};
 
 export default function Contribute() {
   const {
