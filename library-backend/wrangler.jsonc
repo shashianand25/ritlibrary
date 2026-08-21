@@ -1,23 +1,21 @@
 {
-  "name": "library-backend",
-  "main": "src/index.js",
-  "compatibility_date": "2024-05-13",
-  "triggers": {
-    "crons": [
-      "*/10 * * * *"
-    ]
-  },
-  "r2_buckets": [
-    {
-      "binding": "PYQ_BUCKET",
-      "bucket_name": "pyq-library-data"
-    },
-    {
-      "binding": "EVENTS_BUCKET",
-      "bucket_name": "rit-events-assets"
-    }
-  ],
-  "vars": {
-    "ADMIN_EMAILS": "admin@college.edu"
-  }
+	"name": "library-backend",
+	"main": "src/index.js",
+	"compatibility_date": "2024-05-13",
+	"triggers": {
+		"crons": ["*/10 * * * *"],
+	},
+	"r2_buckets": [
+		{
+			"binding": "PYQ_BUCKET",
+			"bucket_name": "pyq-library-data",
+		},
+		{
+			"binding": "EVENTS_BUCKET",
+			"bucket_name": "rit-events-assets",
+		},
+	],
+	"vars": {
+		"ADMIN_EMAILS": "admin@college.edu",
+	},
 }

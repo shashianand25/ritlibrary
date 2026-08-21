@@ -31,4 +31,5 @@ export const slugify = (value) =>
 		.replace(/^-+|-+$/g, '')
 		.slice(0, 80) || 'event';
 
-export const assetUrl = (origin, key) => `${origin}/api/events/assets/${key.split('/').map(encodeURIComponent).join('/')}`;
+export const assetUrl = (origin, key) =>
+	`${origin}/api/events/assets/${key.split('/').map(encodeURIComponent).join('/')}`;

@@ -1,26 +1,26 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import worker from '../src/index.js';
-import router from '../src/router.js';
 
 describe('Worker HTTP Router & Request Dispatch', () => {
-	const mockEnv = {
-		DRIVE_ROOT_ID: 'root-folder-xyz',
-		PYQ_BUCKET: {
-			get: vi.fn().mockResolvedValue({
-				text: async () => JSON.stringify([{ id: 'file-1', name: 'Notes.pdf' }]),
-			}),
-			put: vi.fn().mockResolvedValue({}),
-		},
-		EVENTS_BUCKET: {
-			get: vi.fn().mockResolvedValue({
-				text: async () => JSON.stringify([{ id: 'event-1', title: 'Tech Symposium' }]),
-			}),
-			put: vi.fn().mockResolvedValue({}),
-		},
-	};
+	let mockEnv;
 
 	beforeEach(() => {
 		vi.restoreAllMocks();
+		mockEnv = {
+			DRIVE_ROOT_ID: 'root-folder-xyz',
+			PYQ_BUCKET: {
+				get: vi.fn().mockResolvedValue({
+					text: async () => JSON.stringify([{ id: 'file-1', name: 'Notes.pdf' }]),
+				}),
+				put: vi.fn().mockResolvedValue({}),
+			},
+			EVENTS_BUCKET: {
+				get: vi.fn().mockResolvedValue({
+					text: async () => JSON.stringify([{ id: 'event-1', title: 'Tech Symposium' }]),
+				}),
+				put: vi.fn().mockResolvedValue({}),
+			},
+		};
 	});
 
 	it('handles OPTIONS preflight request with CORS headers', async () => {

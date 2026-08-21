@@ -9,8 +9,8 @@ import {
 	z,
 } from './schemas.js';
 import { requireAdmin, requireUploader, requireDeleter, checkIsAdmin } from './utils/auth.js';
-import { listAdminsFromDb, addAdminToDb, removeAdminFromDb } from './db/admins.js';
-import { getDriveAuthToken, uploadToDrive, deleteDriveFile } from './services/drive.js';
+import { listAdminsFromDb, addAdminToDb, removeAdminFromDb } from './db.js';
+import { getDriveAuthToken, uploadToDrive, deleteDriveFile } from './drive.js';
 import { getFilesFromR2, saveFilesToR2, getEventsFromR2, saveEventsToR2 } from './services/r2.js';
 import logger from './utils/logger.js';
 
@@ -38,7 +38,7 @@ export async function handleRequest(request, env, _ctx) {
 				events.map((event) => ({
 					...event,
 					imageUrl: event.imageKey ? assetUrl(url.origin, event.imageKey) : event.imageUrl,
-				})),
+				}))
 			);
 		}
 
@@ -249,17 +249,18 @@ export async function handleRequest(request, env, _ctx) {
 
 			const validated = uploadMetadataSchema.parse({
 				category: formData.get('category') || undefined,
-				year: formData.get('year'),
-				sem: formData.get('sem'),
-				branch: formData.get('branch'),
-				subjectCode: formData.get('subjectCode'),
-				folderName: formData.get('folderName'),
+				year: formData.get('year') || undefined,
+				sem: formData.get('sem') || undefined,
+				branch: formData.get('branch') || undefined,
+				subjectCode: formData.get('subjectCode') || undefined,
+				folderName: formData.get('folderName') || undefined,
 				section: formData.get('section') || undefined,
 				allSubjects: formData.get('allSubjects') || undefined,
 				uploaderName: formData.get('uploaderName') || undefined,
 			});
 
-			const { category, year, sem, branch, subjectCode, folderName, section, allSubjects } = validated;
+			const { category, year, sem, branch, subjectCode, folderName, section, allSubjects } =
+				validated;
 			const uploaderName = validated.uploaderName || email;
 
 			const driveName = allSubjects
@@ -268,7 +269,13 @@ export async function handleRequest(request, env, _ctx) {
 
 			const token = await getDriveAuthToken(env);
 			const fileBytes = await file.arrayBuffer();
-			const driveFile = await uploadToDrive(token, driveName, fileBytes, file.type, env.DRIVE_ROOT_ID);
+			const driveFile = await uploadToDrive(
+				token,
+				driveName,
+				fileBytes,
+				file.type,
+				env.DRIVE_ROOT_ID
+			);
 			if (!driveFile.id) return jsonRes({ error: 'Drive upload failed' }, 500);
 
 			const newEntry = {

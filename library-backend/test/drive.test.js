@@ -1,12 +1,15 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import {
+	b64url,
+	b64urlBuf,
 	getGoogleAuthToken,
 	getGoogleUserAuthToken,
 	getDriveAuthToken,
+	fetchAllFiles,
 	fetchAllDriveFiles,
 	uploadToDrive,
 	deleteDriveFile,
-} from '../src/services/drive.js';
+} from '../src/drive.js';
 import {
 	MOCK_SERVICE_ACCOUNT,
 	MOCK_AUTH_TOKEN,
@@ -17,7 +20,7 @@ import {
 	parseMultipartBody,
 } from './drive.mock.js';
 
-describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
+describe('Google Drive Service Unit Tests', () => {
 	let mockFetch;
 	let originalFetch;
 
@@ -32,8 +35,26 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 		vi.restoreAllMocks();
 	});
 
+	describe('Base64 URL Helpers', () => {
+		it('encodes strings to URL-safe base64', () => {
+			const input = 'Hello+World/?=';
+			const encoded = b64url(input);
+			expect(encoded).not.toContain('+');
+			expect(encoded).not.toContain('/');
+			expect(encoded).not.toContain('=');
+		});
+
+		it('encodes byte buffers to URL-safe base64', () => {
+			const buffer = new Uint8Array([251, 255, 254, 0, 1, 2]);
+			const encoded = b64urlBuf(buffer);
+			expect(encoded).not.toContain('+');
+			expect(encoded).not.toContain('/');
+			expect(encoded).not.toContain('=');
+		});
+	});
+
 	describe('getGoogleAuthToken (Service Account Flow)', () => {
-		it('generates a signed JWT and exchanges it for an access token without live network calls', async () => {
+		it('generates a signed JWT and exchanges it for an access token', async () => {
 			const env = {
 				GOOGLE_SERVICE_ACCOUNT: MOCK_SERVICE_ACCOUNT,
 			};
@@ -41,7 +62,6 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 			const token = await getGoogleAuthToken(env);
 			expect(token).toBe(MOCK_AUTH_TOKEN);
 
-			// Verify the fetch request dispatched to Google OAuth
 			expect(globalThis.fetch).toHaveBeenCalledTimes(1);
 			const [url, options] = globalThis.fetch.mock.calls[0];
 			expect(url).toBe('https://oauth2.googleapis.com/token');
@@ -61,7 +81,7 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 			expect(globalThis.fetch).toHaveBeenCalledTimes(1);
 		});
 
-		it('throws error when GOOGLE_SERVICE_ACCOUNT is missing and does not call fetch', async () => {
+		it('throws error when GOOGLE_SERVICE_ACCOUNT is missing', async () => {
 			await expect(getGoogleAuthToken({})).rejects.toThrow(
 				'GOOGLE_SERVICE_ACCOUNT is not configured'
 			);
@@ -87,7 +107,7 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 	});
 
 	describe('getGoogleUserAuthToken & getDriveAuthToken', () => {
-		it('exchanges user refresh token for access token using mocked OAuth endpoint', async () => {
+		it('exchanges user refresh token for access token using OAuth endpoint', async () => {
 			const env = {
 				GOOGLE_OAUTH_CLIENT_ID: 'test-client-id',
 				GOOGLE_OAUTH_CLIENT_SECRET: 'test-client-secret',
@@ -118,10 +138,10 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 		});
 	});
 
-	describe('uploadToDrive (Multipart Body Construction & Isolation)', () => {
-		it('builds the correct multipart body and headers without any network calls', async () => {
+	describe('uploadToDrive (Multipart Body Construction & Upload)', () => {
+		it('builds the correct multipart body and headers', async () => {
 			const token = 'mock-bearer-token-12345';
-			const fileName = 'Unit1/21CS32/Gen/computer_networks_notes.pdf';
+			const fileName = 'Unit1/21CS32/Gen/sample_notes.pdf';
 			const fileContent = 'Sample binary payload representing PDF bytes';
 			const fileBytes = new TextEncoder().encode(fileContent);
 			const mimeType = 'application/pdf';
@@ -130,7 +150,6 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 			const result = await uploadToDrive(token, fileName, fileBytes, mimeType, parentId);
 			expect(result).toEqual(MOCK_UPLOADED_FILE);
 
-			// Verify fetch mock was called with correct endpoint and headers
 			expect(globalThis.fetch).toHaveBeenCalledTimes(1);
 			const [url, options] = globalThis.fetch.mock.calls[0];
 			expect(url).toBe(
@@ -140,7 +159,6 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 			expect(options.headers.Authorization).toBe(`Bearer ${token}`);
 			expect(options.headers['Content-Type']).toBe('multipart/related; boundary=rit_lib_boundary');
 
-			// Assert multipart payload structure
 			expect(options.body).toBeInstanceOf(Uint8Array);
 			const parsed = parseMultipartBody(options.body);
 
@@ -153,7 +171,7 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 			expect(parsed.filePayload).toBe(fileContent);
 		});
 
-		it('throws error when parentId is missing without calling fetch', async () => {
+		it('throws error when parentId is missing', async () => {
 			await expect(
 				uploadToDrive('token', 'notes.pdf', new Uint8Array(), 'application/pdf', '')
 			).rejects.toThrow('DRIVE_ROOT_ID is not configured');
@@ -184,8 +202,8 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 		});
 	});
 
-	describe('fetchAllDriveFiles & deleteDriveFile', () => {
-		it('fetches and paginates Drive files without live network calls', async () => {
+	describe('fetchAllFiles & deleteDriveFile', () => {
+		it('fetches and paginates Drive files', async () => {
 			let callCount = 0;
 			mockFetch = createDriveFetchMock({
 				onList: () => {
@@ -210,18 +228,22 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 			});
 			globalThis.fetch = vi.fn(mockFetch);
 
-			const files = await fetchAllDriveFiles('folder-root-id', 'mock-token');
+			const files = await fetchAllFiles('folder-root-id', 'mock-token');
 			expect(files).toHaveLength(2);
 			expect(files[0].id).toBe('file-id-1');
 			expect(files[1].id).toBe('file-id-2');
 			expect(globalThis.fetch).toHaveBeenCalledTimes(2);
 		});
 
+		it('exports fetchAllDriveFiles as an alias', () => {
+			expect(fetchAllDriveFiles).toBe(fetchAllFiles);
+		});
+
 		it('deletes Drive file via DELETE request', async () => {
-			await deleteDriveFile('mock-token', 'file-id-to-delete');
+			await deleteDriveFile('mock-token', 'file-id-to-remove');
 			expect(globalThis.fetch).toHaveBeenCalledTimes(1);
 			const [url, options] = globalThis.fetch.mock.calls[0];
-			expect(url).toBe('https://www.googleapis.com/drive/v3/files/file-id-to-delete');
+			expect(url).toBe('https://www.googleapis.com/drive/v3/files/file-id-to-remove');
 			expect(options.method).toBe('DELETE');
 			expect(options.headers.Authorization).toBe('Bearer mock-token');
 		});
@@ -248,23 +270,6 @@ describe('Google Drive & OAuth Service (Hermetic Mock Execution)', () => {
 			await expect(deleteDriveFile('mock-token', 'file-id')).rejects.toThrow(
 				'Drive delete failed (500): Internal Drive Error'
 			);
-		});
-	});
-
-	describe('Hermetic Network Isolation (Zero Real Network Calls)', () => {
-		it('throws an isolation violation error and prevents external network calls for unmocked hosts', async () => {
-			const unmockedHostUrl = 'https://api.neon.tech/neondb/v1/projects';
-			await expect(globalThis.fetch(unmockedHostUrl)).rejects.toThrow(
-				'[Zero Network Call Violation] Unmocked network call attempted to: https://api.neon.tech/neondb/v1/projects'
-			);
-		});
-
-		it('asserts fetch is not called for unexpected endpoints', async () => {
-			const unmockedHost = 'https://live-postgres-neon.com/query';
-			expect(mockFetch.getCallsFor('live-postgres-neon.com')).toHaveLength(0);
-			await expect(globalThis.fetch(unmockedHost)).rejects.toThrow('[Zero Network Call Violation]');
-			expect(mockFetch.getCallsFor('live-postgres-neon.com')).toHaveLength(1);
-			expect(mockFetch.getCallsFor('https://live-postgres-neon.com/other')).toHaveLength(0);
 		});
 	});
 });

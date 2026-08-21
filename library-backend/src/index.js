@@ -1,5 +1,5 @@
 import router from './router.js';
-import { getDriveAuthToken, fetchAllDriveFiles } from './services/drive.js';
+import { getDriveAuthToken, fetchAllFiles } from './drive.js';
 import { getFilesFromR2, saveFilesToR2 } from './services/r2.js';
 import logger from './utils/logger.js';
 
@@ -17,7 +17,7 @@ export default {
 					const token = await getDriveAuthToken(env);
 					const existing = await getFilesFromR2(env);
 					const existingById = new Map(existing.map((f) => [f.id, f]));
-					const drives = await fetchAllDriveFiles(env.DRIVE_ROOT_ID, token);
+					const drives = await fetchAllFiles(env.DRIVE_ROOT_ID, token);
 					const files = drives.map((f) => ({
 						...(existingById.get(f.id) || {}),
 						id: f.id,
@@ -30,7 +30,7 @@ export default {
 				} catch (err) {
 					logger.error('Scheduled Drive scan failed', err);
 				}
-			})(),
+			})()
 		);
 	},
 };

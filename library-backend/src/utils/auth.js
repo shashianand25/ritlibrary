@@ -10,11 +10,14 @@ const PUBLIC_DELETES_ENABLED = true;
 export async function verifyIdToken(idToken, firebaseApiKey) {
 	if (!idToken || !firebaseApiKey) return null;
 	try {
-		const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${firebaseApiKey}`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ idToken }),
-		});
+		const res = await fetch(
+			`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${firebaseApiKey}`,
+			{
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ idToken }),
+			}
+		);
 		if (!res.ok) return null;
 		const data = await res.json();
 		return data.users?.[0]?.email || null;

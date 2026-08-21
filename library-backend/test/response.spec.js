@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { jsonRes, cleanPathSegment, getFileViewName, normalizeSection, slugify, assetUrl } from '../src/utils/response.js';
+import {
+	jsonRes,
+	cleanPathSegment,
+	getFileViewName,
+	normalizeSection,
+	slugify,
+	assetUrl,
+} from '../src/utils/response.js';
 
 describe('Backend Response & String Utilities', () => {
 	it('formats json responses with CORS headers', async () => {
@@ -20,6 +27,8 @@ describe('Backend Response & String Utilities', () => {
 
 	it('slugifies titles and generates asset URLs correctly', () => {
 		expect(slugify('Web Development Hackathon 2026!')).toBe('web-development-hackathon-2026');
-		expect(assetUrl('https://api.ritlib.org', 'events/banner.png')).toBe('https://api.ritlib.org/api/events/assets/events/banner.png');
+		expect(assetUrl('https://api.ritlib.org', 'events/banner.png')).toBe(
+			'https://api.ritlib.org/api/events/assets/events/banner.png'
+		);
 	});
 });

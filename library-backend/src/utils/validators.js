@@ -2,39 +2,37 @@
  * Backend Input Validation Schemas and Guards
  */
 
+import { emailSchema, eventCreationSchema, uploadMetadataSchema } from '../schemas.js';
+
 export function isValidEmail(email) {
 	if (!email || typeof email !== 'string') return false;
-	return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+	return emailSchema.safeParse(email).success;
 }
 
 export function validateEventPayload(data) {
-	const errors = [];
-	if (!data.title || typeof data.title !== 'string' || data.title.trim().length < 2) {
-		errors.push('Title must be at least 2 characters long');
-	}
-	if (!data.description || typeof data.description !== 'string' || data.description.trim().length < 5) {
-		errors.push('Description must be at least 5 characters long');
-	}
-	const category = (data.category || '').toLowerCase().trim();
-	if (!['hackathon', 'event', 'challenge'].includes(category)) {
-		errors.push('Category must be one of: hackathon, event, challenge');
+	const result = eventCreationSchema.safeParse(data || {});
+	if (result.success) {
+		return {
+			isValid: true,
+			errors: [],
+		};
 	}
 	return {
-		isValid: errors.length === 0,
-		errors,
+		isValid: false,
+		errors: result.error.errors.map((e) => e.message),
 	};
 }
 
 export function validateUploadPayload(data) {
-	const errors = [];
-	const required = ['year', 'sem', 'branch', 'subjectCode', 'folderName'];
-	for (const field of required) {
-		if (!data[field] || String(data[field]).trim() === '') {
-			errors.push(`Field '${field}' is required`);
-		}
+	const result = uploadMetadataSchema.safeParse(data || {});
+	if (result.success) {
+		return {
+			isValid: true,
+			errors: [],
+		};
 	}
 	return {
-		isValid: errors.length === 0,
-		errors,
+		isValid: false,
+		errors: result.error.errors.map((e) => e.message),
 	};
 }
