@@ -27,3 +27,5 @@ dist-ssr
 service-account.json
 .vercel
 .env*
+coverage/
+public/web/

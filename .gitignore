@@ -1,2 +1,26 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production & Build outputs
+dist/
+build/
+coverage/
+.wrangler/
 .vercel
-.env*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Vendored PDF viewer build artifacts
+my-project/public/web/
+public/web/
+
+# System & Editor
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json
