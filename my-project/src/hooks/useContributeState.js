@@ -17,8 +17,24 @@ export function getYearFromSem(sem) {
   return '4th Year';
 }
 
+export function normalizeSemKey(sem) {
+  if (!sem) return '';
+  const s = String(sem).trim();
+  if (s.endsWith('Sem')) return s;
+  const num = parseInt(s, 10);
+  if (isNaN(num)) return s;
+  const suffix = num === 1 ? '1st' : num === 2 ? '2nd' : num === 3 ? '3rd' : `${num}th`;
+  return `${suffix} Sem`;
+}
+
 export function getSubjects(year, sem, branch) {
-  return subjectsData?.[year]?.[sem]?.[branch?.toLowerCase()] || [];
+  if (!year || !sem || !branch) return [];
+  const semKey = normalizeSemKey(sem);
+  return (
+    subjectsData?.[year]?.[semKey]?.[branch?.toLowerCase()] ||
+    subjectsData?.[year]?.[sem]?.[branch?.toLowerCase()] ||
+    []
+  );
 }
 
 export function useContributeState() {

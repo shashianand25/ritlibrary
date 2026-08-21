@@ -98,7 +98,22 @@ export function useSearchPyqState() {
 
   const branchSubjects = useMemo(() => {
     if (!form.year || !form.semester || !form.branch) return [];
-    return subjectsData?.[form.year]?.[form.semester]?.[form.branch.toLowerCase()] || [];
+    const sem = String(form.semester).trim();
+    const num = parseInt(sem, 10);
+    const semKey = isNaN(num)
+      ? sem
+      : num === 1
+        ? '1st Sem'
+        : num === 2
+          ? '2nd Sem'
+          : num === 3
+            ? '3rd Sem'
+            : `${num}th Sem`;
+    return (
+      subjectsData?.[form.year]?.[semKey]?.[form.branch.toLowerCase()] ||
+      subjectsData?.[form.year]?.[form.semester]?.[form.branch.toLowerCase()] ||
+      []
+    );
   }, [form.year, form.semester, form.branch]);
 
   const handleBranch = useCallback((e) => {
