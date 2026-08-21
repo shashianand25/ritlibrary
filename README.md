@@ -67,6 +67,7 @@ ritlibrary/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js `20.x` or higher
 - npm `10.x` or higher
 - (Optional) Docker and Docker Compose
@@ -135,13 +136,13 @@ docker-compose up --build -d
 
 ## 🔐 Environment Variables Reference
 
-| Variable | Scope | Description |
-| :--- | :--- | :--- |
-| `VITE_WORKER_URL` | Frontend | URL of the deployed Cloudflare Worker API |
-| `VITE_FIREBASE_API_KEY` | Frontend | Firebase Web API Key for authentication |
-| `DATABASE_URL` | Backend | PostgreSQL connection string (Neon Serverless) |
-| `ADMIN_EMAILS` | Backend | Comma-separated bootstrap administrator emails |
-| `DRIVE_ROOT_ID` | Backend | Google Drive target folder ID for stored resources |
+| Variable                | Scope    | Description                                        |
+| :---------------------- | :------- | :------------------------------------------------- |
+| `VITE_WORKER_URL`       | Frontend | URL of the deployed Cloudflare Worker API          |
+| `VITE_FIREBASE_API_KEY` | Frontend | Firebase Web API Key for authentication            |
+| `DATABASE_URL`          | Backend  | PostgreSQL connection string (Neon Serverless)     |
+| `ADMIN_EMAILS`          | Backend  | Comma-separated bootstrap administrator emails     |
+| `DRIVE_ROOT_ID`         | Backend  | Google Drive target folder ID for stored resources |
 
 See [`my-project/.env.example`](my-project/.env.example) and [`library-backend/.env.example`](library-backend/.env.example) for exact templates.
 

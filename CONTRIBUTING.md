@@ -8,6 +8,7 @@ Thank you for your interest in improving RIT Library! We welcome contributions f
 
 1. **Fork the Repository**
    Fork the repo to your own GitHub account and clone it locally:
+
    ```bash
    git clone https://github.com/<your-username>/ritlibrary.git
    cd ritlibrary
@@ -55,6 +56,7 @@ npm run build
 We strictly follow the **[Conventional Commits](https://www.conventionalcommits.org/)** specification and maintain a **mandatory test-pairing policy**:
 
 ### 1. Test-Pairing Rule
+
 - **Every feature (`feat:`) and bugfix (`fix:`) commit MUST include its corresponding unit, component, or integration test within the exact same commit.**
 - Changes submitted without accompanying tests will require revisions before PR approval.
 - Follow existing patterns in:
@@ -62,6 +64,7 @@ We strictly follow the **[Conventional Commits](https://www.conventionalcommits.
   - **Frontend UI & Hooks**: [`my-project/src/__tests__/*.test.jsx`](file:///Users/shashi/notes-rit/my-project/src/__tests__) using React Testing Library and Vitest.
 
 ### 2. Commit Types
+
 - `feat(scope):` New user-facing feature or API capability (paired with tests)
 - `fix(scope):` Bug fix or defect resolution (paired with regression test)
 - `test(scope):` Test suite expansion or test fixture improvements
@@ -72,6 +75,7 @@ We strictly follow the **[Conventional Commits](https://www.conventionalcommits.
 - `chore(scope):` Dependency bumps or maintenance tasks
 
 ### 3. Commit Message Examples
+
 ```
 feat(backend-health): add /api/health monitoring endpoint with tests
 fix(upload): enforce 50MB file size limit with validation tests

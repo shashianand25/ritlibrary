@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.0] - 2026-08-21
 
 ### Added
+
 - Modularized backend architecture by decomposing `library-backend/src/index.js` into focused modules:
   - `src/drive.js`: Google Drive authentication (JWT service account and user OAuth tokens), multipart uploads, and folder pagination.
   - `src/db.js`: Neon Serverless Postgres connection management, schema initialization, and admin operations.
@@ -23,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expanded backend unit test suite with `test/drive.test.js` covering 17 Google Drive unit test scenarios.
 
 ### Changed
+
 - Slimmed Cloudflare Worker entry point `library-backend/src/index.js` down from 536 LOC to 36 LOC.
 - Upgraded frontend test coverage exceeding 86% line coverage across 38 test files and 134 tests.
 - Updated backend test suite with 10 test files and 106 automated tests passing.
@@ -32,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.0] - 2026-08-21
 
 ### Added
+
 - Structured JSON logging (`src/utils/logger.js`) with timestamp, level, message, and error tracking sink.
 - Custom state management hook `useManageAdminsState.js` with comprehensive unit test suite.
 - Integration flow test `ContributeFlow.test.jsx` asserting complete directory navigation and file deletion.
@@ -40,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Backend automated testing job `test-backend` in `.github/workflows/ci.yml`.
 
 ### Changed
+
 - Hardened security audit gate in CI by removing failure bypass.
 - Purged 153 unused legacy Node server packages from frontend manifest to optimize bundle and eliminate vulnerabilities.
 - Upgraded coverage threshold floors to 65% lines/statements and 50% branches.
@@ -49,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2026-08-21
 
 ### Added
+
 - Centralized API client (`src/api/client.js`) for all backend communication.
 - Custom state management hooks (`useContributeState`, `useSearchPyqState`).
 - Typecheck verification with `jsconfig.json` in CI pipeline.
@@ -56,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Security vulnerability audit in CI workflow (`npm audit`).
 
 ### Changed
+
 - Refactored `ManageAdmins`, `Contribute`, `Events`, and `searchpyq` to use isolated API client functions.
 
 ---
@@ -63,6 +69,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-08-21
 
 ### Added
+
 - Comprehensive test suite with Vitest and React Testing Library covering 20 test files and 41+ unit/component tests.
 - Global `ErrorBoundary` to gracefully capture unexpected render crashes with recovery options.
 - Structured logger (`src/utils/logger.js`) replacing unstructured console statements.
@@ -73,7 +80,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Open-source community health files: `LICENSE` (ISC), `CONTRIBUTING.md`, `SECURITY.md`, and `.nvmrc`.
 
 ### Removed
+
 - Removed 17,222 LOC of vendored Mozilla PDF.js viewer build output in favor of standard npm package imports.
 
 ### Changed
+
 - Modularized all god files (`searchpyq.jsx`, `Contribute.jsx`, `Events.jsx`, `HomePage.jsx`, `SyllabusTracker.jsx`) so no file exceeds 490 LOC.

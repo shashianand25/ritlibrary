@@ -25,6 +25,7 @@ export default defineConfig(({ command }) => ({
     historyApiFallback: true,
   },
   build: {
+    target: 'es2022',
     rollupOptions: {
       output: {
         manualChunks: {
