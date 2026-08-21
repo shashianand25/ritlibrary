@@ -26,6 +26,9 @@ dist-ssr
 
 service-account.json
 .vercel
-.env*
+.env
+.env.local
+.env.*.local
+!.env.example
 coverage/
 public/web/

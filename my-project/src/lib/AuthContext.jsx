@@ -2,14 +2,15 @@ import { createContext, useContext, useEffect, useState, useCallback } from 'rea
 import { onAuthStateChanged, signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
 import { auth, googleProvider } from './firebase';
 
-const WORKER_URL = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
+const WORKER_URL =
+  import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
 const ADMIN_MODE_ENABLED = false;
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [user, setUser]                   = useState(null);
-  const [isAdmin, setIsAdmin]             = useState(false);
+  const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isAuthLoading, setIsAuthLoading] = useState(true);
 
   /* Check admin status against the Worker KV */

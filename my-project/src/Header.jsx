@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Menu, X, LogIn, LogOut, ShieldCheck, ChevronDown } from 'lucide-react';
 import { useAuth } from './lib/AuthContext.jsx';
 
@@ -20,8 +20,8 @@ export default function Header() {
       if (window.innerWidth >= 768) setMenuOpen(false);
     };
     h();
-    window.addEventListener("resize", h);
-    return () => window.removeEventListener("resize", h);
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
   }, []);
 
   /* Close user dropdown on outside click */
@@ -36,15 +36,20 @@ export default function Header() {
   }, []);
 
   const menuItems = [
-    { label: 'About',      path: '/about',      action: () => navigate('/about') },
-    { label: 'Notes',      path: '/resources',  action: () => navigate('/resources') },
-    { label: 'Syllabus',   path: '/syllabus',   action: () => navigate('/syllabus') },
+    { label: 'About', path: '/about', action: () => navigate('/about') },
+    { label: 'Notes', path: '/resources', action: () => navigate('/resources') },
+    { label: 'Syllabus', path: '/syllabus', action: () => navigate('/syllabus') },
     { label: 'Contribute', path: '/contribute', action: () => navigate('/contribute') },
   ];
 
   /* Initials avatar */
   const initials = user?.displayName
-    ? user.displayName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+    ? user.displayName
+        .split(' ')
+        .map((w) => w[0])
+        .join('')
+        .slice(0, 2)
+        .toUpperCase()
     : user?.email?.[0]?.toUpperCase() || '?';
 
   return (
@@ -54,10 +59,14 @@ export default function Header() {
         style={{ fontFamily: "'Outfit', sans-serif" }}
       >
         {/* Logo */}
-        <div className="flex items-center gap-3 sm:gap-4 cursor-pointer" onClick={() => navigate('/')}>
+        <div
+          className="flex items-center gap-3 sm:gap-4 cursor-pointer"
+          onClick={() => navigate('/')}
+        >
           <div className="flex items-center gap-2.5">
             <img
-              src="/favicon.png" alt="Site Logo"
+              src="/favicon.png"
+              alt="Site Logo"
               className="h-6 w-6 sm:h-8 sm:w-8 object-contain transition-all duration-300"
               style={{ mixBlendMode: 'screen', filter: 'invert(1) hue-rotate(180deg)' }}
             />
@@ -68,10 +77,13 @@ export default function Header() {
           <span className="text-white/30 text-xl sm:text-3xl font-light mx-0.5">|</span>
           <div className="flex items-center">
             <img
-              src="/ramaiah-logo.png" alt="Ramaiah Logo"
+              src="/ramaiah-logo.png"
+              alt="Ramaiah Logo"
               className="h-8 w-8 sm:h-[2.4rem] sm:w-[2.4rem] object-contain"
               style={{ mixBlendMode: 'screen', filter: 'invert(1) hue-rotate(180deg)' }}
-              onError={(e) => { e.target.style.display = 'none'; }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
             />
           </div>
         </div>
@@ -97,44 +109,79 @@ export default function Header() {
 
           {/* Auth button / user chip */}
           {isAuthLoading ? (
-            <div style={{
-              width: 32, height: 32, borderRadius: '50%',
-              border: '2px solid rgba(255,255,255,0.2)',
-              borderTopColor: '#A3E635',
-              animation: 'spin 0.8s linear infinite',
-            }} />
+            <div
+              style={{
+                width: 32,
+                height: 32,
+                borderRadius: '50%',
+                border: '2px solid rgba(255,255,255,0.2)',
+                borderTopColor: '#A3E635',
+                animation: 'spin 0.8s linear infinite',
+              }}
+            />
           ) : user ? (
             <div ref={userMenuRef} style={{ position: 'relative' }}>
               <button
-                onClick={() => setUserMenuOpen(p => !p)}
+                onClick={() => setUserMenuOpen((p) => !p)}
                 style={{
-                  display: 'flex', alignItems: 'center', gap: 8,
-                  padding: '6px 10px', borderRadius: 12, cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '6px 10px',
+                  borderRadius: 12,
+                  cursor: 'pointer',
                   background: 'rgba(163,230,53,0.12)',
                   border: '1px solid rgba(163,230,53,0.25)',
                 }}
               >
                 {user.photoURL ? (
-                  <img src={user.photoURL} alt="" style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }} />
+                  <img
+                    src={user.photoURL}
+                    alt=""
+                    style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }}
+                  />
                 ) : (
-                  <div style={{
-                    width: 28, height: 28, borderRadius: '50%',
-                    background: 'linear-gradient(135deg,#66713f,#A3E635)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 12, fontWeight: 800, color: '#fff',
-                  }}>
+                  <div
+                    style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg,#66713f,#A3E635)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 12,
+                      fontWeight: 800,
+                      color: '#fff',
+                    }}
+                  >
                     {initials}
                   </div>
                 )}
                 {!isSmallScreen && (
-                  <span style={{ fontSize: 13, fontWeight: 600, color: '#F3F4F6', maxWidth: 100, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  <span
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: '#F3F4F6',
+                      maxWidth: 100,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
                     {user.displayName || user.email}
                   </span>
                 )}
-                {isAdmin && (
-                  <ShieldCheck size={14} style={{ color: '#A3E635' }} />
-                )}
-                <ChevronDown size={12} style={{ color: 'rgba(255,255,255,0.5)', transform: userMenuOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+                {isAdmin && <ShieldCheck size={14} style={{ color: '#A3E635' }} />}
+                <ChevronDown
+                  size={12}
+                  style={{
+                    color: 'rgba(255,255,255,0.5)',
+                    transform: userMenuOpen ? 'rotate(180deg)' : 'none',
+                    transition: 'transform 0.2s',
+                  }}
+                />
               </button>
 
               <AnimatePresence>
@@ -145,44 +192,94 @@ export default function Header() {
                     exit={{ opacity: 0, y: -8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
                     style={{
-                      position: 'absolute', right: 0, top: 'calc(100% + 8px)',
-                      minWidth: 200, borderRadius: 14, padding: '8px',
-                      background: 'rgba(15,23,42,0.95)', backdropFilter: 'blur(20px)',
+                      position: 'absolute',
+                      right: 0,
+                      top: 'calc(100% + 8px)',
+                      minWidth: 200,
+                      borderRadius: 14,
+                      padding: '8px',
+                      background: 'rgba(15,23,42,0.95)',
+                      backdropFilter: 'blur(20px)',
                       border: '1px solid rgba(255,255,255,0.1)',
                       boxShadow: '0 16px 40px rgba(0,0,0,0.5)',
                       zIndex: 100,
                     }}
                   >
-                    <div style={{ padding: '8px 12px 12px', borderBottom: '1px solid rgba(255,255,255,0.08)', marginBottom: 6 }}>
-                      <p style={{ fontSize: 13, fontWeight: 700, color: '#F3F4F6', margin: 0 }}>{user.displayName}</p>
-                      <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', margin: '2px 0 0', wordBreak: 'break-all' }}>{user.email}</p>
-
+                    <div
+                      style={{
+                        padding: '8px 12px 12px',
+                        borderBottom: '1px solid rgba(255,255,255,0.08)',
+                        marginBottom: 6,
+                      }}
+                    >
+                      <p style={{ fontSize: 13, fontWeight: 700, color: '#F3F4F6', margin: 0 }}>
+                        {user.displayName}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: 11,
+                          color: 'rgba(255,255,255,0.45)',
+                          margin: '2px 0 0',
+                          wordBreak: 'break-all',
+                        }}
+                      >
+                        {user.email}
+                      </p>
                     </div>
                     {isAdmin && (
                       <button
-                        onClick={() => { navigate('/admin'); setUserMenuOpen(false); }}
-                        style={{
-                          width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-                          padding: '9px 12px', borderRadius: 10, border: 'none', cursor: 'pointer',
-                          background: 'transparent', color: '#F3F4F6', fontSize: 13, fontWeight: 600,
-                          transition: 'background 0.15s', marginBottom: 4
+                        onClick={() => {
+                          navigate('/admin');
+                          setUserMenuOpen(false);
                         }}
-                        onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
-                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                        style={{
+                          width: '100%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          padding: '9px 12px',
+                          borderRadius: 10,
+                          border: 'none',
+                          cursor: 'pointer',
+                          background: 'transparent',
+                          color: '#F3F4F6',
+                          fontSize: 13,
+                          fontWeight: 600,
+                          transition: 'background 0.15s',
+                          marginBottom: 4,
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.background = 'rgba(255,255,255,0.08)')
+                        }
+                        onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                       >
                         <ShieldCheck size={15} style={{ color: '#A3E635' }} /> Manage Admins
                       </button>
                     )}
                     <button
-                      onClick={() => { signOut(); setUserMenuOpen(false); }}
+                      onClick={() => {
+                        signOut();
+                        setUserMenuOpen(false);
+                      }}
                       style={{
-                        width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-                        padding: '9px 12px', borderRadius: 10, border: 'none', cursor: 'pointer',
-                        background: 'transparent', color: '#ef4444', fontSize: 13, fontWeight: 600,
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        padding: '9px 12px',
+                        borderRadius: 10,
+                        border: 'none',
+                        cursor: 'pointer',
+                        background: 'transparent',
+                        color: '#ef4444',
+                        fontSize: 13,
+                        fontWeight: 600,
                         transition: 'background 0.15s',
                       }}
-                      onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,0.1)'}
-                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.background = 'rgba(239,68,68,0.1)')
+                      }
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                     >
                       <LogOut size={15} /> Sign Out
                     </button>
@@ -192,13 +289,21 @@ export default function Header() {
             </div>
           ) : (
             <motion.button
-              whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
               onClick={signIn}
               style={{
-                display: 'flex', alignItems: 'center', gap: 7,
-                padding: '7px 16px', borderRadius: 12, border: 'none', cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 7,
+                padding: '7px 16px',
+                borderRadius: 12,
+                border: 'none',
+                cursor: 'pointer',
                 background: 'linear-gradient(135deg,#66713f,#A3E635cc)',
-                color: '#fff', fontSize: 13, fontWeight: 700,
+                color: '#fff',
+                fontSize: 13,
+                fontWeight: 700,
                 boxShadow: '0 4px 14px rgba(102,113,63,0.4)',
               }}
             >
@@ -233,9 +338,14 @@ export default function Header() {
               {menuItems.map((item) => (
                 <button
                   key={item.label}
-                  onClick={() => { item.action(); setMenuOpen(false); }}
+                  onClick={() => {
+                    item.action();
+                    setMenuOpen(false);
+                  }}
                   className={`w-full px-6 py-4 text-[16px] font-medium transition-all duration-200 text-left border-b border-white/5 cursor-pointer ${
-                    location.pathname === item.path ? 'text-lime-400' : 'text-gray-200 hover:text-blue-400 hover:bg-white/5'
+                    location.pathname === item.path
+                      ? 'text-lime-400'
+                      : 'text-gray-200 hover:text-blue-400 hover:bg-white/5'
                   }`}
                 >
                   {item.label}
@@ -244,14 +354,20 @@ export default function Header() {
               {/* Mobile sign in/out */}
               {!user ? (
                 <button
-                  onClick={() => { signIn(); setMenuOpen(false); }}
+                  onClick={() => {
+                    signIn();
+                    setMenuOpen(false);
+                  }}
                   className="w-full px-6 py-4 text-[16px] font-medium text-left text-lime-400 hover:bg-white/5 cursor-pointer flex items-center gap-2"
                 >
                   <LogIn size={16} /> Sign In
                 </button>
               ) : (
                 <button
-                  onClick={() => { signOut(); setMenuOpen(false); }}
+                  onClick={() => {
+                    signOut();
+                    setMenuOpen(false);
+                  }}
                   className="w-full px-6 py-4 text-[16px] font-medium text-left text-red-400 hover:bg-white/5 cursor-pointer flex items-center gap-2"
                 >
                   <LogOut size={16} /> Sign Out

@@ -1,1 +1,25 @@
-{}
+{
+  "name": "ritlibrary-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RIT Library - Academic resource portal with notes, PYQs, and syllabus tracking",
+  "workspaces": [
+    "my-project",
+    "library-backend"
+  ],
+  "scripts": {
+    "dev": "npm --prefix my-project run dev",
+    "build": "npm --prefix my-project run build",
+    "test": "npm --prefix my-project test",
+    "test:coverage": "npm --prefix my-project run test:coverage",
+    "lint": "npm --prefix my-project run lint",
+    "format": "npm --prefix my-project run format",
+    "format:check": "npm --prefix my-project run format:check"
+  },
+  "author": "RIT Library Team",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shashianand25/ritlibrary"
+  }
+}

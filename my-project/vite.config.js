@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig(({ command }) => ({
   plugins: [
-    react(), 
+    react(),
     tailwindcss(),
     {
       name: 'strip-dynamic-requires',
@@ -17,20 +17,23 @@ export default defineConfig(({ command }) => ({
             .replace(/require\(['"]code['"]\s*\+\s*['"]page['"]\)/g, '{}')
             .replace(/require\(['"]cf['"]\s*\+\s*['"]b['"]\)/g, '{}');
         }
-      }
-    }
+      },
+    },
   ],
 
   server: {
     historyApiFallback: true,
   },
   resolve: {
-    alias: command === 'build' ? {
-      'codepage': 'codepage/dist/cpexcel.full.js'
-    } : {}
+    alias:
+      command === 'build'
+        ? {
+            codepage: 'codepage/dist/cpexcel.full.js',
+          }
+        : {},
   },
   define: {
-    'cptable': 'window.cptable',
-    'CFB': 'window.CFB'
-  }
+    cptable: 'window.cptable',
+    CFB: 'window.CFB',
+  },
 }));
