@@ -5,7 +5,6 @@ import {
   getFileSubjectCode,
   getFileFolderName,
   getFileSection,
-  getFileLeafName,
   getFileViewName,
 } from '../utils/fileHelpers.js';
 
