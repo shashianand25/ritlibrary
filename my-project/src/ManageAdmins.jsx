@@ -2,7 +2,8 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trash2, Plus, ShieldCheck, Mail, Loader2, AlertCircle } from 'lucide-react';
 import Header from './Header.jsx';
-import { THEME_COLORS, glassCard, inputFieldStyle } from './constants/theme.js';
+import { THEME_COLORS, inputFieldStyle } from './constants/theme.js';
+import { darkBgStyle, glassCard } from './constants/sharedStyles.js';
 import useManageAdminsState from './hooks/useManageAdminsState.js';
 
 export default function ManageAdmins() {
@@ -24,9 +25,7 @@ export default function ManageAdmins() {
     return (
       <div
         style={{
-          minHeight: '100vh',
-          background: THEME_COLORS.darkBg,
-          color: '#fff',
+          ...darkBgStyle,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -39,7 +38,7 @@ export default function ManageAdmins() {
 
   if (!isAdmin) {
     return (
-      <div style={{ minHeight: '100vh', background: THEME_COLORS.darkBg, color: '#fff' }}>
+      <div style={darkBgStyle}>
         <Header />
         <div style={{ padding: '80px 24px', textAlign: 'center' }}>
           <ShieldCheck
@@ -58,9 +57,7 @@ export default function ManageAdmins() {
   return (
     <div
       style={{
-        minHeight: '100vh',
-        background: THEME_COLORS.darkBg,
-        color: '#fff',
+        ...darkBgStyle,
         fontFamily: "'Inter', sans-serif",
       }}
     >
