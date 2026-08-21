@@ -1,34 +1,19 @@
 import { useEffect, useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  Search,
-  BookOpen,
-  Sparkles,
-  BookMarked,
-  GraduationCap,
-  Layers,
-  ChevronDown,
-} from 'lucide-react';
+import { Search, BookMarked, GraduationCap, BookOpen } from 'lucide-react';
 import subjectsData from './data/subjects.json';
 import DrivePreview from './pdf.jsx';
 import Mozillapdf from './mozillapdf.jsx';
 import Header from './Header.jsx';
-import { branchGroups, examTypesList, electiveOptions, COLORS } from './constants/searchData.js';
+import { COLORS } from './constants/searchData.js';
 import { ResourcesBg, GLOBAL_STYLE } from './components/SearchBackground.jsx';
 import { CircleLoader } from './components/Loaders.jsx';
 import { PillBtn } from './components/UIElements.jsx';
 import SearchFilters from './components/search/SearchFilters.jsx';
 import NotesResults from './components/search/NotesResults.jsx';
 import PyqResults from './components/search/PyqResults.jsx';
-import {
-  getFileCategory,
-  isAllSubjectsPyq,
-  getFileSubjectCode,
-  getFileFolderName,
-  getFileSection,
-  getFileLeafName,
-} from './utils/fileHelpers.js';
+import { getFileCategory, getFileSubjectCode, getFileFolderName } from './utils/fileHelpers.js';
 import logger from './utils/logger.js';
 
 const FILES_JSON_URL =
@@ -70,9 +55,7 @@ export default function SearchPYQ() {
     return { year: '', branch: '', semester: '', subject: '', subSubject: '' };
   });
 
-  const [cycleTag, setCycleTag] = useState('');
   const [showElective, setShowElective] = useState(false);
-  const [examTypes, setExamTypes] = useState(['CIE1', 'CIE2', 'SEE']);
   const [searchMode, setSearchMode] = useState(() =>
     typeof window !== 'undefined' ? localStorage.getItem('searchMode') || 'guided' : 'guided'
   );
@@ -90,10 +73,8 @@ export default function SearchPYQ() {
   const [openMenuId, setOpenMenuId] = useState(null);
   const [activeTab, setActiveTab] = useState('notes');
   const [currentSubjectCode, setCurrentSubjectCode] = useState('');
-  const [resultsPanelRef, setResultsPanelRef] = useState(null);
 
   const [allData, setAllData] = useState([]);
-  const [isDataLoading, setIsDataLoading] = useState(true);
 
   useEffect(() => {
     localStorage.setItem('searchSettings', JSON.stringify(form));
@@ -131,8 +112,6 @@ export default function SearchPYQ() {
         }
       } catch (e) {
         logger.error('Failed to load file index', e);
-      } finally {
-        setIsDataLoading(false);
       }
     })();
   }, []);
@@ -289,26 +268,23 @@ export default function SearchPYQ() {
                   searchMode={searchMode}
                   setSearchMode={setSearchMode}
                   form={form}
-                  setForm={setForm}
                   subjectCode={subjectCode}
                   setSubjectCode={setSubjectCode}
                   codeError={codeError}
                   handleSearch={handleSearch}
                   isSearching={isSearching}
-                  cycleTag={cycleTag}
                   showElective={showElective}
                   branchSubjects={branchSubjects}
                   handleBranch={handleBranch}
                   handleSemester={handleSemester}
                   handleSubject={handleSubject}
                   handleSubSubject={handleSubSubject}
-                  isSmallScreen={isSmallScreen}
                 />
               </motion.div>
             </div>
 
             {/* Results Display Panel */}
-            <div className="lg:col-span-7" ref={setResultsPanelRef}>
+            <div className="lg:col-span-7">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}

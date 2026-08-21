@@ -29,6 +29,8 @@ service-account.json
 .env
 .env.local
 .env.*.local
+.env.vercel*
 !.env.example
+
 coverage/
 public/web/

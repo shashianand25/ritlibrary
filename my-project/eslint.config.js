@@ -31,13 +31,20 @@ export default [
       'no-unused-vars': [
         'warn',
         {
-          varsIgnorePattern: '^[A-Z_]',
+          varsIgnorePattern: '^(motion|[A-Z_])',
           argsIgnorePattern: '^_',
           ignoreRestSiblings: true,
+          caughtErrors: 'none',
         },
       ],
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'no-empty': ['warn', { allowEmptyCatch: true }],
+    },
+  },
+  {
+    files: ['src/lib/AuthContext.jsx'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
     },
   },
 ];

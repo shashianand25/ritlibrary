@@ -1,3 +1,5 @@
+import React from 'react';
+
 // PDF Icon
 export const PdfIcon = () => (
   <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -9,10 +11,10 @@ export const PdfIcon = () => (
     <text
       x="256"
       y="360"
-      font-family="Arial, sans-serif"
-      font-size="180"
-      font-weight="bold"
-      text-anchor="middle"
+      fontFamily="Arial, sans-serif"
+      fontSize="180"
+      fontWeight="bold"
+      textAnchor="middle"
       fill="#fff"
     >
       PDF
@@ -34,7 +36,3 @@ export const ImageIcon = () => (
     <circle cx="219.59" cy="191.47" r="51.37" fill="#f44336" />
   </svg>
 );
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-  <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10-4.477-10-10-10zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm0-14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z" />
-</svg>;

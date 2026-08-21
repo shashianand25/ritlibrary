@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Upload,
@@ -21,8 +21,8 @@ import logger from './utils/logger.js';
 
 const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
 const FILES_JSON_URL = WORKER;
-const PUBLIC_UPLOADS_ENABLED = true;
-const PUBLIC_DELETES_ENABLED = true;
+const PUBLIC_UPLOADS_ENABLED = import.meta.env.VITE_PUBLIC_UPLOADS_ENABLED !== 'false';
+const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED === 'true';
 const C = COLORS;
 
 const NOTE_FOLDERS = [
@@ -167,7 +167,10 @@ export default function Contribute() {
 
   const year = semester ? getYearFromSem(semester) : '';
   const branches = year ? branchGroups[year] || [] : [];
-  const subjects = year && semester && branch ? getSubjects(year, semester, branch) : [];
+  const subjects = useMemo(
+    () => (year && semester && branch ? getSubjects(year, semester, branch) : []),
+    [year, semester, branch]
+  );
 
   useEffect(() => {
     if (subject && subjects.length > 0) {
@@ -435,7 +438,11 @@ export default function Contribute() {
                   isCustom={customFolders.includes(fName)}
                   isActive={activeFolder === fName}
                   onView={() => setActiveFolder(activeFolder === fName ? '' : fName)}
-                  onUpload={() => setUploadTarget(fName)}
+                  onUpload={() =>
+                    canUpload
+                      ? setUploadTarget(fName)
+                      : alert('Please sign in to contribute resources.')
+                  }
                   onRemove={() => setCustomFolders((p) => p.filter((x) => x !== fName))}
                 />
               ))}

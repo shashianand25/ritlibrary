@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, CheckCircle, Circle, BookOpen, Layers } from 'lucide-react';
 import syllabusData from './data/syllabus.json';
@@ -13,8 +13,6 @@ import { ResourcesBg, GLOBAL_STYLE } from './components/SearchBackground.jsx';
 import logger from './utils/logger.js';
 
 export default function SyllabusTracker() {
-  const [hasStorageError, setHasStorageError] = useState(false);
-
   const [semester, setSemester] = useState(() => {
     try {
       const savedPrefs =

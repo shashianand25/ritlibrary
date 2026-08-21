@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from './lib/AuthContext.jsx';
 import { Trash2, Plus, ShieldCheck, Mail, Loader2, AlertCircle } from 'lucide-react';
 import Header from './Header.jsx';
 import { COLORS } from './constants/searchData.js';
+import { isValidEmail } from './utils/validators.js';
 
 const WORKER = import.meta.env.VITE_WORKER_URL || 'https://library-backend.ritlibrary.workers.dev';
 const C = COLORS;
@@ -24,7 +25,7 @@ export default function ManageAdmins() {
   const [actionLoading, setActionLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const fetchAdmins = async () => {
+  const fetchAdmins = useCallback(async () => {
     if (!user) return;
     try {
       const idToken = await user.getIdToken();
@@ -40,16 +41,20 @@ export default function ManageAdmins() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user]);
 
   useEffect(() => {
     if (user && isAdmin) fetchAdmins();
     else if (!isAuthLoading) setLoading(false);
-  }, [user, isAdmin, isAuthLoading]);
+  }, [user, isAdmin, isAuthLoading, fetchAdmins]);
 
   const handleAdd = async (e) => {
     e.preventDefault();
-    if (!newEmail || !newEmail.includes('@')) return;
+    if (!isValidEmail(newEmail)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
     setActionLoading(true);
     setError('');
     try {
