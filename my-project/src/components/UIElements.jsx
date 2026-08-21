@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { PdfIcon, ImageIcon } from '../svg.jsx';
+import { pillButtonBase } from '../constants/sharedStyles.js';
 
 /* ────────── file icon ────────── */
 export const FileIcon = ({ fileName, mimeType }) => {
@@ -116,15 +117,10 @@ export function PillBtn({ active, onClick, children, colors }) {
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
       style={{
-        padding: '7px 18px',
-        borderRadius: 999,
-        fontSize: 13,
-        fontWeight: 700,
+        ...pillButtonBase,
         border: `2px solid ${active ? colors?.accent || '#A3E635' : (colors?.accent || '#A3E635') + '55'}`,
         background: active ? colors?.accent || '#A3E635' : 'transparent',
         color: active ? '#fff' : colors?.accent || '#A3E635',
-        cursor: 'pointer',
-        transition: 'all 0.2s',
       }}
     >
       {children}
