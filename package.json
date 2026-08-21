@@ -7,6 +7,10 @@
     "my-project",
     "library-backend"
   ],
+  "dependencies": {
+    "library-backend": "*",
+    "my-project": "*"
+  },
   "scripts": {
     "setup": "npm install && node scripts/setup.js",
     "dev": "npm --prefix my-project run dev",
@@ -20,6 +24,14 @@
   },
   "devDependencies": {
     "prettier": "^3.9.6"
+  },
+  "coverageThreshold": {
+    "global": {
+      "lines": 70,
+      "functions": 70,
+      "branches": 65,
+      "statements": 70
+    }
   },
   "author": "RIT Library Team",
   "license": "ISC",
