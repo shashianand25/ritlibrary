@@ -1,91 +1,31 @@
-import { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAuth } from './lib/AuthContext.jsx';
 import { Trash2, Plus, ShieldCheck, Mail, Loader2, AlertCircle } from 'lucide-react';
 import Header from './Header.jsx';
-import { COLORS } from './constants/searchData.js';
-import { isValidEmail } from './utils/validators.js';
-import { getAdmins, addAdmin, removeAdmin } from './api/client.js';
-
-const C = COLORS;
-
-const glass = {
-  background: 'rgba(20,25,35,0.75)',
-  backdropFilter: 'blur(24px)',
-  border: '1px solid rgba(255,255,255,0.1)',
-  boxShadow: '0 12px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
-};
+import { THEME_COLORS, glassCard, inputFieldStyle } from './constants/theme.js';
+import useManageAdminsState from './hooks/useManageAdminsState.js';
 
 export default function ManageAdmins() {
-  const { user, isAdmin, isAuthLoading } = useAuth();
-  const [admins, setAdmins] = useState([]);
-  const [bootstrapAdmins, setBootstrapAdmins] = useState([]);
-  const [newEmail, setNewEmail] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [actionLoading, setActionLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const fetchAdmins = useCallback(async () => {
-    if (!user) return;
-    try {
-      const idToken = await user.getIdToken();
-      const data = await getAdmins(idToken);
-      setAdmins(data.dbAdmins || []);
-      setBootstrapAdmins(data.bootstrapAdmins || []);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }, [user]);
-
-  useEffect(() => {
-    if (user && isAdmin) fetchAdmins();
-    else if (!isAuthLoading) setLoading(false);
-  }, [user, isAdmin, isAuthLoading, fetchAdmins]);
-
-  const handleAdd = async (e) => {
-    e.preventDefault();
-    if (!isValidEmail(newEmail)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-
-    setActionLoading(true);
-    setError('');
-    try {
-      const idToken = await user.getIdToken();
-      await addAdmin(newEmail, idToken);
-      setNewEmail('');
-      await fetchAdmins();
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setActionLoading(false);
-    }
-  };
-
-  const handleRemove = async (emailToRemove) => {
-    if (!window.confirm(`Are you sure you want to remove ${emailToRemove} from admins?`)) return;
-    setActionLoading(true);
-    setError('');
-    try {
-      const idToken = await user.getIdToken();
-      await removeAdmin(emailToRemove, idToken);
-      await fetchAdmins();
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setActionLoading(false);
-    }
-  };
+  const {
+    isAdmin,
+    isAuthLoading,
+    admins,
+    bootstrapAdmins,
+    newEmail,
+    setNewEmail,
+    loading,
+    actionLoading,
+    error,
+    handleAdd,
+    handleRemove,
+  } = useManageAdminsState();
 
   if (isAuthLoading || loading) {
     return (
       <div
         style={{
           minHeight: '100vh',
-          background: '#0a0d14',
+          background: THEME_COLORS.darkBg,
           color: '#fff',
           display: 'flex',
           alignItems: 'center',
@@ -99,7 +39,7 @@ export default function ManageAdmins() {
 
   if (!isAdmin) {
     return (
-      <div style={{ minHeight: '100vh', background: '#0a0d14', color: '#fff' }}>
+      <div style={{ minHeight: '100vh', background: THEME_COLORS.darkBg, color: '#fff' }}>
         <Header />
         <div style={{ padding: '80px 24px', textAlign: 'center' }}>
           <ShieldCheck
@@ -119,7 +59,7 @@ export default function ManageAdmins() {
     <div
       style={{
         minHeight: '100vh',
-        background: '#0a0d14',
+        background: THEME_COLORS.darkBg,
         color: '#fff',
         fontFamily: "'Inter', sans-serif",
       }}
@@ -156,11 +96,12 @@ export default function ManageAdmins() {
           </div>
         )}
 
+        {/* Add Admin Form */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          style={{ ...glass, borderRadius: 20, padding: 24, marginBottom: 32 }}
+          style={{ ...glassCard, borderRadius: 20, padding: 24, marginBottom: 32 }}
         >
           <h3
             style={{
@@ -172,7 +113,7 @@ export default function ManageAdmins() {
               alignItems: 'center',
             }}
           >
-            <Plus size={16} color={C.primary} /> Add New Admin
+            <Plus size={16} color={THEME_COLORS.primary} /> Add New Admin
           </h3>
           <form onSubmit={handleAdd} style={{ display: 'flex', gap: 12 }}>
             <div style={{ position: 'relative', flexGrow: 1 }}>
@@ -193,15 +134,8 @@ export default function ManageAdmins() {
                 onChange={(e) => setNewEmail(e.target.value)}
                 required
                 style={{
-                  width: '100%',
-                  padding: '12px 16px 12px 42px',
-                  background: 'rgba(0,0,0,0.3)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: 12,
-                  color: '#fff',
-                  fontSize: 15,
-                  outline: 'none',
-                  transition: 'border-color 0.2s',
+                  ...inputFieldStyle,
+                  paddingLeft: 42,
                 }}
               />
             </div>
@@ -210,32 +144,35 @@ export default function ManageAdmins() {
               disabled={actionLoading || !newEmail}
               style={{
                 padding: '0 24px',
-                background: C.primary,
+                background: THEME_COLORS.primary,
                 color: '#fff',
                 border: 'none',
                 borderRadius: 12,
                 fontWeight: 700,
                 fontSize: 14,
                 cursor: 'pointer',
-                transition: 'opacity 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 8,
                 opacity: actionLoading || !newEmail ? 0.5 : 1,
               }}
             >
-              {actionLoading ? 'Adding...' : 'Add'}
+              {actionLoading ? <Loader2 size={16} className="animate-spin" /> : 'Add Admin'}
             </button>
           </form>
         </motion.div>
 
+        {/* Admin List */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          style={{ ...glass, borderRadius: 20, overflow: 'hidden' }}
+          style={{ ...glassCard, borderRadius: 20, overflow: 'hidden' }}
         >
           <div
             style={{
               padding: '20px 24px',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              borderBottom: '1px solid rgba(255,255,255,0.05)',
               background: 'rgba(0,0,0,0.2)',
             }}
           >
@@ -270,7 +207,12 @@ export default function ManageAdmins() {
                     }}
                   >
                     <div
-                      style={{ width: 6, height: 6, borderRadius: '50%', background: C.primary }}
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: '50%',
+                        background: THEME_COLORS.primary,
+                      }}
                     />{' '}
                     Root Admin (Environment)
                   </div>
@@ -281,7 +223,7 @@ export default function ManageAdmins() {
             {/* DB Admins */}
             {admins.map((admin) => (
               <div
-                key={admin.email}
+                key={admin.email || admin}
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -294,29 +236,30 @@ export default function ManageAdmins() {
                 }}
               >
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 600 }}>{admin.email}</div>
-                  <div style={{ fontSize: 12, opacity: 0.5, marginTop: 4 }}>
-                    Added: {new Date(admin.created_at).toLocaleDateString()}
-                  </div>
+                  <div style={{ fontSize: 15, fontWeight: 600 }}>{admin.email || admin}</div>
+                  {admin.created_at && (
+                    <div style={{ fontSize: 12, opacity: 0.5, marginTop: 4 }}>
+                      Added: {new Date(admin.created_at).toLocaleDateString()}
+                    </div>
+                  )}
                 </div>
                 <button
-                  onClick={() => handleRemove(admin.email)}
+                  onClick={() => {
+                    const ok = window.confirm(`Remove ${admin.email || admin} from admins?`);
+                    if (ok) handleRemove(admin.email || admin);
+                  }}
                   disabled={actionLoading}
                   style={{
-                    width: 36,
-                    height: 36,
-                    borderRadius: 10,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                     background: 'rgba(239,68,68,0.1)',
                     border: '1px solid rgba(239,68,68,0.2)',
                     color: '#ef4444',
-                    cursor: actionLoading ? 'not-allowed' : 'pointer',
-                    opacity: actionLoading ? 0.5 : 1,
-                    transition: 'background 0.2s',
+                    padding: '8px',
+                    borderRadius: 8,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
-                  title="Remove Admin"
                 >
                   <Trash2 size={16} />
                 </button>
@@ -324,8 +267,8 @@ export default function ManageAdmins() {
             ))}
 
             {bootstrapAdmins.length === 0 && admins.length === 0 && (
-              <div style={{ padding: 32, textAlign: 'center', opacity: 0.5, fontSize: 14 }}>
-                No administrators found.
+              <div style={{ textAlign: 'center', padding: '32px', opacity: 0.5, fontSize: 14 }}>
+                No active administrators found.
               </div>
             )}
           </div>
