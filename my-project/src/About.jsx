@@ -15,6 +15,7 @@ import {
   Zap,
 } from 'lucide-react';
 import Header from './Header.jsx';
+import { darkBg, glassCard, pillButtonBase } from './constants/sharedStyles.js';
 
 const GLOBAL_STYLE = `
 @keyframes ritlib-circle {
@@ -52,7 +53,7 @@ function PageBg() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(135deg,#050a14 0%,#0d1120 50%,#0a0f0a 100%)',
+          background: darkBg,
         }}
       />
       {[
@@ -126,14 +127,6 @@ const CREATORS = [
   },
 ];
 
-const glass = {
-  background: 'rgba(20,25,35,0.7)',
-  backdropFilter: 'blur(24px)',
-  border: '1px solid rgba(255,255,255,0.1)',
-  boxShadow: '0 8px 40px rgba(0,0,0,0.5)',
-  borderRadius: 24,
-};
-
 export default function About() {
   return (
     <>
@@ -160,16 +153,11 @@ export default function About() {
             >
               <div
                 style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '6px 18px',
-                  borderRadius: 999,
+                  ...pillButtonBase,
                   marginBottom: 20,
                   background: `${primary}1a`,
                   border: `1px solid ${primary}44`,
                   fontSize: 12,
-                  fontWeight: 700,
                   letterSpacing: '0.08em',
                   color: secondary,
                   textTransform: 'uppercase',
@@ -225,7 +213,7 @@ export default function About() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + i * 0.1 }}
                     whileHover={{ y: -5 }}
-                    style={{ ...glass, padding: 28 }}
+                    style={{ ...glassCard, padding: 28 }}
                   >
                     <div
                       style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}
@@ -276,7 +264,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              style={{ ...glass, padding: 32, marginBottom: 48 }}
+              style={{ ...glassCard, padding: 32, marginBottom: 48 }}
             >
               <SectionLabel>Mission</SectionLabel>
               <p style={{ fontSize: 16, lineHeight: 1.8, opacity: 0.75, margin: 0 }}>
@@ -311,7 +299,7 @@ export default function About() {
                     transition={{ delay: 0.45 + i * 0.06 }}
                     whileHover={{ y: -4, scale: 1.02 }}
                     style={{
-                      ...glass,
+                      ...glassCard,
                       padding: '16px 20px',
                       display: 'flex',
                       alignItems: 'center',
