@@ -1,14 +1,37 @@
 /**
- * Centralized Shared Style Constants for UI Components
- * Consolidates glassmorphism, background gradients, and pill/button/dropdown styles.
+ * Centralized Shared Style Constants & Design System Primitives
+ * Consolidates glassmorphism, background gradients, card surfaces,
+ * typography, and interactive button/dropdown styles across all views.
  */
 
 export const darkBg = 'linear-gradient(135deg, #050a14 0%, #0d1120 50%, #0a0f0a 100%)';
 
+export const primaryColor = '#66713f';
+export const secondaryColor = '#A3E635';
+export const accentColor = '#4A5D73';
+export const textColor = '#F3F4F6';
+export const mutedTextColor = '#9CA3AF';
+
 export const darkBgStyle = {
   minHeight: '100vh',
   background: darkBg,
-  color: '#F3F4F6',
+  color: textColor,
+};
+
+export const pageWrapperStyle = {
+  minHeight: '100vh',
+  background: darkBg,
+  color: textColor,
+  position: 'relative',
+  overflow: 'hidden',
+};
+
+export const pageContainerStyle = {
+  maxWidth: 1200,
+  margin: '0 auto',
+  padding: '100px 24px 80px',
+  position: 'relative',
+  zIndex: 1,
 };
 
 export const glassCard = {
@@ -18,6 +41,15 @@ export const glassCard = {
   border: '1px solid rgba(255, 255, 255, 0.1)',
   boxShadow: '0 8px 40px rgba(0, 0, 0, 0.5)',
   borderRadius: 24,
+};
+
+export const glassCardSubtle = {
+  background: 'rgba(255, 255, 255, 0.03)',
+  backdropFilter: 'blur(16px)',
+  WebkitBackdropFilter: 'blur(16px)',
+  border: '1px solid rgba(255, 255, 255, 0.08)',
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+  borderRadius: 20,
 };
 
 export const glassDropdown = {
@@ -40,6 +72,21 @@ export const pillButtonBase = {
   fontWeight: 700,
   cursor: 'pointer',
   transition: 'all 0.2s',
+};
+
+export const gradientPillButton = {
+  ...pillButtonBase,
+  background: 'linear-gradient(135deg, #66713f, #A3E635)',
+  color: '#050a14',
+  border: 'none',
+  boxShadow: '0 4px 20px rgba(163, 230, 53, 0.35)',
+};
+
+export const secondaryOutlineButton = {
+  ...pillButtonBase,
+  background: 'rgba(255, 255, 255, 0.05)',
+  color: '#F3F4F6',
+  border: '1px solid rgba(255, 255, 255, 0.15)',
 };
 
 export const userChipStyle = {
@@ -126,4 +173,41 @@ export const sectionLabelStyle = {
   opacity: 0.45,
   textTransform: 'uppercase',
   marginBottom: 16,
+};
+
+export const iconBadgeStyle = {
+  width: 42,
+  height: 42,
+  borderRadius: 12,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: 'rgba(163, 230, 53, 0.15)',
+  color: '#A3E635',
+  flexShrink: 0,
+};
+
+export const cardTitleStyle = {
+  fontSize: 18,
+  fontWeight: 700,
+  color: '#F3F4F6',
+  marginBottom: 8,
+};
+
+export const cardDescriptionStyle = {
+  fontSize: 14,
+  lineHeight: 1.6,
+  color: '#9CA3AF',
+};
+
+export const gridTwoColStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+  gap: 24,
+};
+
+export const gridThreeColStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+  gap: 20,
 };

@@ -1,21 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  BookOpen,
-  GraduationCap,
-  Sparkles,
-  Heart,
-  Shield,
-  Users,
-  ArrowRight,
-  Github,
-  Database,
-  Layers,
-  Cpu,
-  Zap,
-} from 'lucide-react';
+import { BookOpen, Heart, Layers, Cpu, Zap, Database, Github } from 'lucide-react';
 import Header from './Header.jsx';
-import { darkBg, glassCard, pillButtonBase, sectionLabelStyle } from './constants/sharedStyles.js';
+import {
+  darkBg,
+  glassCard,
+  pillButtonBase,
+  sectionLabelStyle,
+  primaryColor,
+  secondaryColor,
+  accentColor,
+} from './constants/sharedStyles.js';
 
 const GLOBAL_STYLE = `
 @keyframes ritlib-circle {
@@ -39,12 +34,7 @@ const GLOBAL_STYLE = `
 }
 `;
 
-const primary = '#66713f';
-const secondary = '#A3E635';
-const text = '#F3F4F6';
-
 function PageBg() {
-  const accent = '#4A5D73';
   return (
     <div
       style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden' }}
@@ -62,7 +52,7 @@ function PageBg() {
           h: 700,
           top: '-20%',
           left: '-15%',
-          color: primary,
+          color: primaryColor,
           op: 0.15,
           anim: 'blob-float-1 26s ease-in-out infinite',
         },
@@ -71,7 +61,7 @@ function PageBg() {
           h: 500,
           bottom: '-15%',
           right: '-10%',
-          color: accent,
+          color: accentColor,
           op: 0.2,
           anim: 'blob-float-2 30s ease-in-out infinite',
         },
@@ -134,7 +124,7 @@ export default function About() {
       <div
         style={{
           minHeight: '100vh',
-          color: text,
+          color: '#F3F4F6',
           position: 'relative',
           fontFamily: "'Inter',system-ui,sans-serif",
         }}
@@ -155,11 +145,11 @@ export default function About() {
                 style={{
                   ...pillButtonBase,
                   marginBottom: 20,
-                  background: `${primary}1a`,
-                  border: `1px solid ${primary}44`,
+                  background: `${primaryColor}1a`,
+                  border: `1px solid ${primaryColor}44`,
                   fontSize: 12,
                   letterSpacing: '0.08em',
-                  color: secondary,
+                  color: secondaryColor,
                   textTransform: 'uppercase',
                 }}
               >
@@ -170,7 +160,7 @@ export default function About() {
                   fontSize: 'clamp(2rem, 5vw, 3rem)',
                   fontWeight: 900,
                   margin: '0 0 16px',
-                  background: `linear-gradient(135deg,${primary},${secondary})`,
+                  background: `linear-gradient(135deg,${primaryColor},${secondaryColor})`,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}

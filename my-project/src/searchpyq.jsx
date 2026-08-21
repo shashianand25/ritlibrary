@@ -14,13 +14,7 @@ import NotesResults from './components/search/NotesResults.jsx';
 import PyqResults from './components/search/PyqResults.jsx';
 import { getFileCategory, getFileSubjectCode, getFileFolderName } from './utils/fileHelpers.js';
 import useSearchPyqState from './hooks/useSearchPyqState.js';
-
-const glass = {
-  background: 'rgba(20,25,35,0.75)',
-  backdropFilter: 'blur(24px)',
-  border: '1px solid rgba(255,255,255,0.1)',
-  boxShadow: '0 12px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
-};
+import { glassCard } from './constants/sharedStyles.js';
 
 function normalizeSearch(str) {
   return (str || '').toLowerCase().replace(/[\s/_-]+/g, '');
@@ -146,7 +140,7 @@ export default function SearchPYQ() {
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                style={{ ...glass, borderRadius: 24, padding: 24 }}
+                style={{ ...glassCard, padding: 24 }}
               >
                 <SearchFilters
                   searchMode={searchMode}
@@ -173,7 +167,7 @@ export default function SearchPYQ() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                style={{ ...glass, borderRadius: 24, padding: 24, minHeight: 520 }}
+                style={{ ...glassCard, padding: 24, minHeight: 520 }}
               >
                 {submitted ? (
                   <div>
