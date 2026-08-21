@@ -20,10 +20,17 @@
     "typecheck": "npm --prefix my-project run typecheck",
     "lint": "npm --prefix my-project run lint && npm --prefix library-backend run lint",
     "format": "npm --prefix my-project run format && npm --prefix library-backend run format",
-    "format:check": "npm --prefix my-project run format:check && npm --prefix library-backend run format:check"
+    "format:check": "npm --prefix my-project run format:check && npm --prefix library-backend run format:check",
+    "audit:deps": "npm audit --audit-level=critical"
   },
   "devDependencies": {
     "prettier": "^3.9.6"
+  },
+  "overrides": {
+    "tar": "^7.5.22",
+    "@mapbox/node-pre-gyp": {
+      "tar": "^7.5.22"
+    }
   },
   "coverageThreshold": {
     "global": {

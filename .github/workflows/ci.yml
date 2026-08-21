@@ -121,7 +121,7 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Audit Dependencies
-        run: npm audit --audit-level=critical || true
+        run: npm audit --audit-level=critical
 
   build:
     name: Production Build Verification
