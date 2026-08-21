@@ -15,7 +15,7 @@ import {
   Zap,
 } from 'lucide-react';
 import Header from './Header.jsx';
-import { darkBg, glassCard, pillButtonBase } from './constants/sharedStyles.js';
+import { darkBg, glassCard, pillButtonBase, sectionLabelStyle } from './constants/sharedStyles.js';
 
 const GLOBAL_STYLE = `
 @keyframes ritlib-circle {
@@ -355,18 +355,5 @@ export default function About() {
 }
 
 function SectionLabel({ children }) {
-  return (
-    <p
-      style={{
-        fontSize: 11,
-        fontWeight: 700,
-        letterSpacing: '0.14em',
-        opacity: 0.45,
-        textTransform: 'uppercase',
-        marginBottom: 16,
-      }}
-    >
-      {children}
-    </p>
-  );
+  return <p style={sectionLabelStyle}>{children}</p>;
 }
