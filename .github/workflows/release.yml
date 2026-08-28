@@ -39,7 +39,7 @@ jobs:
           tar -czf release-assets/ritlibrary-frontend-bundle.tar.gz -C my-project/dist .
 
       - name: Generate Release Notes & Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: release-assets/ritlibrary-frontend-bundle.tar.gz
