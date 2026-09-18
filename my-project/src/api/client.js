@@ -87,7 +87,13 @@ export async function removeAdmin(email, idToken) {
  * Files & Resources API methods
  */
 export async function fetchFileIndex() {
-  return await request('/api/files');
+  try {
+    const data = await request('/api/files');
+    if (Array.isArray(data) || data?.files) return data;
+  } catch (e) {
+    logger.warn('Failed to fetch from /api/files, falling back to /:', e);
+  }
+  return await request('/');
 }
 
 export async function uploadResource(formData, idToken) {

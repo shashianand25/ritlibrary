@@ -246,6 +246,7 @@ export function useContributeState() {
     deletingFileId,
     deleteError,
     setDeleteError,
+    year,
     branches,
     subjects,
     handleSem,

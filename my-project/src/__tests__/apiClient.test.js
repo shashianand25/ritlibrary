@@ -103,6 +103,26 @@ describe('api/client module', () => {
     expect(res).toEqual(mockFiles);
   });
 
+  it('fetchFileIndex falls back to root / if /api/files returns 404', async () => {
+    const mockFiles = [{ id: 'f1', name: 'File 1' }];
+    const mockFetch = vi
+      .fn()
+      .mockResolvedValueOnce({
+        ok: false,
+        status: 404,
+        text: async () => '{"error":"Not Found"}',
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => mockFiles,
+      });
+    vi.stubGlobal('fetch', mockFetch);
+
+    const res = await fetchFileIndex();
+    expect(res).toEqual(mockFiles);
+    expect(mockFetch).toHaveBeenCalledTimes(2);
+  });
+
   it('uploadResource sends POST request with FormData', async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: true,

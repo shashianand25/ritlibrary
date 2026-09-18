@@ -17,7 +17,7 @@ import UploadModal from './components/contribute/UploadModal.jsx';
 import FolderCard from './components/contribute/FolderCard.jsx';
 import FolderContents from './components/contribute/FolderContents.jsx';
 import { Dropdown } from './components/UIElements.jsx';
-import useContributeState from './hooks/useContributeState.js';
+import useContributeState, { normalizeSemKey } from './hooks/useContributeState.js';
 
 const C = COLORS;
 
@@ -77,6 +77,7 @@ export default function Contribute() {
     deletingFileId,
     deleteError,
     setDeleteError,
+    year,
     branches,
     subjects,
     handleSem,
@@ -314,6 +315,8 @@ export default function Contribute() {
               category={mode === 'notes' ? 'Notes' : 'PYQ'}
               subjectCode={effectiveSubjectCode}
               branch={branch}
+              year={year}
+              sem={normalizeSemKey(semester)}
               onClose={() => setUploadTarget(null)}
               onSuccess={(newFile) => {
                 if (newFile) setAllFiles((prev) => [newFile, ...prev]);

@@ -265,6 +265,8 @@ UploadModal.propTypes = {
   subjectCode: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   branch: PropTypes.string.isRequired,
+  year: PropTypes.string,
+  sem: PropTypes.string,
   onClose: PropTypes.func.isRequired,
   onSuccess: PropTypes.func.isRequired,
 };

@@ -56,6 +56,14 @@ describe('Worker HTTP Router & Request Dispatch', () => {
 		expect(body).toEqual([{ id: 'file-1', name: 'Notes.pdf' }]);
 	});
 
+	it('GET /api/files returns files from R2', async () => {
+		const req = new Request('https://api.ritlib.org/api/files');
+		const res = await worker.fetch(req, mockEnv, {});
+		expect(res.status).toBe(200);
+		const body = await res.json();
+		expect(body).toEqual([{ id: 'file-1', name: 'Notes.pdf' }]);
+	});
+
 	it('GET /api/health returns ok status and current timestamp', async () => {
 		const req = new Request('https://api.ritlib.org/api/health');
 		const res = await worker.fetch(req, mockEnv, {});

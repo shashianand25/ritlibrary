@@ -38,8 +38,11 @@ export async function handleRequest(request, env, _ctx) {
 			});
 		}
 
-		/* GET / — serve files.json from R2 */
-		if (request.method === 'GET' && url.pathname === '/') {
+		/* GET / or /api/files — serve files.json from R2 */
+		if (
+			request.method === 'GET' &&
+			(url.pathname === '/' || url.pathname === '/api/files' || url.pathname === '/files')
+		) {
 			const res = await handleListFiles(env);
 			recordRequest(request.method, url.pathname, res.status);
 			return res;
