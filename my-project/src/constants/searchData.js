@@ -95,3 +95,7 @@ export const COLORS = {
   surface: '#1A1A1A',
   text: '#F3F4F6',
 };
+
+export const COLLEGE_PYQ_DRIVE_URL =
+  'https://drive.google.com/drive/folders/1FDy6mEK5kV3Jost-dsjdoZUoTHowq2om';
+

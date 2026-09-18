@@ -5,12 +5,20 @@ import PyqResults from '../components/search/PyqResults.jsx';
 import { COLORS } from '../constants/searchData.js';
 
 describe('PyqResults component', () => {
-  it('renders empty state when no pyq files exist', () => {
+  it('renders college-wide pyq drive link button and empty state when no pyq files exist', () => {
     render(<PyqResults pdfFiles={[]} groupedPDFs={[]} colors={COLORS} />);
+    expect(screen.getByText('College-Wide PYQ Repository')).toBeInTheDocument();
+    expect(screen.getByText('Open Drive')).toBeInTheDocument();
+    const driveLink = screen.getByRole('link', { name: /College-Wide PYQ Repository/i });
+    expect(driveLink).toHaveAttribute(
+      'href',
+      'https://drive.google.com/drive/folders/1FDy6mEK5kV3Jost-dsjdoZUoTHowq2om'
+    );
+    expect(driveLink).toHaveAttribute('target', '_blank');
     expect(screen.getByText('No PYQs found for this subject')).toBeInTheDocument();
   });
 
-  it('renders question paper folders and files when provided', () => {
+  it('renders question paper folders and files along with college-wide drive link when provided', () => {
     const mockFiles = [
       {
         id: 'p1',
@@ -35,6 +43,7 @@ describe('PyqResults component', () => {
       />
     );
 
+    expect(screen.getByText('College-Wide PYQ Repository')).toBeInTheDocument();
     expect(screen.getByText('2023-24')).toBeInTheDocument();
     expect(screen.getByText('2023 SEE Paper')).toBeInTheDocument();
   });

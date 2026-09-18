@@ -23,7 +23,13 @@ import Header from './Header.jsx';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-import { branchGroups, examTypesList, electiveOptions, COLORS } from './constants/searchData.js';
+import {
+  branchGroups,
+  examTypesList,
+  electiveOptions,
+  COLORS,
+  COLLEGE_PYQ_DRIVE_URL,
+} from './constants/searchData.js';
 import { ResourcesBg, GLOBAL_STYLE } from './components/SearchBackground.jsx';
 import { CircleLoader } from './components/Loaders.jsx';
 import { StyledSelect, PillBtn } from './components/UIElements.jsx';
@@ -1096,6 +1102,38 @@ export default function SearchPYQ() {
                         </div>
                       ) : (
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                          {/* College-Wide Common PYQ Drive Banner */}
+                          <a
+                            href={COLLEGE_PYQ_DRIVE_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-lime-400/30 bg-lime-400/10 hover:bg-lime-400/15 transition-all shadow-md hover:shadow-lime-400/10"
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-lime-400/20 border border-lime-400/30 flex items-center justify-center shrink-0 text-lime-400 group-hover:scale-105 transition-transform">
+                                <GraduationCap size={20} />
+                              </div>
+                              <div className="text-left">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-white font-bold text-sm sm:text-[15px] group-hover:text-lime-300 transition-colors">
+                                    College-Wide PYQ Repository
+                                  </span>
+                                  <span className="text-[10px] uppercase tracking-wider font-extrabold px-1.5 py-0.5 rounded bg-lime-400/20 text-lime-400 border border-lime-400/30">
+                                    All Branches
+                                  </span>
+                                </div>
+                                <p className="text-xs text-white/60 m-0 mt-0.5">
+                                  Common Google Drive folder for all semesters & branches
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-lime-400/20 text-lime-300 text-xs font-semibold group-hover:bg-lime-400 group-hover:text-black transition-all">
+                              <span>Open Drive</span>
+                              <ExternalLink size={13} />
+                            </div>
+                          </a>
+
                           {pdfFiles.length > 0 ? (
                             (() => {
                               const isSingleFolder = groupedPDFs.length === 1;

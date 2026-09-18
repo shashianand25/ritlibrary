@@ -102,8 +102,16 @@ describe('SearchPYQ component', () => {
     // Switch to PYQs tab
     fireEvent.click(screen.getByText('PYQs'));
     await waitFor(() => {
+      expect(screen.getByText('College-Wide PYQ Repository')).toBeInTheDocument();
       expect(screen.getByText(/SEE Question Paper/i)).toBeInTheDocument();
     });
+
+    const collegeDriveLink = screen.getByRole('link', { name: /College-Wide PYQ Repository/i });
+    expect(collegeDriveLink).toHaveAttribute(
+      'href',
+      'https://drive.google.com/drive/folders/1FDy6mEK5kV3Jost-dsjdoZUoTHowq2om'
+    );
+    expect(collegeDriveLink).toHaveAttribute('target', '_blank');
 
     // Click file row to open preview
     fireEvent.click(screen.getByText(/SEE Question Paper/i));
