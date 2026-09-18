@@ -6,7 +6,7 @@ import { useAuth } from '../lib/AuthContext.jsx';
 import logger from '../utils/logger.js';
 
 const PUBLIC_UPLOADS_ENABLED = import.meta.env.VITE_PUBLIC_UPLOADS_ENABLED !== 'false';
-const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED === 'true';
+const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED !== 'false';
 
 export function getYearFromSem(sem) {
   const n = parseInt(sem, 10);

@@ -39,4 +39,46 @@ describe('FolderContents component', () => {
     fireEvent.click(deleteBtn);
     expect(onDelete).toHaveBeenCalledWith(mockFiles[0]);
   });
+
+  it('triggers onClose when clicking close button or backdrop', () => {
+    const onClose = vi.fn();
+    const { container } = render(
+      <FolderContents
+        activeFolder="Unit 1"
+        folderFiles={[]}
+        isAdmin={false}
+        onClose={onClose}
+      />
+    );
+
+    const closeBtn = screen.getByTitle('Close');
+    fireEvent.click(closeBtn);
+    expect(onClose).toHaveBeenCalledTimes(1);
+
+    // Click backdrop
+    const backdrop = container.firstChild;
+    fireEvent.click(backdrop);
+    expect(onClose).toHaveBeenCalledTimes(2);
+  });
+
+  it('displays deleteError and handles custom folder deletion', () => {
+    const onRemoveFolder = vi.fn();
+    render(
+      <FolderContents
+        activeFolder="Custom Notes"
+        folderFiles={[]}
+        isAdmin={true}
+        deleteError="Failed to delete resource"
+        isCustom={true}
+        onRemoveFolder={onRemoveFolder}
+      />
+    );
+
+    expect(screen.getByText('Failed to delete resource')).toBeInTheDocument();
+    expect(screen.getByText('No files uploaded to this folder yet.')).toBeInTheDocument();
+
+    const deleteFolderBtn = screen.getByTitle('Delete this custom folder');
+    fireEvent.click(deleteFolderBtn);
+    expect(onRemoveFolder).toHaveBeenCalledTimes(1);
+  });
 });

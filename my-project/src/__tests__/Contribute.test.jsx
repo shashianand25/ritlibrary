@@ -273,15 +273,10 @@ describe('Contribute component', () => {
 
     fireEvent.click(screen.getAllByRole('button', { name: /^View$/i })[0]);
 
-    await waitFor(() => {
-      expect(screen.getByText('Unit 1 Notes')).toBeInTheDocument();
-    });
+    const deleteBtn = await screen.findByTitle(/Delete file/i);
+    fireEvent.click(deleteBtn);
 
-    fireEvent.click(screen.getByTitle(/Delete file/i));
-
-    await waitFor(() => {
-      expect(screen.getByText('Deletion permission denied')).toBeInTheDocument();
-    });
+    expect(await screen.findByText('Deletion permission denied')).toBeInTheDocument();
 
     // Dismiss error
     const dismissBtn = screen.getByRole('button', { name: /Dismiss/i });
@@ -307,7 +302,7 @@ describe('Contribute component', () => {
     const uploadButtons = screen.getAllByRole('button', { name: /^Upload$/i });
     fireEvent.click(uploadButtons[0]);
 
-    expect(screen.getByText('Upload to "Unit 1"')).toBeInTheDocument();
+    expect(await screen.findByText('Upload to "Unit 1"')).toBeInTheDocument();
 
     // Close modal via header close button
     const modalHeading = screen.getByRole('heading', { name: /Upload to "Unit 1"/i });
@@ -320,7 +315,7 @@ describe('Contribute component', () => {
 
     // Open upload on Unit 2
     fireEvent.click(uploadButtons[1]);
-    expect(screen.getByText('Upload to "Unit 2"')).toBeInTheDocument();
+    expect(await screen.findByText('Upload to "Unit 2"')).toBeInTheDocument();
   });
 
   it('alerts user when trying to upload while unauthenticated', async () => {

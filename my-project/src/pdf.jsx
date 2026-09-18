@@ -1,68 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Download, X, Loader2, Check, AlertCircle, Sparkles } from 'lucide-react';
+import { Download, X, Loader2, Check, Sparkles } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
-import logger from './utils/logger.js';
 
 // Ensure worker is set up for pdfjs-dist
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+if (pdfjsLib.GlobalWorkerOptions) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+}
 
-const DrivePreview = ({
-  fileId,
-  onClose,
-  fileName = 'Document.pdf',
-  originalFileName = '',
-  mimeType,
-}) => {
-  const previewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-  const downloadUrl = `https://drive.google.com/uc?id=${fileId}&export=download`;
+// Module-level variable storing extracted text
+let storedText = '';
 
-  const [extractState, setExtractState] = useState('idle'); // 'idle', 'extracting', 'success', 'error'
-  const [extractError, setExtractError] = useState('');
+export const getStoredText = () => storedText;
+export const clearStoredText = () => {
+  storedText = '';
+};
 
-  const isPdf = mimeType === 'application/pdf';
-  // Check originalFileName for .pptx extension, or mimeType for presentation types
-  const isPptx =
-    originalFileName.toLowerCase().endsWith('.pptx') ||
-    (mimeType && mimeType.includes('presentation')) ||
-    (mimeType && mimeType.includes('powerpoint'));
-
-  // Show button for either
-  const canExtract = isPdf || isPptx;
-
-  const extractAndCopyText = async () => {
-    try {
-      setExtractState('extracting');
-      setExtractError('');
-
-      // The backend proxy endpoint for fetching the file
-      const backendUrl = `https://pyq-backend-xs9d.onrender.com/api/pdf/${fileId}`;
-      let fullText = '';
-
-      if (isPdf) {
-        const response = await fetch(backendUrl);
-        if (!response.ok) throw new Error('Failed to fetch PDF file');
-
-        const arrayBuffer = await response.arrayBuffer();
-        const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
-        const pdf = await loadingTask.promise;
-        const numPages = pdf.numPages;
-
-        for (let i = 1; i <= numPages; i++) {
-          const page = await pdf.getPage(i);
-          const textContent = await page.getTextContent();
-          const pageText = textContent.items.map((item) => item.str).join(' ');
-          fullText += `--- Page ${i} ---\n${pageText}\n\n`;
-        }
-
-        if (!fullText.trim()) {
-          throw new Error('No text found. This might be a scanned PDF containing only images.');
-        }
-      } else if (isPptx) {
-        throw new Error('Presentation files (.ppt/.pptx) can be downloaded directly from Drive.');
-      }
-
-      const aiPrompt = `You are an expert tutor and exam coach.
+const AI_PROMPT = `You are an expert tutor and exam coach.
 
 Analyze the following content and do the following:
 
@@ -91,14 +45,165 @@ Content:
 
 `;
 
-      await navigator.clipboard.writeText(aiPrompt + fullText);
+const DrivePreview = ({
+  fileId,
+  onClose,
+  fileName = 'Document.pdf',
+  originalFileName = '',
+  mimeType,
+}) => {
+  const previewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+  const downloadUrl = `https://drive.google.com/uc?id=${fileId}&export=download`;
+
+  const [extractState, setExtractState] = useState('idle'); // 'idle', 'extracting', 'success'
+
+  const storedTextRef = useRef('');
+  const abortControllerRef = useRef(null);
+  const extractionPromiseRef = useRef(null);
+  const timeoutRef = useRef(null);
+
+  const isPdf = mimeType === 'application/pdf';
+  const isPptx =
+    originalFileName.toLowerCase().endsWith('.pptx') ||
+    (mimeType && mimeType.includes('presentation')) ||
+    (mimeType && mimeType.includes('powerpoint'));
+
+  const canExtract = isPdf || isPptx;
+
+  const extractTextFromFile = async (signal) => {
+    if (!isPdf) return '';
+
+    try {
+      const backendUrl = `https://pyq-backend-xs9d.onrender.com/api/pdf/${fileId}`;
+      const response = await fetch(backendUrl, { signal });
+      if (!response.ok) return '';
+
+      const arrayBuffer = await response.arrayBuffer();
+      if (signal?.aborted) return '';
+
+      const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+      const pdf = await loadingTask.promise;
+      if (signal?.aborted) return '';
+
+      const numPages = pdf.numPages;
+      let fullText = '';
+
+      for (let i = 1; i <= numPages; i++) {
+        if (signal?.aborted) return '';
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items.map((item) => item.str).join(' ');
+        fullText += `--- Page ${i} ---\n${pageText}\n\n`;
+      }
+
+      if (!fullText.trim()) return '';
+
+      return AI_PROMPT + fullText;
+    } catch {
+      // Silently fail if it does fail - no error messages
+      return '';
+    }
+  };
+
+  // Whenever a user opens a file, start extracting/copying text in background and store it
+  useEffect(() => {
+    // Reset stored text for newly opened file
+    storedText = '';
+    storedTextRef.current = '';
+
+    if (!fileId || !isPdf) return;
+
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+    let isMounted = true;
+
+    const task = (async () => {
+      try {
+        const text = await extractTextFromFile(controller.signal);
+        if (isMounted && !controller.signal.aborted && text) {
+          storedText = text;
+          storedTextRef.current = text;
+        }
+      } catch {
+        // Silently fail if it does fail
+        if (isMounted) {
+          storedText = '';
+          storedTextRef.current = '';
+        }
+      }
+    })();
+
+    extractionPromiseRef.current = task;
+
+    // On unmount / close, discard the text and make variable empty
+    return () => {
+      isMounted = false;
+      controller.abort();
+      storedText = '';
+      storedTextRef.current = '';
+      extractionPromiseRef.current = null;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [fileId, isPdf]);
+
+  const handleClose = () => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
+    // Discard text and make variable empty
+    storedText = '';
+    storedTextRef.current = '';
+    extractionPromiseRef.current = null;
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setExtractState('idle');
+
+    if (onClose) onClose();
+  };
+
+  const handleCopy = async () => {
+    if (!canExtract) return;
+
+    try {
+      let textToCopy = storedTextRef.current;
+
+      // If extraction is currently in progress, await it
+      if (!textToCopy && extractionPromiseRef.current) {
+        setExtractState('extracting');
+        await extractionPromiseRef.current;
+        textToCopy = storedTextRef.current;
+      }
+
+      // If still not ready, attempt once silently
+      if (!textToCopy && isPdf) {
+        setExtractState('extracting');
+        const controller = new AbortController();
+        abortControllerRef.current = controller;
+        textToCopy = await extractTextFromFile(controller.signal);
+        if (textToCopy) {
+          storedText = textToCopy;
+          storedTextRef.current = textToCopy;
+        }
+      }
+
+      if (!textToCopy) {
+        // Silently fail if no text was extractable - no error messages
+        setExtractState('idle');
+        return;
+      }
+
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(textToCopy);
+      }
+
       setExtractState('success');
-      setTimeout(() => setExtractState('idle'), 3000);
-    } catch (err) {
-      logger.error('Text extraction failed:', err);
-      setExtractError(err.message || 'Extraction failed');
-      setExtractState('error');
-      setTimeout(() => setExtractState('idle'), 4000);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setExtractState('idle');
+      }, 3000);
+    } catch {
+      // Silently fail if copying fails - no error messages
+      setExtractState('idle');
     }
   };
 
@@ -112,22 +217,17 @@ Content:
           title={fileName}
         >
           {fileName}
-          {extractState === 'error' && (
-            <span className="text-red-400 text-xs truncate max-w-xs">{extractError}</span>
-          )}
         </div>
 
         <div className="flex items-center space-x-3 shrink-0">
           {canExtract && (
             <button
-              onClick={extractAndCopyText}
+              onClick={handleCopy}
               disabled={extractState === 'extracting'}
               className={`flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                 extractState === 'success'
                   ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                  : extractState === 'error'
-                    ? 'bg-red-500/20 text-red-400 border border-red-500/30'
-                    : 'bg-indigo-500 sm:bg-indigo-600 hover:bg-indigo-600 sm:hover:bg-indigo-700 text-white shadow-sm'
+                  : 'bg-indigo-500 sm:bg-indigo-600 hover:bg-indigo-600 sm:hover:bg-indigo-700 text-white shadow-sm'
               }`}
               title="Copy text with AI Tutor Prompt"
             >
@@ -149,12 +249,6 @@ Content:
                   <span className="tracking-wide hidden sm:inline">Copied!</span>
                 </>
               )}
-              {extractState === 'error' && (
-                <>
-                  <AlertCircle size={14} className="sm:w-4 sm:h-4" />
-                  <span className="tracking-wide hidden sm:inline">Failed</span>
-                </>
-              )}
             </button>
           )}
           <a
@@ -167,7 +261,7 @@ Content:
             <Download size={20} />
           </a>
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="text-white hover:bg-neutral-700 hover:text-white p-2 rounded-full transition-colors"
             title="Close"
           >

@@ -18,6 +18,7 @@ import FolderCard from './components/contribute/FolderCard.jsx';
 import FolderContents from './components/contribute/FolderContents.jsx';
 import { Dropdown } from './components/UIElements.jsx';
 import useContributeState, { normalizeSemKey } from './hooks/useContributeState.js';
+import { getFileViewName } from './utils/fileHelpers.js';
 
 const C = COLORS;
 
@@ -100,8 +101,9 @@ export default function Contribute() {
   };
 
   const handleDeleteWithPrompt = (file) => {
+    const displayName = getFileViewName(file.view || file.name?.split('/').pop() || file.name);
     const ok = window.confirm(
-      `Delete "${file.view || file.name}" from Drive and the library index?`
+      `Delete "${displayName}" from Drive and the library index?`
     );
     if (ok) deleteFile(file);
   };
@@ -293,9 +295,17 @@ export default function Contribute() {
               folderFiles={activeFolder ? folderFiles(activeFolder) : []}
               isAdmin={canDelete}
               isDeleting={Boolean(deletingFileId)}
+              deletingFileId={deletingFileId}
+              isCustom={customFolders.includes(activeFolder)}
+              onClose={() => {
+                setActiveFolder('');
+                setDeleteError('');
+              }}
               onDelete={handleDeleteWithPrompt}
-              onUpload={() => setUploadTarget(activeFolder)}
-              colors={C}
+              onRemoveFolder={() => {
+                setCustomFolders((p) => p.filter((x) => x !== activeFolder));
+                setActiveFolder('');
+              }}
             />
           </section>
         ) : (

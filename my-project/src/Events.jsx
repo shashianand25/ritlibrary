@@ -10,7 +10,7 @@ import logger from './utils/logger.js';
 import { fetchEvents, deleteEvent as apiDeleteEvent } from './api/client.js';
 
 const PUBLIC_UPLOADS_ENABLED = import.meta.env.VITE_PUBLIC_UPLOADS_ENABLED !== 'false';
-const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED === 'true';
+const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED !== 'false';
 
 const categories = [
   { id: 'all', label: 'All', icon: Sparkles },
