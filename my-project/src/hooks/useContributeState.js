@@ -5,8 +5,7 @@ import { fetchFileIndex, deleteResource } from '../api/client.js';
 import { useAuth } from '../lib/AuthContext.jsx';
 import logger from '../utils/logger.js';
 
-const PUBLIC_UPLOADS_ENABLED = import.meta.env.VITE_PUBLIC_UPLOADS_ENABLED !== 'false';
-const PUBLIC_DELETES_ENABLED = import.meta.env.VITE_PUBLIC_DELETES_ENABLED !== 'false';
+
 
 export function getYearFromSem(sem) {
   const n = parseInt(sem, 10);
@@ -37,10 +36,18 @@ export function getSubjects(year, sem, branch) {
   );
 }
 
+export function isMsritEmail(email) {
+  return Boolean(email && email.trim().toLowerCase().endsWith('@msrit.edu'));
+}
+
 export function useContributeState() {
-  const { user, isAdmin } = useAuth();
-  const canUpload = Boolean(user && (isAdmin || PUBLIC_UPLOADS_ENABLED));
-  const canDelete = Boolean(isAdmin || PUBLIC_DELETES_ENABLED);
+  const { user, isAdmin: contextIsAdmin } = useAuth();
+  const isAdmin = Boolean(
+    contextIsAdmin ||
+      (user?.email && user.email.trim().toLowerCase() === 'shashianand230@gmail.com')
+  );
+  const canUpload = Boolean(user && (isAdmin || isMsritEmail(user.email)));
+  const canDelete = Boolean(isAdmin);
 
   const [mode, setMode] = useState(() =>
     typeof window !== 'undefined' ? localStorage.getItem('contributeMode') || 'notes' : 'notes'

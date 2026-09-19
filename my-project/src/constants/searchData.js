@@ -84,7 +84,53 @@ export const electiveOptions = {
     { label: 'Introduction to Mechanical Engineering', value: 'ESC134', code: 'ESC134/234' },
     { label: 'Essentials of Information Technology', value: 'ESC135', code: 'ESC135/235' },
   ],
+  // 5th Sem CSE Electives
+  program_elective_course_1: [
+    { label: 'Secure Programming', value: 'CSE551', code: 'CSE551' },
+    { label: 'Computer Graphics and Virtual Reality', value: 'CSE552', code: 'CSE552' },
+    { label: 'Advanced Algorithms', value: 'CSE554', code: 'CSE554' },
+    { label: 'Object Oriented Analysis and Design', value: 'CSE556', code: 'CSE556' },
+    { label: 'Big Data Analytics', value: 'CSE557', code: 'CSE557' },
+  ],
+  ability_enhancement_course_v: [
+    { label: 'NoSQL', value: 'CSAEC59', code: 'CSAEC59' },
+    { label: 'Prompt Engineering', value: 'CSAEC510', code: 'CSAEC510' },
+  ],
+  // 6th Sem CSE Electives
+  program_elective_course_2: [
+    { label: 'Introduction to Deep Learning', value: 'CSE631', code: 'CSE631' },
+    { label: 'Software Defined Networks', value: 'CSE632', code: 'CSE632' },
+    { label: 'Linux Kernel Programming', value: 'CSE633', code: 'CSE633' },
+    { label: 'Cryptography and Network Security', value: 'CSE636', code: 'CSE636' },
+    { label: 'Distributed Systems', value: 'CSE637', code: 'CSE637' },
+  ],
+  program_elective_course_3: [
+    { label: 'Wireless Sensor Networks', value: 'CSE642', code: 'CSE642' },
+    { label: 'Natural Language Processing', value: 'CSE643', code: 'CSE643' },
+    { label: 'Advanced DBMS', value: 'CSE644', code: 'CSE644' },
+    { label: 'Edge AI and Automation', value: 'CSE645', code: 'CSE645' },
+    { label: 'Block chain and Distributed App Development', value: 'CSE646', code: 'CSE646' },
+  ],
+  institutional_open_elective_1: [
+    { label: 'Mobile Application Development', value: 'CSOE02', code: 'CSOE02' },
+    { label: 'Full Stack Development', value: 'CSOE04', code: 'CSOE04' },
+    { label: 'Object Oriented Programming with C++', value: 'CSOE05', code: 'CSOE05' },
+    {
+      label: 'Introduction to Artificial Intelligence and Machine Learning',
+      value: 'CSOE09',
+      code: 'CSOE09',
+    },
+    { label: 'Introduction to Big Data Analytics', value: 'CSOE10', code: 'CSOE10' },
+    { label: 'Project Management with Git', value: 'CSOE12', code: 'CSOE12' },
+  ],
 };
+
+// Branch-scoped aliases for forward-compatibility
+electiveOptions.cse_program_elective_course_1 = electiveOptions.program_elective_course_1;
+electiveOptions.cse_ability_enhancement_course_v = electiveOptions.ability_enhancement_course_v;
+electiveOptions.cse_program_elective_course_2 = electiveOptions.program_elective_course_2;
+electiveOptions.cse_program_elective_course_3 = electiveOptions.program_elective_course_3;
+electiveOptions.cse_institutional_open_elective_1 = electiveOptions.institutional_open_elective_1;
 
 // Always dark — no light mode
 export const COLORS = {

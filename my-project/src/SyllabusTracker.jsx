@@ -14,13 +14,14 @@ export default function SyllabusTracker() {
         typeof window !== 'undefined' ? localStorage.getItem('pyq_syllabus_prefs') : null;
       if (savedPrefs) {
         const prefs = JSON.parse(savedPrefs);
-        if (prefs.semester === 3 || prefs.semester === 4) return prefs.semester;
+        if (syllabusData.semesters.some((s) => s.semester === prefs.semester)) return prefs.semester;
       }
       const savedForm =
         typeof window !== 'undefined' ? localStorage.getItem('searchPYQForm') : null;
       if (savedForm) {
         const form = JSON.parse(savedForm);
-        if (form.semester === 3 || form.semester === 4) return form.semester;
+        const formSem = Number(form.semester);
+        if (syllabusData.semesters.some((s) => s.semester === formSem)) return formSem;
       }
     } catch (e) {
       logger.warn('Failed to parse saved syllabus semester from localStorage', e);

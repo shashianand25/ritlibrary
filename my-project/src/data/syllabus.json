@@ -1426,11 +1426,11 @@
                 },
                 {
                   "id": "am31_u2_t2",
-                  "text": "Reduction formula for ∫sin^n x dx, ∫cos^n x dx"
+                  "text": "Reduction formula for \u222bsin^n x dx, \u222bcos^n x dx"
                 },
                 {
                   "id": "am31_u2_t3",
-                  "text": "Reduction formula for ∫sin^n x cos^m x dx"
+                  "text": "Reduction formula for \u222bsin^n x cos^m x dx"
                 },
                 {
                   "id": "am31_u2_t4",
@@ -2838,6 +2838,4552 @@
                 {
                   "id": "am41_u5_t4",
                   "text": "Conditional probability, Bayes theorem"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "semester": 5,
+      "subjects": [
+        {
+          "id": "cs51",
+          "name": "Software Engineering and Modelling",
+          "code": "CS51",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "cs51_u1",
+              "title": "Introduction to Software Processes and Agile Development",
+              "topics": [
+                {
+                  "id": "cs51_u1_t1",
+                  "text": "Professional software development, Software engineering ethics"
+                },
+                {
+                  "id": "cs51_u1_t2",
+                  "text": "Software process models and Process activities"
+                },
+                {
+                  "id": "cs51_u1_t3",
+                  "text": "Coping with change and Process improvement"
+                },
+                {
+                  "id": "cs51_u1_t4",
+                  "text": "Agile methods and Agile development techniques"
+                },
+                {
+                  "id": "cs51_u1_t5",
+                  "text": "Agile project management"
+                }
+              ]
+            },
+            {
+              "id": "cs51_u2",
+              "title": "Requirements Engineering and Design Concepts",
+              "topics": [
+                {
+                  "id": "cs51_u2_t1",
+                  "text": "Functional and Non-functional requirements"
+                },
+                {
+                  "id": "cs51_u2_t2",
+                  "text": "Requirements engineering processes and Requirements elicitation"
+                },
+                {
+                  "id": "cs51_u2_t3",
+                  "text": "Requirements specification, validation, and change management"
+                },
+                {
+                  "id": "cs51_u2_t4",
+                  "text": "Design within the context of software engineering"
+                },
+                {
+                  "id": "cs51_u2_t5",
+                  "text": "Design concepts and The Design Model"
+                }
+              ]
+            },
+            {
+              "id": "cs51_u3",
+              "title": "Architectural Design and Implementation",
+              "topics": [
+                {
+                  "id": "cs51_u3_t1",
+                  "text": "Architectural design decisions and Architectural views"
+                },
+                {
+                  "id": "cs51_u3_t2",
+                  "text": "Architectural patterns"
+                },
+                {
+                  "id": "cs51_u3_t3",
+                  "text": "Object-oriented design using the UML"
+                },
+                {
+                  "id": "cs51_u3_t4",
+                  "text": "Design patterns"
+                },
+                {
+                  "id": "cs51_u3_t5",
+                  "text": "Implementation issues"
+                }
+              ]
+            },
+            {
+              "id": "cs51_u4",
+              "title": "Software Testing and Evolution",
+              "topics": [
+                {
+                  "id": "cs51_u4_t1",
+                  "text": "Development testing and Test-driven development (TDD)"
+                },
+                {
+                  "id": "cs51_u4_t2",
+                  "text": "Release testing and User testing"
+                },
+                {
+                  "id": "cs51_u4_t3",
+                  "text": "Software evolution processes"
+                },
+                {
+                  "id": "cs51_u4_t4",
+                  "text": "Legacy systems and Software maintenance"
+                }
+              ]
+            },
+            {
+              "id": "cs51_u5",
+              "title": "Project Management, Planning and Quality",
+              "topics": [
+                {
+                  "id": "cs51_u5_t1",
+                  "text": "Risk management, Managing people, and Teamwork"
+                },
+                {
+                  "id": "cs51_u5_t2",
+                  "text": "Software pricing and Plan-driven development"
+                },
+                {
+                  "id": "cs51_u5_t3",
+                  "text": "Project scheduling and Agile planning"
+                },
+                {
+                  "id": "cs51_u5_t4",
+                  "text": "Software quality and Software standards"
+                },
+                {
+                  "id": "cs51_u5_t5",
+                  "text": "Reviews and inspections"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cs52",
+          "name": "Artificial Intelligence and Machine Learning",
+          "code": "CS52",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cs52_u1",
+              "title": "Introduction to AI, Agents, Search and Logic",
+              "topics": [
+                {
+                  "id": "cs52_u1_t1",
+                  "text": "What is AI? Intelligent Agents: Agents, Environments, Rationality, Agent Structures"
+                },
+                {
+                  "id": "cs52_u1_t2",
+                  "text": "Problem-solving by search: Problem Solving Agents, Uninformed and Informed Search Strategies"
+                },
+                {
+                  "id": "cs52_u1_t3",
+                  "text": "Heuristic functions and search optimization"
+                },
+                {
+                  "id": "cs52_u1_t4",
+                  "text": "Logical Agents: Knowledge-Based Agents, The Wumpus World, Propositional Logic"
+                },
+                {
+                  "id": "cs52_u1_t5",
+                  "text": "Reasoning patterns in Propositional Logic, Agents Based on Propositional Logic"
+                },
+                {
+                  "id": "cs52_u1_t6",
+                  "text": "First-Order Logic: Syntax, Semantics, and Knowledge Engineering in FOL"
+                }
+              ]
+            },
+            {
+              "id": "cs52_u2",
+              "title": "Knowledge Graphs, Inference, Uncertainty and ML Basics",
+              "topics": [
+                {
+                  "id": "cs52_u2_t1",
+                  "text": "Knowledge Graphs and Ontologies: RDF-style triples, ontology reasoning, rule-based inference"
+                },
+                {
+                  "id": "cs52_u2_t2",
+                  "text": "Semantic relationships and applications in QA and intelligent agents"
+                },
+                {
+                  "id": "cs52_u2_t3",
+                  "text": "Inference in FOL: Unification, Lifting, Forward Chaining, Backward Chaining, Resolution"
+                },
+                {
+                  "id": "cs52_u2_t4",
+                  "text": "Reasoning under Uncertainty: Conditional probability, Bayes' theorem, Bayesian networks"
+                },
+                {
+                  "id": "cs52_u2_t5",
+                  "text": "Naive Bayes classifier"
+                },
+                {
+                  "id": "cs52_u2_t6",
+                  "text": "Introduction to Machine Learning: Terminology, key tasks, well-posed problems, ML types"
+                }
+              ]
+            },
+            {
+              "id": "cs52_u3",
+              "title": "Supervised Learning, Trees and Evaluation Metrics",
+              "topics": [
+                {
+                  "id": "cs52_u3_t1",
+                  "text": "Supervised Learning: Classification and Regression"
+                },
+                {
+                  "id": "cs52_u3_t2",
+                  "text": "Classification Algorithms: Logistic Regression, SVM, Naive Bayes, KNN"
+                },
+                {
+                  "id": "cs52_u3_t3",
+                  "text": "Regression Algorithms: Linear Regression and Polynomial Regression"
+                },
+                {
+                  "id": "cs52_u3_t4",
+                  "text": "Hybrid Tree and Ensemble Algorithms: Decision Trees, Random Forest, Gradient Boosting"
+                },
+                {
+                  "id": "cs52_u3_t5",
+                  "text": "Model Validation and Tuning: Cross-validation, Hyperparameter tuning"
+                },
+                {
+                  "id": "cs52_u3_t6",
+                  "text": "Evaluation Metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC, Confusion Matrix, R2 score"
+                }
+              ]
+            },
+            {
+              "id": "cs52_u4",
+              "title": "Unsupervised Learning, Clustering and Anomaly Detection",
+              "topics": [
+                {
+                  "id": "cs52_u4_t1",
+                  "text": "Unsupervised Learning: Need, characteristics, difference from supervised learning"
+                },
+                {
+                  "id": "cs52_u4_t2",
+                  "text": "Clustering Concepts: Similarity/distance measures (Euclidean, Manhattan, Cosine, intra/inter-cluster)"
+                },
+                {
+                  "id": "cs52_u4_t3",
+                  "text": "Clustering Algorithms: K-Means Clustering, Hierarchical Clustering, DBSCAN"
+                },
+                {
+                  "id": "cs52_u4_t4",
+                  "text": "Dimensionality Reduction Algorithms: Principal Component Analysis (PCA)"
+                },
+                {
+                  "id": "cs52_u4_t5",
+                  "text": "Association Rule Learning: Apriori Algorithm, Support, Confidence, Lift"
+                },
+                {
+                  "id": "cs52_u4_t6",
+                  "text": "Anomaly Detection: Outliers, need for anomaly detection, basic detection approaches"
+                }
+              ]
+            },
+            {
+              "id": "cs52_u5",
+              "title": "Deep Learning, GenAI, RL and Responsible AI",
+              "topics": [
+                {
+                  "id": "cs52_u5_t1",
+                  "text": "Deep Learning Overview: Neural networks, CNNs for computer vision, Transformers"
+                },
+                {
+                  "id": "cs52_u5_t2",
+                  "text": "Basics of NLP: Word embeddings, Attention mechanism, Transformer architecture"
+                },
+                {
+                  "id": "cs52_u5_t3",
+                  "text": "Generative AI: Large Language Models, Prompt Engineering, RAG"
+                },
+                {
+                  "id": "cs52_u5_t4",
+                  "text": "Vector Databases: Chroma and FAISS"
+                },
+                {
+                  "id": "cs52_u5_t5",
+                  "text": "Reinforcement Learning: MDP, Q-learning, exploration vs exploitation"
+                },
+                {
+                  "id": "cs52_u5_t6",
+                  "text": "Explainable and Responsible AI: Ethics, bias, and conceptual foundations"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cs53",
+          "name": "Finite Automata and Formal Languages",
+          "code": "CS53",
+          "credits": "2:1:0",
+          "units": [
+            {
+              "id": "cs53_u1",
+              "title": "Introduction to Finite Automata",
+              "topics": [
+                {
+                  "id": "cs53_u1_t1",
+                  "text": "Structural representations, automata and complexity"
+                },
+                {
+                  "id": "cs53_u1_t2",
+                  "text": "Central concepts of automata theory"
+                },
+                {
+                  "id": "cs53_u1_t3",
+                  "text": "Deterministic Finite Automata (DFA)"
+                },
+                {
+                  "id": "cs53_u1_t4",
+                  "text": "Nondeterministic Finite Automata (NFA)"
+                },
+                {
+                  "id": "cs53_u1_t5",
+                  "text": "Application of finite automata"
+                },
+                {
+                  "id": "cs53_u1_t6",
+                  "text": "Finite automata with epsilon transitions"
+                }
+              ]
+            },
+            {
+              "id": "cs53_u2",
+              "title": "Regular Expressions and Properties",
+              "topics": [
+                {
+                  "id": "cs53_u2_t1",
+                  "text": "Finite automata and regular expressions"
+                },
+                {
+                  "id": "cs53_u2_t2",
+                  "text": "Applications of regular expressions"
+                },
+                {
+                  "id": "cs53_u2_t3",
+                  "text": "Proving languages not to be regular (Pumping Lemma)"
+                },
+                {
+                  "id": "cs53_u2_t4",
+                  "text": "Closure properties of regular languages"
+                },
+                {
+                  "id": "cs53_u2_t5",
+                  "text": "Equivalence and minimization of automata"
+                }
+              ]
+            },
+            {
+              "id": "cs53_u3",
+              "title": "Context-Free Grammars and Pushdown Automata",
+              "topics": [
+                {
+                  "id": "cs53_u3_t1",
+                  "text": "Context-free grammars (CFGs) and Parse trees"
+                },
+                {
+                  "id": "cs53_u3_t2",
+                  "text": "Applications, ambiguity in grammars and languages"
+                },
+                {
+                  "id": "cs53_u3_t3",
+                  "text": "Definition of the pushdown automata (PDA)"
+                },
+                {
+                  "id": "cs53_u3_t4",
+                  "text": "Languages of a PDA"
+                },
+                {
+                  "id": "cs53_u3_t5",
+                  "text": "Equivalence of PDAs and CFGs: CFG for PDA"
+                }
+              ]
+            },
+            {
+              "id": "cs53_u4",
+              "title": "Deterministic PDA and Normal Forms",
+              "topics": [
+                {
+                  "id": "cs53_u4_t1",
+                  "text": "Deterministic Pushdown Automata (DPDA)"
+                },
+                {
+                  "id": "cs53_u4_t2",
+                  "text": "Normal forms for CFGs: eliminating useless symbols, epsilon-productions, unit productions"
+                },
+                {
+                  "id": "cs53_u4_t3",
+                  "text": "Chomsky Normal Form (CNF)"
+                },
+                {
+                  "id": "cs53_u4_t4",
+                  "text": "The pumping lemma for Context-Free Grammars"
+                },
+                {
+                  "id": "cs53_u4_t5",
+                  "text": "Closure properties of CFLs"
+                }
+              ]
+            },
+            {
+              "id": "cs53_u5",
+              "title": "Turing Machines",
+              "topics": [
+                {
+                  "id": "cs53_u5_t1",
+                  "text": "Notation and Instantaneous Description for Turing Machine"
+                },
+                {
+                  "id": "cs53_u5_t2",
+                  "text": "Transition Diagrams of a Turing Machine"
+                },
+                {
+                  "id": "cs53_u5_t3",
+                  "text": "The Language of a Turing Machine"
+                },
+                {
+                  "id": "cs53_u5_t4",
+                  "text": "Turing Machines and Halting"
+                },
+                {
+                  "id": "cs53_u5_t5",
+                  "text": "Programming techniques for Turing Machines"
+                },
+                {
+                  "id": "cs53_u5_t6",
+                  "text": "Extensions to the basic Turing machine"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cs54",
+          "name": "Data Communication and Networking",
+          "code": "CS54",
+          "credits": "4:0:0",
+          "units": [
+            {
+              "id": "cs54_u1",
+              "title": "Data Communications and Application Layer",
+              "topics": [
+                {
+                  "id": "cs54_u1_t1",
+                  "text": "Data Communications, Networks, Network Types, Protocol Suite (TCP/IP, OSI)"
+                },
+                {
+                  "id": "cs54_u1_t2",
+                  "text": "Application Layer: HTTP overview, persistent/non-persistent, message format"
+                },
+                {
+                  "id": "cs54_u1_t3",
+                  "text": "User-Server Interaction: Cookies, Web Caching, Conditional GET"
+                },
+                {
+                  "id": "cs54_u1_t4",
+                  "text": "File Transfer (FTP): Commands and replies"
+                },
+                {
+                  "id": "cs54_u1_t5",
+                  "text": "Electronic Mail: SMTP, comparison with HTTP, mail access protocols"
+                },
+                {
+                  "id": "cs54_u1_t6",
+                  "text": "DNS: Services, resolution, records and messages"
+                },
+                {
+                  "id": "cs54_u1_t7",
+                  "text": "Peer-to-Peer Applications: P2P file distribution"
+                }
+              ]
+            },
+            {
+              "id": "cs54_u2",
+              "title": "Transport Layer",
+              "topics": [
+                {
+                  "id": "cs54_u2_t1",
+                  "text": "Multiplexing and Demultiplexing"
+                },
+                {
+                  "id": "cs54_u2_t2",
+                  "text": "Connectionless Transport (UDP): Segment structure, checksum"
+                },
+                {
+                  "id": "cs54_u2_t3",
+                  "text": "Reliable data transfer: Go-Back-N and Selective Repeat"
+                },
+                {
+                  "id": "cs54_u2_t4",
+                  "text": "Connection-Oriented Transport (TCP): Segment structure, RTT estimation, timeout"
+                },
+                {
+                  "id": "cs54_u2_t5",
+                  "text": "TCP Flow Control and Connection Management"
+                },
+                {
+                  "id": "cs54_u2_t6",
+                  "text": "TCP Congestion Control"
+                }
+              ]
+            },
+            {
+              "id": "cs54_u3",
+              "title": "Network Layer",
+              "topics": [
+                {
+                  "id": "cs54_u3_t1",
+                  "text": "IPv4 Addressing, Main and Auxiliary protocols"
+                },
+                {
+                  "id": "cs54_u3_t2",
+                  "text": "Routing Algorithms: Distance-Vector (DV) Routing"
+                },
+                {
+                  "id": "cs54_u3_t3",
+                  "text": "Routing Algorithms: Link-State Routing"
+                },
+                {
+                  "id": "cs54_u3_t4",
+                  "text": "Unicast Routing Protocols: Internet structure, Routing Information Protocol (RIP)"
+                },
+                {
+                  "id": "cs54_u3_t5",
+                  "text": "Open Shortest Path First (OSPF)"
+                }
+              ]
+            },
+            {
+              "id": "cs54_u4",
+              "title": "Data-Link Control and Media Access",
+              "topics": [
+                {
+                  "id": "cs54_u4_t1",
+                  "text": "Framing: Character-oriented and Bit-oriented framing"
+                },
+                {
+                  "id": "cs54_u4_t2",
+                  "text": "Error Control: Types of errors, Block coding, Hamming distance"
+                },
+                {
+                  "id": "cs54_u4_t3",
+                  "text": "Linear Block Codes: Parity-check code"
+                },
+                {
+                  "id": "cs54_u4_t4",
+                  "text": "Cyclic Codes: Cyclic Redundancy Check (CRC), Point-to-Point Protocol (PPP)"
+                },
+                {
+                  "id": "cs54_u4_t5",
+                  "text": "Media Access Control: Random Access (CSMA, CSMA/CD, CSMA/CA)"
+                },
+                {
+                  "id": "cs54_u4_t6",
+                  "text": "Controlled access protocols"
+                }
+              ]
+            },
+            {
+              "id": "cs54_u5",
+              "title": "Local Area Networks and Physical Layer",
+              "topics": [
+                {
+                  "id": "cs54_u5_t1",
+                  "text": "Ethernet: Standard Ethernet, Wi-Fi IEEE 802.11 architecture, MAC sublayer, addressing"
+                },
+                {
+                  "id": "cs54_u5_t2",
+                  "text": "Physical layer: Analog and Digital signals, Signal impairment (attenuation, distortion)"
+                },
+                {
+                  "id": "cs54_u5_t3",
+                  "text": "Data Rate Limits and Performance"
+                },
+                {
+                  "id": "cs54_u5_t4",
+                  "text": "Digital Transmission: Digital-to-digital, Analog-to-digital conversion"
+                },
+                {
+                  "id": "cs54_u5_t5",
+                  "text": "Analog Transmission: Digital-to-analog, Analog-to-analog conversion"
+                },
+                {
+                  "id": "cs54_u5_t6",
+                  "text": "Multiplexing: Frequency-Division (FDM) and Time-Division Multiplexing (TDM)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse551",
+          "name": "Secure Programming",
+          "code": "CSE551",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse551_u1",
+              "title": "Software Security Problem and Static Analysis",
+              "topics": [
+                {
+                  "id": "cse551_u1_t1",
+                  "text": "Security Features vs Secure Software, Secure SDLC"
+                },
+                {
+                  "id": "cse551_u1_t2",
+                  "text": "Common Software Vulnerabilities and OWASP Top 10 Overview"
+                },
+                {
+                  "id": "cse551_u1_t3",
+                  "text": "Vulnerability Classification and Secure Design Principles"
+                },
+                {
+                  "id": "cse551_u1_t4",
+                  "text": "Introduction to Static Analysis: Capabilities and Limitations"
+                },
+                {
+                  "id": "cse551_u1_t5",
+                  "text": "Analyzing Source vs Analyzing Compiled Code"
+                },
+                {
+                  "id": "cse551_u1_t6",
+                  "text": "Code Review, Process Integration, and Static Analysis Metrics"
+                }
+              ]
+            },
+            {
+              "id": "cse551_u2",
+              "title": "Input Validation and Secure Coding Practices",
+              "topics": [
+                {
+                  "id": "cse551_u2_t1",
+                  "text": "Input Validation: Validate all input from all sources"
+                },
+                {
+                  "id": "cse551_u2_t2",
+                  "text": "Establishing Trust Boundaries and Strong Input Validation"
+                },
+                {
+                  "id": "cse551_u2_t3",
+                  "text": "Whitelisting vs Blacklisting, Input Length Validation"
+                },
+                {
+                  "id": "cse551_u2_t4",
+                  "text": "Numeric Bounds Checking and Parameterized Requests"
+                },
+                {
+                  "id": "cse551_u2_t5",
+                  "text": "Path Manipulation Vulnerabilities and Command Injection"
+                },
+                {
+                  "id": "cse551_u2_t6",
+                  "text": "Log Forging prevention"
+                }
+              ]
+            },
+            {
+              "id": "cse551_u3",
+              "title": "Memory Safety, Integer Security and Error Handling",
+              "topics": [
+                {
+                  "id": "cse551_u3_t1",
+                  "text": "Buffer Overflow: Exploitation, Allocation Strategies, Size Tracking"
+                },
+                {
+                  "id": "cse551_u3_t2",
+                  "text": "Dangerous String Functions, Bounded Operations, Format String Vulnerabilities"
+                },
+                {
+                  "id": "cse551_u3_t3",
+                  "text": "Character Encoding Issues, Integer Overflow, Wrap-Around Errors"
+                },
+                {
+                  "id": "cse551_u3_t4",
+                  "text": "Truncation, Sign Extension, Signed/Unsigned Conversion"
+                },
+                {
+                  "id": "cse551_u3_t5",
+                  "text": "Runtime Protection Mechanisms and Safer Programming Languages"
+                },
+                {
+                  "id": "cse551_u3_t6",
+                  "text": "Error Handling with Return Codes, Exception Management, Resource Leak Prevention"
+                },
+                {
+                  "id": "cse551_u3_t7",
+                  "text": "Secure Logging, Debugging Security, and Secure Error Reporting"
+                }
+              ]
+            },
+            {
+              "id": "cse551_u4",
+              "title": "Web Application and Service Security",
+              "topics": [
+                {
+                  "id": "cse551_u4_t1",
+                  "text": "Web Applications: Input/Output validation for the web"
+                },
+                {
+                  "id": "cse551_u4_t2",
+                  "text": "Browser Security Assumptions and Protecting Browsers from Malicious Content"
+                },
+                {
+                  "id": "cse551_u4_t3",
+                  "text": "HTTP Security: GET vs POST, Request Ordering, Request Provenance"
+                },
+                {
+                  "id": "cse551_u4_t4",
+                  "text": "Session Management: Identifiers, Timeout, and Session Authentication"
+                },
+                {
+                  "id": "cse551_u4_t5",
+                  "text": "XML Security: Standards-compliant parsing, validation, external references"
+                },
+                {
+                  "id": "cse551_u4_t6",
+                  "text": "Web Service Security: WSDL security concerns, JavaScript hijacking"
+                }
+              ]
+            },
+            {
+              "id": "cse551_u5",
+              "title": "Privacy, Secrets, Privilege and Secure Code Review",
+              "topics": [
+                {
+                  "id": "cse551_u5_t1",
+                  "text": "Privacy and Secrets: Regulatory considerations, identifying private information"
+                },
+                {
+                  "id": "cse551_u5_t2",
+                  "text": "Password Management and Secure Storage, Random Number Generation"
+                },
+                {
+                  "id": "cse551_u5_t3",
+                  "text": "Cryptographic Algorithms and Secure Handling of Secrets in Memory"
+                },
+                {
+                  "id": "cse551_u5_t4",
+                  "text": "Principle of Least Privilege: Filesystem privileges, privilege escalation"
+                },
+                {
+                  "id": "cse551_u5_t5",
+                  "text": "Race Conditions, Insecure Temporary Files, Command Injection in Privileged Programs"
+                },
+                {
+                  "id": "cse551_u5_t6",
+                  "text": "Manual Source Code Auditing and Running Static Analysis Tools"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse552",
+          "name": "Computer Graphics and Virtual Reality",
+          "code": "CSE552",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse552_u1",
+              "title": "Introduction to Computer Graphics and OpenGL",
+              "topics": [
+                {
+                  "id": "cse552_u1_t1",
+                  "text": "Graphics Systems, Physical and synthetic images, Imaging Systems"
+                },
+                {
+                  "id": "cse552_u1_t2",
+                  "text": "The Synthetic Camera Model, Programmer's Interface, Programmable Pipelines"
+                },
+                {
+                  "id": "cse552_u1_t3",
+                  "text": "OpenGL API: Primitives and attributes, Color, Viewing, Control functions"
+                },
+                {
+                  "id": "cse552_u1_t4",
+                  "text": "The Gasket program, Polygons and recursions, 3D gasket"
+                },
+                {
+                  "id": "cse552_u1_t5",
+                  "text": "Adding interactions and menus in OpenGL"
+                }
+              ]
+            },
+            {
+              "id": "cse552_u2",
+              "title": "Geometric Objects, Transformations and Clipping",
+              "topics": [
+                {
+                  "id": "cse552_u2_t1",
+                  "text": "Frames in OpenGL and Modeling a Colored Cube"
+                },
+                {
+                  "id": "cse552_u2_t2",
+                  "text": "Affine Transformations: Rotation, Translation, Scaling"
+                },
+                {
+                  "id": "cse552_u2_t3",
+                  "text": "Transformations in Homogeneous Coordinates"
+                },
+                {
+                  "id": "cse552_u2_t4",
+                  "text": "Concatenation of Transformations and OpenGL Transformation Matrices"
+                },
+                {
+                  "id": "cse552_u2_t5",
+                  "text": "Vertices to Fragments: Implementation strategies and Four major tasks"
+                },
+                {
+                  "id": "cse552_u2_t6",
+                  "text": "Line-segment clipping algorithms"
+                }
+              ]
+            },
+            {
+              "id": "cse552_u3",
+              "title": "Rasterization, Hidden Surface Removal, Lighting and Shading",
+              "topics": [
+                {
+                  "id": "cse552_u3_t1",
+                  "text": "Polygon clipping, Primitive clipping, Clipping in three dimensions"
+                },
+                {
+                  "id": "cse552_u3_t2",
+                  "text": "Rasterization: Bresenham's algorithm and Polygon rasterization"
+                },
+                {
+                  "id": "cse552_u3_t3",
+                  "text": "Hidden-surface removal algorithms"
+                },
+                {
+                  "id": "cse552_u3_t4",
+                  "text": "Lighting and Matter, Light sources, The Phong reflection model"
+                },
+                {
+                  "id": "cse552_u3_t5",
+                  "text": "Polygon shading and Light sources in OpenGL"
+                },
+                {
+                  "id": "cse552_u3_t6",
+                  "text": "Implementing a lighting model"
+                }
+              ]
+            },
+            {
+              "id": "cse552_u4",
+              "title": "Viewing and Projections",
+              "topics": [
+                {
+                  "id": "cse552_u4_t1",
+                  "text": "Classical and computer viewing, Viewing with a Computer"
+                },
+                {
+                  "id": "cse552_u4_t2",
+                  "text": "Positioning of the camera"
+                },
+                {
+                  "id": "cse552_u4_t3",
+                  "text": "Parallel Projections and Perspective Projections"
+                },
+                {
+                  "id": "cse552_u4_t4",
+                  "text": "Perspective Projections with OpenGL"
+                },
+                {
+                  "id": "cse552_u4_t5",
+                  "text": "Perspective projection matrices"
+                }
+              ]
+            },
+            {
+              "id": "cse552_u5",
+              "title": "Introduction to Virtual Reality and Object Modelling",
+              "topics": [
+                {
+                  "id": "cse552_u5_t1",
+                  "text": "Components and design of a VR system, types and advantages"
+                },
+                {
+                  "id": "cse552_u5_t2",
+                  "text": "VR input devices, graphics display interfaces, sound display, haptic feedback"
+                },
+                {
+                  "id": "cse552_u5_t3",
+                  "text": "Graphical rendering pipeline and applications of VR"
+                },
+                {
+                  "id": "cse552_u5_t4",
+                  "text": "Object Modelling techniques in Virtual Reality"
+                },
+                {
+                  "id": "cse552_u5_t5",
+                  "text": "PC graphics architecture, accelerators, and distributed VR environments"
+                },
+                {
+                  "id": "cse552_u5_t6",
+                  "text": "Programming through VRML"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse554",
+          "name": "Advanced Algorithms",
+          "code": "CSE554",
+          "credits": "2:1:0",
+          "units": [
+            {
+              "id": "cse554_u1",
+              "title": "Running Times, Recurrences and Amortized Analysis",
+              "topics": [
+                {
+                  "id": "cse554_u1_t1",
+                  "text": "Characterizing Running Times: O-notation, Omega-notation, Theta-notation"
+                },
+                {
+                  "id": "cse554_u1_t2",
+                  "text": "Asymptotic notations: formal definitions and common functions"
+                },
+                {
+                  "id": "cse554_u1_t3",
+                  "text": "Recurrences: Substitution method"
+                },
+                {
+                  "id": "cse554_u1_t4",
+                  "text": "Recurrences: Recurrence-tree method"
+                },
+                {
+                  "id": "cse554_u1_t5",
+                  "text": "Recurrences: The Master method"
+                },
+                {
+                  "id": "cse554_u1_t6",
+                  "text": "Amortized Analysis: Aggregate, Accounting, and Potential Methods"
+                }
+              ]
+            },
+            {
+              "id": "cse554_u2",
+              "title": "Graph Algorithms, Trees and Hashing",
+              "topics": [
+                {
+                  "id": "cse554_u2_t1",
+                  "text": "Bellman-Ford Algorithm, Single source shortest paths in a DAG"
+                },
+                {
+                  "id": "cse554_u2_t2",
+                  "text": "Johnson's Algorithm for sparse graphs"
+                },
+                {
+                  "id": "cse554_u2_t3",
+                  "text": "Maximum bipartite matching"
+                },
+                {
+                  "id": "cse554_u2_t4",
+                  "text": "Trees: B-trees and Red-Black trees"
+                },
+                {
+                  "id": "cse554_u2_t5",
+                  "text": "Hashing: Hash functions, Separate Chaining, Hash Table without Linked Lists"
+                },
+                {
+                  "id": "cse554_u2_t6",
+                  "text": "Rehashing and Extendible hashing"
+                }
+              ]
+            },
+            {
+              "id": "cse554_u3",
+              "title": "Number-Theoretic Algorithms and Priority Queues",
+              "topics": [
+                {
+                  "id": "cse554_u3_t1",
+                  "text": "Number-Theoretic Algorithms: GCD, Modular Arithmetic"
+                },
+                {
+                  "id": "cse554_u3_t2",
+                  "text": "Solving modular linear equations, Chinese Remainder Theorem"
+                },
+                {
+                  "id": "cse554_u3_t3",
+                  "text": "Powers of an element and RSA cryptosystem"
+                },
+                {
+                  "id": "cse554_u3_t4",
+                  "text": "Priority Queues (Heaps): Binary Heap and Applications"
+                },
+                {
+                  "id": "cse554_u3_t5",
+                  "text": "Advanced Heaps: d-Heaps, Leftist Heaps, Skew Heaps"
+                }
+              ]
+            },
+            {
+              "id": "cse554_u4",
+              "title": "String Matching Algorithms",
+              "topics": [
+                {
+                  "id": "cse554_u4_t1",
+                  "text": "Naive string matching algorithm"
+                },
+                {
+                  "id": "cse554_u4_t2",
+                  "text": "Rabin-Karp algorithm"
+                },
+                {
+                  "id": "cse554_u4_t3",
+                  "text": "String matching with finite automata"
+                },
+                {
+                  "id": "cse554_u4_t4",
+                  "text": "Knuth-Morris-Pratt (KMP) algorithm"
+                }
+              ]
+            },
+            {
+              "id": "cse554_u5",
+              "title": "Algorithmic Puzzles",
+              "topics": [
+                {
+                  "id": "cse554_u5_t1",
+                  "text": "Puzzles: Magic Square, n-queens problem, Glove Selection, Ferrying Soldiers"
+                },
+                {
+                  "id": "cse554_u5_t2",
+                  "text": "Jigsaw Puzzle Assembly, A Stack of Fake Coins"
+                },
+                {
+                  "id": "cse554_u5_t3",
+                  "text": "Maximum Sum Descent, Hats of Two Colors, Pluses and Minuses"
+                },
+                {
+                  "id": "cse554_u5_t4",
+                  "text": "Searching for a Pattern, Locker Doors, Palindrome Counting"
+                },
+                {
+                  "id": "cse554_u5_t5",
+                  "text": "Inverting a Coin Triangle, Sorting 5 in 7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse556",
+          "name": "Object Oriented Analysis and Design",
+          "code": "CSE556",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse556_u1",
+              "title": "Introduction and Object Basics",
+              "topics": [
+                {
+                  "id": "cse556_u1_t1",
+                  "text": "Overview of object-oriented systems development: Why object orientation?"
+                },
+                {
+                  "id": "cse556_u1_t2",
+                  "text": "Object basics: Objects, classes, state, behavior, encapsulation, class hierarchy, polymorphism"
+                },
+                {
+                  "id": "cse556_u1_t3",
+                  "text": "Object relationships: Associations, aggregation, and object containment"
+                },
+                {
+                  "id": "cse556_u1_t4",
+                  "text": "Object-oriented systems development life cycle and software development process"
+                },
+                {
+                  "id": "cse556_u1_t5",
+                  "text": "Use-case driven approach and case study on objects and collaboration"
+                }
+              ]
+            },
+            {
+              "id": "cse556_u2",
+              "title": "Modelling and UML",
+              "topics": [
+                {
+                  "id": "cse556_u2_t1",
+                  "text": "Static and dynamic models: Why modelling?"
+                },
+                {
+                  "id": "cse556_u2_t2",
+                  "text": "UML class diagrams: Class notation, object diagram, interface notation, binary associations"
+                },
+                {
+                  "id": "cse556_u2_t3",
+                  "text": "Association roles, qualifiers, multiplicity, OR associations, association classes, N-ary associations"
+                },
+                {
+                  "id": "cse556_u2_t4",
+                  "text": "Aggregation, composition, generalization, and use-case diagrams"
+                },
+                {
+                  "id": "cse556_u2_t5",
+                  "text": "UML dynamic modelling: Interaction, state chart, activity diagrams, implementation diagrams"
+                },
+                {
+                  "id": "cse556_u2_t6",
+                  "text": "Model management: Packages, model organization, UML extensibility, UML meta model"
+                }
+              ]
+            },
+            {
+              "id": "cse556_u3",
+              "title": "Object-Oriented Analysis and Classification",
+              "topics": [
+                {
+                  "id": "cse556_u3_t1",
+                  "text": "Identifying Use Cases: Business object analysis, use-case driven analysis, business process modelling"
+                },
+                {
+                  "id": "cse556_u3_t2",
+                  "text": "The use-case model: Extends/uses associations, identifying actors, guidelines for finding use cases"
+                },
+                {
+                  "id": "cse556_u3_t3",
+                  "text": "Developing effective documentation"
+                },
+                {
+                  "id": "cse556_u3_t4",
+                  "text": "OO Analysis Classification: Noun-phrase approach, use-case driven approach"
+                },
+                {
+                  "id": "cse556_u3_t5",
+                  "text": "Identifying classes, behaviors, attributes, methods, super-sub relationships, and aggregation"
+                },
+                {
+                  "id": "cse556_u3_t6",
+                  "text": "Case study: Relationship analysis for the ViaNet Bank ATM System"
+                }
+              ]
+            },
+            {
+              "id": "cse556_u4",
+              "title": "Object-Oriented Design and Design Principles",
+              "topics": [
+                {
+                  "id": "cse556_u4_t1",
+                  "text": "OO Design process, Design axioms and corollaries (Coupling, Cohesion, Single Purpose)"
+                },
+                {
+                  "id": "cse556_u4_t2",
+                  "text": "Corollaries: Large number of simpler classes, Reusability, Strong mapping, Standardization"
+                },
+                {
+                  "id": "cse556_u4_t3",
+                  "text": "Designing with inheritance and avoiding inappropriate behaviors"
+                },
+                {
+                  "id": "cse556_u4_t4",
+                  "text": "Designing classes: Visibility, public/private/protected protocols, refining attributes"
+                },
+                {
+                  "id": "cse556_u4_t5",
+                  "text": "Designing methods and protocols: Avoiding pitfalls, UML operation presentation"
+                },
+                {
+                  "id": "cse556_u4_t6",
+                  "text": "Case study: Designing methods for ViaNet bank objects"
+                }
+              ]
+            },
+            {
+              "id": "cse556_u5",
+              "title": "Design Patterns",
+              "topics": [
+                {
+                  "id": "cse556_u5_t1",
+                  "text": "What is a Design Pattern? Selection, usage, and problem-solving with patterns"
+                },
+                {
+                  "id": "cse556_u5_t2",
+                  "text": "Creational patterns: Factory Method, Abstract Factory, Singleton"
+                },
+                {
+                  "id": "cse556_u5_t3",
+                  "text": "Structural patterns: Adapter, Decorator, Composite, Facade"
+                },
+                {
+                  "id": "cse556_u5_t4",
+                  "text": "Behavioral patterns: Strategy, Observer, Command, Template Method"
+                },
+                {
+                  "id": "cse556_u5_t5",
+                  "text": "Patterns and software architecture: Architectural patterns (Layers, MVC)"
+                },
+                {
+                  "id": "cse556_u5_t6",
+                  "text": "Applying patterns to refactor ViaNet / parking-lot designs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse557",
+          "name": "Big Data Analytics",
+          "code": "CSE557",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse557_u1",
+              "title": "Introduction to Big Data Analytics and Data Science",
+              "topics": [
+                {
+                  "id": "cse557_u1_t1",
+                  "text": "Classification of Digital Data, Characteristics and Evolution of Big Data"
+                },
+                {
+                  "id": "cse557_u1_t2",
+                  "text": "Definition and Challenges with Big Data, Why Big Data?"
+                },
+                {
+                  "id": "cse557_u1_t3",
+                  "text": "Traditional Business Intelligence (BI) vs Big Data"
+                },
+                {
+                  "id": "cse557_u1_t4",
+                  "text": "Big Data Analytics: Classification, Top challenges, Importance"
+                },
+                {
+                  "id": "cse557_u1_t5",
+                  "text": "Data Science, Data Scientist responsibilities, Terminology in Big Data environments"
+                }
+              ]
+            },
+            {
+              "id": "cse557_u2",
+              "title": "Data Analytics with Hadoop",
+              "topics": [
+                {
+                  "id": "cse557_u2_t1",
+                  "text": "Basics of Hadoop: Data storage, analysis, data format, data flow"
+                },
+                {
+                  "id": "cse557_u2_t2",
+                  "text": "The Hadoop Distributed File System (HDFS): Design and Concepts"
+                },
+                {
+                  "id": "cse557_u2_t3",
+                  "text": "HDFS Data Flow: Anatomy of a File Read and File Write"
+                },
+                {
+                  "id": "cse557_u2_t4",
+                  "text": "Developing MapReduce Applications: Workflows, writing unit tests"
+                },
+                {
+                  "id": "cse557_u2_t5",
+                  "text": "Anatomy of a MapReduce Job Run: Classic MapReduce vs YARN (MapReduce 2)"
+                },
+                {
+                  "id": "cse557_u2_t6",
+                  "text": "Failures, Job Scheduling, Shuffle and Sort"
+                }
+              ]
+            },
+            {
+              "id": "cse557_u3",
+              "title": "Apache Spark Overview and RDDs",
+              "topics": [
+                {
+                  "id": "cse557_u3_t1",
+                  "text": "Spark Architecture overview, Installation, First Spark program"
+                },
+                {
+                  "id": "cse557_u3_t2",
+                  "text": "Apache Spark cluster manager types, Running Spark examples"
+                },
+                {
+                  "id": "cse557_u3_t3",
+                  "text": "Transformations and Actions with Spark RDDs: Constructing RDDs, RDD operations"
+                },
+                {
+                  "id": "cse557_u3_t4",
+                  "text": "Passing functions to Spark in Scala, Java, Python"
+                },
+                {
+                  "id": "cse557_u3_t5",
+                  "text": "Set operations in Spark, Actions, Pair RDDs"
+                },
+                {
+                  "id": "cse557_u3_t6",
+                  "text": "Partitioning, Accumulators, Broadcast Variables"
+                }
+              ]
+            },
+            {
+              "id": "cse557_u4",
+              "title": "Machine Learning with Spark (Spark MLlib)",
+              "topics": [
+                {
+                  "id": "cse557_u4_t1",
+                  "text": "What is Machine Learning? Why and types of ML in Big Data"
+                },
+                {
+                  "id": "cse557_u4_t2",
+                  "text": "Spark MLlib: Need for pipeline API, Scala syntax for building pipelines"
+                },
+                {
+                  "id": "cse557_u4_t3",
+                  "text": "Predictions on test documents and ML pipelines"
+                },
+                {
+                  "id": "cse557_u4_t4",
+                  "text": "Feature engineering, Feature transformation, and Feature selection algorithms"
+                },
+                {
+                  "id": "cse557_u4_t5",
+                  "text": "Classification, Regression, Clustering, Collaborative filtering"
+                },
+                {
+                  "id": "cse557_u4_t6",
+                  "text": "ML-tuning: Model selection and hyperparameter tuning"
+                }
+              ]
+            },
+            {
+              "id": "cse557_u5",
+              "title": "Snowflake Architecture Overview and Securable Objects",
+              "topics": [
+                {
+                  "id": "cse557_u5_t1",
+                  "text": "Traditional data architectures vs The Snowflake Architecture"
+                },
+                {
+                  "id": "cse557_u5_t2",
+                  "text": "Cloud Services Layer and Query Processing (Virtual Warehouse) Compute Layer"
+                },
+                {
+                  "id": "cse557_u5_t3",
+                  "text": "Creating and using virtual warehouses, sizing considerations"
+                },
+                {
+                  "id": "cse557_u5_t4",
+                  "text": "Centralized (Hybrid Columnar) Database Storage Layer"
+                },
+                {
+                  "id": "cse557_u5_t5",
+                  "text": "Managing Snowflake Database Objects: Databases, schemas, tables, and views"
+                },
+                {
+                  "id": "cse557_u5_t6",
+                  "text": "Extending SQL: Stored procedures, UDFs, Pipes, Streams, and Sequences"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csl56",
+          "name": "Data Communication and Networking Laboratory",
+          "code": "CSL56",
+          "credits": "0:0:1",
+          "units": [
+            {
+              "id": "csl56_u1",
+              "title": "Laboratory Experiments",
+              "topics": [
+                {
+                  "id": "csl56_u1_t1",
+                  "text": "Compilation/installations of tools like NS3, Wireshark"
+                },
+                {
+                  "id": "csl56_u1_t2",
+                  "text": "Study of TCP/IP Protocol Suite using Network Utilities"
+                },
+                {
+                  "id": "csl56_u1_t3",
+                  "text": "HTTP, DNS and TCP Packet Analysis"
+                },
+                {
+                  "id": "csl56_u1_t4",
+                  "text": "Analysis of DHCP, ARP and ICMP Protocols"
+                },
+                {
+                  "id": "csl56_u1_t5",
+                  "text": "TCP Client-Server Communication using Socket Programming"
+                },
+                {
+                  "id": "csl56_u1_t6",
+                  "text": "UDP Client-Server Communication using Socket Programming"
+                },
+                {
+                  "id": "csl56_u1_t7",
+                  "text": "IPv4 Addressing, Subnetting and Static Routing"
+                },
+                {
+                  "id": "csl56_u1_t8",
+                  "text": "Dynamic Routing using RIP and OSPF"
+                },
+                {
+                  "id": "csl56_u1_t9",
+                  "text": "Ethernet Switching, VLAN and Inter-VLAN Routing"
+                },
+                {
+                  "id": "csl56_u1_t10",
+                  "text": "Error Detection and Correction using CRC and Hamming Code"
+                },
+                {
+                  "id": "csl56_u1_t11",
+                  "text": "Performance Analysis under Different Traffic Loads of TCP and UDP Networks"
+                },
+                {
+                  "id": "csl56_u1_t12",
+                  "text": "Congestion Control and Throughput Analysis"
+                },
+                {
+                  "id": "csl56_u1_t13",
+                  "text": "Wi-Fi Performance Measurement and Analysis"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csl57",
+          "name": "Full Stack Development Lab",
+          "code": "CSL57",
+          "credits": "0:0:1",
+          "units": [
+            {
+              "id": "csl57_u1",
+              "title": "Laboratory Experiments",
+              "topics": [
+                {
+                  "id": "csl57_u1_t1",
+                  "text": "HTML5 semantic tags and structure"
+                },
+                {
+                  "id": "csl57_u1_t2",
+                  "text": "Advanced CSS styling, grid, and flexbox layouts"
+                },
+                {
+                  "id": "csl57_u1_t3",
+                  "text": "JavaScript core scripting and DOM manipulation"
+                },
+                {
+                  "id": "csl57_u1_t4",
+                  "text": "Advanced JavaScript features and asynchronous programming"
+                },
+                {
+                  "id": "csl57_u1_t5",
+                  "text": "Inheritance and prototype chains in JavaScript"
+                },
+                {
+                  "id": "csl57_u1_t6",
+                  "text": "Scopes and closures in JavaScript"
+                },
+                {
+                  "id": "csl57_u1_t7",
+                  "text": "Server-side programming using JavaScript: Node.js"
+                },
+                {
+                  "id": "csl57_u1_t8",
+                  "text": "Implement CRUD operations using MongoDB and Node.js"
+                },
+                {
+                  "id": "csl57_u1_t9",
+                  "text": "Develop client-side single-page applications using React"
+                },
+                {
+                  "id": "csl57_u1_t10",
+                  "text": "Implement full stack end-to-end applications using MERN Stack"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "al58",
+          "name": "Research Methodology & Intellectual property rights",
+          "code": "AL58",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "al58_u1",
+              "title": "Research Methodology and Literature Review",
+              "topics": [
+                {
+                  "id": "al58_u1_t1",
+                  "text": "Meaning, objectives, types of research, Ethics in Research"
+                },
+                {
+                  "id": "al58_u1_t2",
+                  "text": "Types of Research Misconduct"
+                },
+                {
+                  "id": "al58_u1_t3",
+                  "text": "Literature Review and Technical Reading, Prior Art Analysis and Synthesis"
+                },
+                {
+                  "id": "al58_u1_t4",
+                  "text": "Bibliographic Databases and Conceptualizing Research"
+                },
+                {
+                  "id": "al58_u1_t5",
+                  "text": "Critical and Creative Reading"
+                },
+                {
+                  "id": "al58_u1_t6",
+                  "text": "Citations: Functions, attributes, impact of title and keywords, knowledge flow, acknowledgments"
+                }
+              ]
+            },
+            {
+              "id": "al58_u2",
+              "title": "Research Design and Experimental Designs",
+              "topics": [
+                {
+                  "id": "al58_u2_t1",
+                  "text": "Need for Research Design and Core Concepts"
+                },
+                {
+                  "id": "al58_u2_t2",
+                  "text": "Variables: Dependent, Independent, Extraneous, and Confounded relationships"
+                },
+                {
+                  "id": "al58_u2_t3",
+                  "text": "Research Hypothesis, Experimental and Control Groups, Treatments"
+                },
+                {
+                  "id": "al58_u2_t4",
+                  "text": "Randomised Block Design and Complete Randomised Design"
+                },
+                {
+                  "id": "al58_u2_t5",
+                  "text": "Latin Square Design and Factorial Design"
+                }
+              ]
+            },
+            {
+              "id": "al58_u3",
+              "title": "Data Collection, Sampling and Hypothesis Testing",
+              "topics": [
+                {
+                  "id": "al58_u3_t1",
+                  "text": "Methods of Data Collection: Primary and Secondary Data"
+                },
+                {
+                  "id": "al58_u3_t2",
+                  "text": "Sampling Design: Fundamentals, measurement, scaling techniques, selection criteria"
+                },
+                {
+                  "id": "al58_u3_t3",
+                  "text": "Characteristics of a Good Sample Design, Types of Sample Design"
+                },
+                {
+                  "id": "al58_u3_t4",
+                  "text": "Data Analysis & Hypothesis Testing: Null/Alternative hypotheses, Type I/II errors, significance level"
+                },
+                {
+                  "id": "al58_u3_t5",
+                  "text": "Hypothesis testing procedures: Mean, Variance, Proportions"
+                },
+                {
+                  "id": "al58_u3_t6",
+                  "text": "Chi-square Test, Analysis of Variance (One Way ANOVA), Covariance (ANOCOVA)"
+                }
+              ]
+            },
+            {
+              "id": "al58_u4",
+              "title": "Intellectual Property Rights and Patents",
+              "topics": [
+                {
+                  "id": "al58_u4_t1",
+                  "text": "Introduction to IPR: Forms of IPR and role in Research and Development"
+                },
+                {
+                  "id": "al58_u4_t2",
+                  "text": "TRIPS Agreement and Patent Cooperation Treaty (PCT)"
+                },
+                {
+                  "id": "al58_u4_t3",
+                  "text": "Patents: History (Indian and Global scenarios), Principles underlying patent law"
+                },
+                {
+                  "id": "al58_u4_t4",
+                  "text": "Types of Patent Applications in India, Procedure for obtaining a patent"
+                },
+                {
+                  "id": "al58_u4_t5",
+                  "text": "Non-Patentable Inventions"
+                },
+                {
+                  "id": "al58_u4_t6",
+                  "text": "Rights Conferred to a Patentee, Basmati Rice Patent Case study"
+                }
+              ]
+            },
+            {
+              "id": "al58_u5",
+              "title": "Industrial Designs, Trademarks and Copyrights",
+              "topics": [
+                {
+                  "id": "al58_u5_t1",
+                  "text": "Industrial Design: Definition, essential requirements, registration procedure"
+                },
+                {
+                  "id": "al58_u5_t2",
+                  "text": "Trademarks: Essentials, registration, and protection"
+                },
+                {
+                  "id": "al58_u5_t3",
+                  "text": "Rights conferred by registration of trademarks and types of reliefs for infringement"
+                },
+                {
+                  "id": "al58_u5_t4",
+                  "text": "Copyrights: Characteristics and rights conferred by registration"
+                },
+                {
+                  "id": "al58_u5_t5",
+                  "text": "Registration of copyrights, infringements, and legal remedies"
+                },
+                {
+                  "id": "al58_u5_t6",
+                  "text": "Trademarks and Copyrights case studies"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csaec59",
+          "name": "NoSQL",
+          "code": "CSAEC59",
+          "credits": "1:0:0",
+          "units": [
+            {
+              "id": "csaec59_u1",
+              "title": "Introduction to NoSQL and MongoDB",
+              "topics": [
+                {
+                  "id": "csaec59_u1_t1",
+                  "text": "Why NoSQL? The Value of Relational Databases, RDBMS vs NoSQL"
+                },
+                {
+                  "id": "csaec59_u1_t2",
+                  "text": "CAP Theorem, Impedance Mismatch, Application and Integration Databases"
+                },
+                {
+                  "id": "csaec59_u1_t3",
+                  "text": "Attack of the Clusters, The Emergence of NoSQL"
+                },
+                {
+                  "id": "csaec59_u1_t4",
+                  "text": "Introduction and CRUD Operations in MongoDB"
+                }
+              ]
+            },
+            {
+              "id": "csaec59_u2",
+              "title": "Key-Value Store Databases and Redis Fundamentals",
+              "topics": [
+                {
+                  "id": "csaec59_u2_t1",
+                  "text": "Key-Value Databases: Data Model, Characteristics, Advantages, Applications"
+                },
+                {
+                  "id": "csaec59_u2_t2",
+                  "text": "Redis Fundamentals: Features, Architecture, Persistence, Replication, Clustering"
+                },
+                {
+                  "id": "csaec59_u2_t3",
+                  "text": "Data Types in Redis: String, List, Set, Hash, Sorted Set"
+                },
+                {
+                  "id": "csaec59_u2_t4",
+                  "text": "Redis Commands: Database Commands, Key Commands, Operations"
+                },
+                {
+                  "id": "csaec59_u2_t5",
+                  "text": "Key Expiration and TTL in Redis"
+                }
+              ]
+            },
+            {
+              "id": "csaec59_u3",
+              "title": "Cassandra Database Fundamentals and CQL",
+              "topics": [
+                {
+                  "id": "csaec59_u3_t1",
+                  "text": "Cassandra Architecture, Replication Factor Strategy, and Features"
+                },
+                {
+                  "id": "csaec59_u3_t2",
+                  "text": "Cassandra Keyspace: Create, Alter, Drop Keyspace"
+                },
+                {
+                  "id": "csaec59_u3_t3",
+                  "text": "Cassandra Table: Create, Alter, Drop, Truncate"
+                },
+                {
+                  "id": "csaec59_u3_t4",
+                  "text": "Cassandra Query Language (CQL): Numeric, Textual, Time, Identity Data Types"
+                },
+                {
+                  "id": "csaec59_u3_t5",
+                  "text": "Collections and Tuples in CQL"
+                }
+              ]
+            },
+            {
+              "id": "csaec59_u4",
+              "title": "Neo4j Data Modeling and CQL Clauses",
+              "topics": [
+                {
+                  "id": "csaec59_u4_t1",
+                  "text": "Data modeling in Neo4j"
+                },
+                {
+                  "id": "csaec59_u4_t2",
+                  "text": "Neo4j CQL Read/Write Clauses: Set Clause, Delete Clause, Remove Clause"
+                },
+                {
+                  "id": "csaec59_u4_t3",
+                  "text": "Foreach clause, Match clause, Where clause"
+                },
+                {
+                  "id": "csaec59_u4_t4",
+                  "text": "Count Function, Order by clause, Limit, Skip"
+                },
+                {
+                  "id": "csaec59_u4_t5",
+                  "text": "String Functions and Aggregate Functions"
+                }
+              ]
+            },
+            {
+              "id": "csaec59_u5",
+              "title": "Graph Databases and NoSQL Models Comparison",
+              "topics": [
+                {
+                  "id": "csaec59_u5_t1",
+                  "text": "Graph Databases: Introduction and Features"
+                },
+                {
+                  "id": "csaec59_u5_t2",
+                  "text": "Graph data in a relational database, querying graph data using MySQL"
+                },
+                {
+                  "id": "csaec59_u5_t3",
+                  "text": "Neo4j in the NoSQL space"
+                },
+                {
+                  "id": "csaec59_u5_t4",
+                  "text": "Key-value stores vs Column-family stores vs Document vs Graph stores"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csaec510",
+          "name": "Prompt Engineering",
+          "code": "CSAEC510",
+          "credits": "1:0:0",
+          "units": [
+            {
+              "id": "csaec510_u1",
+              "title": "Principles of Prompting and LLM Foundations",
+              "topics": [
+                {
+                  "id": "csaec510_u1_t1",
+                  "text": "Overview of the Five Principles: Give Direction, Specify Format, Provide Examples, Evaluate Quality, Divide Labor"
+                },
+                {
+                  "id": "csaec510_u1_t2",
+                  "text": "Introduction to Large Language Models for Text Generation"
+                },
+                {
+                  "id": "csaec510_u1_t3",
+                  "text": "Vector Representations: The Numerical Essence of Language"
+                },
+                {
+                  "id": "csaec510_u1_t4",
+                  "text": "Transformer Architecture: Orchestrating Contextual Relationships"
+                },
+                {
+                  "id": "csaec510_u1_t5",
+                  "text": "Probabilistic Text Generation: The Decision Mechanism"
+                }
+              ]
+            },
+            {
+              "id": "csaec510_u2",
+              "title": "Standard Practices for Text Generation with ChatGPT",
+              "topics": [
+                {
+                  "id": "csaec510_u2_t1",
+                  "text": "Generating Lists and Hierarchical List Generation"
+                },
+                {
+                  "id": "csaec510_u2_t2",
+                  "text": "Generating JSON and YAML, Filtering YAML payloads"
+                },
+                {
+                  "id": "csaec510_u2_t3",
+                  "text": "Mock CSV Data, Explain It Like I'm Five, Universal Translation Through LLMs"
+                },
+                {
+                  "id": "csaec510_u2_t4",
+                  "text": "Text Style Unbundling and Generating New Content with Extracted Features"
+                },
+                {
+                  "id": "csaec510_u2_t5",
+                  "text": "Text Chunking Strategies and Role Prompting"
+                },
+                {
+                  "id": "csaec510_u2_t6",
+                  "text": "GPT Prompting Tactics and Avoiding Hallucinations with References"
+                }
+              ]
+            },
+            {
+              "id": "csaec510_u3",
+              "title": "Advanced Techniques for Text Generation with LangChain",
+              "topics": [
+                {
+                  "id": "csaec510_u3_t1",
+                  "text": "Introduction to LangChain, Environment Setup, Chat Models, Streaming Models"
+                },
+                {
+                  "id": "csaec510_u3_t2",
+                  "text": "LangChain Prompt Templates and LangChain Expression Language (LCEL)"
+                },
+                {
+                  "id": "csaec510_u3_t3",
+                  "text": "OpenAI Function Calling and Parallel Function Calling in LangChain"
+                },
+                {
+                  "id": "csaec510_u3_t4",
+                  "text": "Extracting Data with LangChain"
+                },
+                {
+                  "id": "csaec510_u3_t5",
+                  "text": "Creating Few-Shot Prompt Templates, Formatting and Selecting Examples by Length"
+                },
+                {
+                  "id": "csaec510_u3_t6",
+                  "text": "Saving and Loading LLM Prompts"
+                }
+              ]
+            },
+            {
+              "id": "csaec510_u4",
+              "title": "Vector Databases, RAG and Autonomous Agents",
+              "topics": [
+                {
+                  "id": "csaec510_u4_t1",
+                  "text": "Retrieval Augmented Generation (RAG): Embeddings and Document Loading"
+                },
+                {
+                  "id": "csaec510_u4_t2",
+                  "text": "Memory Retrieval with FAISS and Pinecone, RAG with LangChain, Self-Querying"
+                },
+                {
+                  "id": "csaec510_u4_t3",
+                  "text": "Autonomous Agents: Chain-of-Thought, Reason and Act (ReAct)"
+                },
+                {
+                  "id": "csaec510_u4_t4",
+                  "text": "ReAct Implementation and Using Tools"
+                },
+                {
+                  "id": "csaec510_u4_t5",
+                  "text": "Using LLMs as an API (OpenAI Functions vs ReAct), Agent Toolkits"
+                },
+                {
+                  "id": "csaec510_u4_t6",
+                  "text": "Understanding Memory: Short-Term, Long-Term, Memory in LangChain"
+                }
+              ]
+            },
+            {
+              "id": "csaec510_u5",
+              "title": "LangFuse / LangSmith and LLM Observability",
+              "topics": [
+                {
+                  "id": "csaec510_u5_t1",
+                  "text": "LLM Observability: Monitoring, debugging, evaluating LLM apps in production"
+                },
+                {
+                  "id": "csaec510_u5_t2",
+                  "text": "Integrating LangFuse with LangChain: Setup and pipeline configuration"
+                },
+                {
+                  "id": "csaec510_u5_t3",
+                  "text": "Token consumption, response latency, and cost tracking with respect to token usage"
+                },
+                {
+                  "id": "csaec510_u5_t4",
+                  "text": "Executing LangChain requests and tracing through LangFuse dashboard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hs59",
+          "name": "Environmental Studies",
+          "code": "HS59/HS510",
+          "credits": "0:0:0",
+          "units": [
+            {
+              "id": "hs59_u1",
+              "title": "Environment, Ecology and Biodiversity",
+              "topics": [
+                {
+                  "id": "hs59_u1_t1",
+                  "text": "Definition, scope, and importance of environmental studies"
+                },
+                {
+                  "id": "hs59_u1_t2",
+                  "text": "Multidisciplinary nature of Environmental studies"
+                },
+                {
+                  "id": "hs59_u1_t3",
+                  "text": "Food chain, food web, energy flow and material cycling in ecosystem"
+                },
+                {
+                  "id": "hs59_u1_t4",
+                  "text": "Biodiversity and threats to biodiversity"
+                },
+                {
+                  "id": "hs59_u1_t5",
+                  "text": "Concept of sustainable development: Definition, objectives, applications"
+                }
+              ]
+            },
+            {
+              "id": "hs59_u2",
+              "title": "Natural Resources",
+              "topics": [
+                {
+                  "id": "hs59_u2_t1",
+                  "text": "Forest resources: Ecological importance of forests"
+                },
+                {
+                  "id": "hs59_u2_t2",
+                  "text": "Water resources: Global water resources distribution"
+                },
+                {
+                  "id": "hs59_u2_t3",
+                  "text": "Mineral resources: Environmental effects of extracting and processing minerals"
+                },
+                {
+                  "id": "hs59_u2_t4",
+                  "text": "Food resources: Effects of modern agriculture"
+                },
+                {
+                  "id": "hs59_u2_t5",
+                  "text": "Land resources: Soil erosion and Desertification"
+                }
+              ]
+            },
+            {
+              "id": "hs59_u3",
+              "title": "Energy Sources and Environmental Impact Assessment",
+              "topics": [
+                {
+                  "id": "hs59_u3_t1",
+                  "text": "Growing energy needs: Conventional vs Non-conventional / Renewable sources"
+                },
+                {
+                  "id": "hs59_u3_t2",
+                  "text": "Bio Energy: Ethanol and Biomass energy"
+                },
+                {
+                  "id": "hs59_u3_t3",
+                  "text": "Energy of the future: Hydrogen fuel cells and Nuclear energy"
+                },
+                {
+                  "id": "hs59_u3_t4",
+                  "text": "Environmental Impact Assessment (EIA): Definition, Objectives, Benefits"
+                },
+                {
+                  "id": "hs59_u3_t5",
+                  "text": "Step-by-step procedure of conducting EIA"
+                }
+              ]
+            },
+            {
+              "id": "hs59_u4",
+              "title": "Environmental Pollution",
+              "topics": [
+                {
+                  "id": "hs59_u4_t1",
+                  "text": "Definition, Causes, Effects and control measures of Water pollution"
+                },
+                {
+                  "id": "hs59_u4_t2",
+                  "text": "Definition, Causes, Effects and control measures of Air pollution"
+                },
+                {
+                  "id": "hs59_u4_t3",
+                  "text": "Definition, Causes, Effects and control measures of Soil/land pollution"
+                },
+                {
+                  "id": "hs59_u4_t4",
+                  "text": "Management and treatment methods of Municipal Solid Waste"
+                }
+              ]
+            },
+            {
+              "id": "hs59_u5",
+              "title": "Environmental Protection and Legislation",
+              "topics": [
+                {
+                  "id": "hs59_u5_t1",
+                  "text": "Global warming and Climate change"
+                },
+                {
+                  "id": "hs59_u5_t2",
+                  "text": "Acid rain and Ozone layer depletion"
+                },
+                {
+                  "id": "hs59_u5_t3",
+                  "text": "Salient features of Environmental Protection Act"
+                },
+                {
+                  "id": "hs59_u5_t4",
+                  "text": "Air and Water Pollution Acts"
+                },
+                {
+                  "id": "hs59_u5_t5",
+                  "text": "Functions of Central and State Pollution Control Boards"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "semester": 6,
+      "subjects": [
+        {
+          "id": "al61",
+          "name": "Management & Entrepreneurship",
+          "code": "AL61",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "al61_u1",
+              "title": "Introduction to Management, Planning and Organizing",
+              "topics": [
+                {
+                  "id": "al61_u1_t1",
+                  "text": "Definition of Management, nature and purpose"
+                },
+                {
+                  "id": "al61_u1_t2",
+                  "text": "Contributions of F.W. Taylor and Henry Fayol to management theory"
+                },
+                {
+                  "id": "al61_u1_t3",
+                  "text": "Functions of managers and Types of plans"
+                },
+                {
+                  "id": "al61_u1_t4",
+                  "text": "Planning: Steps in planning, planning process, Management by Objectives (MBO)"
+                },
+                {
+                  "id": "al61_u1_t5",
+                  "text": "Organizing: Nature and purpose, Formal and informal organization"
+                },
+                {
+                  "id": "al61_u1_t6",
+                  "text": "Organization levels and Span of management, Structure and process of organizing"
+                }
+              ]
+            },
+            {
+              "id": "al61_u2",
+              "title": "Staffing, Leading and Controlling",
+              "topics": [
+                {
+                  "id": "al61_u2_t1",
+                  "text": "Staffing: Situational factors affecting staffing"
+                },
+                {
+                  "id": "al61_u2_t2",
+                  "text": "Leading: Human factors in managing, leadership definition, Ingredients of leadership"
+                },
+                {
+                  "id": "al61_u2_t3",
+                  "text": "Controlling: Basic control process, Critical control points and standards"
+                },
+                {
+                  "id": "al61_u2_t4",
+                  "text": "Control as a feedback system, Feed-forward control"
+                },
+                {
+                  "id": "al61_u2_t5",
+                  "text": "Requirements for effective controls"
+                }
+              ]
+            },
+            {
+              "id": "al61_u3",
+              "title": "Introduction to Entrepreneurship and Creativity",
+              "topics": [
+                {
+                  "id": "al61_u3_t1",
+                  "text": "Foundations of Entrepreneurship: Definition, benefits, and potential drawbacks"
+                },
+                {
+                  "id": "al61_u3_t2",
+                  "text": "Inside the Entrepreneurial Mind: From Ideas to Reality"
+                },
+                {
+                  "id": "al61_u3_t3",
+                  "text": "Creativity, Innovation and Entrepreneurship"
+                },
+                {
+                  "id": "al61_u3_t4",
+                  "text": "Creative Thinking and Barriers to Creativity"
+                }
+              ]
+            },
+            {
+              "id": "al61_u4",
+              "title": "The Entrepreneurial Journey and Business Plan",
+              "topics": [
+                {
+                  "id": "al61_u4_t1",
+                  "text": "Crafting a Business Plan: Benefits and Elements of a business plan"
+                },
+                {
+                  "id": "al61_u4_t2",
+                  "text": "Forms of Business Ownership: Sole proprietorships and partnerships"
+                },
+                {
+                  "id": "al61_u4_t3",
+                  "text": "Buying an Existing Business"
+                },
+                {
+                  "id": "al61_u4_t4",
+                  "text": "Launching the Business: Franchising and the Entrepreneur"
+                },
+                {
+                  "id": "al61_u4_t5",
+                  "text": "Types of Franchising and benefits of buying a Franchise"
+                }
+              ]
+            },
+            {
+              "id": "al61_u5",
+              "title": "Small Scale Industry and Institutional Support",
+              "topics": [
+                {
+                  "id": "al61_u5_t1",
+                  "text": "Small Scale Industry (SSI): Definition, characteristics, and types"
+                },
+                {
+                  "id": "al61_u5_t2",
+                  "text": "Role of SSI in Economic Development"
+                },
+                {
+                  "id": "al61_u5_t3",
+                  "text": "Steps to start an SSI and Government Policy towards SSI"
+                },
+                {
+                  "id": "al61_u5_t4",
+                  "text": "Institutional support: TECKSOK, KIADB, KSSIDC, KSIMC"
+                },
+                {
+                  "id": "al61_u5_t5",
+                  "text": "Financial and development institutions: DIC, NSIC, SIDBI, KSFC"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cs62",
+          "name": "Cloud Computing and Microservices",
+          "code": "CS62",
+          "credits": "3:1:0",
+          "units": [
+            {
+              "id": "cs62_u1",
+              "title": "Cloud Computing Foundations",
+              "topics": [
+                {
+                  "id": "cs62_u1_t1",
+                  "text": "Evolution and Characteristics of Cloud Computing"
+                },
+                {
+                  "id": "cs62_u1_t2",
+                  "text": "Service Models: IaaS, PaaS, SaaS"
+                },
+                {
+                  "id": "cs62_u1_t3",
+                  "text": "Deployment Models: Public, Private, Hybrid, Community"
+                },
+                {
+                  "id": "cs62_u1_t4",
+                  "text": "Virtualization: Hypervisors, Containers vs VMs"
+                },
+                {
+                  "id": "cs62_u1_t5",
+                  "text": "Introduction to major cloud platforms: AWS, Azure, GCP"
+                }
+              ]
+            },
+            {
+              "id": "cs62_u2",
+              "title": "Cloud Infrastructure and Services",
+              "topics": [
+                {
+                  "id": "cs62_u2_t1",
+                  "text": "Compute, Storage, and Networking in Cloud"
+                },
+                {
+                  "id": "cs62_u2_t2",
+                  "text": "Object Storage (S3/GCS), Block and File Storage"
+                },
+                {
+                  "id": "cs62_u2_t3",
+                  "text": "Load Balancers and Auto-scaling"
+                },
+                {
+                  "id": "cs62_u2_t4",
+                  "text": "Serverless Computing: AWS Lambda, GCP Cloud Functions"
+                },
+                {
+                  "id": "cs62_u2_t5",
+                  "text": "Cloud Databases: RDS, DynamoDB, Firebase"
+                }
+              ]
+            },
+            {
+              "id": "cs62_u3",
+              "title": "Microservices Architecture Design",
+              "topics": [
+                {
+                  "id": "cs62_u3_t1",
+                  "text": "Monolithic vs Microservices Architecture"
+                },
+                {
+                  "id": "cs62_u3_t2",
+                  "text": "Principles of Microservices: Single Responsibility, Bounded Contexts, DDD"
+                },
+                {
+                  "id": "cs62_u3_t3",
+                  "text": "Inter-service Communication: REST and gRPC"
+                },
+                {
+                  "id": "cs62_u3_t4",
+                  "text": "API Gateway and Service Discovery"
+                },
+                {
+                  "id": "cs62_u3_t5",
+                  "text": "Circuit Breaker Pattern, Versioning, and Service Contracts"
+                }
+              ]
+            },
+            {
+              "id": "cs62_u4",
+              "title": "Containers and Orchestration",
+              "topics": [
+                {
+                  "id": "cs62_u4_t1",
+                  "text": "Docker: Images, Containers, Volumes"
+                },
+                {
+                  "id": "cs62_u4_t2",
+                  "text": "Docker Compose for multi-container applications"
+                },
+                {
+                  "id": "cs62_u4_t3",
+                  "text": "Kubernetes Basics: Pods, Deployments, Services, ConfigMaps"
+                },
+                {
+                  "id": "cs62_u4_t4",
+                  "text": "Container Networking and Service Exposure"
+                },
+                {
+                  "id": "cs62_u4_t5",
+                  "text": "Cloud-native deployment using Kubernetes"
+                },
+                {
+                  "id": "cs62_u4_t6",
+                  "text": "Introduction to Service Mesh and Sidecars"
+                }
+              ]
+            },
+            {
+              "id": "cs62_u5",
+              "title": "Cloud-Native Design and 12-Factor App",
+              "topics": [
+                {
+                  "id": "cs62_u5_t1",
+                  "text": "Introduction to Cloud-Native Applications"
+                },
+                {
+                  "id": "cs62_u5_t2",
+                  "text": "12-Factor App Methodology: Scalable and maintainable microservices"
+                },
+                {
+                  "id": "cs62_u5_t3",
+                  "text": "Stateless Processes, Config via Environment, Port Binding, Logs, Admin Tasks"
+                },
+                {
+                  "id": "cs62_u5_t4",
+                  "text": "Observability in Microservices: Logging, Monitoring, Tracing"
+                },
+                {
+                  "id": "cs62_u5_t5",
+                  "text": "Case Studies: Netflix, Uber, Amazon Microservices Patterns"
+                },
+                {
+                  "id": "cs62_u5_t6",
+                  "text": "Cloud-Native Deployment and Dev/Prod Parity using Containers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csl65",
+          "name": "Penetration Testing and Secure Programming Laboratory",
+          "code": "CSL65",
+          "credits": "0:0:1",
+          "units": [
+            {
+              "id": "csl65_u1",
+              "title": "Vulnerability Assessment and Penetration Testing Labs",
+              "topics": [
+                {
+                  "id": "csl65_u1_t1",
+                  "text": "Operating System Vulnerability Analysis using Nessus / OpenVAS"
+                },
+                {
+                  "id": "csl65_u1_t2",
+                  "text": "Network Scanning: Network discovery, open ports, and potential vulnerabilities using NMAP"
+                },
+                {
+                  "id": "csl65_u1_t3",
+                  "text": "Network Exploitation: Exploiting network services and gaining unauthorized access"
+                },
+                {
+                  "id": "csl65_u1_t4",
+                  "text": "Password Cracking, Ping Flood and Synflood Attacks"
+                },
+                {
+                  "id": "csl65_u1_t5",
+                  "text": "Database Vulnerability Assessment on MySQL / PostgreSQL"
+                },
+                {
+                  "id": "csl65_u1_t6",
+                  "text": "Web Application Vulnerability Scanning using Burp Suite / OWASP ZAP"
+                },
+                {
+                  "id": "csl65_u1_t7",
+                  "text": "Web Application Penetration Testing: Exploiting SQLi, XSS, CSRF"
+                },
+                {
+                  "id": "csl65_u1_t8",
+                  "text": "Social Engineering Attacks: Impersonation, Pretexting, Tailgating"
+                },
+                {
+                  "id": "csl65_u1_t9",
+                  "text": "Phishing Simulation and user susceptibility evaluation"
+                },
+                {
+                  "id": "csl65_u1_t10",
+                  "text": "Maintaining Access, Pivoting, and Vulnerability Assessment Reporting"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csl66",
+          "name": "Microservices and DevOps Lab",
+          "code": "CSL66",
+          "credits": "0:0:1",
+          "units": [
+            {
+              "id": "csl66_u1",
+              "title": "Microservices and DevOps Engineering Topics",
+              "topics": [
+                {
+                  "id": "csl66_u1_t1",
+                  "text": "Topic 1: Monolithic Decomposition & Multi-Stage Containerization with Dockerfiles"
+                },
+                {
+                  "id": "csl66_u1_t2",
+                  "text": "Topic 2: Declarative Infrastructure & Configuration Management (Ansible / Terraform)"
+                },
+                {
+                  "id": "csl66_u1_t3",
+                  "text": "Topic 3: Multi-Container Networking & Isolated State Storage (Database-per-Service, Docker Compose)"
+                },
+                {
+                  "id": "csl66_u1_t4",
+                  "text": "Topic 4: Automated Continuous Integration (CI) & Testing Pipelines (GitHub Actions / Jenkins)"
+                },
+                {
+                  "id": "csl66_u1_t5",
+                  "text": "Topic 5: Asynchronous Event-Driven Architectures & Message Brokers (Apache Kafka / RabbitMQ)"
+                },
+                {
+                  "id": "csl66_u1_t6",
+                  "text": "Topic 6: Production Cluster Orchestration & Kubernetes Manifests on Minikube"
+                },
+                {
+                  "id": "csl66_u1_t7",
+                  "text": "Topic 7: GitOps Continuous Delivery (CD) using ArgoCD & Live Observability with Prometheus/Grafana"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse631",
+          "name": "Introduction to Deep Learning",
+          "code": "CSE631",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse631_u1",
+              "title": "Introduction to Neural Networks, Perceptron and Tensors",
+              "topics": [
+                {
+                  "id": "cse631_u1_t1",
+                  "text": "What is a Neural Network? Models of a Neuron"
+                },
+                {
+                  "id": "cse631_u1_t2",
+                  "text": "Neural Networks Viewed As Directed Graphs, Feedback, Network Architectures"
+                },
+                {
+                  "id": "cse631_u1_t3",
+                  "text": "Rosenblatt's Perceptron: Introduction and Perceptron Convergence Theorem"
+                },
+                {
+                  "id": "cse631_u1_t4",
+                  "text": "Relation Between the Perceptron and Bayes Classifier for a Gaussian Environment"
+                },
+                {
+                  "id": "cse631_u1_t5",
+                  "text": "Tensors: Mathematical Foundations, Tensor Operations, Computational Graphs"
+                }
+              ]
+            },
+            {
+              "id": "cse631_u2",
+              "title": "Multilayer Perceptrons and Backpropagation",
+              "topics": [
+                {
+                  "id": "cse631_u2_t1",
+                  "text": "Multilayer Perceptrons: Introduction, Batch Learning and On-Line Learning"
+                },
+                {
+                  "id": "cse631_u2_t2",
+                  "text": "The Back-Propagation Algorithm"
+                },
+                {
+                  "id": "cse631_u2_t3",
+                  "text": "The XOR Problem"
+                },
+                {
+                  "id": "cse631_u2_t4",
+                  "text": "Heuristics for Making the Back-Propagation Algorithm Perform Better"
+                },
+                {
+                  "id": "cse631_u2_t5",
+                  "text": "Back Propagation and Differentiation"
+                }
+              ]
+            },
+            {
+              "id": "cse631_u3",
+              "title": "Regularization and Optimization for Deep Learning",
+              "topics": [
+                {
+                  "id": "cse631_u3_t1",
+                  "text": "Parameter Norm Penalties: L2 Parameter Regularization"
+                },
+                {
+                  "id": "cse631_u3_t2",
+                  "text": "Dataset Augmentation, Early Stopping, Parameter Tying and Sharing"
+                },
+                {
+                  "id": "cse631_u3_t3",
+                  "text": "Sparse Representations, Dropout, Adversarial Training"
+                },
+                {
+                  "id": "cse631_u3_t4",
+                  "text": "Batch Normalization and Layer Normalization"
+                },
+                {
+                  "id": "cse631_u3_t5",
+                  "text": "Challenges in Optimization: Ill Conditioning, Local Minima, Plateaus, Saddle Points, Exploding Gradients"
+                },
+                {
+                  "id": "cse631_u3_t6",
+                  "text": "Optimization Algorithms with Adaptive Learning Rates"
+                }
+              ]
+            },
+            {
+              "id": "cse631_u4",
+              "title": "Convolutional Neural Networks (CNNs)",
+              "topics": [
+                {
+                  "id": "cse631_u4_t1",
+                  "text": "The Convolution Operation, Motivation, and Pooling"
+                },
+                {
+                  "id": "cse631_u4_t2",
+                  "text": "Convolution and Pooling as an Infinitely Strong Prior"
+                },
+                {
+                  "id": "cse631_u4_t3",
+                  "text": "Variants of the Basic Convolution Function and Structured Outputs"
+                },
+                {
+                  "id": "cse631_u4_t4",
+                  "text": "Data Types and Efficient Convolution Algorithms"
+                },
+                {
+                  "id": "cse631_u4_t5",
+                  "text": "Convolutional Networks and History of Deep Learning"
+                },
+                {
+                  "id": "cse631_u4_t6",
+                  "text": "Conceptual overview of ResNet and Residual Connections"
+                }
+              ]
+            },
+            {
+              "id": "cse631_u5",
+              "title": "Sequence Modeling and Transformers",
+              "topics": [
+                {
+                  "id": "cse631_u5_t1",
+                  "text": "Recurrent Neural Networks (RNNs) and Bidirectional RNNs"
+                },
+                {
+                  "id": "cse631_u5_t2",
+                  "text": "Encoder-Decoder Sequence-to-Sequence Architectures"
+                },
+                {
+                  "id": "cse631_u5_t3",
+                  "text": "Deep Recurrent Networks"
+                },
+                {
+                  "id": "cse631_u5_t4",
+                  "text": "Long Short-Term Memory (LSTM) and Gated RNNs"
+                },
+                {
+                  "id": "cse631_u5_t5",
+                  "text": "Transformers: Architecture, Self-Attention, Multi-Head Attention, Positional Encodings"
+                },
+                {
+                  "id": "cse631_u5_t6",
+                  "text": "Structural Overview of Large Language Models (LLMs)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse632",
+          "name": "Software Defined Networks",
+          "code": "CSE632",
+          "credits": "2:1:0",
+          "units": [
+            {
+              "id": "cse632_u1",
+              "title": "How SDN Works and OpenFlow Specification",
+              "topics": [
+                {
+                  "id": "cse632_u1_t1",
+                  "text": "Fundamental Characteristics and Operation of SDN"
+                },
+                {
+                  "id": "cse632_u1_t2",
+                  "text": "SDN Devices, SDN Controller core modules and interfaces"
+                },
+                {
+                  "id": "cse632_u1_t3",
+                  "text": "Existing controller implementations and potential issues with SDN Controller"
+                },
+                {
+                  "id": "cse632_u1_t4",
+                  "text": "SDN Applications and Alternate SDN Methods (APIs, hypervisor overlays)"
+                },
+                {
+                  "id": "cse632_u1_t5",
+                  "text": "The Open Flow Specification: Open Flow switch, controller, protocol, secure channel"
+                }
+              ]
+            },
+            {
+              "id": "cse632_u2",
+              "title": "OpenFlow Versions and Evolution",
+              "topics": [
+                {
+                  "id": "cse632_u2_t1",
+                  "text": "Open Flow 1.0 Basics and Additions in Open Flow 1.1, 1.2, 1.3"
+                },
+                {
+                  "id": "cse632_u2_t2",
+                  "text": "Open Flow Limitations"
+                },
+                {
+                  "id": "cse632_u2_t3",
+                  "text": "Open Flow 1.4 additions: Bundles, Eviction, Vacancy events, Optical port support, Flow table sync"
+                },
+                {
+                  "id": "cse632_u2_t4",
+                  "text": "OpenFlow 1.5 Additions: Enhanced L4-L7 Support, Pipeline Processing Enhancements"
+                },
+                {
+                  "id": "cse632_u2_t5",
+                  "text": "Egress Tables, Fitness for Carrier Use, Support for Tunnels and Flow Entry Statistics"
+                }
+              ]
+            },
+            {
+              "id": "cse632_u3",
+              "title": "SDN Controllers and Frameworks",
+              "topics": [
+                {
+                  "id": "cse632_u3_t1",
+                  "text": "SDN Controllers: VMware, Nicira, Mininet, NOX/POX, Trema, Ryu, Big Switch Networks/Floodlight"
+                },
+                {
+                  "id": "cse632_u3_t2",
+                  "text": "Layer 3 Centric, L3VPN, Path Computation Element Server, Plexxi, Cisco OnePK"
+                },
+                {
+                  "id": "cse632_u3_t3",
+                  "text": "Building an SDN Framework: Juniper SDN Framework, IETF SDN Framework(s)"
+                },
+                {
+                  "id": "cse632_u3_t4",
+                  "text": "Open Daylight Controller/Framework, API, High Availability and State Storage, Analytics, Policy"
+                }
+              ]
+            },
+            {
+              "id": "cse632_u4",
+              "title": "Network Functions Virtualization (NFV)",
+              "topics": [
+                {
+                  "id": "cse632_u4_t1",
+                  "text": "Journey to Network Functions Virtualization (NFV): Architectural framework and ETSI framework"
+                },
+                {
+                  "id": "cse632_u4_t2",
+                  "text": "Benefits of NFV: Hardware flexibility, scalability, elasticity, rapid development, agility"
+                },
+                {
+                  "id": "cse632_u4_t3",
+                  "text": "Designing NFV Networks: Design considerations and transformation challenges"
+                },
+                {
+                  "id": "cse632_u4_t4",
+                  "text": "Virtualization of Network Infrastructure and Services: Routing, security, mobile communication"
+                }
+              ]
+            },
+            {
+              "id": "cse632_u5",
+              "title": "SDN & NFV Use Cases",
+              "topics": [
+                {
+                  "id": "cse632_u5_t1",
+                  "text": "Bandwidth Scheduling, Manipulation, and Calendaring: Base topology and OpenFlow/PCE"
+                },
+                {
+                  "id": "cse632_u5_t2",
+                  "text": "Overlay Example Using PCE Provisioning, Big Data and Application Hyper-Virtualization"
+                },
+                {
+                  "id": "cse632_u5_t3",
+                  "text": "Data Center Overlays, Big Data, and NFV: Orchestration, Tenant/VM state, Forwarding state"
+                },
+                {
+                  "id": "cse632_u5_t4",
+                  "text": "Data-Driven Learning, Control-Plane Signaling, Scaling and Performance Considerations"
+                },
+                {
+                  "id": "cse632_u5_t5",
+                  "text": "Puppet DevOps Solution, NFV in Mobility, Optimized Big Data"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse633",
+          "name": "Linux Kernel Programming",
+          "code": "CSE633",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse633_u1",
+              "title": "Introduction to the Linux Kernel and Process Management",
+              "topics": [
+                {
+                  "id": "cse633_u1_t1",
+                  "text": "Obtaining the Kernel Source, The Kernel Source Tree, Building the Kernel"
+                },
+                {
+                  "id": "cse633_u1_t2",
+                  "text": "Debugging: Getting Started, Bugs in the Kernel, Debugging by Printing, Oops, Debugging Options"
+                },
+                {
+                  "id": "cse633_u1_t3",
+                  "text": "Process Management: Process descriptor and task structure"
+                },
+                {
+                  "id": "cse633_u1_t4",
+                  "text": "Process creation and Linux implementation of threads"
+                },
+                {
+                  "id": "cse633_u1_t5",
+                  "text": "Process termination and resource cleanup"
+                }
+              ]
+            },
+            {
+              "id": "cse633_u2",
+              "title": "Process Scheduling",
+              "topics": [
+                {
+                  "id": "cse633_u2_t1",
+                  "text": "Multitasking and Linux's Process Scheduler"
+                },
+                {
+                  "id": "cse633_u2_t2",
+                  "text": "Scheduling Policy and Linux scheduling algorithm"
+                },
+                {
+                  "id": "cse633_u2_t3",
+                  "text": "The Linux Scheduling Implementation"
+                },
+                {
+                  "id": "cse633_u2_t4",
+                  "text": "Preemption and Context Switching"
+                },
+                {
+                  "id": "cse633_u2_t5",
+                  "text": "Real-Time Scheduling Policies and Scheduler-Related System Calls"
+                }
+              ]
+            },
+            {
+              "id": "cse633_u3",
+              "title": "Kernel Data Structures and Interrupt Handlers",
+              "topics": [
+                {
+                  "id": "cse633_u3_t1",
+                  "text": "Kernel Data Structures: Selection and usage"
+                },
+                {
+                  "id": "cse633_u3_t2",
+                  "text": "Interrupt Handlers: Top Halves Versus Bottom Halves"
+                },
+                {
+                  "id": "cse633_u3_t3",
+                  "text": "Registering an Interrupt Handler"
+                },
+                {
+                  "id": "cse633_u3_t4",
+                  "text": "Bottom Halves: softirq, tasklets, Work Queues"
+                },
+                {
+                  "id": "cse633_u3_t5",
+                  "text": "The Timer Interrupt Handler and kernel timers"
+                }
+              ]
+            },
+            {
+              "id": "cse633_u4",
+              "title": "Memory Management",
+              "topics": [
+                {
+                  "id": "cse633_u4_t1",
+                  "text": "Physical Memory: Pages and Zones, Getting Pages"
+                },
+                {
+                  "id": "cse633_u4_t2",
+                  "text": "Kernel allocators: kmalloc, vmalloc, slab layer"
+                },
+                {
+                  "id": "cse633_u4_t3",
+                  "text": "The Process Address Space: Address Spaces, memory descriptor"
+                },
+                {
+                  "id": "cse633_u4_t4",
+                  "text": "The Page Cache: Approaches to Caching and writeback"
+                }
+              ]
+            },
+            {
+              "id": "cse633_u5",
+              "title": "Virtual Filesystem and Device Modules",
+              "topics": [
+                {
+                  "id": "cse633_u5_t1",
+                  "text": "The Virtual Filesystem (VFS): Common Filesystem Interface, Abstraction Layer"
+                },
+                {
+                  "id": "cse633_u5_t2",
+                  "text": "Unix Filesystems and VFS Objects and Their Data Structures"
+                },
+                {
+                  "id": "cse633_u5_t3",
+                  "text": "The Superblock Object and Operations"
+                },
+                {
+                  "id": "cse633_u5_t4",
+                  "text": "The Inode Object and Operations"
+                },
+                {
+                  "id": "cse633_u5_t5",
+                  "text": "The Dentry Object and Operations"
+                },
+                {
+                  "id": "cse633_u5_t6",
+                  "text": "Devices and Modules: Device Types and Linux kernel modules"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse636",
+          "name": "Cryptography and Network Security",
+          "code": "CSE636",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "cse636_u1",
+              "title": "Foundations of Cryptography in the Post-Quantum Era",
+              "topics": [
+                {
+                  "id": "cse636_u1_t1",
+                  "text": "Security Goals, Attacks, Services and Mechanisms, Techniques"
+                },
+                {
+                  "id": "cse636_u1_t2",
+                  "text": "Mathematics of Cryptography: Modular Arithmetic, Group Theory basics, Elliptic Curves"
+                },
+                {
+                  "id": "cse636_u1_t3",
+                  "text": "The Quantum Threat: Shor's and Grover's Algorithms and impact on RSA/ECC"
+                },
+                {
+                  "id": "cse636_u1_t4",
+                  "text": "Post-Quantum Cryptography (PQC): Lattice-based, Hash-based, Code-based approaches"
+                },
+                {
+                  "id": "cse636_u1_t5",
+                  "text": "NIST PQC Standards: CRYSTALS-Kyber, CRYSTALS-Dilithium, SPHINCS+"
+                }
+              ]
+            },
+            {
+              "id": "cse636_u2",
+              "title": "Advanced Symmetric, Asymmetric and Privacy-Preserving Cryptography",
+              "topics": [
+                {
+                  "id": "cse636_u2_t1",
+                  "text": "Symmetric Techniques Revisited: AES structure and analysis"
+                },
+                {
+                  "id": "cse636_u2_t2",
+                  "text": "Asymmetric Cryptosystems: RSA, ECC, Elgamal"
+                },
+                {
+                  "id": "cse636_u2_t3",
+                  "text": "Privacy-Preserving Cryptography: Partial and Fully Homomorphic Encryption"
+                },
+                {
+                  "id": "cse636_u2_t4",
+                  "text": "Zero-Knowledge Proofs (zk-SNARKs) and Secure Multi-Party Computation"
+                },
+                {
+                  "id": "cse636_u2_t5",
+                  "text": "Digital Signatures and Key Management for distributed and cloud-native systems"
+                }
+              ]
+            },
+            {
+              "id": "cse636_u3",
+              "title": "Network Security and Zero Trust Architectures",
+              "topics": [
+                {
+                  "id": "cse636_u3_t1",
+                  "text": "Network Attacks, Firewalls, IDS/IPS"
+                },
+                {
+                  "id": "cse636_u3_t2",
+                  "text": "Transport and Application Layer Security: SSL/TLS, HTTPS, S/MIME"
+                },
+                {
+                  "id": "cse636_u3_t3",
+                  "text": "Zero Trust Architecture (ZTA): Principles, micro-segmentation, continuous verification"
+                },
+                {
+                  "id": "cse636_u3_t4",
+                  "text": "Secure Access Service Edge (SASE)"
+                },
+                {
+                  "id": "cse636_u3_t5",
+                  "text": "Software-Defined Perimeter and identity-centric network security for hybrid/remote environments"
+                }
+              ]
+            },
+            {
+              "id": "cse636_u4",
+              "title": "Penetration Testing Methodology and AI Red-Teaming",
+              "topics": [
+                {
+                  "id": "cse636_u4_t1",
+                  "text": "Penetration Testing Methodology (PTES): Reconnaissance, Scanning, Exploitation, Reporting"
+                },
+                {
+                  "id": "cse636_u4_t2",
+                  "text": "Vulnerability Assessment tools: Nmap, Nessus, OpenVAS, Burp Suite, Metasploit"
+                },
+                {
+                  "id": "cse636_u4_t3",
+                  "text": "AI-Assisted and Automated Penetration Testing: LLM-driven reconnaissance and exploit generation"
+                },
+                {
+                  "id": "cse636_u4_t4",
+                  "text": "Autonomous red-teaming agents and ethical/legal boundaries"
+                }
+              ]
+            },
+            {
+              "id": "cse636_u5",
+              "title": "Cloud Security, Threat Intelligence and Digital Forensics",
+              "topics": [
+                {
+                  "id": "cse636_u5_t1",
+                  "text": "Cloud Security: Shared responsibility model, threat models, IAM, multi-tenant data security"
+                },
+                {
+                  "id": "cse636_u5_t2",
+                  "text": "IoT and Embedded Systems Security: Constrained-device cryptography, firmware security"
+                },
+                {
+                  "id": "cse636_u5_t3",
+                  "text": "Blockchain-based Security Applications"
+                },
+                {
+                  "id": "cse636_u5_t4",
+                  "text": "Threat Intelligence and SOC Operations: Threat hunting, SIEM"
+                },
+                {
+                  "id": "cse636_u5_t5",
+                  "text": "Digital Forensics and Incident Response (DFIR): Evidence collection, malware analysis, breach reporting"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse637",
+          "name": "Distributed Systems",
+          "code": "CSE637",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse637_u1",
+              "title": "Characterization of Distributed Systems and IPC",
+              "topics": [
+                {
+                  "id": "cse637_u1_t1",
+                  "text": "Characterization: Examples, trends, resource sharing, and challenges"
+                },
+                {
+                  "id": "cse637_u1_t2",
+                  "text": "System Models: Physical Models, Architectural Models, Fundamental Models"
+                },
+                {
+                  "id": "cse637_u1_t3",
+                  "text": "Networking and Internetworking: Network Types, Principles, Internet Protocols"
+                },
+                {
+                  "id": "cse637_u1_t4",
+                  "text": "Interprocess Communication: API for Internet Protocols, External Data Representation, Marshalling"
+                },
+                {
+                  "id": "cse637_u1_t5",
+                  "text": "Multicast Communication and Network Virtualization (Overlay Networks)"
+                }
+              ]
+            },
+            {
+              "id": "cse637_u2",
+              "title": "Remote Invocation and Indirect Communication",
+              "topics": [
+                {
+                  "id": "cse637_u2_t1",
+                  "text": "Remote Invocation: Request-Reply Protocols, Remote Procedure Call (RPC)"
+                },
+                {
+                  "id": "cse637_u2_t2",
+                  "text": "Distributed Objects and Remote Method Invocation (RMI, JSON-RMI)"
+                },
+                {
+                  "id": "cse637_u2_t3",
+                  "text": "Indirect Communication: Group Communication"
+                },
+                {
+                  "id": "cse637_u2_t4",
+                  "text": "Publish-Subscribe Systems and Message Queues"
+                },
+                {
+                  "id": "cse637_u2_t5",
+                  "text": "Shared Memory Approaches"
+                }
+              ]
+            },
+            {
+              "id": "cse637_u3",
+              "title": "Message Ordering and Global State Recording",
+              "topics": [
+                {
+                  "id": "cse637_u3_t1",
+                  "text": "Message ordering paradigms: Asynchronous execution with synchronous communication"
+                },
+                {
+                  "id": "cse637_u3_t2",
+                  "text": "Synchronous program order on an asynchronous system"
+                },
+                {
+                  "id": "cse637_u3_t3",
+                  "text": "Group communication: Causal order (CO) and Total order"
+                },
+                {
+                  "id": "cse637_u3_t4",
+                  "text": "Global state and snapshot recording: System model and definitions"
+                },
+                {
+                  "id": "cse637_u3_t5",
+                  "text": "Snapshot algorithms for FIFO channels (Chandy-Lamport)"
+                }
+              ]
+            },
+            {
+              "id": "cse637_u4",
+              "title": "Distributed Mutual Exclusion and Deadlock Detection",
+              "topics": [
+                {
+                  "id": "cse637_u4_t1",
+                  "text": "Distributed Mutual Exclusion: Preliminaries and requirements"
+                },
+                {
+                  "id": "cse637_u4_t2",
+                  "text": "Lamport's Distributed Mutual Exclusion algorithm"
+                },
+                {
+                  "id": "cse637_u4_t3",
+                  "text": "Ricart-Agrawala algorithm"
+                },
+                {
+                  "id": "cse637_u4_t4",
+                  "text": "Deadlock detection in distributed systems: Models of deadlocks"
+                },
+                {
+                  "id": "cse637_u4_t5",
+                  "text": "Knapp's classification of distributed deadlock detection algorithms"
+                }
+              ]
+            },
+            {
+              "id": "cse637_u5",
+              "title": "Peer-to-Peer Computing and Distributed Shared Memory",
+              "topics": [
+                {
+                  "id": "cse637_u5_t1",
+                  "text": "Peer-to-peer computing: Data indexing, Unstructured overlays, Chord DHT"
+                },
+                {
+                  "id": "cse637_u5_t2",
+                  "text": "Content Addressable Networks (CAN) and Tapestry"
+                },
+                {
+                  "id": "cse637_u5_t3",
+                  "text": "Tradeoffs between table storage and route lengths, Graph structures of complex networks"
+                },
+                {
+                  "id": "cse637_u5_t4",
+                  "text": "Distributed Shared Memory (DSM): Abstraction, advantages, memory consistency models"
+                },
+                {
+                  "id": "cse637_u5_t5",
+                  "text": "Shared memory mutual exclusion, Wait-freedom, Atomic snapshots of shared objects"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse642",
+          "name": "Wireless Sensor Networks",
+          "code": "CSE642",
+          "credits": "2:1:0",
+          "units": [
+            {
+              "id": "cse642_u1",
+              "title": "Introduction to WSN and Sensor Node Anatomy",
+              "topics": [
+                {
+                  "id": "cse642_u1_t1",
+                  "text": "What are Wireless Sensor Networks? Applications and Types of WSN"
+                },
+                {
+                  "id": "cse642_u1_t2",
+                  "text": "Anatomy of Sensor Node: Hardware components"
+                },
+                {
+                  "id": "cse642_u1_t3",
+                  "text": "Power Consumption considerations in sensor nodes"
+                },
+                {
+                  "id": "cse642_u1_t4",
+                  "text": "Operating Systems and concepts in WSN"
+                },
+                {
+                  "id": "cse642_u1_t5",
+                  "text": "Communication Stack for sensor networks"
+                }
+              ]
+            },
+            {
+              "id": "cse642_u2",
+              "title": "Physical Layer and Medium Access Control",
+              "topics": [
+                {
+                  "id": "cse642_u2_t1",
+                  "text": "Physical layer technologies and RF Wireless communication overview"
+                },
+                {
+                  "id": "cse642_u2_t2",
+                  "text": "Modulation and Wireless channels effects"
+                },
+                {
+                  "id": "cse642_u2_t3",
+                  "text": "Medium Access Control (MAC): Challenges of MAC in WSN"
+                },
+                {
+                  "id": "cse642_u2_t4",
+                  "text": "CSMA Mechanism in sensor networks"
+                },
+                {
+                  "id": "cse642_u2_t5",
+                  "text": "Contention-based, Reservation-based, and Hybrid Medium Access"
+                }
+              ]
+            },
+            {
+              "id": "cse642_u3",
+              "title": "Radio Communications and Link Management",
+              "topics": [
+                {
+                  "id": "cse642_u3_t1",
+                  "text": "Radio Waves: Modulation and Demodulation"
+                },
+                {
+                  "id": "cse642_u3_t2",
+                  "text": "Properties of wireless communication and MAC protocols"
+                },
+                {
+                  "id": "cse642_u3_t3",
+                  "text": "Wireless links: Introduction, properties, and Error Control"
+                },
+                {
+                  "id": "cse642_u3_t4",
+                  "text": "Naming and addressing in sensor networks"
+                },
+                {
+                  "id": "cse642_u3_t5",
+                  "text": "Link estimation protocols and Topology Control"
+                }
+              ]
+            },
+            {
+              "id": "cse642_u4",
+              "title": "Multi-hop Communication and Data Aggregation",
+              "topics": [
+                {
+                  "id": "cse642_u4_t1",
+                  "text": "Multi-hop Communication: Routing basics and Routing metrics"
+                },
+                {
+                  "id": "cse642_u4_t2",
+                  "text": "Routing Protocols in WSN"
+                },
+                {
+                  "id": "cse642_u4_t3",
+                  "text": "Data Aggregation and Clustering: Clustering Techniques"
+                },
+                {
+                  "id": "cse642_u4_t4",
+                  "text": "In-Network Processing and Data Aggregation"
+                },
+                {
+                  "id": "cse642_u4_t5",
+                  "text": "Comprehensive Sampling in sensor networks"
+                }
+              ]
+            },
+            {
+              "id": "cse642_u5",
+              "title": "Sensing Techniques and Deploying Applications",
+              "topics": [
+                {
+                  "id": "cse642_u5_t1",
+                  "text": "Types of sensors, Sensing coverage, and High-level sensors"
+                },
+                {
+                  "id": "cse642_u5_t2",
+                  "text": "Special case: Human as a sensor, Actuators in WSN"
+                },
+                {
+                  "id": "cse642_u5_t3",
+                  "text": "Designing and Deploying WSN Applications: Early deployments and general problems"
+                },
+                {
+                  "id": "cse642_u5_t4",
+                  "text": "General testing and validation, Requirement analysis"
+                },
+                {
+                  "id": "cse642_u5_t5",
+                  "text": "Top-down design Process and Bottom-up Implementation Process"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse643",
+          "name": "Natural Language Processing",
+          "code": "CSE643",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse643_u1",
+              "title": "Introduction to Speech, Language Processing and Morphology",
+              "topics": [
+                {
+                  "id": "cse643_u1_t1",
+                  "text": "Knowledge in Speech and Language Processing, Ambiguity, Models and Algorithms"
+                },
+                {
+                  "id": "cse643_u1_t2",
+                  "text": "Language, Thought, and Understanding"
+                },
+                {
+                  "id": "cse643_u1_t3",
+                  "text": "State of the Art and Near-Term Future in NLP"
+                },
+                {
+                  "id": "cse643_u1_t4",
+                  "text": "Regular Expressions and Automata"
+                },
+                {
+                  "id": "cse643_u1_t5",
+                  "text": "Morphology and Finite-State Transducers: Lexicon-free FSTs, Porter Stemmer, Human Morphological Processing"
+                }
+              ]
+            },
+            {
+              "id": "cse643_u2",
+              "title": "N-grams, POS Tagging and Context-Free Grammars",
+              "topics": [
+                {
+                  "id": "cse643_u2_t1",
+                  "text": "N-grams: Counting Words in Corpora, Smoothing, Spelling and Pronunciation, Entropy"
+                },
+                {
+                  "id": "cse643_u2_t2",
+                  "text": "Word Classes and Part-of-Speech Tagging: Part-of-Speech Tagging"
+                },
+                {
+                  "id": "cse643_u2_t3",
+                  "text": "Rule-based POS Tagging, Stochastic POS Tagging, Transformation-Based Tagging"
+                },
+                {
+                  "id": "cse643_u2_t4",
+                  "text": "Context-Free Grammars for English: Constituency, Context-Free Rules and Trees"
+                },
+                {
+                  "id": "cse643_u2_t5",
+                  "text": "Sentence-Level Constructions and The Noun Phrase"
+                }
+              ]
+            },
+            {
+              "id": "cse643_u3",
+              "title": "Parsing with Context-Free Grammars",
+              "topics": [
+                {
+                  "id": "cse643_u3_t1",
+                  "text": "Parsing with Context-Free Grammars: The Earley Algorithm"
+                },
+                {
+                  "id": "cse643_u3_t2",
+                  "text": "Features and Unification: Feature Structures, Unification of Feature Structures"
+                },
+                {
+                  "id": "cse643_u3_t3",
+                  "text": "Feature Structures in Grammar and Implementing Unification"
+                },
+                {
+                  "id": "cse643_u3_t4",
+                  "text": "Parsing with Unification Constraints"
+                },
+                {
+                  "id": "cse643_u3_t5",
+                  "text": "Lexicalized and Probabilistic Parsing: Probabilistic Context-Free Grammars (PCFGs)"
+                },
+                {
+                  "id": "cse643_u3_t6",
+                  "text": "Problems and limitations with PCFGs"
+                }
+              ]
+            },
+            {
+              "id": "cse643_u4",
+              "title": "Representing Meaning and Semantic Analysis",
+              "topics": [
+                {
+                  "id": "cse643_u4_t1",
+                  "text": "Representing Meaning: First Order Predicate Calculus and Linguistically Relevant Concepts"
+                },
+                {
+                  "id": "cse643_u4_t2",
+                  "text": "Related Representational Approaches and Alternative Approaches to Meaning"
+                },
+                {
+                  "id": "cse643_u4_t3",
+                  "text": "Semantic Analysis: Syntax-Driven Semantic Analysis"
+                },
+                {
+                  "id": "cse643_u4_t4",
+                  "text": "Attachments for a Fragment of English"
+                },
+                {
+                  "id": "cse643_u4_t5",
+                  "text": "Lexical Semantics: Relations Among Lexemes and Their Senses"
+                },
+                {
+                  "id": "cse643_u4_t6",
+                  "text": "WordNet: Database of Lexical Relations, Internal Structure of Words"
+                }
+              ]
+            },
+            {
+              "id": "cse643_u5",
+              "title": "Discourse, Generation and Machine Translation",
+              "topics": [
+                {
+                  "id": "cse643_u5_t1",
+                  "text": "Discourse: Reference Resolution, Text Coherence, Discourse Structure"
+                },
+                {
+                  "id": "cse643_u5_t2",
+                  "text": "Language Generation: Introduction and Architecture for Generation"
+                },
+                {
+                  "id": "cse643_u5_t3",
+                  "text": "Machine Translation: Language Similarities and Differences"
+                },
+                {
+                  "id": "cse643_u5_t4",
+                  "text": "The Transfer Metaphor and translation models"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse644",
+          "name": "Advanced DBMS",
+          "code": "CSE644",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "cse644_u1",
+              "title": "Database Models and Enhanced ER (EER) Modeling",
+              "topics": [
+                {
+                  "id": "cse644_u1_t1",
+                  "text": "Database models: Flat, ER, Relational, Record base, Network, Hierarchical"
+                },
+                {
+                  "id": "cse644_u1_t2",
+                  "text": "Object-oriented, Object-relational, Semi-structured, Associative, Context, and Graph models"
+                },
+                {
+                  "id": "cse644_u1_t3",
+                  "text": "Enhanced Entity-Relationship (EER) Model: Subclasses, Superclasses, Inheritance"
+                },
+                {
+                  "id": "cse644_u1_t4",
+                  "text": "Specialization and Generalization: Constraints and characteristics"
+                },
+                {
+                  "id": "cse644_u1_t5",
+                  "text": "Modeling of UNION Types Using Categories"
+                },
+                {
+                  "id": "cse644_u1_t6",
+                  "text": "Sample UNIVERSITY EER Schema, Design Choices, Formal Definitions"
+                }
+              ]
+            },
+            {
+              "id": "cse644_u2",
+              "title": "Indexing and Hashing",
+              "topics": [
+                {
+                  "id": "cse644_u2_t1",
+                  "text": "Basic Concepts and Ordered Indices"
+                },
+                {
+                  "id": "cse644_u2_t2",
+                  "text": "B+-Tree Index Files and B+-Tree Extensions"
+                },
+                {
+                  "id": "cse644_u2_t3",
+                  "text": "Multiple-Key access techniques"
+                },
+                {
+                  "id": "cse644_u2_t4",
+                  "text": "Static Hashing and Dynamic Hashing"
+                },
+                {
+                  "id": "cse644_u2_t5",
+                  "text": "Comparison of Ordered Indexing and Hashing"
+                },
+                {
+                  "id": "cse644_u2_t6",
+                  "text": "Bitmap Indices and Index Definition in SQL"
+                }
+              ]
+            },
+            {
+              "id": "cse644_u3",
+              "title": "Query Processing and Optimization",
+              "topics": [
+                {
+                  "id": "cse644_u3_t1",
+                  "text": "Query Processing Overview and Measures of Query Cost"
+                },
+                {
+                  "id": "cse644_u3_t2",
+                  "text": "Selection Operation, Sorting, and Join Operation algorithms"
+                },
+                {
+                  "id": "cse644_u3_t3",
+                  "text": "Evaluation of Expressions"
+                },
+                {
+                  "id": "cse644_u3_t4",
+                  "text": "Query Optimization: Transformation of Relational Expressions"
+                },
+                {
+                  "id": "cse644_u3_t5",
+                  "text": "Estimating Statistics of Expression Results and Choice of Evaluation Plans"
+                }
+              ]
+            },
+            {
+              "id": "cse644_u4",
+              "title": "Parallel and Distributed Databases",
+              "topics": [
+                {
+                  "id": "cse644_u4_t1",
+                  "text": "Parallel Databases: I/O Parallelism, Inter-query and Intra-query Parallelism"
+                },
+                {
+                  "id": "cse644_u4_t2",
+                  "text": "Intra-operation Parallelism, Interoperation Parallelism, Query Optimization"
+                },
+                {
+                  "id": "cse644_u4_t3",
+                  "text": "Design of Parallel Systems and Parallelism on Multi-Core Processors"
+                },
+                {
+                  "id": "cse644_u4_t4",
+                  "text": "Distributed Databases: Homogeneous and Heterogeneous, Distributed Data Storage"
+                },
+                {
+                  "id": "cse644_u4_t5",
+                  "text": "Distributed Transactions, Commit Protocols, Concurrency Control, Availability"
+                },
+                {
+                  "id": "cse644_u4_t6",
+                  "text": "Distributed Query Processing, Cloud-Based Databases, Directory Systems"
+                }
+              ]
+            },
+            {
+              "id": "cse644_u5",
+              "title": "Enhanced Data Models for Advanced Applications",
+              "topics": [
+                {
+                  "id": "cse644_u5_t1",
+                  "text": "Active Database Concepts: Generalized Model and Oracle Triggers"
+                },
+                {
+                  "id": "cse644_u5_t2",
+                  "text": "Design and Implementation Issues for Active Databases"
+                },
+                {
+                  "id": "cse644_u5_t3",
+                  "text": "Temporal Database Concepts: Time representation, Calendars, Time Dimensions"
+                },
+                {
+                  "id": "cse644_u5_t4",
+                  "text": "Incorporating Time in Relational Databases using Tuple Versioning"
+                },
+                {
+                  "id": "cse644_u5_t5",
+                  "text": "Spatial Database Concepts: Introduction, Spatial Data Types and Models"
+                },
+                {
+                  "id": "cse644_u5_t6",
+                  "text": "Multimedia Database Concepts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse645",
+          "name": "Edge AI and Automation",
+          "code": "CSE645",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse645_u1",
+              "title": "Introduction to Edge AI and TinyML",
+              "topics": [
+                {
+                  "id": "cse645_u1_t1",
+                  "text": "What is Edge AI? Why Edge and not Cloud?"
+                },
+                {
+                  "id": "cse645_u1_t2",
+                  "text": "Introduction to TinyML: Definition and scope"
+                },
+                {
+                  "id": "cse645_u1_t3",
+                  "text": "Benefits: Latency, privacy, bandwidth, energy efficiency"
+                },
+                {
+                  "id": "cse645_u1_t4",
+                  "text": "Applications: Smart homes, healthcare, wearables, agriculture, industrial IoT"
+                },
+                {
+                  "id": "cse645_u1_t5",
+                  "text": "Architecture of edge intelligence systems"
+                }
+              ]
+            },
+            {
+              "id": "cse645_u2",
+              "title": "Hardware and Tools for TinyML",
+              "topics": [
+                {
+                  "id": "cse645_u2_t1",
+                  "text": "Overview of low-power edge devices: Arduino Nano 33 BLE Sense, ESP32, Raspberry Pi"
+                },
+                {
+                  "id": "cse645_u2_t2",
+                  "text": "Edge Accelerators: Coral Edge TPU, NVIDIA Jetson Nano"
+                },
+                {
+                  "id": "cse645_u2_t3",
+                  "text": "Sensors: Microphones, IMUs, temperature, camera modules"
+                },
+                {
+                  "id": "cse645_u2_t4",
+                  "text": "ML frameworks and tools: TensorFlow Lite, Edge Impulse, TinyML Kit"
+                },
+                {
+                  "id": "cse645_u2_t5",
+                  "text": "On-device deployment workflow and Introduction to n8n for IoT automation"
+                }
+              ]
+            },
+            {
+              "id": "cse645_u3",
+              "title": "ML Model Compression and Deployment",
+              "topics": [
+                {
+                  "id": "cse645_u3_t1",
+                  "text": "Challenges of ML on resource-constrained devices"
+                },
+                {
+                  "id": "cse645_u3_t2",
+                  "text": "Model optimization techniques: Quantization, pruning, knowledge distillation"
+                },
+                {
+                  "id": "cse645_u3_t3",
+                  "text": "Energy-efficient inference and memory constraints"
+                },
+                {
+                  "id": "cse645_u3_t4",
+                  "text": "Compiling and converting models for deployment"
+                },
+                {
+                  "id": "cse645_u3_t5",
+                  "text": "TFLite conversion and Micro interpreter"
+                },
+                {
+                  "id": "cse645_u3_t6",
+                  "text": "Flashing and testing models on devices"
+                }
+              ]
+            },
+            {
+              "id": "cse645_u4",
+              "title": "Workflow Automation with n8n",
+              "topics": [
+                {
+                  "id": "cse645_u4_t1",
+                  "text": "Introduction to workflow automation tools: n8n and Node-RED"
+                },
+                {
+                  "id": "cse645_u4_t2",
+                  "text": "n8n interface, triggers, and nodes"
+                },
+                {
+                  "id": "cse645_u4_t3",
+                  "text": "Connecting edge devices to n8n: MQTT, HTTP Webhooks, Serial-to-API"
+                },
+                {
+                  "id": "cse645_u4_t4",
+                  "text": "Building ML inference pipelines with n8n"
+                },
+                {
+                  "id": "cse645_u4_t5",
+                  "text": "Automating tasks: Email/SMS alerts, dashboards, serverless functions"
+                },
+                {
+                  "id": "cse645_u4_t6",
+                  "text": "Case studies: Anomaly detection alert system, auto-logging IoT data"
+                }
+              ]
+            },
+            {
+              "id": "cse645_u5",
+              "title": "Security, Power Management and Trends",
+              "topics": [
+                {
+                  "id": "cse645_u5_t1",
+                  "text": "Security and privacy in Edge AI: Local inference, data isolation"
+                },
+                {
+                  "id": "cse645_u5_t2",
+                  "text": "Federated learning basics"
+                },
+                {
+                  "id": "cse645_u5_t3",
+                  "text": "Power management strategies for edge devices"
+                },
+                {
+                  "id": "cse645_u5_t4",
+                  "text": "Real-world deployment considerations: OTA updates, model versioning"
+                },
+                {
+                  "id": "cse645_u5_t5",
+                  "text": "Trends: Edge + LLMs, Neuromorphic chips, TinyML-as-a-Service"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cse646",
+          "name": "Blockchain Essentials & DApps",
+          "code": "CSE646",
+          "credits": "2:0:1",
+          "units": [
+            {
+              "id": "cse646_u1",
+              "title": "Distributed Systems, Consensus and Blockchain Foundations",
+              "topics": [
+                {
+                  "id": "cse646_u1_t1",
+                  "text": "Distributed systems, CAP theorem, Byzantine Generals problem, Consensus"
+                },
+                {
+                  "id": "cse646_u1_t2",
+                  "text": "History and Introduction to blockchain, technical definitions"
+                },
+                {
+                  "id": "cse646_u1_t3",
+                  "text": "Generic elements and Features of a blockchain"
+                },
+                {
+                  "id": "cse646_u1_t4",
+                  "text": "Applications and Tiers of blockchain technology"
+                },
+                {
+                  "id": "cse646_u1_t5",
+                  "text": "Consensus in blockchain, CAP theorem and blockchain"
+                },
+                {
+                  "id": "cse646_u1_t6",
+                  "text": "Benefits and limitations of blockchain"
+                }
+              ]
+            },
+            {
+              "id": "cse646_u2",
+              "title": "Decentralization and Cryptographic Primitives",
+              "topics": [
+                {
+                  "id": "cse646_u2_t1",
+                  "text": "Decentralization using blockchain and methods of decentralization"
+                },
+                {
+                  "id": "cse646_u2_t2",
+                  "text": "Smart contracts, Decentralized organizations (DAOs, DACs, DASs)"
+                },
+                {
+                  "id": "cse646_u2_t3",
+                  "text": "Decentralized applications (DApps) and Platforms for decentralization"
+                },
+                {
+                  "id": "cse646_u2_t4",
+                  "text": "Cryptographic primitives: Symmetric, Asymmetric cryptography, Public/private keys"
+                },
+                {
+                  "id": "cse646_u2_t5",
+                  "text": "Hash functions: Pre-image/second pre-image/collision resistance, SHA, MD"
+                },
+                {
+                  "id": "cse646_u2_t6",
+                  "text": "Merkle trees, Patricia trees, DHTs, Digital signatures, ECDSA"
+                }
+              ]
+            },
+            {
+              "id": "cse646_u3",
+              "title": "Bitcoin, Architecture and Smart Contracts",
+              "topics": [
+                {
+                  "id": "cse646_u3_t1",
+                  "text": "Bitcoin definition, Transactions, transaction life cycle and structure"
+                },
+                {
+                  "id": "cse646_u3_t2",
+                  "text": "Types of transactions, Structure of a block and block header"
+                },
+                {
+                  "id": "cse646_u3_t3",
+                  "text": "The genesis block, The Bitcoin network, Wallets"
+                },
+                {
+                  "id": "cse646_u3_t4",
+                  "text": "Smart Contracts: History, definition, Ricardian contracts, templates"
+                },
+                {
+                  "id": "cse646_u3_t5",
+                  "text": "Oracles, Smart Oracles, Deploying smart contracts on a blockchain, The DAO"
+                }
+              ]
+            },
+            {
+              "id": "cse646_u4",
+              "title": "Ethereum, EVM and Decentralized Application Development",
+              "topics": [
+                {
+                  "id": "cse646_u4_t1",
+                  "text": "Ethereum introduction, clients, releases, and the Ethereum stack"
+                },
+                {
+                  "id": "cse646_u4_t2",
+                  "text": "Currency (ETH and ETC), Forks, Gas, and Consensus mechanisms"
+                },
+                {
+                  "id": "cse646_u4_t3",
+                  "text": "The world state, Transactions, Contract creation transaction, Message calls"
+                },
+                {
+                  "id": "cse646_u4_t4",
+                  "text": "Elements of Ethereum: EVM, Accounts, Blocks, Ether, Messages, Mining"
+                },
+                {
+                  "id": "cse646_u4_t5",
+                  "text": "Hands-on with Ethereum network, clients and wallets (Geth)"
+                }
+              ]
+            },
+            {
+              "id": "cse646_u5",
+              "title": "Hyperledger Architecture and Enterprise Blockchains",
+              "topics": [
+                {
+                  "id": "cse646_u5_t1",
+                  "text": "Hyperledger reference architecture and requirements"
+                },
+                {
+                  "id": "cse646_u5_t2",
+                  "text": "Hyperledger Fabric: Architecture, Membership services, Blockchain services, Components"
+                },
+                {
+                  "id": "cse646_u5_t3",
+                  "text": "Sawtooth Lake: PoET consensus, Transaction families, Development environment"
+                },
+                {
+                  "id": "cse646_u5_t4",
+                  "text": "Corda: Architecture, State objects, Transactions, Consensus, Flows, Components, Nodes"
+                },
+                {
+                  "id": "cse646_u5_t5",
+                  "text": "Permissioning service, Network map service, Notary service, Oracle service, Vaults, CorDapps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csp67",
+          "name": "Mini Project",
+          "code": "CSP67",
+          "credits": "0:0:4",
+          "units": [
+            {
+              "id": "csp67_u1",
+              "title": "Mini Project Lifecycle",
+              "topics": [
+                {
+                  "id": "csp67_u1_t1",
+                  "text": "Problem Identification and Domain Selection"
+                },
+                {
+                  "id": "csp67_u1_t2",
+                  "text": "Literature Survey and Requirement Analysis"
+                },
+                {
+                  "id": "csp67_u1_t3",
+                  "text": "System Architecture and Component Design"
+                },
+                {
+                  "id": "csp67_u1_t4",
+                  "text": "Application Development and Module Implementation"
+                },
+                {
+                  "id": "csp67_u1_t5",
+                  "text": "Testing, Integration, and Performance Evaluation"
+                },
+                {
+                  "id": "csp67_u1_t6",
+                  "text": "Project Report Preparation, Presentation, and Viva-Voce"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cs68",
+          "name": "Technical Skill Enhancement Course",
+          "code": "CS68",
+          "credits": "0:1:0",
+          "units": [
+            {
+              "id": "cs68_u1",
+              "title": "Skill Development Modules",
+              "topics": [
+                {
+                  "id": "cs68_u1_t1",
+                  "text": "Industry Domain Setup and Developer Tooling"
+                },
+                {
+                  "id": "cs68_u1_t2",
+                  "text": "Hands-on Technical Workshops by Industry Experts"
+                },
+                {
+                  "id": "cs68_u1_t3",
+                  "text": "Framework Proficiency and Real-world Coding Tasks"
+                },
+                {
+                  "id": "cs68_u1_t4",
+                  "text": "Code Quality, Peer Reviews, and Agile Practices"
+                },
+                {
+                  "id": "cs68_u1_t5",
+                  "text": "Final Skill Evaluation and Presentation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csoe02",
+          "name": "Mobile Application Development",
+          "code": "CSOE02",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "csoe02_u1",
+              "title": "Features and Architecture of Flutter",
+              "topics": [
+                {
+                  "id": "csoe02_u1_t1",
+                  "text": "Features, Advantages, and Disadvantages of Flutter"
+                },
+                {
+                  "id": "csoe02_u1_t2",
+                  "text": "Flutter Installation in Windows and macOS"
+                },
+                {
+                  "id": "csoe02_u1_t3",
+                  "text": "Architecture of Flutter Applications"
+                },
+                {
+                  "id": "csoe02_u1_t4",
+                  "text": "Creating Simple Applications in Android Studio"
+                }
+              ]
+            },
+            {
+              "id": "csoe02_u2",
+              "title": "Flutter Basics and Dart Programming",
+              "topics": [
+                {
+                  "id": "csoe02_u2_t1",
+                  "text": "Flutter Widgets, Gestures, Concept of State, Layers"
+                },
+                {
+                  "id": "csoe02_u2_t2",
+                  "text": "Introduction to Dart: Variables, Data types, Decision Making, Loops, Functions"
+                },
+                {
+                  "id": "csoe02_u2_t3",
+                  "text": "Object-Oriented Programming in Dart"
+                },
+                {
+                  "id": "csoe02_u2_t4",
+                  "text": "Introduction to Widgets and Widget Build Visualization"
+                }
+              ]
+            },
+            {
+              "id": "csoe02_u3",
+              "title": "Layouts and State Management",
+              "topics": [
+                {
+                  "id": "csoe02_u3_t1",
+                  "text": "Types of Layout Widgets: Single Child Widgets, Multiple Child Widgets"
+                },
+                {
+                  "id": "csoe02_u3_t2",
+                  "text": "Advanced Layout Application and Gesture Handling"
+                },
+                {
+                  "id": "csoe02_u3_t3",
+                  "text": "State Management: Ephemeral State vs Application State"
+                },
+                {
+                  "id": "csoe02_u3_t4",
+                  "text": "Scoped model, Navigation and Routing in Flutter"
+                }
+              ]
+            },
+            {
+              "id": "csoe02_u4",
+              "title": "Animation, Packages and REST APIs",
+              "topics": [
+                {
+                  "id": "csoe02_u4_t1",
+                  "text": "Introduction to Animation-Based Classes and Flutter Animation Workflow"
+                },
+                {
+                  "id": "csoe02_u4_t2",
+                  "text": "Android Specific Code on Flutter"
+                },
+                {
+                  "id": "csoe02_u4_t3",
+                  "text": "Dart Packages: Types, using packages, developing a Flutter plugin package"
+                },
+                {
+                  "id": "csoe02_u4_t4",
+                  "text": "Accessing REST APIs and Product Service APIs"
+                }
+              ]
+            },
+            {
+              "id": "csoe02_u5",
+              "title": "Database Concepts, Testing and Deployment",
+              "topics": [
+                {
+                  "id": "csoe02_u5_t1",
+                  "text": "SQLite and Cloud Firestore integration"
+                },
+                {
+                  "id": "csoe02_u5_t2",
+                  "text": "Internationalization on Flutter using intl package"
+                },
+                {
+                  "id": "csoe02_u5_t3",
+                  "text": "Testing on Flutter: Types of testing, Widget testing"
+                },
+                {
+                  "id": "csoe02_u5_t4",
+                  "text": "Application Deployment on Android and iOS"
+                },
+                {
+                  "id": "csoe02_u5_t5",
+                  "text": "Development Tools: Visual Studio Code, Dart DevTools, Flutter SDK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csoe04",
+          "name": "Full Stack Development",
+          "code": "CSOE04",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "csoe04_u1",
+              "title": "Web Fundamentals and Introduction to XHTML",
+              "topics": [
+                {
+                  "id": "csoe04_u1_t1",
+                  "text": "Introduction to Internet, World Wide Web, Browsers, Web Servers, URLs, MIME"
+                },
+                {
+                  "id": "csoe04_u1_t2",
+                  "text": "HTTP Protocol, Web Security, Web Programmer's Toolbox"
+                },
+                {
+                  "id": "csoe04_u1_t3",
+                  "text": "Introduction to XHTML: Origins, syntax, and standard document structure"
+                },
+                {
+                  "id": "csoe04_u1_t4",
+                  "text": "Basic text markup, Images, Hypertext Links, Lists"
+                }
+              ]
+            },
+            {
+              "id": "csoe04_u2",
+              "title": "XHTML Tables, Forms and Cascading Style Sheets",
+              "topics": [
+                {
+                  "id": "csoe04_u2_t1",
+                  "text": "XHTML Tables, Forms, Frames, Syntactic Differences with HTML"
+                },
+                {
+                  "id": "csoe04_u2_t2",
+                  "text": "CSS Introduction, Levels of style sheets, Specification formats, Selector formats"
+                },
+                {
+                  "id": "csoe04_u2_t3",
+                  "text": "Property values: Font, List, Color, Alignment"
+                },
+                {
+                  "id": "csoe04_u2_t4",
+                  "text": "The CSS Box Model, Background images, span and div tags"
+                }
+              ]
+            },
+            {
+              "id": "csoe04_u3",
+              "title": "The Basics of JavaScript and DOM",
+              "topics": [
+                {
+                  "id": "csoe04_u3_t1",
+                  "text": "JavaScript overview, Object orientation, syntactic characteristics, primitives, expressions"
+                },
+                {
+                  "id": "csoe04_u3_t2",
+                  "text": "Screen I/O, control statements, object creation, arrays, functions, constructors"
+                },
+                {
+                  "id": "csoe04_u3_t3",
+                  "text": "Pattern Matching Using Regular Expressions and Error Handling"
+                },
+                {
+                  "id": "csoe04_u3_t4",
+                  "text": "JavaScript and HTML Documents, The Execution Environment"
+                },
+                {
+                  "id": "csoe04_u3_t5",
+                  "text": "Document Object Model (DOM), Element Access, Event Handling, DOM 2 Model, Traversal"
+                }
+              ]
+            },
+            {
+              "id": "csoe04_u4",
+              "title": "Dynamic Documents with JavaScript and Introduction to PHP",
+              "topics": [
+                {
+                  "id": "csoe04_u4_t1",
+                  "text": "Dynamic Documents: Positioning, moving, visibility, colors, fonts, dynamic content"
+                },
+                {
+                  "id": "csoe04_u4_t2",
+                  "text": "Stacking elements, cursor tracking, reacting to clicks, dragging and dropping"
+                },
+                {
+                  "id": "csoe04_u4_t3",
+                  "text": "Introduction to PHP: Origins, uses, syntax, primitives, operations, output"
+                },
+                {
+                  "id": "csoe04_u4_t4",
+                  "text": "Control statements, arrays, functions, pattern matching in PHP"
+                },
+                {
+                  "id": "csoe04_u4_t5",
+                  "text": "Form handling, files, cookies, and session tracking in PHP"
+                }
+              ]
+            },
+            {
+              "id": "csoe04_u5",
+              "title": "Database Access through the Web",
+              "topics": [
+                {
+                  "id": "csoe04_u5_t1",
+                  "text": "Relational Databases: SQL Introduction and database access architectures"
+                },
+                {
+                  "id": "csoe04_u5_t2",
+                  "text": "MySQL database system and database access with PHP and MySQL"
+                },
+                {
+                  "id": "csoe04_u5_t3",
+                  "text": "NoSQL Databases: Introduction, basics of MongoDB"
+                },
+                {
+                  "id": "csoe04_u5_t4",
+                  "text": "CRUD operations in MongoDB and database access with PHP and MongoDB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csoe05",
+          "name": "Object Oriented Programming with C++",
+          "code": "CSOE05",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "csoe05_u1",
+              "title": "Beginning with C++ and its Features",
+              "topics": [
+                {
+                  "id": "csoe05_u1_t1",
+                  "text": "What is C++? Applications and structure of C++ program"
+                },
+                {
+                  "id": "csoe05_u1_t2",
+                  "text": "Data types, Variables, Operators, Expressions"
+                },
+                {
+                  "id": "csoe05_u1_t3",
+                  "text": "Operator overloading introduction and Control structures in C++"
+                }
+              ]
+            },
+            {
+              "id": "csoe05_u2",
+              "title": "Functions, Classes and Objects",
+              "topics": [
+                {
+                  "id": "csoe05_u2_t1",
+                  "text": "Functions, Inline functions, Function overloading"
+                },
+                {
+                  "id": "csoe05_u2_t2",
+                  "text": "Friend functions and Virtual functions"
+                },
+                {
+                  "id": "csoe05_u2_t3",
+                  "text": "Specifying a class, C++ program with a class, arrays within a class"
+                },
+                {
+                  "id": "csoe05_u2_t4",
+                  "text": "Memory allocation to objects, array of objects, member pointers"
+                }
+              ]
+            },
+            {
+              "id": "csoe05_u3",
+              "title": "Constructors, Destructors and Operator Overloading",
+              "topics": [
+                {
+                  "id": "csoe05_u3_t1",
+                  "text": "Constructors: Multiple constructors in a class, Copy constructor, Dynamic constructor"
+                },
+                {
+                  "id": "csoe05_u3_t2",
+                  "text": "Destructors and memory cleanup"
+                },
+                {
+                  "id": "csoe05_u3_t3",
+                  "text": "Defining operator overloading: Unary and binary operators"
+                },
+                {
+                  "id": "csoe05_u3_t4",
+                  "text": "Manipulation of strings using operators"
+                }
+              ]
+            },
+            {
+              "id": "csoe05_u4",
+              "title": "Inheritance, Pointers, Virtual Functions, Polymorphism",
+              "topics": [
+                {
+                  "id": "csoe05_u4_t1",
+                  "text": "Derived Classes: Single, Multilevel, Multiple inheritance"
+                },
+                {
+                  "id": "csoe05_u4_t2",
+                  "text": "Pointers to objects and derived classes, this pointer"
+                },
+                {
+                  "id": "csoe05_u4_t3",
+                  "text": "Virtual and Pure Virtual functions"
+                },
+                {
+                  "id": "csoe05_u4_t4",
+                  "text": "Abstract classes and Runtime polymorphism"
+                }
+              ]
+            },
+            {
+              "id": "csoe05_u5",
+              "title": "Streams and Working with Files",
+              "topics": [
+                {
+                  "id": "csoe05_u5_t1",
+                  "text": "C++ streams and stream classes"
+                },
+                {
+                  "id": "csoe05_u5_t2",
+                  "text": "Formatted and unformatted I/O operations, Manipulators"
+                },
+                {
+                  "id": "csoe05_u5_t3",
+                  "text": "Classes for file stream operations, opening and closing files, EOF detection"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csoe09",
+          "name": "Introduction to Artificial Intelligence and Machine Learning",
+          "code": "CSOE09",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "csoe09_u1",
+              "title": "Introduction to AI and Problem Solving by Search",
+              "topics": [
+                {
+                  "id": "csoe09_u1_t1",
+                  "text": "What is AI? Foundation and History of Artificial Intelligence"
+                },
+                {
+                  "id": "csoe09_u1_t2",
+                  "text": "Intelligent Agents: Agents and Environments, Rationality, Nature of Environments, Agent Structures"
+                },
+                {
+                  "id": "csoe09_u1_t3",
+                  "text": "Problem-solving by search: Problem Solving Agents, Example Problems, Searching for Solution"
+                },
+                {
+                  "id": "csoe09_u1_t4",
+                  "text": "Uninformed Search Strategies (BFS, DFS, Uniform Cost)"
+                },
+                {
+                  "id": "csoe09_u1_t5",
+                  "text": "Informed Search Strategies and Heuristic Functions"
+                }
+              ]
+            },
+            {
+              "id": "csoe09_u2",
+              "title": "Introduction to Machine Learning and Decision Trees",
+              "topics": [
+                {
+                  "id": "csoe09_u2_t1",
+                  "text": "What is Machine Learning? Key Terminology, Key tasks of ML"
+                },
+                {
+                  "id": "csoe09_u2_t2",
+                  "text": "Well-posed learning problems and Designing a Learning system"
+                },
+                {
+                  "id": "csoe09_u2_t3",
+                  "text": "Perspectives and Issues in Machine Learning"
+                },
+                {
+                  "id": "csoe09_u2_t4",
+                  "text": "Decision Tree Representation and Appropriate Problems for Decision Tree Learning"
+                },
+                {
+                  "id": "csoe09_u2_t5",
+                  "text": "Basic Decision Tree Learning Algorithm and Issues in Decision Tree Learning"
+                }
+              ]
+            },
+            {
+              "id": "csoe09_u3",
+              "title": "Artificial Neural Networks and Bayesian Learning",
+              "topics": [
+                {
+                  "id": "csoe09_u3_t1",
+                  "text": "Artificial Neural Networks: Introduction and Representation"
+                },
+                {
+                  "id": "csoe09_u3_t2",
+                  "text": "Appropriate problems for Neural Network Learning and Perceptrons"
+                },
+                {
+                  "id": "csoe09_u3_t3",
+                  "text": "Multilayer Networks and the Backpropagation algorithm"
+                },
+                {
+                  "id": "csoe09_u3_t4",
+                  "text": "Bayesian Learning: Introduction and Bayes theorem"
+                },
+                {
+                  "id": "csoe09_u3_t5",
+                  "text": "Naive Bayes Classifier and The EM Algorithm"
+                }
+              ]
+            },
+            {
+              "id": "csoe09_u4",
+              "title": "Instance-Based, Genetic and Reinforcement Learning",
+              "topics": [
+                {
+                  "id": "csoe09_u4_t1",
+                  "text": "Instance-Based Learning: K-Nearest Neighbor learning"
+                },
+                {
+                  "id": "csoe09_u4_t2",
+                  "text": "Locally Weighted Regression, Radial basis functions, Case-based reasoning"
+                },
+                {
+                  "id": "csoe09_u4_t3",
+                  "text": "Genetic Algorithms: Hypotheses representation, Genetic operators, Fitness function, Selection"
+                },
+                {
+                  "id": "csoe09_u4_t4",
+                  "text": "Reinforcement Learning: Introduction and The Learning Task"
+                }
+              ]
+            },
+            {
+              "id": "csoe09_u5",
+              "title": "Natural Language Processing and Communication",
+              "topics": [
+                {
+                  "id": "csoe09_u5_t1",
+                  "text": "Natural Language Processing: Language Models, Text Classification"
+                },
+                {
+                  "id": "csoe09_u5_t2",
+                  "text": "Information Retrieval and Information Extraction"
+                },
+                {
+                  "id": "csoe09_u5_t3",
+                  "text": "Phrase Structure Grammars and Syntactic Analysis"
+                },
+                {
+                  "id": "csoe09_u5_t4",
+                  "text": "Augmented Grammars and Semantic Interpretation"
+                },
+                {
+                  "id": "csoe09_u5_t5",
+                  "text": "Machine Translation and Speech Recognition"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csoe10",
+          "name": "Introduction to Big Data Analytics",
+          "code": "CSOE10",
+          "credits": "3:0:0",
+          "units": [
+            {
+              "id": "csoe10_u1",
+              "title": "Understanding Big Data",
+              "topics": [
+                {
+                  "id": "csoe10_u1_t1",
+                  "text": "What is Big Data? Data storage and analysis, comparison with RDBMS"
+                },
+                {
+                  "id": "csoe10_u1_t2",
+                  "text": "Grid computing, volunteer computing, convergence of key trends"
+                },
+                {
+                  "id": "csoe10_u1_t3",
+                  "text": "Industry examples: Web analytics, marketing, fraud detection, credit risk, healthcare"
+                },
+                {
+                  "id": "csoe10_u1_t4",
+                  "text": "Big data technologies: Hadoop, open source technologies, cloud and big data"
+                },
+                {
+                  "id": "csoe10_u1_t5",
+                  "text": "Crowd sourcing analytics, inter and trans firewall analytics"
+                }
+              ]
+            },
+            {
+              "id": "csoe10_u2",
+              "title": "NoSQL Data Management",
+              "topics": [
+                {
+                  "id": "csoe10_u2_t1",
+                  "text": "Introduction to NoSQL: Aggregate data models (Key-value, Document)"
+                },
+                {
+                  "id": "csoe10_u2_t2",
+                  "text": "Relationships, Graph databases, Schema-less databases"
+                },
+                {
+                  "id": "csoe10_u2_t3",
+                  "text": "Materialized views, Distribution models, Sharding and replication"
+                },
+                {
+                  "id": "csoe10_u2_t4",
+                  "text": "MapReduce concepts in NoSQL, Partitioning and combining"
+                }
+              ]
+            },
+            {
+              "id": "csoe10_u3",
+              "title": "Basics of Hadoop and HDFS",
+              "topics": [
+                {
+                  "id": "csoe10_u3_t1",
+                  "text": "Data format and analyzing data with Hadoop"
+                },
+                {
+                  "id": "csoe10_u3_t2",
+                  "text": "Scaling out: Hadoop streaming and Hadoop pipes"
+                },
+                {
+                  "id": "csoe10_u3_t3",
+                  "text": "Hadoop Distributed File System (HDFS): Design and Concepts"
+                },
+                {
+                  "id": "csoe10_u3_t4",
+                  "text": "HDFS Java interface and Data flow"
+                },
+                {
+                  "id": "csoe10_u3_t5",
+                  "text": "Hadoop I/O: Data integrity, compression, serialization (Avro), file-based data structures"
+                }
+              ]
+            },
+            {
+              "id": "csoe10_u4",
+              "title": "MapReduce Applications",
+              "topics": [
+                {
+                  "id": "csoe10_u4_t1",
+                  "text": "MapReduce workflows and Unit tests with MRUnit"
+                },
+                {
+                  "id": "csoe10_u4_t2",
+                  "text": "Anatomy of a MapReduce job run: Classic MapReduce vs YARN"
+                },
+                {
+                  "id": "csoe10_u4_t3",
+                  "text": "Handling failures in Classic MapReduce and YARN"
+                },
+                {
+                  "id": "csoe10_u4_t4",
+                  "text": "Job scheduling, Shuffle and sort, Task execution"
+                },
+                {
+                  "id": "csoe10_u4_t5",
+                  "text": "MapReduce types, input formats, output formats"
+                }
+              ]
+            },
+            {
+              "id": "csoe10_u5",
+              "title": "Hadoop Related Tools",
+              "topics": [
+                {
+                  "id": "csoe10_u5_t1",
+                  "text": "HBase: Data model, architecture, and storage operations"
+                },
+                {
+                  "id": "csoe10_u5_t2",
+                  "text": "Apache Hive: Data warehouse infrastructure, Hive architecture, HiveQL"
+                },
+                {
+                  "id": "csoe10_u5_t3",
+                  "text": "Apache Pig: Anatomy of Pig Latin, execution modes, dataflow scripts"
+                },
+                {
+                  "id": "csoe10_u5_t4",
+                  "text": "Sqoop and Flume: Bulk data transfers and event streaming"
+                },
+                {
+                  "id": "csoe10_u5_t5",
+                  "text": "ZooKeeper: Distributed coordination and configuration management"
                 }
               ]
             }

@@ -52,4 +52,38 @@ describe('SyllabusTracker component', () => {
       screen.getByText(/Track your preparation progress across all subjects/i)
     ).toBeInTheDocument();
   });
+
+  it('loads 5th semester and renders core and elective subjects correctly', () => {
+    localStorage.setItem(
+      'pyq_syllabus_prefs',
+      JSON.stringify({ semester: 5, subjectId: null })
+    );
+
+    render(
+      <BrowserRouter>
+        <SyllabusTracker />
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText(/Software Engineering and Modelling/i)).toBeInTheDocument();
+    expect(screen.getByText(/Finite Automata and Formal Languages/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Data Communication and Networking$/i)).toBeInTheDocument();
+  });
+
+  it('loads 6th semester and renders core and lab subjects correctly', () => {
+    localStorage.setItem(
+      'pyq_syllabus_prefs',
+      JSON.stringify({ semester: 6, subjectId: null })
+    );
+
+    render(
+      <BrowserRouter>
+        <SyllabusTracker />
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText(/Management & Entrepreneurship/i)).toBeInTheDocument();
+    expect(screen.getByText(/Cloud Computing and Microservices/i)).toBeInTheDocument();
+    expect(screen.getByText(/Microservices and DevOps Lab/i)).toBeInTheDocument();
+  });
 });

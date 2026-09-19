@@ -119,7 +119,7 @@ export default function SubjectChecklist({
 
           return (
             <UnitAccordion
-              key={unit.id}
+              key={unit.id || unit.unit || index}
               unit={unit}
               index={index}
               isComplete={isUnitComplete}

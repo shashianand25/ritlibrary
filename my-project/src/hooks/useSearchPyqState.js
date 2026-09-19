@@ -141,8 +141,8 @@ export function useSearchPyqState() {
   const handleSubject = useCallback(
     (e) => {
       const val = e.target.value;
-      const selected = branchSubjects.find((s) => s.name === val);
-      if (selected && selected.elective && selected.options) {
+      const selected = branchSubjects.find((s) => s.value === val || s.name === val);
+      if (selected && selected.elective) {
         setShowElective(true);
         setForm((p) => ({ ...p, subject: val, subSubject: '' }));
       } else {

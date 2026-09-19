@@ -52,6 +52,7 @@ function matchesFolder(file, category, subjectCode, folder) {
 
 export default function Contribute() {
   const {
+    user,
     isAdmin,
     canUpload,
     canDelete,
@@ -125,7 +126,7 @@ export default function Contribute() {
             <ShieldAlert size={20} className="text-lime-400 shrink-0" />
             <p className="text-xs text-lime-300">
               Files uploaded here are directly synchronized with Google Drive and verified by RIT
-              student moderators.
+              student moderators. Only accounts with @msrit.edu emails can upload.
             </p>
           </div>
         </div>
@@ -220,7 +221,8 @@ export default function Contribute() {
                 <option value="" disabled hidden>
                   Select Elective
                 </option>
-                {electiveOptions[subject]?.map(({ label, value }) => (
+                {(electiveOptions[`${branch}_${subject}`] || electiveOptions[subject])?.map(
+                  ({ label, value }) => (
                   <option key={value} value={value} className="bg-neutral-900 text-white">
                     {label}
                   </option>
@@ -280,11 +282,15 @@ export default function Contribute() {
                   isCustom={customFolders.includes(fName)}
                   isActive={activeFolder === fName}
                   onView={() => setActiveFolder(activeFolder === fName ? '' : fName)}
-                  onUpload={() =>
-                    canUpload
-                      ? setUploadTarget(fName)
-                      : alert('Please sign in to contribute resources.')
-                  }
+                  onUpload={() => {
+                    if (canUpload) {
+                      setUploadTarget(fName);
+                    } else if (!user) {
+                      alert('Please sign in to contribute resources.');
+                    } else {
+                      alert('Only @msrit.edu email accounts can upload resources.');
+                    }
+                  }}
                   onRemove={() => setCustomFolders((p) => p.filter((x) => x !== fName))}
                 />
               ))}

@@ -1679,14 +1679,27 @@
           "value": "artificial_intelligence_and_machine_learning",
           "code": "CS52"
         },
-        { "label": "Database Systems", "value": "database_systems", "code": "CS53" },
-        { "label": "Operating Systems", "value": "operating_systems", "code": "CS54" },
+        {
+          "label": "Finite Automata and Formal Languages",
+          "value": "finite_automata_and_formal_languages",
+          "code": "CS53"
+        },
+        {
+          "label": "Data Communication and Networking",
+          "value": "data_communication_and_networking",
+          "code": "CS54"
+        },
         {
           "label": "Program Elective Course – 1",
           "value": "program_elective_course_1",
-          "code": "CSE55x"
+          "code": "CSE55x",
+          "elective": true
         },
-        { "label": "Database Laboratory", "value": "database_laboratory", "code": "CSL56" },
+        {
+          "label": "Data Communication and Networking Laboratory",
+          "value": "data_communication_and_networking_laboratory",
+          "code": "CSL56"
+        },
         {
           "label": "Full Stack Development Lab",
           "value": "full_stack_development_lab",
@@ -1696,6 +1709,17 @@
           "label": "Research Methodology & Intellectual property rights",
           "value": "research_methodology_intellectual_property_rights",
           "code": "AL58"
+        },
+        {
+          "label": "Ability Enhancement Course – V",
+          "value": "ability_enhancement_course_v",
+          "code": "CSAEC59/510",
+          "elective": true
+        },
+        {
+          "label": "Environmental Studies",
+          "value": "environmental_studies",
+          "code": "HS59/HS510"
         }
       ],
       "cv": [
@@ -2162,34 +2186,47 @@
           "code": "AL61"
         },
         {
-          "label": "Cloud computing and BigData",
-          "value": "cloud_computing_and_bigdata",
+          "label": "Cloud computing and Microservices",
+          "value": "cloud_computing_and_microservices",
           "code": "CS62"
         },
         {
           "label": "Program Elective Course – 2",
           "value": "program_elective_course_2",
-          "code": "CSE63x"
+          "code": "CSE63x",
+          "elective": true
         },
         {
           "label": "Program Elective Course – 3",
           "value": "program_elective_course_3",
-          "code": "CSE64x"
+          "code": "CSE64x",
+          "elective": true
         },
         {
-          "label": "Penetration Testing and Secure Systems Laboratory",
-          "value": "penetration_testing_and_secure_systems_laboratory",
+          "label": "Penetration Testing and Secure Programming Laboratory",
+          "value": "penetration_testing_and_secure_programming_laboratory",
           "code": "CSL65"
         },
         {
-          "label": "Unix System Programming Laboratory",
-          "value": "unix_system_programming_laboratory",
+          "label": "Microservices and DevOps Lab",
+          "value": "microservices_and_devops_lab",
           "code": "CSL66"
         },
         {
           "label": "Institutional Open Elective – 1",
           "value": "institutional_open_elective_1",
-          "code": "CSOE0x"
+          "code": "CSOE0x",
+          "elective": true
+        },
+        {
+          "label": "Mini Project",
+          "value": "mini_project",
+          "code": "CSP67"
+        },
+        {
+          "label": "Technical Skill enhancement Course",
+          "value": "technical_skill_enhancement_course",
+          "code": "CS68"
         }
       ],
       "cv": [

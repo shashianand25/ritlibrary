@@ -812,7 +812,10 @@ export default function SearchPYQ() {
                             <option value="" disabled hidden>
                               Select Elective
                             </option>
-                            {electiveOptions[form.subject]?.map(({ label, value }) => (
+                            {(
+                              electiveOptions[`${form.branch}_${form.subject}`] ||
+                              electiveOptions[form.subject]
+                            )?.map(({ label, value }) => (
                               <option key={value} value={value}>
                                 {label}
                               </option>

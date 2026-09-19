@@ -107,7 +107,10 @@ export default function SearchFilters({
                 <option value="" disabled hidden>
                   Select Elective
                 </option>
-                {electiveOptions[form.subject]?.map(({ label, value }) => (
+                {(
+                  electiveOptions[`${form.branch}_${form.subject}`] ||
+                  electiveOptions[form.subject]
+                )?.map(({ label, value }) => (
                   <option key={value} value={value} className="bg-neutral-900 text-white">
                     {label}
                   </option>

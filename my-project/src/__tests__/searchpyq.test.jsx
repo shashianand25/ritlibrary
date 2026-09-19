@@ -120,4 +120,40 @@ describe('SearchPYQ component', () => {
       expect(screen.getByTestId('mock-drive-preview')).toBeInTheDocument();
     });
   });
+
+  it('handles guided search for 5th Sem CSE electives like Ability Enhancement Course (Prompt Engineering)', async () => {
+    const { container } = render(<SearchPYQ />);
+
+    const semSelect = container.querySelector('select[name="semester"]');
+    fireEvent.change(semSelect, { target: { name: 'semester', value: '5th Sem' } });
+
+    await waitFor(() => {
+      const branchSelect = container.querySelector('select[name="branch"]');
+      expect(branchSelect).not.toBeDisabled();
+    });
+
+    const branchSelect = container.querySelector('select[name="branch"]');
+    fireEvent.change(branchSelect, { target: { name: 'branch', value: 'cse' } });
+
+    await waitFor(() => {
+      const subjectSelect = container.querySelector('select[name="subject"]');
+      expect(subjectSelect).not.toBeDisabled();
+    });
+
+    const subjectSelect = container.querySelector('select[name="subject"]');
+    fireEvent.change(subjectSelect, {
+      target: { name: 'subject', value: 'ability_enhancement_course_v' },
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText('Elective Topic')).toBeInTheDocument();
+      expect(screen.getByText('Prompt Engineering')).toBeInTheDocument();
+      expect(screen.getByText('NoSQL')).toBeInTheDocument();
+    });
+
+    const electiveSelect = container.querySelector('select[name="subSubject"]');
+    fireEvent.change(electiveSelect, { target: { name: 'subSubject', value: 'CSAEC510' } });
+
+    expect(electiveSelect.value).toBe('CSAEC510');
+  });
 });

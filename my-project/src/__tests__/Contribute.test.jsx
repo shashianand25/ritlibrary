@@ -122,6 +122,42 @@ describe('Contribute component', () => {
     });
   });
 
+  it('handles 5th Sem CSE electives including Prompt Engineering under Ability Enhancement Course', async () => {
+    const { container } = render(<Contribute />);
+
+    const semSelect = container.querySelectorAll('select')[0];
+    fireEvent.change(semSelect, { target: { value: '5' } });
+
+    await waitFor(() => {
+      expect(container.querySelectorAll('select')[1]).not.toBeDisabled();
+    });
+
+    const branchSelect = container.querySelectorAll('select')[1];
+    fireEvent.change(branchSelect, { target: { value: 'cse' } });
+
+    await waitFor(() => {
+      expect(container.querySelectorAll('select')[2]).not.toBeDisabled();
+    });
+
+    // Select Ability Enhancement Course – V
+    const subjectSelect = container.querySelectorAll('select')[2];
+    fireEvent.change(subjectSelect, { target: { value: 'ability_enhancement_course_v' } });
+
+    // Elective dropdown should appear with Prompt Engineering option
+    await waitFor(() => {
+      expect(container.querySelectorAll('select').length).toBe(4);
+      expect(screen.getByText('Prompt Engineering')).toBeInTheDocument();
+      expect(screen.getByText('NoSQL')).toBeInTheDocument();
+    });
+
+    const electiveSelect = container.querySelectorAll('select')[3];
+    fireEvent.change(electiveSelect, { target: { value: 'CSAEC510' } });
+
+    await waitFor(() => {
+      expect(screen.getByText('Resource Directories')).toBeInTheDocument();
+    });
+  });
+
   it('handles custom folder creation and cancellation', async () => {
     localStorage.setItem('contributeSem', '3');
     localStorage.setItem('contributeBranch', 'cse');
@@ -337,5 +373,26 @@ describe('Contribute component', () => {
     fireEvent.click(uploadButtons[0]);
 
     expect(alertSpy).toHaveBeenCalledWith('Please sign in to contribute resources.');
+  });
+
+  it('alerts user when authenticated with non-msrit email and non-admin', async () => {
+    mockAuth = { user: { email: 'external@gmail.com' }, isAdmin: false };
+    const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
+
+    localStorage.setItem('contributeSem', '3');
+    localStorage.setItem('contributeBranch', 'cse');
+    localStorage.setItem('contributeSubject', 'Data Structures');
+    localStorage.setItem('contributeSubjectCode', '21CS32');
+
+    render(<Contribute />);
+
+    await waitFor(() => {
+      expect(screen.getByText('Resource Directories')).toBeInTheDocument();
+    });
+
+    const uploadButtons = screen.getAllByRole('button', { name: /^Upload$/i });
+    fireEvent.click(uploadButtons[0]);
+
+    expect(alertSpy).toHaveBeenCalledWith('Only @msrit.edu email accounts can upload resources.');
   });
 });
