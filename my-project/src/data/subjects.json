@@ -1696,6 +1696,11 @@
           "elective": true
         },
         {
+          "label": "Artificial Intelligence and Machine Learning Laboratory",
+          "value": "artificial_intelligence_and_machine_learning_laboratory",
+          "code": "CSL52"
+        },
+        {
           "label": "Data Communication and Networking Laboratory",
           "value": "data_communication_and_networking_laboratory",
           "code": "CSL56"
@@ -2211,6 +2216,11 @@
           "label": "Microservices and DevOps Lab",
           "value": "microservices_and_devops_lab",
           "code": "CSL66"
+        },
+        {
+          "label": "Introduction to Deep Learning Laboratory",
+          "value": "deep_learning_laboratory",
+          "code": "CSL631"
         },
         {
           "label": "Institutional Open Elective – 1",

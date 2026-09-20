@@ -4207,6 +4207,124 @@
           ]
         },
         {
+          "id": "csl52",
+          "name": "Artificial Intelligence and Machine Learning Laboratory",
+          "code": "CSL52",
+          "credits": "0:0:1",
+          "units": [
+            {
+              "id": "csl52_u1",
+              "title": "Search Algorithms and Logical Agents",
+              "topics": [
+                {
+                  "id": "csl52_u1_t1",
+                  "text": "Uninformed Search: Breadth-First Search (BFS) and Depth-First Search (DFS)"
+                },
+                {
+                  "id": "csl52_u1_t2",
+                  "text": "Informed Search: A* Search Algorithm and Heuristic Evaluation"
+                },
+                {
+                  "id": "csl52_u1_t3",
+                  "text": "Knowledge-Based Agents and Propositional Logic Inference"
+                },
+                {
+                  "id": "csl52_u1_t4",
+                  "text": "First-Order Logic: Unification, Forward Chaining, and Resolution Refutation"
+                }
+              ]
+            },
+            {
+              "id": "csl52_u2",
+              "title": "Knowledge Graphs and Probabilistic Inference",
+              "topics": [
+                {
+                  "id": "csl52_u2_t1",
+                  "text": "Knowledge Graphs and Ontologies: Triples and Semantic Rule-Based Inference"
+                },
+                {
+                  "id": "csl52_u2_t2",
+                  "text": "Bayesian Networks Construction and Exact/Approximate Inference"
+                },
+                {
+                  "id": "csl52_u2_t3",
+                  "text": "Naive Bayes Classification for Text and Categorical Datasets"
+                }
+              ]
+            },
+            {
+              "id": "csl52_u3",
+              "title": "Supervised Learning and Ensemble Classification",
+              "topics": [
+                {
+                  "id": "csl52_u3_t1",
+                  "text": "Linear Regression and Polynomial Regression with Regularization (Ridge/Lasso)"
+                },
+                {
+                  "id": "csl52_u3_t2",
+                  "text": "Logistic Regression and K-Nearest Neighbors (KNN)"
+                },
+                {
+                  "id": "csl52_u3_t3",
+                  "text": "Support Vector Machines (SVM) with Linear, Polynomial, and RBF Kernels"
+                },
+                {
+                  "id": "csl52_u3_t4",
+                  "text": "Decision Trees, Random Forest, and Gradient Boosting Classifiers"
+                },
+                {
+                  "id": "csl52_u3_t5",
+                  "text": "Performance Evaluation: Cross-Validation, Confusion Matrix, Precision, Recall, ROC/AUC"
+                }
+              ]
+            },
+            {
+              "id": "csl52_u4",
+              "title": "Unsupervised Learning and Neural Networks",
+              "topics": [
+                {
+                  "id": "csl52_u4_t1",
+                  "text": "K-Means Clustering and Silhouette Score Analysis"
+                },
+                {
+                  "id": "csl52_u4_t2",
+                  "text": "Hierarchical Clustering and Dendrogram Construction"
+                },
+                {
+                  "id": "csl52_u4_t3",
+                  "text": "Principal Component Analysis (PCA) for High-Dimensional Data Reduction"
+                },
+                {
+                  "id": "csl52_u4_t4",
+                  "text": "Multilayer Perceptron (MLP) with Backpropagation Algorithm"
+                }
+              ]
+            },
+            {
+              "id": "csl52_u5",
+              "title": "Deep Learning and AI Ethics Auditing",
+              "topics": [
+                {
+                  "id": "csl52_u5_t1",
+                  "text": "Convolutional Neural Networks (CNN) for Image Classification"
+                },
+                {
+                  "id": "csl52_u5_t2",
+                  "text": "Recurrent Neural Networks (RNN) and Transformers for Sequence Processing"
+                },
+                {
+                  "id": "csl52_u5_t3",
+                  "text": "Responsible AI: Dataset Bias Detection and Fairness Metrics Auditing"
+                },
+                {
+                  "id": "csl52_u5_t4",
+                  "text": "Explainable AI (XAI): Feature Importance and Interpretability using SHAP/LIME"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "csl56",
           "name": "Data Communication and Networking Laboratory",
           "code": "CSL56",
@@ -5270,6 +5388,96 @@
                 {
                   "id": "csl66_u1_t7",
                   "text": "Topic 7: GitOps Continuous Delivery (CD) using ArgoCD & Live Observability with Prometheus/Grafana"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "csl631",
+          "name": "Introduction to Deep Learning Laboratory",
+          "code": "CSL631",
+          "credits": "0:0:1",
+          "units": [
+            {
+              "id": "csl631_u1",
+              "title": "Perceptron and Tensor Computations",
+              "topics": [
+                {
+                  "id": "csl631_u1_t1",
+                  "text": "Implementation of Rosenblatt Perceptron Model and Convergence Verification"
+                },
+                {
+                  "id": "csl631_u1_t2",
+                  "text": "Tensor Operations, Mathematical Transformations, and Computational Graphs"
+                }
+              ]
+            },
+            {
+              "id": "csl631_u2",
+              "title": "Multilayer Perceptrons and Backpropagation",
+              "topics": [
+                {
+                  "id": "csl631_u2_t1",
+                  "text": "Multilayer Perceptron (MLP) Implementation for Non-Linear XOR Classification"
+                },
+                {
+                  "id": "csl631_u2_t2",
+                  "text": "Gradient Descent Optimization and Automatic Differentiation"
+                }
+              ]
+            },
+            {
+              "id": "csl631_u3",
+              "title": "Regularization and Optimization Methods",
+              "topics": [
+                {
+                  "id": "csl631_u3_t1",
+                  "text": "Regularization Techniques: L1/L2 Weight Decay, Dropout, and Early Stopping"
+                },
+                {
+                  "id": "csl631_u3_t2",
+                  "text": "Batch Normalization and Layer Normalization"
+                },
+                {
+                  "id": "csl631_u3_t3",
+                  "text": "Deep Learning Optimizers: Comparative Analysis of SGD, Momentum, RMSprop, Adam"
+                }
+              ]
+            },
+            {
+              "id": "csl631_u4",
+              "title": "Convolutional Neural Networks",
+              "topics": [
+                {
+                  "id": "csl631_u4_t1",
+                  "text": "Convolution, Padding, Stride, and Pooling Operations from Scratch"
+                },
+                {
+                  "id": "csl631_u4_t2",
+                  "text": "Deep CNN Image Classification and Feature Map Visualization"
+                },
+                {
+                  "id": "csl631_u4_t3",
+                  "text": "Transfer Learning and Fine-Tuning using Pre-trained Models"
+                }
+              ]
+            },
+            {
+              "id": "csl631_u5",
+              "title": "Sequence Models and Modern Deep Architectures",
+              "topics": [
+                {
+                  "id": "csl631_u5_t1",
+                  "text": "Recurrent Neural Networks (RNN) and LSTM for Time-Series Forecasting"
+                },
+                {
+                  "id": "csl631_u5_t2",
+                  "text": "Self-Attention Mechanism and Transformer Block Implementation"
+                },
+                {
+                  "id": "csl631_u5_t3",
+                  "text": "Autoencoders for Unsupervised Representation Learning and Noise Reduction"
                 }
               ]
             }

@@ -399,12 +399,19 @@ export default function SearchPYQ() {
       setCurrentSubjectCode(finalCode);
       const code = normalizeSearch(finalCode);
 
+      const isMatchingCode = (fileCode, targetCode) => {
+        if (!fileCode || !targetCode) return false;
+        if (fileCode === targetCode) return true;
+        const stripLab = (c) => c.replace(/l(?=\d)/g, '').replace(/^cse/, 'cs');
+        return stripLab(fileCode) === stripLab(targetCode);
+      };
+
       const pyqResults = allData.filter((file) => {
         if (getFileCategory(file) !== 'pyq') return false;
 
         const allSubjectsPyq = isAllSubjectsPyq(file);
         const fileCode = normalizeSearch(getFileSubjectCode(file));
-        if (fileCode !== code) {
+        if (!isMatchingCode(fileCode, code)) {
           if (allSubjectsPyq || fileCode === 'all') {
             if (form.semester && form.branch) {
               if (file.sem && file.sem !== form.semester) return false;
@@ -424,7 +431,7 @@ export default function SearchPYQ() {
         if (getFileCategory(file) !== 'notes') return false;
 
         const fileCode = normalizeSearch(getFileSubjectCode(file));
-        if (fileCode !== code) {
+        if (!isMatchingCode(fileCode, code)) {
           if (fileCode === 'all') {
             if (form.sem && form.branch) {
               if (file.sem !== form.sem || file.branch !== form.branch) return false;
